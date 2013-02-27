@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head><title>[%= title %]</title></head>
+  <body>
+  <strong> yapc2013 debug mode </strong> - 
+  <a href="/2013/member/show"> member </a> | 
+  <a href="/2013/talk/index"> talk </a> |
+  <a href="/2013/auth/login"> login </a> |
+  <a href="/2013/auth/logout"> logout </a>
+  <br />
+    [%= content %]
+  </body>
+</html>

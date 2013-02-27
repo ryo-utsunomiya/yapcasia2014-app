@@ -1,0 +1,9 @@
+[% WRAPPER "layouts/default.html.tx" %]
+
+<h2>member show</h2>
+
+<pre>
+[% member %]
+</pre>
+
+[% END %]

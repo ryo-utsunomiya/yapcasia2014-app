@@ -1,0 +1,9 @@
+[% WRAPPER "layouts/default.html.tx" %]
+
+<h2>show talks</h2>
+
+<pre>
+[% talks %]
+</pre>
+
+[% END %]

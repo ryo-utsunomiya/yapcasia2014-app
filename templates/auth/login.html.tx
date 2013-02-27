@@ -1,0 +1,9 @@
+[% WRAPPER "layouts/default.html.tx" %]
+
+<ul>
+  <li><s><a class="button button-primary" href="./fb">Facebook</a></s></li>
+  <li><a class="button button-info" href="./auth_twitter">Twitter</a></li>
+  <li><s><a class="button button-success" href="./github">Github</a></s></li>
+</ul>
+
+[% END %]
