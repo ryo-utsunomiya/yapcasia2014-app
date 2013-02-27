@@ -34,6 +34,9 @@ sub startup {
     #my $auth = $r->under("/2013/auth");
     #$r->get('/2013/auth/twitter')->to("auth#auth_twitter");
 
+    $r->route('/')->to(cb => sub {
+        shift->redirect_to("/2013/");
+    });
     $r->route('/2013/:controller/:action');
 
 }
