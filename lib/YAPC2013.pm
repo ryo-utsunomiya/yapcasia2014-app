@@ -29,7 +29,7 @@ sub startup {
 
     # Router
     my $r = $self->routes;
-    $r->namespace('YAPC2013::Controller');
+    push @{$r->namespaces}, 'YAPC2013::Controller';
 
     #my $auth = $r->under("/2013/auth");
     #$r->get('/2013/auth/twitter')->to("auth#auth_twitter");
