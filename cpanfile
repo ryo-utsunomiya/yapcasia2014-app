@@ -23,4 +23,5 @@ requires 'Exporter::Constants';
 requires 'Teng';
 requires 'Data::Dumper::Concise';
 requires 'OAuth::Lite::Consumer';
+requires 'HTTP::Session';
 
