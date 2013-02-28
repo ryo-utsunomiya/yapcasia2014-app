@@ -40,6 +40,7 @@ sub table {
     if (! $table) {
         $table = (split /::/, Scalar::Util::blessed $self)[-1];
         $table =~ s/([a-z0-9])([A-Z])/$1_$2/g;
+        $table = lc $table;
 #        $table = "yapc2013_" .lc $table;
         $self->{table} = $table;
     }
