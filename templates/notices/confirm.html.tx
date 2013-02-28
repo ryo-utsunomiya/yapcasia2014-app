@@ -1,8 +1,14 @@
-[% WRAPPER "layouts/default.html.tx" %]
+[% WRAPPER "layouts/default.html.tx" WITH title = "YAPC::Asia 2013 イベントβ登録" %]
 
 <style type="text/css">
 <!--
     p.error {
+        border: 1px solid #f00;
+        padding: 1em;
+        font-weight: bold;
+    }
+
+    p.notice {
         border: 1px solid #f00;
         padding: 1em;
         color: #555;
@@ -12,7 +18,7 @@
 </style>
 
 [% IF (email_sent_message) %]
-<p class="error">確認メールが送信されました。メールに書いてあるコードを下記フォームに入力していただくか、メールにあるリンクをクリックして登録を完了してください</p>
+<p class="notice">確認メールが送信されました。<span style="text-decoration: underline">念のため迷惑メールフォルダもご確認ください</span>。メールに書いてあるコードを下記フォームに入力していただくか、メールにあるリンクをクリックして登録を完了してください</p>
 [% END %]
 [% IF (code_not_found) %]
 <p class="error">指定された登録コードが見つかりませんでした。コードを再確認していただいても駄目な場合は再登録をしてみてください

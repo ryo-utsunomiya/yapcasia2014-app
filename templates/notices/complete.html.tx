@@ -1,4 +1,4 @@
-[% WRAPPER "layouts/default.html.tx" %]
+[% WRAPPER "layouts/default.html.tx" WITH title = "YAPC::Asia 2013 イベントβ登録" %]
 
 登録が完了しました。YAPC::Asia Tokyo 2013からのお知らせがあり次第ご連絡いたします！
 

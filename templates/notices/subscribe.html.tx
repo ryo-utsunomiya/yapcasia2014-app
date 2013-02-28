@@ -1,6 +1,22 @@
-[% WRAPPER "layouts/default.html.tx" %]
+[% WRAPPER "layouts/default.html.tx" WITH title = "YAPC::Asia 2013 イベントβ登録" %]
+
+<style type="text/css">
+<!--
+    p.error {
+        border: 1px solid #f00;
+        padding: 1em;
+        font-weight: bold;
+    }
+-->
+</style>
+
+[% IF (invalid_email) %]
+<p class="error">メールアドレスが不正です。</p>
+[% END %]
 
 <p>YAPC::Asia Tokyo 2013の開催情報（ゲストスピーカーの決定、カンファレンス内容のアナウンス、チケットの販売情報など）をいち早く知りたい！という方はこちらにメールアドレスをご登録ください！</p>
+
+<p>メールアドレスを登録すると確認メールが送信されますが、迷惑メールフォルダに入る可能性もありますので、そちらもご確認ください。</p>
 
 <form action="/2013/notices/subscribe" method="POST">
     <input type="text" name="email">

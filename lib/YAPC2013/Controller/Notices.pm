@@ -1,5 +1,6 @@
 package YAPC2013::Controller::Notices;
 use Mojo::Base 'YAPC2013::Controller';
+use Email::Valid::Loose;
 
 sub subscribe {
     my ($self) = @_;
@@ -8,6 +9,11 @@ sub subscribe {
         # XXX add validation, check for email duplicates
         # grab email
         my $email = $self->req->param('email');
+        if (! Email::Valid::Loose->address($email)) {
+            $self->stash(invalid_email => 1);
+            return;
+        }
+
         # we haven't validated this email yet, so we can't register it
         # for real. insert into notices_subscription_temp
         my $subscription = $self->get('API::NoticesSubscriptionTemp')->create({

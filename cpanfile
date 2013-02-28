@@ -11,6 +11,7 @@ requires 'Data::UUID';
 requires 'Data::Localize';
 requires 'Email::MIME';
 requires 'Email::Sender';
+requires 'Email::Valid::Loose';
 requires 'Furl';
 requires 'JSON';
 requires 'HTML::Scrubber';
