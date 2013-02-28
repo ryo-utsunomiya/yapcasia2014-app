@@ -1,0 +1,10 @@
+[% WRAPPER "layouts/default.html.tx" %]
+
+<p>YAPC::Asia Tokyo 2013の開催情報（ゲストスピーカーの決定、カンファレンス内容のアナウンス、チケットの販売情報など）をいち早く知りたい！という方はこちらにメールアドレスをご登録ください！</p>
+
+<form action="/2013/notices/subscribe" method="POST">
+    <input type="text" name="email">
+    <input type="submit" value="submit">
+</form>
+
+[% END %]

@@ -1,0 +1,13 @@
+YAPC::Asia Tokyo 2013 お知らせメールに登録ありがとうございます。
+
+登録を完了するには下記URLをクリックしていただくか、
+
+    http://yapcasia.org/2013/notices/confirm?code=[% subscription.code %]
+
+下記フォームにアクセスした上で「登録コード」を入力してください。
+
+    http://yapcasia.org/2013/notices/confirm
+    登録コード： [% subscription.code %]
+
+===
+YAPC::Asia Tokyo 2013 運営チーム

@@ -29,13 +29,12 @@ register Memcached => sub {
     Cache::Memcached::Fast->new($config->{Memcached});
 }, { scoped => 1 };
 
-=pod
 register 'DB::Master' => sub {
     my $config = $_[0]->get('config');
     DBI->connect(@{$config->{'DB::Master'}});
 }, { scoped => 1 };
 
-foreach my $name (qw(Ballot Email EmailRegistration Member OEmbed Talk Venue Vote)) {
+foreach my $name (qw(Email NoticesSubscriptionTemp NoticesSubscription )) {
     my $key = "API::$name";
     my $klass = "YAPC2013::API::$name";
     eval "require $klass" or die;
@@ -44,7 +43,6 @@ foreach my $name (qw(Ballot Email EmailRegistration Member OEmbed Talk Venue Vot
         return $klass->new( container => $c );
     };
 }
-=cut
 
 register 'FormValidator' => sub {
     my $config = $_[0]->get('config');

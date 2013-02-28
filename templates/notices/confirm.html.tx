@@ -1,0 +1,15 @@
+[% WRAPPER "layouts/default.html.tx" %]
+
+[% IF (email_sent_message) %]
+<p>確認メールが送信されました。メールに書いてあるコードを下記フォームに入力していただくか、メールにあるリンクをクリックして登録を完了してください</p>
+[% END %]
+
+<p>まだ登録してない、もしくは登録確認メールが手元に届いていない方は<a href="/2013/notices/subscribe">こちらから登録してください</a></p>
+
+<form action="/2013/notices/confirm" method="POST">
+    登録コード
+    <input type="text" name="code">
+    <input type="submit" value="Value">
+</form>
+
+[% END %]
