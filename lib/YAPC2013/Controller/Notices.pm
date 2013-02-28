@@ -10,11 +10,12 @@ sub subscribe {
         my $email = $self->req->param('email');
         # we haven't validated this email yet, so we can't register it
         # for real. insert into notices_subscription_temp
-        $self->get('API::NoticesSubscriptionTemp')->create({
+        my $subscription = $self->get('API::NoticesSubscriptionTemp')->create({
             email      => $email,
             code       => $self->get('UUID')->create_str(),
             expires_on => \'DATE_ADD(NOW(), INTERVAL 7 DAY)'
         });
+        $self->stash(subscription => $subscription);
 
         my $message;
         {
