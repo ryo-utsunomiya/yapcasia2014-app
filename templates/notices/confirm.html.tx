@@ -1,7 +1,21 @@
 [% WRAPPER "layouts/default.html.tx" %]
 
+<style type="text/css">
+<!--
+    p.error {
+        border: 1px solid #f00;
+        padding: 1em;
+        color: #555;
+        font-weight: bold;
+    }
+-->
+</style>
+
 [% IF (email_sent_message) %]
-<p>確認メールが送信されました。メールに書いてあるコードを下記フォームに入力していただくか、メールにあるリンクをクリックして登録を完了してください</p>
+<p class="error">確認メールが送信されました。メールに書いてあるコードを下記フォームに入力していただくか、メールにあるリンクをクリックして登録を完了してください</p>
+[% END %]
+[% IF (code_not_found) %]
+<p class="error">指定された登録コードが見つかりませんでした。コードを再確認していただいても駄目な場合は再登録をしてみてください
 [% END %]
 
 <p>まだ登録してない、もしくは登録確認メールが手元に届いていない方は<a href="/2013/notices/subscribe">こちらから登録してください</a></p>

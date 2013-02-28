@@ -40,7 +40,9 @@ sub confirm {
         my ($temp) = $self->get('API::NoticesSubscriptionTemp')->search({
             code => $code
         });
-        if ($temp) {
+        if (! $temp) {
+            $self->stash(code_not_found => 1);
+        } else {
             $self->get('API::NoticesSubscriptionTemp')->delete($temp->{id});
             # XXX if we're already registered, just go ahead and ignore
             my @registered = $self->get('API::NoticesSubscription')->search({ email => $temp->{email} });
