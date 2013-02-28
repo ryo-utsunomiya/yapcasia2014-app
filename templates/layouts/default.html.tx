@@ -9,7 +9,7 @@
     #logo {
         width: 300px;
         height: 100px;
-        background: url(/2013/static/images/logo.png) no-repeat 0 0;
+        background: url(/2013/static/images/logo-small.png) no-repeat 0 0;
     }
 
     #content {
