@@ -1,5 +1,5 @@
 [% WRAPPER "layouts/default.html.tx" %]
 
-登録が完了しました。YAPC::Asia Tokyo 2013からのお知らせをご連絡いたします！
+登録が完了しました。YAPC::Asia Tokyo 2013からのお知らせがあり次第ご連絡いたします！
 
 [% END %]
