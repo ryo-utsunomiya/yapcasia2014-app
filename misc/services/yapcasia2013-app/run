@@ -1,7 +1,8 @@
 #!/bin/sh
 
-PATH=/var/lib/jpa/perl5/perls/perl-5.14.2/bin:/var/lib/jpa/perl5/bin:$PATH
+export LC_ALL=en_US
+export PATH=/var/lib/jpa/perl5/perls/perl-5.14.2/bin:/var/lib/jpa/perl5/bin:$PATH
 APP_HOME=/var/lib/jpa/yapcasia.org/yapcasia2013-app
 
 cd $APP_HOME
-./script/server -p 6001 
+./script/server -p 9001 -o 127.0.0.1
