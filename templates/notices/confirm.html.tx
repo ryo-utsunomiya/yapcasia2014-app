@@ -9,7 +9,7 @@
 <form action="/2013/notices/confirm" method="POST">
     登録コード
     <input type="text" name="code">
-    <input type="submit" value="Value">
+    <input type="submit" value="確認">
 </form>
 
 [% END %]
