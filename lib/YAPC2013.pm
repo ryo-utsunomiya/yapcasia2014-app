@@ -49,12 +49,10 @@ sub setup_xslate {
     my $renderer = $self->renderer;
     $renderer->add_handler(tx => YAPC2013::Renderer->build(
         app => $self,
-        template_options => {
-            syntax => "TTerse",
-            cache_dir => $self->home->rel_dir("tmp", "compiled_templates"),
-            module => [ "Text::Xslate::Bridge::TT2Like", "Data::Dumper::Concise" ],
-            function => {
-            }
+        syntax => "TTerse",
+        cache_dir => $self->home->rel_dir("tmp", "compiled_templates"),
+        module => [ "Text::Xslate::Bridge::TT2Like", "Data::Dumper::Concise" ],
+        function => {
         }
     ));
     $self->renderer->default_handler('tx');
