@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PATH=/var/lib/jpa/perl5/bin:$PATH
+PATH=/var/lib/jpa/perl5/perls/perl-5.14.2/bin:/var/lib/jpa/perl5/bin:$PATH
 APP_HOME=/var/lib/jpa/yapcasia.org/yapcasia2013-app
 
 $APP_HOME/script/server -p 6001 
