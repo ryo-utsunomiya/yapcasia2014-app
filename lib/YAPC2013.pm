@@ -29,6 +29,12 @@ sub startup {
     $self->helper( json => sub { JSON->new->utf8 } );
     $self->helper( uuid => sub { Data::UUID->new; } );
 
+    $self->hook(around_dispatch => sub {
+        my $next = shift;
+        my $guard = $self->container->new_scope;
+        $next->();
+    });
+
     # Router
     my $r = $self->routes;
     push @{$r->namespaces}, 'YAPC2013::Controller';
