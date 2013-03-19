@@ -1,0 +1,27 @@
+#!perl
+#
+# script/send_notice /path/to/email
+
+use strict;
+use lib "local/lib/perl5";
+use lib "lib";
+use Encode qw(decode_utf8);
+use YAPC2013;
+
+my $app = YAPC2013->new;
+
+my $file = shift;
+open my $fh, '<', $file or die;
+my $subject = decode_utf8(<$fh>);
+my $message = decode_utf8(do { local $/; <$fh> });
+my $email_api = $app->container->get('API::Email');
+my $notices_api = $app->container->get('API::NoticesSubscription');
+foreach my $subscription ($notices_api->search()) {
+     warn $subscription->{email};
+     $email_api->send_email({
+         to => $subscription->{email},
+         subject => $subject,
+         message => $message,
+     });
+     last;
+}
