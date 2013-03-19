@@ -23,5 +23,4 @@ foreach my $subscription ($notices_api->search()) {
          subject => $subject,
          message => $message,
      });
-     last;
 }
