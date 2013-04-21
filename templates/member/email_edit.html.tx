@@ -1,0 +1,28 @@
+[% WRAPPER "layouts/default.html.tx" 
+title = ""
+%]
+
+<div id="main">
+
+<div id="lead" class="section">
+<h1 class="corners">Member<span>hoge</span></h1>
+<div class="body">
+<h2 class="corners">email edit</h2>
+<p>
+"xxx email文言"
+</p>
+
+現在登録されてるメールアドレス : [% member.email %]
+
+<form action="/2013/member/email_confirm" method="post" class="form-horizontal">
+  <input type="hidden" name="id" value="[% member.id %]" />
+  <input type="text" name="email" value="" class="input-large" />
+  <input type="submit" class="button button-info">
+</form>
+
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+</div>
+
+[% END %]

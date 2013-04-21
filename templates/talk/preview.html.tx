@@ -1,0 +1,134 @@
+[% WRAPPER 'layouts/default.html.tx'
+title = 'TEST TITLE'
+%]
+
+<div id="main">
+
+<div id="lead" class="section">
+<h1 class="corners">トーク登録<span>Registation of talk</span></h1>
+<div class="body">
+<h2 class="corners"></h2>
+
+
+<div id="main-contents">
+
+<div class="section posts">
+    <h2>[% loc("Please verify your submission") %]</h2>
+    <div class="innerblock">
+        <div class="entry">
+            <div class="entry-contents">
+                <table class="table">
+                <tr>
+                    <td>ID</td>
+[% IF (is_edit) %]
+                    <td><a href="/2012/talk/[% talk.id %]">[% talk.id %]</a></td>
+[% ELSE %]
+                    <td>[% loc("New Submission") %]</td>
+[% END %]
+                </tr>
+                <tr>
+                    <td>[% loc("Talk Title (Japanese)") %]</td>
+                    <td>[% talk.title %]</td>
+                </tr>
+                <tr>
+                    <td>[% loc("Talk Title (English)") %]</td>
+                    <td>[% talk.title_en %]</td>
+                </tr>
+[% IF (member.is_admin) %]
+                <tr>
+                    <td>[% loc("Talk Status") %]</td>
+                    <td>[% loc(talk.status) %]</td>
+                </tr>
+                <tr>
+                    <td>[% loc("Starts On") %]</td>
+                    <td>[% talk.start_on %]</td>
+                </tr>
+[% END %]
+[% IF (talk.duration != 5) %]
+                <tr>
+                    <td>[% loc("Talk Category") %]</td>
+                    <td>[% loc(talk.category) %]</td>
+                </tr>
+                <tr>
+                    <td>[% loc("Language") %]</td>
+                    <td>[% loc(talk.language) %]</td>
+                </tr>
+                <tr>
+                    <td>[% loc("Slide Subtitles") %]</td>
+                    <td>[% loc(talk.subtitles) %]</td>
+                </tr>
+                <tr>
+                    <td>[% loc("Talk Duration") %]</td>
+                    <td>[% talk.duration %] [% loc("minutes") %]</td>
+                </tr>
+                <tr>
+                    <td>[% loc("Material (Difficulty) Level") %]</td>
+                    <td>[% loc(talk.material_level) %]</td>
+                </tr>
+[% ELSE %]
+                <tr>
+                    <td>[% loc("Talk Duration") %]</td>
+                    <td>Lightning Talk</td>
+                </tr>
+[% END %]
+[% IF (is_edit) %]
+                <tr>
+                    <td>[% loc("Slide URL") %]</td>
+                    <td>[% talk.slide_url %]</td>
+                </tr>
+[% END %]
+[% IF (is_edit && member.is_admin) %]
+                <tr>
+                    <td>[% loc("Video URL") %]</td>
+                    <td>[% talk.video_url %]</td>
+                </tr>
+[% END %]
+                <tr>
+                    <td>[% loc("Talk Abstract") %]</td>
+                    <td>[% fmt_talk_abstract(talk) %]</td>
+                </tr>
+                </table>
+
+                <form id="commit-form" action="/2013/talk/commit" method="POST">
+                    <input type="hidden" name="p" value="[% subsession_id %]" />
+                    <button class="button button-yapc">[% loc("Submit") %]</button>
+                    <button class="button button-danger">[% loc("Go Back") %]</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+<!--
+    $(document).ready( function() {
+        $(".button-danger", "#commit-form").each(function(i,e) {
+            $(e).click(function() {
+                location.href = "/2013/talk/input?p=[% subsession_id %]"
+                return false;
+            });
+        });
+    } );
+-->
+</script>
+
+
+
+
+
+
+
+
+
+
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+</div><!--  / #main /  -->
+
+
+
+
+[% END %]

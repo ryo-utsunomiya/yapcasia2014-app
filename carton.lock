@@ -8,7 +8,7 @@
                "unknown"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "ExtUtils::MakeMaker version 6.64, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "ExtUtils::MakeMaker version 6.6302, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "unknown"
             ],
@@ -127,7 +127,7 @@
                "Andy Armstrong <andy@hexten.net>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4004, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -301,17 +301,6 @@
                      "strict" : "0",
                      "warnings" : "0"
                   }
-               },
-               "test" : {
-                  "recommends" : {
-                     "Inline" : "0.50"
-                  },
-                  "requires" : {
-                     "Config" : "0",
-                     "File::Find" : "0",
-                     "IO::File" : "0",
-                     "Test::More" : "0.62"
-                  }
                }
             },
             "provides" : {
@@ -323,14 +312,12 @@
             "release_status" : "stable",
             "resources" : {
                "bugtracker" : {
-                  "mailto" : "bug-Capture-Tiny@rt.cpan.org",
                   "web" : "https://rt.cpan.org/Public/Dist/Display.html?Name=Capture-Tiny"
                },
                "homepage" : "https://metacpan.org/release/Capture-Tiny",
                "repository" : {
                   "type" : "git",
-                  "url" : "git://github.com/dagolden/capture-tiny.git",
-                  "web" : "https://github.com/dagolden/capture-tiny"
+                  "url" : "git://github.com/dagolden/capture-tiny.git"
                }
             },
             "version" : "0.21"
@@ -448,7 +435,7 @@
                "unknown"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4004, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -585,7 +572,7 @@
                "runtime" : {
                   "requires" : {
                      "Carp" : "0",
-                     "ExtUtils::MakeMaker" : "6.64"
+                     "ExtUtils::MakeMaker" : "6.6302"
                   }
                }
             },
@@ -616,7 +603,7 @@
                "Benjamin Trott <cpan@stupidfool.org>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4004, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -763,27 +750,16 @@
                      "strict" : "0",
                      "warnings" : "0"
                   }
-               },
-               "test" : {
-                  "requires" : {
-                     "Test::Fatal" : "0",
-                     "Test::More" : "0.88",
-                     "Test::Requires" : "0",
-                     "constant" : "0",
-                     "version" : "0"
-                  }
                }
             },
             "release_status" : "stable",
             "resources" : {
                "bugtracker" : {
-                  "mailto" : "bug-class-load@rt.cpan.org",
                   "web" : "http://rt.cpan.org/NoAuth/Bugs.html?Dist=Class-Load"
                },
                "repository" : {
                   "type" : "git",
-                  "url" : "git://github.com/autarch/class-load.git",
-                  "web" : "https://github.com/autarch/class-load"
+                  "url" : "git://github.com/autarch/class-load.git"
                }
             },
             "version" : "0.20"
@@ -1452,7 +1428,7 @@
                "Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4004, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -1741,7 +1717,7 @@
                "Mark Stosberg <mark@summersault.com>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -2101,20 +2077,13 @@
                      "Params::Util" : "0",
                      "Sub::Install" : "0.921"
                   }
-               },
-               "test" : {
-                  "requires" : {
-                     "Test::More" : "0.96"
-                  }
                }
             },
             "release_status" : "stable",
             "resources" : {
                "homepage" : "http://github.com/rjbs/data-optlist",
                "repository" : {
-                  "type" : "git",
-                  "url" : "http://github.com/rjbs/data-optlist",
-                  "web" : "http://github.com/rjbs/data-optlist"
+                  "url" : "http://github.com/rjbs/data-optlist"
                }
             },
             "version" : "0.107",
@@ -2335,7 +2304,7 @@
                "Based on code originally by Leo Lapworth, with many changes added by\nby Leon Brocard <acme@astray.com>."
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4004, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -2444,6 +2413,67 @@
          },
          "target" : "Data::Page::NoTotalEntries",
          "version" : "0.02"
+      },
+      "Data::Recursive::Encode" : {
+         "dist" : "Data-Recursive-Encode-0.04",
+         "mymeta" : {
+            "abstract" : "Encode/Decode Values In A Structure",
+            "author" : [
+               "Tokuhiro Matsuno <tokuhirom AAJKLFJEF GMAIL COM>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "Module::Install version 1.00, CPAN::Meta::Converter version 2.120921",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Data-Recursive-Encode",
+            "no_index" : {
+               "directory" : [
+                  "inc",
+                  "t",
+                  "xt"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "6.42",
+                     "Test::More" : "0.94"
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "6.42"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "perl" : "5.008001"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "license" : [
+                  "http://dev.perl.org/licenses/"
+               ]
+            },
+            "version" : "0.04"
+         },
+         "name" : "Data::Recursive::Encode",
+         "pathname" : "T/TO/TOKUHIROM/Data-Recursive-Encode-0.04.tar.gz",
+         "provides" : {
+            "Data::Recursive::Encode" : {
+               "file" : "Data/Recursive/Encode.pm",
+               "version" : "0.04"
+            }
+         },
+         "target" : "Data::Recursive::Encode",
+         "version" : "0.04"
       },
       "Data::UUID" : {
          "dist" : "Data-UUID-1.218",
@@ -2862,11 +2892,6 @@
                      "ExtUtils::MakeMaker" : "6.30"
                   }
                },
-               "develop" : {
-                  "requires" : {
-                     "Test::Pod" : "1.41"
-                  }
-               },
                "runtime" : {
                   "requires" : {
                      "File::Spec" : "0",
@@ -2875,25 +2900,16 @@
                      "strict" : "0",
                      "warnings" : "0"
                   }
-               },
-               "test" : {
-                  "requires" : {
-                     "Test::More" : "0.88",
-                     "base" : "0",
-                     "bytes" : "0"
-                  }
                }
             },
             "release_status" : "stable",
             "resources" : {
                "bugtracker" : {
-                  "mailto" : "bug-devel-stacktrace@rt.cpan.org",
                   "web" : "http://rt.cpan.org/NoAuth/Bugs.html?Dist=Devel-StackTrace"
                },
                "repository" : {
                   "type" : "git",
-                  "url" : "git://git.urth.org/Devel-StackTrace.git",
-                  "web" : "http://git.urth.org/Devel-StackTrace.git"
+                  "url" : "git://git.urth.org/Devel-StackTrace.git"
                }
             },
             "version" : "1.30"
@@ -3133,12 +3149,6 @@
                   "requires" : {
                      "List::MoreUtils" : "0.12",
                      "Sub::Exporter" : "0"
-                  }
-               },
-               "test" : {
-                  "requires" : {
-                     "Test::Fatal" : "0",
-                     "Test::More" : "0.88"
                   }
                }
             },
@@ -3815,13 +3825,6 @@
                      "ExtUtils::MakeMaker" : "6.30"
                   }
                },
-               "develop" : {
-                  "requires" : {
-                     "Sub::Override" : "0",
-                     "Test::Pod" : "1.41",
-                     "version" : "0.9901"
-                  }
-               },
                "runtime" : {
                   "requires" : {
                      "Capture::Tiny" : "0.08",
@@ -3849,20 +3852,13 @@
                      "Throwable::Error" : "0.200003",
                      "Try::Tiny" : "0"
                   }
-               },
-               "test" : {
-                  "requires" : {
-                     "Test::More" : "0.96"
-                  }
                }
             },
             "release_status" : "stable",
             "resources" : {
                "homepage" : "https://github.com/rjbs/email-sender",
                "repository" : {
-                  "type" : "git",
-                  "url" : "https://github.com/rjbs/email-sender.git",
-                  "web" : "https://github.com/rjbs/email-sender"
+                  "url" : "https://github.com/rjbs/email-sender.git"
                }
             },
             "version" : "1.300005",
@@ -4444,7 +4440,7 @@
                "Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4004, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -4675,6 +4671,10 @@
             "ExtUtils::testlib" : {
                "file" : "ExtUtils/testlib.pm",
                "version" : "6.64"
+            },
+            "JSON::PP::Compat5006" : {
+               "file" : "JSON/PP/Compat5006.pm",
+               "version" : "1.09"
             },
             "MM" : {
                "file" : "ExtUtils/MM.pm"
@@ -5091,6 +5091,76 @@
          "target" : "Furl",
          "version" : "2.06"
       },
+      "HTML::FillInForm::Lite" : {
+         "dist" : "HTML-FillInForm-Lite-1.12",
+         "mymeta" : {
+            "abstract" : "Lightweight FillInForm module in Pure Perl",
+            "author" : [
+               "Goro Fuji (藤 吾郎) <gfuji(at)cpan.org>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "Module::Install version 1.06, CPAN::Meta::Converter version 2.120921",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "HTML-FillInForm-Lite",
+            "no_index" : {
+               "directory" : [
+                  "example",
+                  "inc",
+                  "t"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "CGI" : "0",
+                     "ExtUtils::MakeMaker" : "6.59",
+                     "Test::More" : "0.62"
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "6.59"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "perl" : "5.006"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "license" : [
+                  "http://dev.perl.org/licenses/"
+               ],
+               "repository" : {
+                  "type" : "git",
+                  "url" : "git://github.com/gfx/p5-HTML-FillInForm-Lite.git"
+               }
+            },
+            "version" : "1.12"
+         },
+         "name" : "HTML::FillInForm::Lite",
+         "pathname" : "G/GF/GFUJI/HTML-FillInForm-Lite-1.12.tar.gz",
+         "provides" : {
+            "HTML::FillInForm::Lite" : {
+               "file" : "HTML/FillInForm/Lite.pm",
+               "version" : "1.12"
+            },
+            "HTML::FillInForm::Lite::Compat" : {
+               "file" : "HTML/FillInForm/Lite/Compat.pm",
+               "version" : "1.12"
+            }
+         },
+         "target" : "HTML::FillInForm::Lite",
+         "version" : "1.12"
+      },
       "HTML::Parser" : {
          "dist" : "HTML-Parser-3.69",
          "mymeta" : {
@@ -5223,32 +5293,17 @@
                      "HTML::Parser" : "0",
                      "vars" : "0"
                   }
-               },
-               "test" : {
-                  "requires" : {
-                     "Carp" : "0",
-                     "English" : "0",
-                     "File::Find" : "0",
-                     "File::Spec" : "0",
-                     "File::Temp" : "0",
-                     "Scalar::Util" : "0",
-                     "Test" : "0",
-                     "Test::More" : "0.94",
-                     "perl" : "5.004"
-                  }
                }
             },
             "release_status" : "stable",
             "resources" : {
                "bugtracker" : {
-                  "mailto" : "bug-HTML-Scrubber@rt.cpan.org",
                   "web" : "http://rt.cpan.org/Public/Dist/Display.html?Name=HTML-Scrubber"
                },
                "homepage" : "http://search.cpan.org/dist/HTML-Scrubber",
                "repository" : {
                   "type" : "git",
-                  "url" : "git://github.com/nigelm/html-scrubber.git",
-                  "web" : "http://github.com/nigelm/html-scrubber"
+                  "url" : "git://github.com/nigelm/html-scrubber.git"
                }
             },
             "version" : "0.09",
@@ -6298,25 +6353,11 @@
                      "ExtUtils::MakeMaker" : "6.30"
                   }
                },
-               "develop" : {
-                  "requires" : {
-                     "Pod::Coverage::TrustPod" : "0",
-                     "Test::Pod" : "1.41",
-                     "Test::Pod::Coverage" : "1.08"
-                  }
-               },
                "runtime" : {
                   "requires" : {
                      "Carp" : "0",
                      "Encode" : "2.10",
                      "Exporter" : "5.57"
-                  }
-               },
-               "test" : {
-                  "requires" : {
-                     "File::Temp" : "0",
-                     "Scalar::Util" : "0",
-                     "Test::More" : "0.88"
                   }
                }
             },
@@ -6324,8 +6365,7 @@
             "resources" : {
                "repository" : {
                   "type" : "git",
-                  "url" : "git://github.com/madsen/io-html.git",
-                  "web" : "http://github.com/madsen/io-html"
+                  "url" : "git://github.com/madsen/io-html.git"
                }
             },
             "version" : "1.00",
@@ -6536,7 +6576,7 @@
                "unknown"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "ExtUtils::MakeMaker version 6.64, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "ExtUtils::MakeMaker version 6.6302, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "unknown"
             ],
@@ -7054,6 +7094,163 @@
          "target" : "List::MoreUtils",
          "version" : "0.33"
       },
+      "Locale::Maketext::Lexicon" : {
+         "dist" : "Locale-Maketext-Lexicon-0.93",
+         "mymeta" : {
+            "abstract" : "Use other catalog formats in Maketext",
+            "author" : [
+               "Clinton Gormley <drtech@cpan.org>",
+               "Audrey Tang <cpan@audreyt.org>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "Dist::Zilla version 4.300030, CPAN::Meta::Converter version 2.120921",
+            "license" : [
+               "mit"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Locale-Maketext-Lexicon",
+            "prereqs" : {
+               "build" : {
+                  "requires" : {}
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "6.30"
+                  }
+               },
+               "develop" : {
+                  "requires" : {
+                     "Test::Pod" : "1.41"
+                  }
+               },
+               "runtime" : {
+                  "recommends" : {
+                     "HTML::Parser" : "3.56",
+                     "Lingua::EN::Sentence" : "0.25",
+                     "PPI" : "1.203",
+                     "Template" : "2.20",
+                     "Template::Constants" : "2.75",
+                     "Text::HAML" : "0",
+                     "YAML" : "0.66",
+                     "YAML::Loader" : "0.66"
+                  },
+                  "requires" : {
+                     "Locale::Maketext" : "1.17"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "bugtracker" : {
+                  "web" : "https://github.com/clintongormley/locale-maketext-lexicon/issues"
+               },
+               "homepage" : "http://search.cpan.org/dist/Locale-Maketext-Lexicon",
+               "repository" : {
+                  "type" : "git",
+                  "url" : "git://github.com/clintongormley/locale-maketext-lexicon.git",
+                  "web" : "https://github.com/clintongormley/locale-maketext-lexicon"
+               }
+            },
+            "version" : "0.93"
+         },
+         "name" : "Locale::Maketext::Lexicon",
+         "pathname" : "D/DR/DRTECH/Locale-Maketext-Lexicon-0.93.tar.gz",
+         "provides" : {
+            "Locale::Maketext::Extract" : {
+               "file" : "Locale/Maketext/Extract.pm",
+               "version" : "0.93"
+            },
+            "Locale::Maketext::Extract::Plugin::Base" : {
+               "file" : "Locale/Maketext/Extract/Plugin/Base.pm",
+               "version" : "0.93"
+            },
+            "Locale::Maketext::Extract::Plugin::FormFu" : {
+               "file" : "Locale/Maketext/Extract/Plugin/FormFu.pm",
+               "version" : "0.93"
+            },
+            "Locale::Maketext::Extract::Plugin::FormFu::Extractor" : {
+               "file" : "Locale/Maketext/Extract/Plugin/FormFu.pm",
+               "version" : "0.93"
+            },
+            "Locale::Maketext::Extract::Plugin::Generic" : {
+               "file" : "Locale/Maketext/Extract/Plugin/Generic.pm",
+               "version" : "0.93"
+            },
+            "Locale::Maketext::Extract::Plugin::Haml" : {
+               "file" : "Locale/Maketext/Extract/Plugin/Haml.pm",
+               "version" : "0.93"
+            },
+            "Locale::Maketext::Extract::Plugin::Mason" : {
+               "file" : "Locale/Maketext/Extract/Plugin/Mason.pm",
+               "version" : "0.93"
+            },
+            "Locale::Maketext::Extract::Plugin::PPI" : {
+               "file" : "Locale/Maketext/Extract/Plugin/PPI.pm",
+               "version" : "0.93"
+            },
+            "Locale::Maketext::Extract::Plugin::Perl" : {
+               "file" : "Locale/Maketext/Extract/Plugin/Perl.pm",
+               "version" : "0.93"
+            },
+            "Locale::Maketext::Extract::Plugin::TT2" : {
+               "file" : "Locale/Maketext/Extract/Plugin/TT2.pm",
+               "version" : "0.93"
+            },
+            "Locale::Maketext::Extract::Plugin::TT2::Directive" : {
+               "file" : "Locale/Maketext/Extract/Plugin/TT2.pm",
+               "version" : "0.93"
+            },
+            "Locale::Maketext::Extract::Plugin::TT2::Parser" : {
+               "file" : "Locale/Maketext/Extract/Plugin/TT2.pm",
+               "version" : "0.93"
+            },
+            "Locale::Maketext::Extract::Plugin::TextTemplate" : {
+               "file" : "Locale/Maketext/Extract/Plugin/TextTemplate.pm",
+               "version" : "0.93"
+            },
+            "Locale::Maketext::Extract::Plugin::TextTemplate::Parser" : {
+               "file" : "Locale/Maketext/Extract/Plugin/TextTemplate.pm",
+               "version" : "0.93"
+            },
+            "Locale::Maketext::Extract::Plugin::YAML" : {
+               "file" : "Locale/Maketext/Extract/Plugin/YAML.pm",
+               "version" : "0.93"
+            },
+            "Locale::Maketext::Extract::Plugin::YAML::Extractor" : {
+               "file" : "Locale/Maketext/Extract/Plugin/YAML.pm",
+               "version" : "0.93"
+            },
+            "Locale::Maketext::Extract::Run" : {
+               "file" : "Locale/Maketext/Extract/Run.pm",
+               "version" : "0.93"
+            },
+            "Locale::Maketext::Lexicon" : {
+               "file" : "Locale/Maketext/Lexicon.pm",
+               "version" : "0.93"
+            },
+            "Locale::Maketext::Lexicon::Auto" : {
+               "file" : "Locale/Maketext/Lexicon/Auto.pm",
+               "version" : "0.93"
+            },
+            "Locale::Maketext::Lexicon::Gettext" : {
+               "file" : "Locale/Maketext/Lexicon/Gettext.pm",
+               "version" : "0.93"
+            },
+            "Locale::Maketext::Lexicon::Msgcat" : {
+               "file" : "Locale/Maketext/Lexicon/Msgcat.pm",
+               "version" : "0.93"
+            },
+            "Locale::Maketext::Lexicon::Tie" : {
+               "file" : "Locale/Maketext/Lexicon/Tie.pm",
+               "version" : "0.93"
+            }
+         },
+         "target" : "Locale::Maketext::Lexicon",
+         "version" : "0.93"
+      },
       "Log::Minimal" : {
          "dist" : "Log-Minimal-0.14",
          "mymeta" : {
@@ -7386,6 +7583,314 @@
          "target" : "Mail::Address",
          "version" : "2.12"
       },
+      "Module::Build" : {
+         "dist" : "Module-Build-0.4004",
+         "mymeta" : {
+            "abstract" : "Build and install Perl modules",
+            "author" : [
+               "Ken Williams <kwilliams@cpan.org>",
+               "Module-Build mailing list at <module-build@perl.org>."
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "Module::Build version 0.4004, CPAN::Meta::Converter version 2.120921",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Module-Build",
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "CPAN::Meta::YAML" : "0.003",
+                     "File::Temp" : "0.15",
+                     "Parse::CPAN::Meta" : "1.4401",
+                     "Test::Harness" : "3.16",
+                     "Test::More" : "0.49"
+                  }
+               },
+               "runtime" : {
+                  "recommends" : {
+                     "ExtUtils::Install" : "0.3",
+                     "ExtUtils::Manifest" : "1.54"
+                  },
+                  "requires" : {
+                     "CPAN::Meta" : "2.110420",
+                     "Cwd" : "0",
+                     "Data::Dumper" : "0",
+                     "ExtUtils::CBuilder" : "0.27",
+                     "ExtUtils::Install" : "0",
+                     "ExtUtils::Manifest" : "0",
+                     "ExtUtils::Mkbootstrap" : "0",
+                     "ExtUtils::ParseXS" : "2.21",
+                     "File::Basename" : "0",
+                     "File::Compare" : "0",
+                     "File::Copy" : "0",
+                     "File::Find" : "0",
+                     "File::Path" : "0",
+                     "File::Spec" : "0.82",
+                     "Getopt::Long" : "0",
+                     "IO::File" : "0",
+                     "Module::Metadata" : "1.000002",
+                     "Perl::OSType" : "1",
+                     "Test::Harness" : "0",
+                     "Text::Abbrev" : "0",
+                     "Text::ParseWords" : "0",
+                     "perl" : "5.006001",
+                     "version" : "0.87"
+                  }
+               }
+            },
+            "provides" : {
+               "Module::Build" : {
+                  "file" : "lib/Module/Build.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::Base" : {
+                  "file" : "lib/Module/Build/Base.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::Compat" : {
+                  "file" : "lib/Module/Build/Compat.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::Config" : {
+                  "file" : "lib/Module/Build/Config.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::Cookbook" : {
+                  "file" : "lib/Module/Build/Cookbook.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::Dumper" : {
+                  "file" : "lib/Module/Build/Dumper.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::ModuleInfo" : {
+                  "file" : "lib/Module/Build/ModuleInfo.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::Notes" : {
+                  "file" : "lib/Module/Build/Notes.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::PPMMaker" : {
+                  "file" : "lib/Module/Build/PPMMaker.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::Platform::Amiga" : {
+                  "file" : "lib/Module/Build/Platform/Amiga.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::Platform::Default" : {
+                  "file" : "lib/Module/Build/Platform/Default.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::Platform::EBCDIC" : {
+                  "file" : "lib/Module/Build/Platform/EBCDIC.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::Platform::MPEiX" : {
+                  "file" : "lib/Module/Build/Platform/MPEiX.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::Platform::MacOS" : {
+                  "file" : "lib/Module/Build/Platform/MacOS.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::Platform::RiscOS" : {
+                  "file" : "lib/Module/Build/Platform/RiscOS.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::Platform::Unix" : {
+                  "file" : "lib/Module/Build/Platform/Unix.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::Platform::VMS" : {
+                  "file" : "lib/Module/Build/Platform/VMS.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::Platform::VOS" : {
+                  "file" : "lib/Module/Build/Platform/VOS.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::Platform::Windows" : {
+                  "file" : "lib/Module/Build/Platform/Windows.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::Platform::aix" : {
+                  "file" : "lib/Module/Build/Platform/aix.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::Platform::cygwin" : {
+                  "file" : "lib/Module/Build/Platform/cygwin.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::Platform::darwin" : {
+                  "file" : "lib/Module/Build/Platform/darwin.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::Platform::os2" : {
+                  "file" : "lib/Module/Build/Platform/os2.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::PodParser" : {
+                  "file" : "lib/Module/Build/PodParser.pm",
+                  "version" : "0.4004"
+               },
+               "Module::Build::Version" : {
+                  "file" : "lib/Module/Build/Version.pm",
+                  "version" : "0.87"
+               },
+               "Module::Build::YAML" : {
+                  "file" : "lib/Module/Build/YAML.pm",
+                  "version" : "1.41"
+               },
+               "inc::latest" : {
+                  "file" : "lib/inc/latest.pm",
+                  "version" : "0.4004"
+               },
+               "inc::latest::private" : {
+                  "file" : "lib/inc/latest/private.pm",
+                  "version" : "0.4004"
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "license" : [
+                  "http://dev.perl.org/licenses/"
+               ],
+               "repository" : {
+                  "url" : "https://github.com/Perl-Toolchain-Gang/Module-Build"
+               },
+               "x_MailingList" : "mailto:module-build@perl.org"
+            },
+            "version" : "0.4004"
+         },
+         "name" : "Module::Build",
+         "pathname" : "L/LE/LEONT/Module-Build-0.4004.tar.gz",
+         "provides" : {
+            "Module::Build" : {
+               "file" : "Module/Build.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::Base" : {
+               "file" : "Module/Build/Base.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::Compat" : {
+               "file" : "Module/Build/Compat.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::Config" : {
+               "file" : "Module/Build/Config.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::ConfigData" : {
+               "file" : "Module/Build/ConfigData.pm"
+            },
+            "Module::Build::Cookbook" : {
+               "file" : "Module/Build/Cookbook.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::Dumper" : {
+               "file" : "Module/Build/Dumper.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::ModuleInfo" : {
+               "file" : "Module/Build/ModuleInfo.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::Notes" : {
+               "file" : "Module/Build/Notes.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::PPMMaker" : {
+               "file" : "Module/Build/PPMMaker.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::Platform::Amiga" : {
+               "file" : "Module/Build/Platform/Amiga.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::Platform::Default" : {
+               "file" : "Module/Build/Platform/Default.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::Platform::EBCDIC" : {
+               "file" : "Module/Build/Platform/EBCDIC.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::Platform::MPEiX" : {
+               "file" : "Module/Build/Platform/MPEiX.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::Platform::MacOS" : {
+               "file" : "Module/Build/Platform/MacOS.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::Platform::RiscOS" : {
+               "file" : "Module/Build/Platform/RiscOS.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::Platform::Unix" : {
+               "file" : "Module/Build/Platform/Unix.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::Platform::VMS" : {
+               "file" : "Module/Build/Platform/VMS.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::Platform::VOS" : {
+               "file" : "Module/Build/Platform/VOS.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::Platform::Windows" : {
+               "file" : "Module/Build/Platform/Windows.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::Platform::aix" : {
+               "file" : "Module/Build/Platform/aix.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::Platform::cygwin" : {
+               "file" : "Module/Build/Platform/cygwin.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::Platform::darwin" : {
+               "file" : "Module/Build/Platform/darwin.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::Platform::os2" : {
+               "file" : "Module/Build/Platform/os2.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::PodParser" : {
+               "file" : "Module/Build/PodParser.pm",
+               "version" : "0.4004"
+            },
+            "Module::Build::Version" : {
+               "file" : "Module/Build/Version.pm",
+               "version" : "0.87"
+            },
+            "Module::Build::YAML" : {
+               "file" : "Module/Build/YAML.pm",
+               "version" : "1.41"
+            },
+            "inc::latest" : {
+               "file" : "inc/latest.pm",
+               "version" : "0.4004"
+            },
+            "inc::latest::private" : {
+               "file" : "inc/latest/private.pm",
+               "version" : "0.4004"
+            }
+         },
+         "target" : "Module::Build",
+         "version" : "0.4004"
+      },
       "Module::Implementation" : {
          "dist" : "Module-Implementation-0.06",
          "mymeta" : {
@@ -7424,25 +7929,16 @@
                      "strict" : "0",
                      "warnings" : "0"
                   }
-               },
-               "test" : {
-                  "requires" : {
-                     "Test::Fatal" : "0",
-                     "Test::More" : "0.88",
-                     "Test::Requires" : "0"
-                  }
                }
             },
             "release_status" : "stable",
             "resources" : {
                "bugtracker" : {
-                  "mailto" : "bug-module-implementation@rt.cpan.org",
                   "web" : "http://rt.cpan.org/NoAuth/Bugs.html?Dist=Module-Implementation"
                },
                "repository" : {
                   "type" : "git",
-                  "url" : "git://git.urth.org/Module-Implementation.git",
-                  "web" : "http://git.urth.org/Module-Implementation.git"
+                  "url" : "git://git.urth.org/Module-Implementation.git"
                }
             },
             "version" : "0.06"
@@ -7466,7 +7962,7 @@
                "Andrew Main (Zefram) <zefram@fysh.org>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -8595,25 +9091,16 @@
                      "strict" : "0",
                      "warnings" : "0"
                   }
-               },
-               "test" : {
-                  "requires" : {
-                     "Test::Fatal" : "0",
-                     "Test::More" : "0.88",
-                     "Test::Requires" : "0"
-                  }
                }
             },
             "release_status" : "stable",
             "resources" : {
                "bugtracker" : {
-                  "mailto" : "bug-package-deprecationmanager@rt.cpan.org",
                   "web" : "http://rt.cpan.org/NoAuth/Bugs.html?Dist=Package-DeprecationManager"
                },
                "repository" : {
                   "type" : "git",
-                  "url" : "git://git.moose.perl.org/Package-DeprecationManager.git",
-                  "web" : "http://git.shadowcat.co.uk/gitweb/gitweb.cgi?p=gitmo/Package-DeprecationManager.git;a=summary"
+                  "url" : "git://git.moose.perl.org/Package-DeprecationManager.git"
                }
             },
             "version" : "0.13"
@@ -8663,14 +9150,6 @@
                      "ExtUtils::MakeMaker" : "6.30"
                   }
                },
-               "develop" : {
-                  "requires" : {
-                     "Pod::Coverage::TrustPod" : "0",
-                     "Test::LeakTrace" : "0",
-                     "Test::Pod" : "1.41",
-                     "Test::Pod::Coverage" : "1.08"
-                  }
-               },
                "runtime" : {
                   "recommends" : {
                      "Package::Stash::XS" : "0.26"
@@ -8688,29 +9167,17 @@
                      "strict" : "0",
                      "warnings" : "0"
                   }
-               },
-               "test" : {
-                  "requires" : {
-                     "File::Find" : "0",
-                     "File::Temp" : "0",
-                     "Test::Fatal" : "0",
-                     "Test::More" : "0.88",
-                     "Test::Requires" : "0",
-                     "base" : "0"
-                  }
                }
             },
             "release_status" : "stable",
             "resources" : {
                "bugtracker" : {
-                  "mailto" : "bug-package-stash@rt.cpan.org",
                   "web" : "http://rt.cpan.org/Public/Dist/Display.html?Name=Package-Stash"
                },
                "homepage" : "http://metacpan.org/release/Package-Stash",
                "repository" : {
                   "type" : "git",
-                  "url" : "git://github.com/doy/package-stash.git",
-                  "web" : "https://github.com/doy/package-stash"
+                  "url" : "git://github.com/doy/package-stash.git"
                }
             },
             "version" : "0.34",
@@ -9026,47 +9493,23 @@
                      "ExtUtils::MakeMaker" : "6.30"
                   }
                },
-               "develop" : {
-                  "requires" : {
-                     "Pod::Coverage::TrustPod" : "0",
-                     "Test::LeakTrace" : "0",
-                     "Test::Pod" : "1.41",
-                     "Test::Pod::Coverage" : "1.08"
-                  }
-               },
                "runtime" : {
                   "requires" : {
                      "XSLoader" : "0",
                      "strict" : "0",
                      "warnings" : "0"
                   }
-               },
-               "test" : {
-                  "requires" : {
-                     "B" : "0",
-                     "File::Find" : "0",
-                     "File::Temp" : "0",
-                     "Scalar::Util" : "0",
-                     "Symbol" : "0",
-                     "Test::Fatal" : "0",
-                     "Test::More" : "0.88",
-                     "Test::Requires" : "0",
-                     "base" : "0",
-                     "constant" : "0"
-                  }
                }
             },
             "release_status" : "stable",
             "resources" : {
                "bugtracker" : {
-                  "mailto" : "bug-package-stash-xs@rt.cpan.org",
                   "web" : "http://rt.cpan.org/Public/Dist/Display.html?Name=Package-Stash-XS"
                },
                "homepage" : "http://metacpan.org/release/Package-Stash-XS",
                "repository" : {
                   "type" : "git",
-                  "url" : "git://github.com/doy/package-stash-xs.git",
-                  "web" : "https://github.com/doy/package-stash-xs"
+                  "url" : "git://github.com/doy/package-stash-xs.git"
                }
             },
             "version" : "0.26",
@@ -10260,7 +10703,7 @@
                "Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4004, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -10644,6 +11087,57 @@
          "target" : "Stream::Buffered",
          "version" : "0.02"
       },
+      "String::CamelCase" : {
+         "dist" : "String-CamelCase-0.02",
+         "mymeta" : {
+            "abstract" : "camelcase, de-camelcase",
+            "author" : [
+               "YAMASHINA Hio <hio@cpan.org>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "ExtUtils::MY_Metafile version 0.09, EUMM-6.17., CPAN::Meta::Converter version 2.120921",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "String-CamelCase",
+            "no_index" : {
+               "directory" : [
+                  "inc",
+                  "t"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "0"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "Test::More" : "0"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "version" : "0.02",
+            "x_installdirs" : "site",
+            "x_version_from" : "lib/String/CamelCase.pm"
+         },
+         "name" : "String::CamelCase",
+         "pathname" : "H/HI/HIO/String-CamelCase-0.02.tar.gz",
+         "provides" : {
+            "String::CamelCase" : {
+               "file" : "String/CamelCase.pm",
+               "version" : "0.02"
+            }
+         },
+         "target" : "String::CamelCase",
+         "version" : "0.02"
+      },
       "Sub::Exporter" : {
          "dist" : "Sub-Exporter-0.985",
          "mymeta" : {
@@ -10678,12 +11172,6 @@
                      "ExtUtils::MakeMaker" : "6.30"
                   }
                },
-               "develop" : {
-                  "requires" : {
-                     "Test::Pod" : "1.41",
-                     "version" : "0.9901"
-                  }
-               },
                "runtime" : {
                   "requires" : {
                      "Carp" : "0",
@@ -10693,26 +11181,13 @@
                      "strict" : "0",
                      "warnings" : "0"
                   }
-               },
-               "test" : {
-                  "requires" : {
-                     "Exporter" : "0",
-                     "File::Find" : "0",
-                     "File::Temp" : "0",
-                     "Test::More" : "0.96",
-                     "base" : "0",
-                     "overload" : "0",
-                     "subs" : "0"
-                  }
                }
             },
             "release_status" : "stable",
             "resources" : {
                "homepage" : "https://github.com/rjbs/sub-exporter",
                "repository" : {
-                  "type" : "git",
-                  "url" : "https://github.com/rjbs/sub-exporter.git",
-                  "web" : "https://github.com/rjbs/sub-exporter"
+                  "url" : "https://github.com/rjbs/sub-exporter.git"
                }
             },
             "version" : "0.985",
@@ -11117,14 +11592,6 @@
                      "strict" : "0",
                      "warnings" : "0"
                   }
-               },
-               "test" : {
-                  "requires" : {
-                     "Exporter" : "0",
-                     "File::Find" : "0",
-                     "File::Temp" : "0",
-                     "Test::More" : "0"
-                  }
                }
             },
             "provides" : {
@@ -11136,14 +11603,11 @@
             "release_status" : "stable",
             "resources" : {
                "bugtracker" : {
-                  "mailto" : "bug-sub-uplevel at rt.cpan.org",
                   "web" : "http://rt.cpan.org/Public/Dist/Display.html?Name=Sub-Uplevel"
                },
                "homepage" : "https://github.com/dagolden/sub-uplevel",
                "repository" : {
-                  "type" : "git",
-                  "url" : "https://github.com/dagolden/sub-uplevel.git",
-                  "web" : "https://github.com/dagolden/sub-uplevel"
+                  "url" : "https://github.com/dagolden/sub-uplevel.git"
                }
             },
             "version" : "0.24"
@@ -11494,7 +11958,7 @@
                "Curtis \"Ovid\" Poe <ovid@cpan.org>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4004, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -11553,7 +12017,7 @@
                "Adrian Howard <adrianh@quietstars.com>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4004, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -11643,22 +12107,13 @@
                      "strict" : "0",
                      "warnings" : "0"
                   }
-               },
-               "test" : {
-                  "requires" : {
-                     "Test::Builder::Tester" : "0",
-                     "Test::More" : "0.47",
-                     "overload" : "0"
-                  }
                }
             },
             "release_status" : "stable",
             "resources" : {
                "homepage" : "https://github.com/rjbs/test-fatal",
                "repository" : {
-                  "type" : "git",
-                  "url" : "https://github.com/rjbs/test-fatal.git",
-                  "web" : "https://github.com/rjbs/test-fatal"
+                  "url" : "https://github.com/rjbs/test-fatal.git"
                }
             },
             "version" : "0.010",
@@ -12670,12 +13125,6 @@
                      "ExtUtils::MakeMaker" : "6.30"
                   }
                },
-               "develop" : {
-                  "requires" : {
-                     "Test::Pod" : "1.41",
-                     "version" : "0.9901"
-                  }
-               },
                "runtime" : {
                   "requires" : {
                      "Carp" : "0",
@@ -12688,24 +13137,13 @@
                      "Sub::Quote" : "0",
                      "overload" : "0"
                   }
-               },
-               "test" : {
-                  "requires" : {
-                     "File::Find" : "0",
-                     "File::Temp" : "0",
-                     "Test::More" : "0.96",
-                     "strict" : "0",
-                     "warnings" : "0"
-                  }
                }
             },
             "release_status" : "stable",
             "resources" : {
                "homepage" : "https://github.com/rjbs/throwable",
                "repository" : {
-                  "type" : "git",
-                  "url" : "https://github.com/rjbs/throwable.git",
-                  "web" : "https://github.com/rjbs/throwable"
+                  "url" : "https://github.com/rjbs/throwable.git"
                }
             },
             "version" : "0.200004",
@@ -12958,7 +13396,7 @@
                "Gurusamy Sarathy        gsar@umich.edu"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4004, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],

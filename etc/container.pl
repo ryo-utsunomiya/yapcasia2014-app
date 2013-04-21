@@ -34,7 +34,7 @@ register 'DB::Master' => sub {
     DBI->connect(@{$config->{'DB::Master'}});
 }, { scoped => 1 };
 
-foreach my $name (qw(Email NoticesSubscriptionTemp NoticesSubscription )) {
+foreach my $name (qw(Member Email Talk NoticesSubscriptionTemp NoticesSubscription )) {
     my $key = "API::$name";
     my $klass = "YAPC2013::API::$name";
     eval "require $klass" or die;

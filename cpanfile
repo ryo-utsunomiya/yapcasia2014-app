@@ -28,4 +28,7 @@ requires 'Teng';
 requires 'Data::Dumper::Concise';
 requires 'OAuth::Lite::Consumer';
 requires 'HTTP::Session';
-
+requires 'String::CamelCase';
+requires 'Locale::Maketext::Lexicon';
+requires 'HTML::FillInForm::Lite';
+requires 'Data::Recursive::Encode';

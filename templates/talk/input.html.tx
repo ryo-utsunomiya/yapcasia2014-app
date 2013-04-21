@@ -1,0 +1,226 @@
+[% WRAPPER 'layouts/default.html.tx'
+title = 'TEST TITLE'
+%]
+
+<div id="main">
+
+<div id="lead" class="section">
+<h1 class="corners">トーク登録<span>Registation of talk</span></h1>
+<div class="body">
+<h2 class="corners"></h2>
+
+<div id="main-contents">
+
+<div class="section posts">
+    <h2>[% IF (is_edit) %][% loc("Edit Your Talk") %][% ELSE %][% loc("Submit a new talk") %][% END %]</h2>
+    <div class="innerblock">
+        <div class="entry">
+            <div class="entry-contents">
+
+            <h2><a href="http://yapcasia.org/2012/news/yapcasia-2012-call-for-papers.html">[% loc("We're Looking For YOUR Talk!") %]</a> xxx 2013年版に変更する</h2>
+            <p>[% loc("This year we're looking for:") %]</p>
+
+            <ul>
+                <li>[% loc("Tutorials for Perl beginners") %]</li>
+                <li>[% loc("Using Perl in Windows Environment") %]</li>
+                <li>[% loc("Best Practices for Perl Developers (e.g. Environment, Tools, Deployment Techniques, IDEs)") %]</li>
+                <li>[% loc("Your experiences with Perl, and other languages (differences, comparisons)") %]</li>
+                <li>[% loc("Behind the scenes look of services and products built with Perl") %]</il>
+                <li>[% loc("Talks about the Perl community") %]</li>
+            </ul>
+
+            <p>[% loc("THE DEADLINE IS 7/31 ! (for 20/40min talks)") %]</p>
+
+[% FILTER fillinform %]
+                <form action="/2013/talk/check" method="post" class="form-horizontal">
+[% IF (is_edit) %]
+<input type="hidden" name="id" />
+<input type="hidden" name="is_edit" value="1" />
+[% END %]
+                    <fieldset>
+                        <h3>[% loc("Talk Title") %] <p style="font-size: 10pt; color: #aaa">[% loc("Please enter at least one of Japanese/English talk titles") %]</p></h3>
+                        [% fmt_error_message(results, "titles", "Talk Title") %]
+                        <div class="control-group">
+                            <label class="control-label" for="">[% loc("Talk Title (Japanese)" ) %]</label>
+                            <div class="controls docs-input-sizes">
+                                <input type="text" class="input-xlarge" name="title">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="">[% loc("Talk Title (English)" ) %]</label>
+                            <div class="controls docs-input-sizes">
+                                <input type="text" class="input-xlarge" name="title_en">
+                            </div>
+                        </div>
+
+                        <h3>[% loc("T-Shirt Size") %] <p style="font-size: 10pt; color:#aaa">[% loc("We provide speakers with free YAPC::Asia T-shirts, so please let us know what size you want. If you for some reason don't want one, please select 'Don't need it'") %]</p></h3>
+                        <div class="control-group">
+                            [% fmt_error_message(results, "tshirt_size", "T-Shirt Size") %]
+                            <label class="control-label" for="">[% loc("T-Shirt Size") %]</label>
+                            <div class="controls">
+                                <select name="tshirt_size">
+                                    <option value="none">[% loc("Don't need it") %]</option>
+[% FOREACH size IN [ "XS", "S", "M", "L", "XL", "XXL", "XXXL" ] %]
+                                    <option value="[% size %]">[% size %]</option>
+[% END %]
+                                </select>
+                            </div>
+                        </div>
+
+                        <h3>[% loc("Talk Details") %]</h3>
+[% IF (member.is_admin) %]
+                        <div class="control-group">
+                            [% fmt_error_message(results, "status", "Talk Status") %]
+                            <label class="control-label" for="">[% loc("Talk Status") %]</label>
+                            <div class="controls">
+                                <select name="status">
+[% FOREACH status IN [ "pending", "accepted", "rejected" ] %]
+                                    <option value="[% status %]">[% loc(status) %]</option>
+[% END %]
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            [% fmt_error_message(results, "venue_id", "Venue") %]
+                            <label class="control-label" for="">[% loc("Venue") %]</label>
+                            <div class="controls">
+                                <select name="venue_id">
+                                    <option value="">TBD</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label">[% loc("Starts On") %]</label>
+                            <div class="controls">
+                                <select name="start_on_date">
+                                    <option value="">[% loc("TBD") %]</option>
+[% FOREACH date IN [ "2013-09-19", "2013-09-20", "2013-09-21" ] %]
+                                    <option value="[% date %]">[% date %]</option>
+[% END %]
+                                </select>
+                                <br><div>Time: <input type="text" name="start_on_time"></div>
+                            </div>
+                        </div>
+[% END %]
+                        <div class="control-group">
+                            [% fmt_error_message(results, "category", "Talk Category") %]
+                            <label class="control-label" for="">[% loc("Talk Category") %]</label>
+                            <div class="controls">
+                                <select name="category">
+[% FOREACH category IN [ "tutorial", "app", "infra", "library", "community", "testing", "other" ] %]
+                                    <option value="[% category %]">[% loc(category) %]</option>
+[% END %]
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            [% fmt_error_message(results, "language", "Language") %]
+                            <label class="control-label" for="">[% loc("Language") %]</label>
+                            <div class="controls">
+                                <select name="language">
+                                    <option value="ja">[% loc("Japanese") %]</option>
+                                    <option value="en">[% loc("English") %]</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            [% fmt_error_message(results, "subtitles", "Slide Subtitles") %]
+                            <label class="control-label" for="">[% loc("Slide Subtitles") %]</label>
+                            <div class="controls">
+                                <select name="subtitles">
+                                    <option value="ja">[% loc("Japanese") %]</option>
+                                    <option value="en">[% loc("English") %]</option>
+                                    <option value="none">[% loc("None") %]</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            [% fmt_error_message(results, "duration", "Talk Duration") %]
+                            <label class="control-label" for="">[% loc("Talk Duration") %]</label>
+                            <div class="controls">
+                                <select name="duration">
+[% IF (member.is_admin) %]
+                                  <option value="60">60 [% loc("minutes") %]</option>
+[% END %]
+                                  <option value="40">40 [% loc("minutes") %]</option>
+                                  <option value="20">20 [% loc("minutes") %]</option>
+                                  <option value="5">Lightning Talk</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            [% fmt_error_message(results, "material_level", "Material Level") %]
+                            <label class="control-label" for="">[% loc("Material (Difficulty) Level") %]</label>
+                            <div class="controls">
+                                <select name="material_level">
+                                    <option value="advanced">[% loc("Advanced - In-depth knowledge on the subject is preferred") %]</option>
+                                    <option value="regular" selected="selected">[% loc("Regular - Some knowledge on the subject is preferred, but not required to understand the talk") %]</option>
+                                    <option value="beginner">[% loc("Beginner - Almost no prior knowledge is expected") %]</option>
+                                </select>
+                            </div>
+                        </div>
+
+[% IF (is_edit) %]
+                        <div class="control-group">
+                            [% fmt_error_message(results, "slide_url", "Slide URL") %]
+                            <label class="control-label" for="">[% loc("Slide URL") %]</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge" name="slide_url">
+                            </div>
+                        </div>
+[% IF (member.is_admin) %]
+                        <div class="control-group">
+                            [% fmt_error_message(results, "video_url", "Video URL") %]
+                            <label class="control-label" for="">[% loc("Video URL") %]</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge" name="video_url">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            [% fmt_error_message(results, "profile_url", "Profile Photo URL") %]
+                            <label class="control-label" for="">[% loc("Profile Photo URL") %]</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge" name="profile_url">
+                            </div>
+                        </div>
+[% END %]
+[% END %]
+
+                        <div class="control-group">
+                            [% fmt_error_message(results, "abstract", "Talk Abstract") %]
+                            <label class="control-label" for="">[% loc("Talk Abstract") %]</label>
+                            <div class="controls">
+                                <textarea name="abstract" style="width: 300px; height: 20em" placeholder="[% loc("Please describe the contents of your talk. We WILL base our decisions to accept talks depending on this abstract. This text will be interprted as Markdown formatted text.") %]"></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="button button-yapc">[% loc("Submit") %]</button>
+
+                    </fieldset>
+                </form>
+[% END # fillinform %]
+            </div>
+        </div>
+    </div><!-- innerblock -->
+</div>
+
+</div><!-- main-contents -->
+
+
+
+
+
+
+
+
+
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+</div><!--  / #main /  -->
+
+[% END %]

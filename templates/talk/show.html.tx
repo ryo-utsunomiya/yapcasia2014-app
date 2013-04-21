@@ -1,9 +1,192 @@
-[% WRAPPER "layouts/default.html.tx" %]
+[% WRAPPER 'layouts/default.html.tx'
+title = 'TEST TITLE'
+%]
 
-<h2>show talks</h2>
+<div id="main">
 
-<pre>
-[% talks %]
-</pre>
+<div id="lead" class="section">
+<h1 class="corners">トーク<span>talk</span></h1>
+<div class="body">
+<h2 class="corners"></h2>
+
+[% SET talk_url = "http://yapcasia.org/2013/talk/show/" _ talk.id %]
+
+<style type="text/css">
+<!--
+    #container #main-contents .posts .entry-contents .abstract h1,
+    #container #main-contents .posts .entry-contents .abstract h2,
+    #container #main-contents .posts .entry-contents .abstract h3,
+    #container #main-contents .posts .entry-contents .abstract h4,
+    #container #main-contents .posts .entry-contents .abstract h5,
+    #container #main-contents .posts .entry-contents .abstract h6 {
+        width: 300px;
+    }
+-->
+</style>
+<div id="main-contents">
+
+<div class="section posts">
+    <div class="innerblock">
+        <div class="entry">
+            <h2>[% loc("Talk Information") %]</h2>
+            <div class="entry-contents">
+
+<style>
+<!--
+    .speaker { float: left }
+    .speaker .icon img { width: 50px; height: 50px }
+    .speaker .data { width: 50px }
+    #container #main-contents .posts 
+    .speaker .data .name { word-wrap: break-word; font-size: 0.8em;}
+-->
+</style>
+<div class="speaker">
+    <div class="icon">[% fmt_member_icon_tag(speaker) %]</div>
+    <div class="data">
+       <p class="name"><a href="/2013/member/show/[% speaker.id %]">[% speaker.name || speacker.nickname %]</a></p>
+       <p><a href="/2013/talk/edit/[% talk.id %][% IF (talk.duration == 5) %]?lt=1[% END %]">[% loc("Edit Talk") %]</a></p>
+[% IF (owner || member.is_admin) %]
+        <p><a id="talk-delete" href="/2013/talk/delete/[% talk.id %]">[% loc("Delete Talk") %]</a></p>
+[% END %]
+    </div>
+</div>
+
+                <div style="margin-left: 100px">
+[% IF (talk.status != 'accepted') %]
+<div style="color: #f00; text-align: center; font-weight: bold">[% loc("This talk is currently in '[_1]' state", loc(talk.status)) %]</div>
+[% END %]
+                    <h4>[% loc("Talk Title") %]</h4>
+[%- SET talk_title = "" -%]
+[%- IF (member.is_admin || owner || talk.duration != 5 || talk.lt_visible) %]
+[% SET talk_title = lang == 'ja' ? (talk.title || talk.title_en) : (talk.title_en || talk.title) %]
+[% ELSE %]
+[% SET talk_title = "Lightning Talk" %]
+[% END -%]
+                    <div style="margin-bottom: 1em; margin-left: 1em; font-weight: bold">
+                    [% talk_title %]
+                    </div>
+                    <h4>[% loc("Abstract") %]</h4>
+                    <table>
+                    <tr>
+                        <td width="400" valign="top">
+[% IF (talk.profile_url) %]
+                            <img src="/2012/photo/crop?maxwidth=150&url=[% talk.profile_url %]" width="150" height="150" style="float: left; margin-bottom: 1em; margin-right: 1em;" />
+[% END %]
+                            <div class="abstract">
+[% IF (member.is_admin || owner || talk.duration != 5 || talk.lt_visible) %][% fmt_talk_abstract(talk) %][% ELSE %]Lightning Talk[% END %]</div>
+                        </td>
+                        <td width="90" style="padding: 5px" valign="top">
+                            <div class="fb-like" data-href="[% talk_url %]" data-layout="button_count" data-send="false" data-width="50" data-show-faces="false"></div>
+                            <g:plusone size="tall" annotation="none" href="[% talk_url %]"></g:plusone>
+                            <div data-plugins-type="mixi-favorite" data-service-key="c42621fa3b01434ead73c1ad76af5a35df298cf2" data-href="[% talk_url %]" data-show-faces="false" data-show-count="true" data-width="100"></div>
+                            <a href="http://b.hatena.ne.jp/entry/[% talk_url %]" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+[% IF (talk.status == 'pending') %]
+<div style="margin-top: 1em; color: #999; font-size: 0.8em">
+[% loc("Currently this talk is in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons above to express  your interest!") %]
+</div>
+[% END %]
+                        </td>
+                    </tr>
+                    </table>
+
+                    <h4>[% loc("Talk Details") %]</h4>
+                    <table class="table">
+                    <tr>
+                        <td>[% loc("Venue") %]</td>
+                        <td>[% IF (talk.venue) %][% loc(talk.venue.name) %][% ELSE %]TBD[% END %]</td>
+                    </tr>
+                    <tr>
+                        <td>[% loc("Starts On") %]</td>
+                        <td>[% IF (talk.start_on) %][% talk.start_on%][% ELSE %]TBD[% END %]</td>
+                    </tr>
+[% IF (talk.duration != 5) %]
+                    <tr>
+                        <td>[% loc("Talk Category") %]</td>
+                        <td>[% loc(talk.category) %]</td>
+                    </tr>
+                    <tr>
+                        <td>[% loc("Language") %]</td>
+                        <td>[% loc(talk.language) %]</td>
+                    </tr>
+                    <tr>
+                        <td>[% loc("Slide Subtitles") %]</td>
+                        <td>[% loc(talk.subtitles) %]</td>
+                    </tr>
+                    <tr>
+                        <td>[% loc("Talk Duration") %]</td>
+                        <td>[% loc("[_1] minutes", talk.duration) %]</td>
+                    </tr>
+                    <tr>
+                        <td>[% loc("Material (Difficulty) Level") %]</td>
+                        <td>[% loc(talk.material_level) %]</td>
+                    </tr>
+[% ELSE %]
+                    <tr>
+                        <td>[% loc("Talk Duration") %]</td>
+                        <td>Lightning Talk</td>
+                    </tr>
+[% END %]
+                    </table>
+
+                    <h4>[% loc("Video") %]</h4>
+                    <div class="video">[% IF 0 && embed_talk_video(talk.video_url); END %]</div>
+
+                    <h4>[% loc("Slide") %]</h4>
+                    <div class="slide">[% IF 0 && embed_talk_slide(talk.slide_url); END %]</div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+<!--
+    $(document).ready( function() {
+        $("#talk-delete").click( function() {
+            return confirm("[% loc("Are you sure you want to delete this talk? You can't undo this!") %]");
+        });
+    });
+    $([
+        { 
+            src: "http://b.st-hatena.com/js/bookmark_button.js",
+            id: "hatena-bookmark"
+        },
+        {
+            src: "http://static.mixi.jp/js/plugins.js#lang=ja",
+            id: "mixi-check"
+        },
+        {
+            src: "http://platform.twitter.com/widgets.js",
+            id: "twitter-wjs"
+        },
+        {
+            src: "http://connect.facebook.net/en_US/all.js#xfbml=1&appId=144267325643659",
+            id: "facebook-jssdk"
+        },
+        {
+            src: 'https://apis.google.com/js/plusone.js',
+            id: "google-plusone"
+        }
+    ]).each( function(i, e) {
+        var s = document.getElementById(e.id);
+        if (! s) {
+            s = document.createElement('script');
+            s.id = e.id;
+            s.src = e.src;
+            s.async = true;
+            document.getElementsByTagName('head')[0].appendChild(s);
+        }
+    });
+-->
+</script>
+
+
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+</div><!--  / #main /  -->
 
 [% END %]

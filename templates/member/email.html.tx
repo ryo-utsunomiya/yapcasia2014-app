@@ -1,0 +1,32 @@
+[% WRAPPER "layouts/default.html.tx" 
+title = ""
+%]
+
+<div id="main">
+
+<div id="lead" class="section">
+<h1 class="corners">Member<span>hoge</span></h1>
+<div class="body">
+<h2 class="corners">Member show</h2>
+
+<pre>
+nick : [% member.nickname %] by [% member.authenticated_by %]<br />
+name : [% member.name %]<br />
+email : [% member.email %]<br />
+site_id : [% member.id %] / [% member.created_on %]<br />
+</pre>
+
+[% IF !member.email %]
+<a href="/2013/member/email/edit">emailを登録して下さい</a>
+[% END %]
+
+<ul>
+  <li><a href="/2013/talk/regist"></a></li>
+</ul>
+
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+</div>
+
+[% END %]

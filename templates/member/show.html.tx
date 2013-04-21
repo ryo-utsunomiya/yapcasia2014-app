@@ -1,9 +1,94 @@
-[% WRAPPER "layouts/default.html.tx" %]
+[% WRAPPER "layouts/default.html.tx" 
+title = ""
+%]
 
-<h2>member show</h2>
+<div id="main">
 
-<pre>
-[% member %]
-</pre>
+<div id="lead" class="section">
+<h1 class="corners">Member<span>Member</span></h1>
+<div class="body">
+<h2 class="corners">Member show</h2>
+
+<style type="text/css">
+<!--
+    .speaker { float: left }
+    .speaker .name {
+        font-size: 0.8em;
+        width: 60px;
+        word-wrap: break-word
+    }
+
+    .speaker .icon { width: 50px; height: 50px }
+    .speaker .icon img {
+        width: 50px;
+        height: 50px;
+    }
+-->
+</style>
+
+<div id="main-contents">
+    <div class="section posts">
+        <h2>[% loc("[_1]'s Page", member.name || member.nickname) %]</h2>
+        <div class="innerblock">
+            <div class="entry">
+                <div class="entry-contents">
+
+<div class="speaker">
+    <div class="icon">[% fmt_member_icon_tag(member) %]</div>
+    <p class="name"><a href="/2013/member/show/[% member.id %]">[% member.name || member.nickname %]</a></p>
+[% IF (owner) %]
+                <p>(<a href="/2013/logout">logout</a>)</p>
+[% END %]
+</div>
+
+            <div style="margin-left: 80px">
+[% IF (owner && ! member.email) %]
+                <h4>[% loc("Email") %]</h4>
+                <ul>
+                    <li>[% loc("Email address not registered.") %] <a href="/2013/member/email_edit">[% loc("Please register if you want to submit a talk") %]</a></li>
+                </ul>
+[% END %]
+                <h4>[% loc("Talks Submitted by [_1]", member.name || member.nickname) %]</h4>
+
+[% IF (talks.size() < 1) %]
+                <p style="color: #999">[% loc("No talks submitted") %]</p>
+[% ELSE %]
+[% FOREACH talk IN talks %]
+                <ul>
+                    <li><a href="[% c.url_for("/2013/talk/show/" _ talk.id) %]">
+[% IF (owner || talk.duration != 5 || talk.lt_visible) %][% talk.title || talk.title_en %][% END %]</a> ([% loc(talk.status) %])</li>
+                </ul>
+[% END %]
+[% END %]
+
+[% IF (owner) %]
+                <h4>[% loc("Best Talk Votes") %]</h4>
+                <ul>
+                    <li>[% loc("Coming soon") %]</li>
+                </ul>
+[% END %]
+
+                <h4>Link</h4>
+                <ul>
+                  <li>
+                    [% IF member.email %]
+                    <a href="/2013/member/email_edit">Edit your Email </a>
+                    [% END %]
+                  </li>
+                  <li><a href="/2013/talk/input">Submit a new talk</a></li>
+                </ul>
+
+            </div>
+
+            </div><!-- entry-contents -->
+            </div><!-- entry -->
+        </div>
+    </div>
+</div>
+
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+</div>
 
 [% END %]

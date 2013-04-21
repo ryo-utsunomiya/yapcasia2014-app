@@ -1,7 +1,18 @@
-<h2>member index</h2>
+[% WRAPPER 'layouts/default.html.tx'
+title = 'TEST TITLE'
+%]
 
-<table>
+<div id="main">
 
-[% hoge %]
+<div id="lead" class="section">
+<h1 class="corners">トーク<span>Talk</span></h1>
+<div class="body">
+<h2 class="corners"></h2>
 
-</table>
+
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+</div><!--  / #main /  -->
+
+[% END %]

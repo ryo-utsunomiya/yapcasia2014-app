@@ -43,7 +43,6 @@ sub auth_twitter {
         my $request_token = $consumer->get_request_token(
             callback_url => $config->{Twitter}->{callback_url},
         );
-
         $self->sessions->set( request_token => $request_token );
         $self->redirect_to( $consumer->url_to_authorize(
             token        => $request_token,
@@ -60,14 +59,13 @@ sub auth_twitter {
             url    => q{http://api.twitter.com/1/account/verify_credentials.json},
             token  => $access_token,
         );
-        my $tw = $self->app->json->decode($res->decoded_content);
+        my $tw = $self->get('JSON')->decode($res->decoded_content);
 
         my $member = {
             remote_id => $tw->{id},
             nickname  => $tw->{screen_name},
             name      => $tw->{name},
             authenticated_by => "twitter",
-            email => ''
         };
 
         $self->create_member( $member );
@@ -77,28 +75,7 @@ sub auth_twitter {
 sub create_member {
     my ($self, $member) = @_;
 
-    my $db = $self->app->db;
-    my $old = $db->single(
-        'member' => +{
-            remote_id => $member->{remote_id},
-            authenticated_by => $member->{authenticated_by}
-        }
-    );
-
-    my $object;
-    if( $old ){
-        $old->update( $member );
-        $object = $old->refetch();
-    } else {
-        my $uuid = $self->app->uuid;
-        $member->{id} = lc( $uuid->create_str() );
-        $object = $db->insert(
-            'member' => $member
-        );
-    }
-
-
-=pod
+    my $api = $self->get('API::Member');
     my ($old) = $api->search({
         remote_id => $member->{remote_id},
         authenticated_by => $member->{authenticated_by},
@@ -113,9 +90,11 @@ sub create_member {
         $member->{id} = lc($uuid->create_str());
         $object = $self->get('API::Member')->create($member);
     }
-=cut
 
-    $self->sessions->set(member => $object->get_columns );
+use Data::Dumper;
+warn Dumper($object);
+
+    $self->sessions->set(member => $object);
 
     my $url = $self->sessions->get('after_login');
     if ($url) {
@@ -125,5 +104,6 @@ sub create_member {
     }
     $self->redirect_to($url);
 }
+
 
 1;

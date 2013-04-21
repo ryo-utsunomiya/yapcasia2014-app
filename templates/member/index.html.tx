@@ -1,7 +1,73 @@
-<h2>member index</h2>
+[% WRAPPER 'layouts/default.html.tx'
+title = 'TEST TITLE'
+%]
 
-<table>
+<div id="main">
 
-[% hoge %]
+<div id="lead" class="section">
+<h1 class="corners">Member<span>hoge</span></h1>
+<div class="body">
+<h2 class="corners">Member</h2>
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
 
-</table>
+<div class="section">
+<h2 class="corners">Member<span>hoge</span></h2>
+<div class="body">
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+<div class="section">
+<h2 class="corners">Member<span>hoge</span></h2>
+<div class="body">
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+<div id="lead" class="section">
+<h1 class="corners">エンジニアのエンジニアによるエンジニアのためのお祭り<span>OF THE ENGINEERS BY THE ENGINEERS FOR THE ENGINEERS<span></h1>
+<div class="body">
+<h2>Welcome to YAPC::Asia Tokyo 2013</h2>
+<p>YAPC::Asia Tokyo 2013の開催情報（ゲストスピーカーの決定、カンファレンス内容のアナウンス、チケットの販売情報など）をいち早く知りたい！という方はこちらにメールアドレスをご登録ください！</p>
+<p>メールアドレスを登録すると確認メールが送信されますが、迷惑メールフォルダに入る可能性もありますので、そちらもご確認ください。</p>
+<div>
+<form action="http://yapcasia.org/2013/notices/subscribe" method="POST" class="form-horizontal">
+<input type="text" name="email" class="input-large">
+<input type="submit" value="登録" class="button button-info">
+</form>
+</div>
+
+<p>
+<!--a href="http://yapcasia.org/2013/photos" target="_blank">Photos of YAPC::Asia Tokyo 2013!</a><br /-->
+<a href="http://www.facebook.com/yapcasia" target="_blank">Facebookページもチェック！</a>
+</p>
+
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+<div class="section">
+<h2 class="corners">YAPCとは？ / What is YAPC?</h2>
+<div class="body">
+<p>世界最大のYAPCがまた今年ももどってきました！YAPCはYet Another Perl Conferenceの略で、Perlに関するカンファレンス・・・いや、お祭りです！Perlだけに限らず、様々な分野のギーク達が集まり技術の話と楽しさに満ちた三日間のお祭りが開かれます。心配する必要はありません、YAPCは誰でも楽しめるカンファレンスです。</p>
+<p>Perlギーク達がどんな事を今しているのか、そしてさらに前進するためにどんなことをしているのか、是非皆様も体験しに来て下さい！</p>
+<p>The world's largest YAPC is back! YAPC is a grassroots conference for geeks: it stands for Yet Another Perl Conference and is mainly targeted for Perl users, but have no worry! We have talks for everybody! It's more like a 3-day festival filled with fun and geeky-ness than a all serious conference. We're sure you can have lots of fun with us.</p>
+<p>Come see what's up with the Perl geeks, and what keeps us taking new steps forward.</p>
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+<div id="sponsors" class="section">
+<h2 class="corners">SPONSORS</h2>
+<div class="body">
+
+<h3>主催</h3>
+<div class="block">
+<ul>
+<li class="large"><a href="http://japan.perlassociation.org" target="_blank"><img src="http://yapcasia.org/2013/static/images/sponsors/jpa.jpg" /></a></li>
+</ul>
+</div>
+
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+</div><!--  / #main /  -->
+
+[% END %]

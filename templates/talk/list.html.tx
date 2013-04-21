@@ -1,0 +1,155 @@
+[% WRAPPER 'layouts/default.html.tx'
+title = 'TEST TITLE'
+%]
+
+<div id="main">
+
+<div id="lead" class="section">
+<h1 class="corners">トーク登録<span>Registation of talk</span></h1>
+<div class="body">
+<h2 class="corners"></h2>
+
+
+<style type="text/css">
+<!--
+    #container #main-contents .posts .talk .speaker .name {
+        font-size: 0.8em;
+        width: 60px;
+        word-wrap: break-word
+    }
+
+    .talk .speaker .icon { width: 50px; height: 50px }
+    .talk .speaker .icon img {
+        width: 50px;
+        height: 50px;
+    }
+    .talk {
+        clear: both;
+    }
+    .talk .speaker {
+        float: left;
+    }
+    .talk .details {
+        margin-left: 80px;
+    }
+    .talk .details .title {
+        padding: 5px;
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+
+    div.social-buttons {
+        float: right;
+    }
+    div.social-buttons .button-mixi {
+        vertical-align: top;
+        margin-left: 1em;
+        display: inline-block;
+    }
+    div.social-buttons .button-hatebu {
+        vertical-align: top;
+        margin-left: 1em;
+        display: inline-block;
+    }
+    div.social-buttons .button-fblike {
+        vertical-align: top;
+        width: 100px;
+        height: 20px;
+        display: inline-block;
+    }
+-->
+</style>
+
+[% MACRO talk_details(talk) BLOCK %]
+[%- SET talk_url = "http://yapcasia.org/2013/talk/show/" _ talk.id %]
+<div class="talk unhandled">
+<div class="speaker">
+    <div class="icon">[% fmt_member_icon_tag(talk.speaker) %]</div>
+    <p class="name"><a href="/2013/member/show/[% talk.speaker.id %]">[% talk.speaker.name || talk.speaker.nickname %]</a></p>
+</div>
+<div class="details">
+    <table class="table">
+    <tr>
+        <td width="400">
+            <div class="title">
+                <div>
+                    <a href="/2013/talk/show/[% talk.id %]">[% talk.title || talk.title_en %]</a> ([% talk.duration %] min)
+                </div>
+                <div class="social-buttons" data-url="[% talk_url %]"></div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="abstract">
+            [% fmt_talk_abstract_short(talk) %]</td>
+    </tr>
+    </table>
+</div>
+</div>
+[% END %]
+
+<div id="main-contents">
+
+<div class="section posts">
+    <h2>[% loc("Talks") %]</h2>
+    <div class="innerblock">
+        <div class="entry">
+            <div class="entry-contents">
+
+
+<h3>[% loc("applied talks") %] ([% applied_talks.size() %])</h3>
+[% FOREACH talk IN applied_talks %]
+[% talk_details(talk) %]
+[% END %]
+
+<!--
+
+<p>[% loc("Here are the list of talks for YAPC::Asia Tokyo 2012. Click on the links below to see a timetable!") %]</p>
+<ul>
+<li><a href="/2012/talk/schedule?date=2012-09-27">[% loc("Day 0") %]</a></li>
+<li><a href="/2012/talk/schedule?date=2012-09-28">[% loc("Day 1") %]</a></li>
+<li><a href="/2012/talk/schedule?date=2012-09-29">[% loc("Day 2") %]</a></li>
+</ul>
+
+            <p style="font-size: 2em"><a href="http://yapcasia.org/2012/news/cfp-for-lightning-talks.html">現在Lightning Talks 募集中です！</a></p>
+
+<h3>[% loc("Day 0") %] ([% day0_talks.size() %])</h3>
+[% FOREACH talk IN day0_talks %]
+[% talk_details(talk) %]
+[% END %]
+
+<h3>[% loc("Day 1") %] ([% day1_talks.size() %])</h3>
+[% FOREACH talk IN day1_talks %]
+[% talk_details(talk) %]
+[% END %]
+
+<h3>[% loc("Day 2") %] ([% day2_talks.size() %])</h3>
+[% FOREACH talk IN day2_talks %]
+[% talk_details(talk) %]
+[% END %]
+
+-->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+</div><!--  / #main /  -->
+
+[% END %]
+

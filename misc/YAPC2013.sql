@@ -14,7 +14,7 @@ CREATE TABLE member (
 
 
 CREATE TABLE talk (
-    id CHAR(4) NOT NULL PRIMARY KEY,
+    id CHAR(40) NOT NULL PRIMARY KEY,
     status ENUM ( 'pending', 'accepted', 'rejected' ) NOT NULL DEFAULT 'pending',
     member_id CHAR(40) NOT NULL,
     venue_id INT,

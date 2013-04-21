@@ -1,9 +1,23 @@
-<h2>member index</h2>
+[% WRAPPER 'layouts/default.html.tx'
+title = 'TEST TITLE'
+%]
+
+<div id="main">
+
+<div id="lead" class="section">
+<h1 class="corners">ログイン<span>login</span></h1>
+<div class="body">
+<h2 class="corners"></h2>
 
 <ul>
-    <li>twitter</li>
-    <li>github</li>
-    <li>facebook</li>
+  <li><s><a class="button button-primary" href="./_fb">Facebook</a></s></li>
+  <li><a class="button button-info" href="/2013/auth/auth_twitter">Twitter</a></li>
+  <li><s><a class="button button-success" href="./_github">Github</a></s></li>
 </ul>
 
-</ul>
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+</div><!--  / #main /  -->
+
+[% END %]
