@@ -1,5 +1,11 @@
 [% WRAPPER "layouts/default.html.tx" WITH title = "YAPC::Asia 2013 イベントお知らせメール登録" %]
 
+<div id="main">
+
+<div id="lead" class="section">
+<h1 class="corners">[% title %]</h1>
+<div class="body">
+
 <style type="text/css">
 <!--
     p.error {
@@ -18,9 +24,13 @@
 
 <p>メールアドレスを登録すると確認メールが送信されますが、迷惑メールフォルダに入る可能性もありますので、そちらもご確認ください。</p>
 
-<form action="/2013/notices/subscribe" method="POST">
-    <input type="text" name="email">
-    <input type="submit" value="登録">
+<form action="/2013/notices/subscribe" method="POST" class="form-horizontal">
+    <input type="text" name="email" class="input-large">
+    <input type="submit" value="登録" class="button button-info">
 </form>
+
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+</div><!--  / #main /  -->
 
 [% END %]

@@ -1,5 +1,11 @@
 [% WRAPPER "layouts/default.html.tx" WITH title = "YAPC::Asia 2013 イベントお知らせメール登録" %]
 
+<div id="main">
+
+<div id="lead" class="section">
+<h1 class="corners">[% title %]</h1>
+<div class="body">
+
 <style type="text/css">
 <!--
     p.error {
@@ -31,5 +37,9 @@
     <input type="text" name="code">
     <input type="submit" value="確認">
 </form>
+
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+</div><!--  / #main /  -->
 
 [% END %]

@@ -1,5 +1,15 @@
 [% WRAPPER "layouts/default.html.tx" WITH title = "YAPC::Asia 2013 イベントお知らせメール登録" %]
 
+<div id="main">
+
+<div id="lead" class="section">
+<h1 class="corners">[% title %]</h1>
+<div class="body">
+
 登録が完了しました。YAPC::Asia Tokyo 2013からのお知らせがあり次第ご連絡いたします！
+
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+</div><!--  / #main /  -->
 
 [% END %]
