@@ -1,0 +1,393 @@
+msgid "tutorial"
+msgstr "Tutorials"
+
+msgid "app"
+msgstr "Applications"
+
+msgid "infra"
+msgstr "Infrastructure, Operation"
+
+msgid "library"
+msgstr "Libraries"
+
+msgid "other"
+msgstr "Other"
+
+msgid "community"
+msgstr "Community"
+
+msgid "testing"
+msgstr "Testing"
+
+msgid "ja"
+msgstr "Japanese"
+
+msgid "Japanese"
+msgstr "Japanese"
+
+msgid "en"
+msgstr "English"
+
+msgid "English"
+msgstr "English"
+
+msgid "Login via [_1]"
+msgstr "Login via %1"
+
+msgid "[_1]'s Page"
+msgstr "%1's Page"
+
+msgid "Best Talk Votes"
+msgstr "Best Talk Votes"
+
+msgid "Coming soon"
+msgstr "Coming soon"
+
+msgid "Talks Submitted by [_1]"
+msgstr "Talks Submitted by %1"
+
+msgid "No talks submitted"
+msgstr "No talks submitted"
+
+msgid "Submit A Talk"
+msgstr "Submit A Talk"
+
+msgid "Edit Your Talk"
+msgstr "Edit Your Talk"
+
+msgid "This year we're looking for:"
+msgstr "This year we're looking for:"
+
+msgid "Tutorials for Perl beginners"
+msgstr "Tutorials for Perl beginners"
+
+msgid "Using Perl in Windows Environment"
+msgstr "Using Perl in Windows Environment"
+
+msgid "Best Practices for Perl Developers (e.g. Environment, Tools, Deployment Techniques, IDEs)"
+msgstr "Best Practices for Perl Developers (e.g. Environment, Tools, Deployment Techniques, IDEs)"
+
+msgid "Your experiences with Perl, and other languages (differences, comparisons)"
+msgstr "Your experiences with Perl, and other languages (differences, comparisons)"
+
+msgid "Behind the scenes look of services and products built with Perl"
+msgstr "Behind the scenes look of services and products built with Perl"
+
+msgid "Talks about the Perl community"
+msgstr "Talks about the Perl community"
+
+msgid "Talk Title"
+msgstr "Talk Title"
+
+msgid "Talk Title (Japanese)"
+msgstr "Talk Title (Japanese)"
+
+msgid "Talk Title (English)"
+msgstr "Talk Title (English)"
+
+msgid "Please enter at least one of Japanese/English talk titles"
+msgstr "Please enter at least one of Japanese/English talk titles"
+
+msgid "T-Shirt Size"
+msgstr "T-Shirt Size"
+
+msgid "We provide speakers with free YAPC::Asia T-shirts, so please let us know what size you want. If you for some reason don't want one, please select 'Don't need it'"
+msgstr "We provide speakers with free YAPC::Asia T-shirts, so please let us know what size you want. If you for some reason don't want one, please select 'Don't need it'"
+
+msgid "Don't need it"
+msgstr "Don't need it"
+
+msgid "Talk Details"
+msgstr "Talk Details"
+
+msgid "Talk Category"
+msgstr "Talk Category"
+
+msgid "Language"
+msgstr "Language"
+
+msgid "None"
+msgstr "None"
+
+msgid "Slide Subtitles"
+msgstr "Slide Subtitles"
+
+msgid "Talk Duration"
+msgstr "Talk Duration"
+
+msgid "[_1] minutes"
+msgstr "%1 minutes"
+
+msgid "Material (Difficulty) Level"
+msgstr "Material (Difficulty) Level"
+
+msgid "Advanced - In-depth knowledge on the subject is preferred"
+msgstr "Advanced - In-depth knowledge on the subject is preferred"
+
+msgid "Regular - Some knowledge on the subject is preferred, but not required to understand the talk"
+msgstr "Regular - Some knowledge on the subject is preferred, but not required to understand the talk"
+
+msgid "Beginner - Almost no prior knowledge is expected"
+msgstr "Beginner - Almost no prior knowledge is expected"
+
+msgid "Talk Abstract"
+msgstr "Talk Abstract"
+
+msgid "Abstract"
+msgstr "Abstract"
+
+msgid "Please describe the contents of your talk. We WILL base our decisions to accept talks depending on this abstract. This text will be interprted as Markdown formatted text."
+msgstr "Please describe the contents of your talk. We WILL base our decisions to accept talks depending on this abstract. This text will be interprted as Markdown formatted text."
+
+msgid "Submit"
+msgstr "Submit"
+
+msgid "Please register if you want to submit a talk"
+msgstr "Please register if you want to submit a talk"
+
+msgid "Please setup your email address"
+msgstr "Please setup your email address"
+
+msgid "Why Are We Asking For Your Email?"
+msgstr "Why Are We Asking For Your Email?"
+
+msgid "Thank you for being interested in presenting at YAPC::Asia Tokyo 2012. However, we don't seem to have an email associated with your account (This is probably because you used Github which doesn't always give us your email, or Twitter which never gives us your email)."
+msgstr "Thank you for being interested in presenting at YAPC::Asia Tokyo 2012. However, we don't seem to have an email associated with your account (This is probably because you used Github which doesn't always give us your email, or Twitter which never gives us your email)."
+
+msgid "We need your email addres in order to proceed, as we will be notifying you about important updates, such as when your talk gets accepted. This is the only reason we need your email address, and it will not be used for anything else"
+msgstr "We need your email addres in order to proceed, as we will be notifying you about important updates, such as when your talk gets accepted. This is the only reason we need your email address, and it will not be used for anything else"
+
+msgid "Please Enter Your Email Address"
+msgstr "Please Enter Your Email Address"
+
+msgid "Please specify a reachable address below, and follow the instructions in the email that will be sent to that address"
+msgstr "Please specify a reachable address below, and follow the instructions in the email that will be sent to that address"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Enter Your Email Address"
+msgstr "Enter Your Email Address"
+
+msgid "Email Registration"
+msgstr "Email Registration"
+
+msgid "Registration Code"
+msgstr "Registration Code"
+
+msgid "Enter Your Registration Code"
+msgstr "Enter Your Registration Code"
+
+msgid "Registration code was not found. Perhaps it expired?"
+msgstr "Registration code was not found. Perhaps it expired?"
+
+msgid "Register a new email address"
+msgstr "Register a new email address"
+
+msgid "Email sent. Please check the instructions in the email to finish registration"
+msgstr "Email sent. Please check the instructions in the email to finish registration"
+
+msgid "Proceed to confirmation page"
+msgstr "Proceed to confirmation page"
+
+msgid "Email Sent"
+msgstr "Email Sent"
+
+msgid "tutorial"
+msgstr "Tutorial"
+
+msgid "app"
+msgstr "Applications"
+
+msgid "infra"
+msgstr "Infrastructure / Operations"
+
+msgid "library"
+msgstr "Libraries"
+
+msgid "other"
+msgstr "Others"
+
+msgid "community"
+msgstr "Community"
+
+msgid "testing"
+msgstr "Testing"
+
+msgid "Thank you for your submission!"
+msgstr "Thank you for your submission!"
+
+msgid "Invalid value for field '[_1]'"
+msgstr "Invalid value for field '%1'"
+
+msgid "Missing value for required field '[_1]'"
+msgstr "Missing value for required field '%1'"
+
+msgid "Thank you for your submission. You will be notified if you talk has been accepted or not"
+msgstr "Thank you for your submission. You will be notified if you talk has been accepted or not"
+
+msgid "advanced"
+msgstr "Advanced"
+
+msgid "regular"
+msgstr "Regular"
+
+msgid "beginner"
+msgstr "Beginner"
+
+msgid "No video available"
+msgstr "No video available"
+
+msgid "No slides available"
+msgstr "No slides available"
+
+msgid "Edit Talk"
+msgstr "Edit Talk"
+
+msgid "Delete Talk"
+msgstr "Delete Talk"
+
+msgid "Edit done"
+msgstr "Edit done"
+
+msgid "Your talk has been updated"
+msgstr "Your talk has been updated"
+
+msgid "Proceed To Talk Page"
+msgstr "Proceed To Talk Page"
+
+msgid "Speaking at YAPC::Asia is both a challenge and a great opportunity for you. Don't be afraid! We are waiting for your submission!"
+msgstr "Speaking at YAPC::Asia is both a challenge and a great opportunity for you. Don't be afraid! We are waiting for your submission!"
+
+msgid "Please verify your submission"
+msgstr "Please verify your submission"
+
+msgid "Talk Deleted!"
+msgstr "Talk Deleted!"
+
+msgid "Your talk was successfully deleted"
+msgstr "Your talk was successfully deleted"
+
+msgid "Proceed To Member Page"
+msgstr "Proceed To Member Page"
+
+msgid "Are you sure you want to delete this talk? You can't undo this!"
+msgstr "Are you sure you want to delete this talk? You can't undo this!"
+
+msgid "pending"
+msgstr "Pending"
+
+msgid "accepted"
+msgstr "Accepted"
+
+msgid "rejected"
+msgstr "Rejected"
+
+msgid "Accepted Talks"
+msgstr "Accepted Talks"
+
+msgid "Pending Talks"
+msgstr "Pending Talks"
+
+msgid "This talk is currently in '[_1]' state"
+msgstr "This talk is currently in '%1' state"
+
+msgid "Video"
+msgstr "Video"
+
+msgid "Slide"
+msgstr "Slide"
+
+msgid "Video URL"
+msgstr "Video URL"
+
+msgid "Slide URL"
+msgstr "Slide URL"
+
+msgid "Talk Status"
+msgstr "Talk Status"
+
+msgid "Talks below are still being considered for YAPC::Asia Tokyo 2012. If you are interested in seeing at the event, please consider expressing your interest using one of the social media buttons, so we can take it into consideration"
+msgstr "Talks below are still being considered for YAPC::Asia Tokyo 2012. If you are interested in seeing at the event, please consider expressing your interest using one of the social media buttons, so we can take it into consideration"
+
+msgid "Currently this talk is in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons above to express  your interest!"
+msgstr "Currently this talk is in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons above to express  your interest!"
+
+msgid "Talk Information"
+msgstr "Talk Information"
+
+msgid "Venue"
+msgstr "Venue"
+
+msgid "Starts On"
+msgstr "開始時間"
+
+msgid "MainHall"
+msgstr "Main Hall (Ito Memorial Hall)"
+
+msgid "2F Room 1"
+msgstr "2F Room 1"
+
+msgid "2F Room 2"
+msgstr "2F Room 2"
+
+msgid "Multi-Purpose Area"
+msgstr "Multi-Purpose Area"
+
+msgid "Please tell us if you want to hear this talk!"
+msgstr "Please tell us if you want to hear this talk!"
+
+msgid "THE DEADLINE IS 7/31 ! (for 20/40min talks)"
+msgstr "THE DEADLINE IS 7/31 ! (for 20/40min talks)"
+
+msgid "Talks are currently being evaluated, and speakers will be notified once your talk has been approved. Below list is NOT FINAL. Stay tuned!"
+msgstr "Talks are currently being evaluated, and speakers will be notified once your talk has been approved. Below list is NOT FINAL. Stay tuned!"
+
+msgid "Here are the list of talks for YAPC::Asia Tokyo 2012. Click on the links below to see a timetable!"
+msgstr "Here are the list of talks for YAPC::Asia Tokyo 2012. Click on the links below to see a timetable!"
+
+msgid "Day 0"
+msgstr "Day 0"
+
+msgid "Day 1"
+msgstr "Day 1"
+
+msgid "Day 2"
+msgstr "Day 2"
+
+msgid "This is the talk submission form for Lightning Talks."
+msgstr "This is the talk submission form for Lightning Talks."
+
+msgid "Talk details WILL BE used to determine if your talk is accepted. Please make sure to put enough details for us to be able to figure out if your talk is going to be fun/interesting/etc."
+msgstr "Talk details WILL BE used to determine if your talk is accepted. Please make sure to put enough details for us to be able to figure out if your talk is going to be fun/interesting/etc."
+
+msgid "Talk details will not be publically seen until after your talk has been given."
+msgstr "Talk details will not be publically seen until after your talk has been given."
+
+msgid "When your talk is accepted, your talk title will be shown in the <a href=\"/2012/talk/show/72256d20-dbad-11e1-bcf1-95936aeab6a4\">Lightning Talks Day 1</a> and <a href=\"/2012/talk/show/c9c6fcb0-dbad-11e1-bcf1-95936aeab6a4\">Lightning Talks Day 2</a>"
+msgstr "When your talk is accepted, your talk title will be shown in the <a href=\"/2012/talk/show/72256d20-dbad-11e1-bcf1-95936aeab6a4\">Lightning Talks Day 1</a> and <a href=\"/2012/talk/show/c9c6fcb0-dbad-11e1-bcf1-95936aeab6a4\">Lightning Talks Day 2</a>"
+
+msgid "Vote For Best Talk Awards"
+msgstr "Vote For Best Talk Awards"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Vote ID"
+msgstr "Vote ID"
+
+msgid "Number of Ballots (used/total)"
+msgstr "Number of Ballots (used/total)"
+
+msgid "List Of Vote Candidates"
+msgstr "List Of Vote Candidates"
+
+msgid "Talks You Voted For"
+msgstr "Talks You Voted For"
+
+msgid "If you have a 2-day pass, then you have 4 votes. If you have a 1-day pass, you have 2 votes."
+msgstr "If you have a 2-day pass, then you have 4 votes. If you have a 1-day pass, you have 2 votes."
+
+msgid "Cancel Vote"
+msgstr "Cancel Vote"
+

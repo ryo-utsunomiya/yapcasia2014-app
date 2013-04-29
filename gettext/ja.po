@@ -1,0 +1,377 @@
+msgid "ja"
+msgstr "日本語"
+
+msgid "Japanese"
+msgstr "日本語"
+
+msgid "en"
+msgstr "英語"
+
+msgid "English"
+msgstr "英語"
+
+msgid "Login via [_1]"
+msgstr "%1を使ってログイン"
+
+msgid "[_1]'s Page"
+msgstr "%1さんのページ"
+
+msgid "Best Talk Votes"
+msgstr "ベストトークへの投票"
+
+msgid "Coming soon"
+msgstr "近日公開"
+
+msgid "Talks Submitted by [_1]"
+msgstr "%1さんが応募しているトーク"
+
+msgid "Talks Submitted by [_1]"
+msgstr "%1さんが応募しているトーク"
+
+msgid "No talks submitted"
+msgstr "トークは応募されていません"
+
+msgid "Submit A Talk"
+msgstr "トークを応募する"
+
+msgid "Edit Your Talk"
+msgstr "トークを編集する"
+
+msgid "This year we're looking for:"
+msgstr "今年は以下のような内容のトークを重点的に募集していますが、特に制限はありませんので、ご自由な内容で応募いただいて結構です"
+
+msgid "Tutorials for Perl beginners"
+msgstr "Perl初心者向けのチュートリアル"
+
+msgid "Using Perl in Windows Environment"
+msgstr "Windowsで扱うPerl"
+
+msgid "Best Practices for Perl Developers (e.g. Environment, Tools, Deployment Techniques, IDEs)"
+msgstr "Perl開発者向けのベストプラクティス(例：環境、ツール、デプロイ方法、IDE等)"
+
+msgid "Your experiences with Perl, and other languages (differences, comparisons)"
+msgstr "Perlとそれ以外の言語での経験談（相違点、比較等）"
+
+msgid "Behind the scenes look of services and products built with Perl"
+msgstr "Perlで作られたサービスや製品の裏側について"
+
+msgid "Talks about the Perl community"
+msgstr "Perlコミュニティについて"
+
+msgid "Talk Title"
+msgstr "タイトル"
+
+msgid "Talk Title (Japanese)"
+msgstr "タイトル (日本語)"
+
+msgid "Talk Title (English)"
+msgstr "タイトル (英語)"
+
+msgid "Please enter at least one of Japanese/English talk titles"
+msgstr "日本語か英語のタイトルのうち最低片方を入力してください（海外の方にもアピールしたい場合は英語タイトルがあったほうが良いです)"
+
+msgid "T-Shirt Size"
+msgstr "Tシャツ サイズ"
+
+msgid "We provide speakers with free YAPC::Asia T-shirts, so please let us know what size you want. If you for some reason don't want one, please select 'Don't need it'"
+msgstr "本編(２０分・４０分）でトークが採用された方にはYAPC::Asia公式Tシャツを進呈していますので、下記よりご希望のサイズを入力してください。万が一シャツが必要ないという場合は'Tシャツ不要'を選択してください"
+
+msgid "Don't need it"
+msgstr "Tシャツ不要"
+
+msgid "Talk Details"
+msgstr "トーク詳細"
+
+msgid "Talk Category"
+msgstr "カテゴリ"
+
+msgid "Language"
+msgstr "言語"
+
+msgid "None"
+msgstr "無し"
+
+msgid "Slide Subtitles"
+msgstr "スライド字幕"
+
+msgid "Talk Duration"
+msgstr "時間"
+
+msgid "minutes"
+msgstr "分"
+
+msgid "[_1] minutes"
+msgstr "%1 分"
+
+msgid "Material (Difficulty) Level"
+msgstr "想定観客層"
+
+msgid "Advanced - In-depth knowledge on the subject is preferred"
+msgstr "アドバンスド - トピックについての事前の知識があることが望ましい"
+
+msgid "Regular - Some knowledge on the subject is preferred, but not required to understand the talk"
+msgstr "レギュラー - トピックについて多少の知識があるほうが良いが、深い知識は必要ない"
+
+msgid "Beginner - Almost no prior knowledge is expected"
+msgstr "ビギナー - トピックについての知識は必要ない"
+
+msgid "Talk Abstract"
+msgstr "トーク概要"
+
+msgid "Abstract"
+msgstr "トーク概要"
+
+msgid "Please describe the contents of your talk. We WILL base our decisions to accept talks depending on this abstract. This text will be interprted as Markdown formatted text."
+msgstr "トークの概要（サマリー）を書いてください。トーク選考の際この内容によって採択されるかどうか決まる事があります。なおこのテキストはMarkdown形式として認識されます"
+
+msgid "Submit"
+msgstr "送信"
+
+msgid "Please register if you want to submit a talk"
+msgstr "トークを応募したい方はメールアドレスを登録してください"
+
+msgid "Please setup your email address"
+msgstr "メールアドレスを設定してください"
+
+msgid "Why Are We Asking For Your Email?"
+msgstr "なんでメールアドレスが必要なの？"
+
+msgid "Thank you for being interested in presenting at YAPC::Asia Tokyo 2012. However, we don't seem to have an email associated with your account (This is probably because you used Github which doesn't always give us your email, or Twitter which never gives us your email)."
+msgstr "YAPC::Asia Tokyo 2012トーク応募ありがとうございます。現在ご使用のアカウントでメールアドレスが未設定のようです（これはGithub経由でログインした際にGithubでメールアドレスを設定していなかったか、Twitter経由でログインしたからだと推測されます)"
+
+msgid "We need your email addres in order to proceed, as we will be notifying you about important updates, such as when your talk gets accepted. This is the only reason we need your email address, and it will not be used for anything else"
+msgstr "応募を続けるためにはメールアドレスを設定する必要があります。これはトークが採択された時など重要なお知らせをお届けするために使われます。ここで入力いただくメールアドレスはこのためのみに使用されます。"
+
+msgid "Please Enter Your Email Address"
+msgstr "メールアドレスを入力してください"
+
+msgid "Please specify a reachable address below, and follow the instructions in the email that will be sent to that address"
+msgstr "下記フォームにメールアドレスを入力してください。追って送信されるメールの内容の指示に従って登録を完了させてください"
+
+msgid "Email"
+msgstr "メールアドレス"
+
+msgid "Enter Your Email Address"
+msgstr "メールアドレスを入力してください"
+
+msgid "Email Registration"
+msgstr "メールアドレス登録"
+
+msgid "Registration Code"
+msgstr "登録コード"
+
+msgid "Enter Your Registration Code"
+msgstr "登録コードを入力してください"
+
+msgid "Registration code was not found. Perhaps it expired?"
+msgstr "登録コードが見つかりませんでした。有効期限が過ぎた可能性があります"
+
+msgid "Register a new email address"
+msgstr "別のメールアドレスを登録する"
+
+msgid "Email sent. Please check the instructions in the email to finish registration"
+msgstr "メールが送信されました。メールに明記されている指示に従って登録を完了させてください"
+
+msgid "Proceed to confirmation page"
+msgstr "登録確認ページへ進む"
+
+msgid "Email Sent"
+msgstr "メール送信完了"
+
+msgid "tutorial"
+msgstr "チュートリアル"
+
+msgid "app"
+msgstr "アプリケーション"
+
+msgid "infra"
+msgstr "インフラ・運用"
+
+msgid "library"
+msgstr "ライブラリ"
+
+msgid "other"
+msgstr "その他"
+
+msgid "community"
+msgstr "コミュニティ"
+
+msgid "testing"
+msgstr "テスト"
+
+msgid "Thank you for your submission!"
+msgstr "トークの応募ありがとうございます！"
+
+msgid "Invalid value for field '[_1]'"
+msgstr "'%1'の値が不正です"
+
+msgid "Missing value for required field '[_1]'"
+msgstr "'%1'は必須項目です"
+
+msgid "Thank you for your submission. You will be notified if you talk has been accepted or not"
+msgstr "トーク応募ありがとうございます。トークの採否は後ほどご連絡させていただきます"
+
+msgid "advanced"
+msgstr "アドバンスド"
+
+msgid "regular"
+msgstr "レギュラー"
+
+msgid "beginner"
+msgstr "ビギナー"
+
+msgid "No video available"
+msgstr "動画は登録されていません"
+
+msgid "No slides available"
+msgstr "スライドは登録されてません"
+
+msgid "Edit Talk"
+msgstr "トーク編集"
+
+msgid "Delete Talk"
+msgstr "トーク削除"
+
+msgid "Edit done"
+msgstr "編集完了"
+
+msgid "Your talk has been updated"
+msgstr "トークの内容が変更されました"
+
+msgid "Proceed To Talk Page"
+msgstr "トークページへ移動する"
+
+msgid "Speaking at YAPC::Asia is both a challenge and a great opportunity for you. Don't be afraid! We are waiting for your submission!"
+msgstr "YAPC::Asiaで登壇するチャンスはあなたにもあります。大勢の前で話すのは大きな挑戦かもしれませんが、あなたにとって大きなチャンスにもなるはずです。是非ご応募お待ちしております！"
+
+msgid "Please verify your submission"
+msgstr "投稿内容をご確認ください"
+
+msgid "Talk Deleted!"
+msgstr "トークが削除されました"
+
+msgid "Your talk was successfully deleted"
+msgstr "指定されたトークが削除されました"
+
+msgid "Proceed To Member Page"
+msgstr "ユーザーページへ移動する"
+
+msgid "Are you sure you want to delete this talk? You can't undo this!"
+msgstr "本当にこのトークを削除しますか？この操作は取り消せません！"
+
+msgid "pending"
+msgstr "保留"
+
+msgid "accepted"
+msgstr "採用"
+
+msgid "rejected"
+msgstr "落選"
+
+msgid "Accepted Talks"
+msgstr "採用されたトーク"
+
+msgid "Pending Talks"
+msgstr "保留中のトーク"
+
+msgid "This talk is currently in '[_1]' state"
+msgstr "このトークは現在'%1'状態です"
+
+msgid "Video"
+msgstr "動画"
+
+msgid "Slide"
+msgstr "スライド"
+
+msgid "Video URL"
+msgstr "動画URL"
+
+msgid "Slide URL"
+msgstr "スライドURL"
+
+msgid "Talk Status"
+msgstr "採否状態"
+
+msgid "Talks below are still being considered for YAPC::Asia Tokyo 2012. If you are interested in seeing at the event, please consider expressing your interest using one of the social media buttons, so we can take it into consideration"
+msgstr "以下のトークはまだ採択されていません。もしあなたが「これは見たい！」と思うトークがあったら、各トークの横のソーシャルメディアボタンを使って運営陣にお知らせ下さい。選考時に参考にさせていただきます"
+
+msgid "Currently this talk is in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons above to express  your interest!"
+msgstr "このトークは現在「保留中」です。もしあなたが「これは是非YAPCで見たい！」と思ったら、上記のソーシャルメディアボタンを押して応援してみてください。選考の際に参考にさせていただきます"
+
+msgid "Talk Information"
+msgstr "トーク情報"
+
+msgid "Venue"
+msgstr "会場"
+
+msgid "Starts On"
+msgstr "開始時間"
+
+msgid "MainHall"
+msgstr "伊藤謝恩ホール"
+
+msgid "2F Room 1"
+msgstr "2F 中教室"
+
+msgid "2F Room 2"
+msgstr "2F 特別教室"
+
+msgid "Multi-Purpose Area"
+msgstr "多目的スペース"
+
+msgid "Please tell us if you want to hear this talk!"
+msgstr "このトークを聞きたい！と思ったらボタンを押してね！"
+
+msgid "THE DEADLINE IS 7/31 ! (for 20/40min talks)"
+msgstr "締め切りは7/31です！(LTは後日募集)"
+
+msgid "Talks are currently being evaluated, and speakers will be notified once your talk has been approved. Below list is NOT FINAL. Stay tuned!"
+msgstr "現在トーク選考中です。採択プロセスが終了した際には連絡がメール等でされますでの、もう少々おまちください。(下記リストはまだ＊仮の物＊です)"
+
+msgid "Here are the list of talks for YAPC::Asia Tokyo 2012. Click on the links below to see a timetable!"
+msgstr "YAPC::Asia Tokyo 2012のトークリストです。タイムテーブルは下記リンクからご覧ください"
+
+msgid "Day 0"
+msgstr "前夜祭 (9/27)"
+
+msgid "Day 1"
+msgstr "1日目 (9/28)"
+
+msgid "Day 2"
+msgstr "2日目 (9/29)"
+
+msgid "This is the talk submission form for Lightning Talks."
+msgstr "Lightning Talk (LT) の応募フォームです"
+
+msgid "Talk details WILL BE used to determine if your talk is accepted. Please make sure to put enough details for us to be able to figure out if your talk is going to be fun/interesting/etc."
+msgstr "記入してもらうトーク概要は採否の参考にしますので、運営側がある程度トークの内容を把握できる程度に詳細を記入してください"
+
+msgid "Talk details will not be publically seen until after your talk has been given."
+msgstr "記入されたトーク概要はLTが発表された後までYAPCサイト上では非公開になります（ですので、ネタが先にばれることはありません）"
+
+msgid "When your talk is accepted, your talk title will be shown in the <a href=\"/2012/talk/show/72256d20-dbad-11e1-bcf1-95936aeab6a4\">Lightning Talks Day 1</a> and <a href=\"/2012/talk/show/c9c6fcb0-dbad-11e1-bcf1-95936aeab6a4\">Lightning Talks Day 2</a>"
+msgstr "LTが採用されますと、<a href=\"/2012/talk/show/72256d20-dbad-11e1-bcf1-95936aeab6a4\">Lightning Talks Day 1</a>と<a href=\"/2012/talk/show/c9c6fcb0-dbad-11e1-bcf1-95936aeab6a4\">Lightning Talks Day 2</a>に掲載されます"
+
+msgid "Vote For Best Talk Awards"
+msgstr "ベストトーク賞投票"
+
+msgid "Name"
+msgstr "名前"
+
+msgid "Vote ID"
+msgstr "投票ID"
+
+msgid "Number of Ballots (used/total)"
+msgstr "票数 (済/総数)"
+
+msgid "List Of Vote Candidates"
+msgstr "投票対象リスト"
+
+msgid "Talks You Voted For"
+msgstr "投票済みのトーク"
+
+msgid "If you have a 2-day pass, then you have 4 votes. If you have a 1-day pass, you have 2 votes."
+msgstr "2日通し券をお持ちの場合は4票分、1日券の場合は2票分の投票が可能です"
+
+msgid "Cancel Vote"
+msgstr "投票をキャンセル"
