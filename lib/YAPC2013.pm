@@ -30,8 +30,9 @@ sub startup {
     $self->helper( uuid => sub { Data::UUID->new; } );
 
     $self->hook(around_dispatch => sub {
-        my $next = shift;
-        my $guard = $self->container->new_scope;
+        my ($next, $c) = @_;
+        my $guard = $c->app->container->new_scope;
+
         $next->();
     });
 
