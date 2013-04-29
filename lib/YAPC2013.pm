@@ -68,6 +68,9 @@ sub setup_routes {
         shift->redirect_to("/2013/");
     });
 
+    #notices
+    $r->route("/2013/notices/:action")->to(controller => 'notices');
+
     #login 
     $r->get("/2013/login")->to("auth#index");
     $r->get("/2013/logout")->to("auth#logout");
