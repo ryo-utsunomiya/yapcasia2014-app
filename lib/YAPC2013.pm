@@ -21,7 +21,6 @@ sub startup {
     my $self = shift;
 
     $self->plugin(Config => { file => "etc/config.pl" });
-    $self->plugin(Config => { file => "etc/config_local.pl" });
     $self->setup_container;
     $self->setup_xslate;
     $self->setup_routes;
