@@ -38,7 +38,7 @@ sub startup {
 
     $self->hook(around_dispatch => sub {
         my ($next, $c) = @_;
-        my $guard = $self->container->new_scope;
+        my $guard = $c->app->container->new_scope;
 
         # set_lang
         my $lang = $c->req->param('lang')

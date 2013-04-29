@@ -9,7 +9,7 @@ sub send_email {
 
     my $email = Email::MIME->create(
         header => [
-            From    => $args->{from} || 'no-reply@perlassociation.org',
+            From    => $args->{from} || 'no-reply@yapcasia.org',
             To      => $args->{to},
             Subject => Encode::encode('MIME-Header-ISO_2022_JP', $args->{subject}),
             
