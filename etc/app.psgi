@@ -13,7 +13,7 @@ my $psgi_app = $server->to_psgi_app;
 
 builder {
     enable 'Session',
-#        state => $server->app->get('Session::State'),
+        state => $server->app->get('Session::State'),
         store => $server->app->get('Session::Store'),
     ;
     enable 'HTTPExceptions';
