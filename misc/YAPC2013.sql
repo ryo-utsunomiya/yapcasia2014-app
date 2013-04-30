@@ -23,7 +23,7 @@ CREATE TABLE talk (
     language ENUM ( 'ja', 'en' ) NOT NULL,
     subtitles ENUM ( 'none', 'ja', 'en' ) NOT NULL,
     category VARCHAR(255) NOT NULL,
-    start_on DATETIME NOT NULL,
+    start_on DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
     duration ENUM ( 'LT', '20', '40' ) NOT NULL,
     material_level ENUM ('advanced', 'regular', 'beginner' ) NOT NULL DEFAULT 'regular',
     tags TEXT,
