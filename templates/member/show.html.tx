@@ -7,7 +7,6 @@ title = ""
 <div id="lead" class="section">
 <h1 class="corners">Member<span>Member</span></h1>
 <div class="body">
-<h2 class="corners">Member show</h2>
 
 <style type="text/css">
 <!--
@@ -68,15 +67,17 @@ title = ""
                 </ul>
 [% END %]
 
+[% IF member.email %]
                 <h4>Link</h4>
                 <ul>
                   <li>
-                    [% IF member.email %]
                     <a href="/2013/member/email_edit">Edit your Email </a>
-                    [% END %]
                   </li>
-                  <li><a href="/2013/talk/input">Submit a new talk</a></li>
+                  <li>
+                    <a href="/2013/talk/input">Submit a new talk</a>
+                  </li>
                 </ul>
+[% END %]
 
             </div>
 
