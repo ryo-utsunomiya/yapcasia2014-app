@@ -59,7 +59,7 @@ register 'Session::Store' => sub {
 register 'Session::State' => sub {
     my $config = $_[0]->get('config');
     Plack::Session::State::Cookie->new(
-        path => "/",
+        path => "/2013/",
         domain => "yapcasia.org",
         expires => "86400",
         httponly => 1,
