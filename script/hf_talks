@@ -1,0 +1,20 @@
+#!/usr/bin/env perl
+# Record 
+#   * Number of pending, rejected, accepted talks
+use strict;
+use lib "local/lib/perl5";
+use lib "lib";
+use Encode qw(decode_utf8);
+use YAPC2013;
+
+my $app = YAPC2013->new;
+
+my $talk_api = $app->container->get('API::Talk');
+my $hf_api   = $app->container->get('API::HRForecast');
+foreach my $status ( qw(pending rejected accepted) ) {
+    my $count = $talk_api->count({
+        status => $status,
+    });
+
+    $hf_api->record("yapcasia2013", "talks", $status, $count);
+}

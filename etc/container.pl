@@ -34,13 +34,14 @@ register 'DB::Master' => sub {
     DBI->connect(@{$config->{'DB::Master'}});
 }, { scoped => 1 };
 
-foreach my $name (qw(Member Email Talk NoticesSubscriptionTemp NoticesSubscription )) {
+foreach my $name (qw(Member Email Talk NoticesSubscriptionTemp NoticesSubscription HRForecast)) {
     my $key = "API::$name";
     my $klass = "YAPC2013::API::$name";
     eval "require $klass" or die;
     register $key => sub {
         my $c = shift;
-        return $klass->new( container => $c );
+        my $config = $c->get('config')->{$key} || {};
+        return $klass->new( %$config, container => $c );
     };
 }
 
