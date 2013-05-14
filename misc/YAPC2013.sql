@@ -5,7 +5,7 @@ CREATE TABLE member (
     remote_id TEXT NOT NULL,
     name TEXT NOT NULL,
     nickname TEXT NOT NULL,
-    email TEXT NOT NULL,
+    email TEXT,
     created_on DATETIME NOT NULL,
     modified_on TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     UNIQUE KEY ( authenticated_by, remote_id(255) ),
