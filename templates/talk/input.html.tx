@@ -142,11 +142,11 @@ title = 'TEST TITLE'
                             <div class="controls">
                                 <select name="duration">
 [% IF (member.is_admin) %]
+                                  <option value="5">Lightning Talk</option>
                                   <option value="60">60 [% loc("minutes") %]</option>
 [% END %]
                                   <option value="40">40 [% loc("minutes") %]</option>
                                   <option value="20">20 [% loc("minutes") %]</option>
-                                  <option value="5">Lightning Talk</option>
                                 </select>
 
                             </div>
