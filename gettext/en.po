@@ -391,3 +391,5 @@ msgstr "If you have a 2-day pass, then you have 4 votes. If you have a 1-day pas
 msgid "Cancel Vote"
 msgstr "Cancel Vote"
 
+msgid "T-shirt Size"
+msgstr "T-shirt Size"

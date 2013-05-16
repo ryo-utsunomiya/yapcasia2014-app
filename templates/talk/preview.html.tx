@@ -46,6 +46,10 @@ title = 'TEST TITLE'
 [% END %]
 [% IF (talk.duration != 5) %]
                 <tr>
+                    <td>[% loc("T-shirt Size") %]</td>
+                    <td>[% loc(talk.tshirt_size) %]</td>
+                </tr>
+                <tr>
                     <td>[% loc("Talk Category") %]</td>
                     <td>[% loc(talk.category) %]</td>
                 </tr>
