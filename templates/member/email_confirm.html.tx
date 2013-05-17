@@ -9,7 +9,7 @@ title = ""
 <div class="body">
 <h2 class="corners">email confirm</h2>
 
-"xxx email文言　以下のemailを登録します。"
+<p>以下のemailを登録します。</p>
 
 <form action="/2013/member/email_submit" method="post" class="form-horizontal">
   email : [% email %]<input type="hidden" name="email" value="[% email %]" /><br />
