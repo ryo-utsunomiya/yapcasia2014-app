@@ -26,6 +26,15 @@ use Data::FormValidator::Constraints qw(email);
             start_on_components => [ qw/start_on_date start_on_time/ ]
         },
         constraint_methods => {
+            title => sub {
+                my ($dfv, $value) = @_;
+                return length( $value ) <= 100;
+            },
+            title_en => sub {
+                my ($dfv, $value) = @_;
+                warn length( $value );
+                return length( $value ) <= 100;
+            },
             status => qr/^(pending|accepted|rejected)$/,
             language => qr/^(en|ja)$/,
             subtitles => qr/^(en|ja|none)$/,
