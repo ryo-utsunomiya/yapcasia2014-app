@@ -393,3 +393,6 @@ msgstr "Cancel Vote"
 
 msgid "T-shirt Size"
 msgstr "T-shirt Size"
+
+msgid "Up to 100 characters"
+msgstr "Up to 100 characters"

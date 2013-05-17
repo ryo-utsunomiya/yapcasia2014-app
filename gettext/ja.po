@@ -378,3 +378,6 @@ msgstr "投票をキャンセル"
 
 msgid "T-shirt Size"
 msgstr "Tシャツサイズ"
+
+msgid "Up to 100 characters"
+msgstr "最大100文字まで"
