@@ -17,19 +17,7 @@ title = 'TEST TITLE'
         <div class="entry">
             <div class="entry-contents">
 
-            <h2><a href="http://yapcasia.org/2012/news/yapcasia-2012-call-for-papers.html">[% loc("We're Looking For YOUR Talk!") %]</a> xxx 2013年版に変更する</h2>
-            <p>[% loc("This year we're looking for:") %]</p>
-
-            <ul>
-                <li>[% loc("Tutorials for Perl beginners") %]</li>
-                <li>[% loc("Using Perl in Windows Environment") %]</li>
-                <li>[% loc("Best Practices for Perl Developers (e.g. Environment, Tools, Deployment Techniques, IDEs)") %]</li>
-                <li>[% loc("Your experiences with Perl, and other languages (differences, comparisons)") %]</li>
-                <li>[% loc("Behind the scenes look of services and products built with Perl") %]</il>
-                <li>[% loc("Talks about the Perl community") %]</li>
-            </ul>
-
-            <p>[% loc("THE DEADLINE IS 7/31 ! (for 20/40min talks)") %]</p>
+            <!-- こういうトークが欲しい! 文言 -->
 
 [% FILTER fillinform %]
                 <form action="/2013/talk/check" method="post" class="form-horizontal">
