@@ -74,23 +74,7 @@ warn Dumper $self->get('API::Member')->lookup( $member->{id} );
 
 warn Dumper $self->sessions->get('member');
 
-    my $content = <<EOS
-YAPC::Asia Tokyo 2013運営事務局です。
-
-こちらのメールアドレスを登録しました。
-
-メールアドレスを登録すると、トークの登録、トークへの投票などが出来るようになります。
-詳しくは http://yapcasia.org/2013/member からご確認下さい。
-
-登録した覚えのない方は大変お手数ですが、
-yapc\@perlassociation.org または twitterで \@yapcasia までご連絡いただければ幸いです。
-
---
-YAPC::Asia Tokyo 2013
-http://yapcasia.org/2013/
-
-EOS
-;
+    my $content = $self->render("member/email_confirm.eml", partial => 1);
 
     #email send
     $self->get('API::Email')->send_email({
@@ -100,7 +84,7 @@ EOS
         message => $content,
     });
 
-    $self->render( email => $email );
+    $self->render("member/email_submit", email => $email );
 }
 
 1;
