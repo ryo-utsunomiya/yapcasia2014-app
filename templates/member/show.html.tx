@@ -44,7 +44,7 @@ title = ""
 [% IF (owner && ! member.email) %]
                 <h4>[% loc("Email") %]</h4>
                 <ul>
-                    <li>[% loc("Email address not registered.") %] <a href="/2013/member/email_edit">[% loc("Please register if you want to submit a talk") %]</a></li>
+                    <li><strong style="color:red">[% loc("Email address not registered.") %] <a href="/2013/member/email_edit">[% loc("Please register if you want to submit a talk") %]</a></strong></li>
                 </ul>
 [% END %]
                 <h4>[% loc("Talks Submitted by [_1]", member.name || member.nickname) %]</h4>

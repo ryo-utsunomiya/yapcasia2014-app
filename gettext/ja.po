@@ -128,7 +128,7 @@ msgid "Submit"
 msgstr "送信"
 
 msgid "Please register if you want to submit a talk"
-msgstr "トークを応募したい方はメールアドレスを登録してください"
+msgstr "トークを応募したい方は最初にメールアドレスを登録してください"
 
 msgid "Please setup your email address"
 msgstr "メールアドレスを設定してください"
