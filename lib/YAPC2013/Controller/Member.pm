@@ -3,6 +3,7 @@ package YAPC2013::Controller::Member;
 use Mojo::Base 'YAPC2013::Controller::CRUD';
 use Data::Dumper;
 use Data::Recursive::Encode;
+use Email::Valid::Loose;
 
 sub index {
     my $self = shift;
@@ -61,30 +62,55 @@ sub email_submit {
     warn 'email_submit';
     $self->assert_logged_in() or return;
 
-    #TODO validation
     my $email = $self->req->param('email');
+    if (! Email::Valid::Loose->address($email)) {
+        $self->stash(invalid_email => 1);
+        return;
+    }
 
-    #regist email
     my $member = $self->get_member;
-    warn Dumper $self->get('API::Member')->update( $member->{id}, {
-        email => $email,
+    $self->stash(member => $member);
+    my $subscription = $self->get('API::MemberTemp')->create({
+        member_id  => $member->{id},
+        email      => $email,
+        code       => $self->get('UUID')->create_str(),
+        expires_on => \'DATE_ADD(NOW(), INTERVAL 7 DAY)'
     });
-warn Dumper $self->get('API::Member')->lookup( $member->{id} );
-    $self->sessions->set(member => $self->get('API::Member')->lookup( $member->{id} ));
+    $self->stash(subscription => $subscription);
 
-warn Dumper $self->sessions->get('member');
-
-    my $content = $self->render("member/email_confirm.eml", partial => 1);
+    my $message = $self->render("member/email_confirm", format => "eml", partial => 1);
 
     #email send
     $self->get('API::Email')->send_email({
         from    => 'yapc@perlassociation.org',
         to      => $email,
         subject => 'YAPC::Asia Tokyo 2013 Email Confirmation',
-        message => $content,
+        message => $message,
     });
 
-    $self->render("member/email_submit", email => $email );
+    $self->render("member/confirm", format => "html", email => $email, email_sent_message => 1 );
+}
+
+sub confirm {
+    my $self = shift;
+    my $code = $self->req->param('code');
+    if ($code) {
+        my $member = $self->get_member;
+        my ($temp) = $self->get('API::MemberTemp')->search({
+            member_id => $member->{id},
+            code => $code
+        });
+        if (! $temp) {
+            $self->stash(code_not_found => 1);
+        } else {
+            my $email = $temp->{email};
+            $self->get('API::MemberTemp')->delete($temp->{id});
+            $self->get('API::Member')->update( $member->{id}, { email => $email } );
+            $self->sessions->set(member => $self->get('API::Member')->lookup( $member->{id} ));
+            $self->redirect_to("/2013/member/complete");
+            return;
+        }
+    }
 }
 
 1;

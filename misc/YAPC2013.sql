@@ -57,3 +57,14 @@ CREATE TABLE notices_subscription (
     modified_on TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     KEY(email(128))
 ) ENGINE=InnoDB DEFAULT CHARSET='utf8';
+
+CREATE TABLE member_temp (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    member_id CHAR(40) NOT NULL,
+    code CHAR(40) NOT NULL UNIQUE,
+    email TEXT NOT NULL,
+    expires_on DATETIME NOT NULL,
+    created_on DATETIME NOT NULL,
+    modified_on TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (member_id) REFERENCES member (id)
+) ENGINE=InnoDB DEFAULT CHARSET='utf8';

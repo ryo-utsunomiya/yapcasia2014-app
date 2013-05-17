@@ -84,10 +84,10 @@ sub setup_routes {
     $member->get("/")->to("member#index");
     $member->get("/index")->to("member#index");
     $member->get("/show/:object_id")->to("member#show");
-    foreach my $action ( qw(index email_edit) ){
+    foreach my $action ( qw(index email_edit complete confirm) ){
         $member->get($action)->to("member#$action");
     }
-    foreach my $action ( qw(email_confirm email_submit) ){
+    foreach my $action ( qw(email_confirm email_submit confirm) ){
         $member->post($action)->to("member#$action");
     }
 
