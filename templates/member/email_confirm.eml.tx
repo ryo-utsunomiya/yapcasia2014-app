@@ -14,6 +14,22 @@ YAPC::Asia Tokyo 2013 メールアドレス登録ありがとうございます�
 登録した覚えのない方は大変お手数ですが、
 yapc@perlassociation.org または twitterで @yapcasia までご連絡いただければ幸いです。
 
+---
+
+Thank you for registering your email address with us.
+
+To finish the registration process, please access the following url:
+
+    http://yapcasia.org/2013/member/confirm?code=[% subscription.code %]
+
+Or please open the form and submit the form using the followin code:
+
+    http://yapcasia.org/2013/member/confirm
+    code: [% subscription.code %]
+
+If you feel that this email has been sent in mistake, please let us know
+at yapc@perlassociation.org or tweet to @yapcasia
+
 ===
 YAPC::Asia Tokyo 2013 運営チーム
 http://yapcasia.org/2013/
