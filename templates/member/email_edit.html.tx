@@ -23,6 +23,7 @@ title = ""
 
 <form action="/2013/member/email_confirm" method="post" class="form-horizontal">
   <input type="hidden" name="id" value="[% member.id %]" />
+  [% IF invalid %]<p style="color:red">メールアドレスの形式でないか、既に登録されているメールアドレスです</p>[% END %]
   <input type="text" name="email" value="" class="input-large" />
   <input type="submit" class="button button-info">
 </form>

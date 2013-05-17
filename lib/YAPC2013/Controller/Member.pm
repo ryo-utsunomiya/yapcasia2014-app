@@ -37,7 +37,6 @@ sub show {
 
 sub email_edit {
     my $self = shift;
-    warn 'email_edit';
     $self->assert_logged_in() or return;
 
     my $member = $self->get_member;
@@ -46,13 +45,15 @@ sub email_edit {
 
 sub email_confirm {
     my $self = shift;
-    warn 'email_confirm';
     $self->assert_logged_in() or return;
 
+    my $member = $self->get_member;
     my $email = $self->req->param('email');
-    #TODO vaidation
+    my $fv = $self->get('FormValidator');
+    my $params = $self->req->params->to_hash;
+    my $results = $fv->check( { %$params }, 'email.check' );
 
-    $self->render( email => $email );
+    $self->render( member => $member, email => $email, invalid => $results->{invalid} );
 }
 
 sub email_submit {
@@ -74,7 +75,9 @@ warn Dumper $self->get('API::Member')->lookup( $member->{id} );
 warn Dumper $self->sessions->get('member');
 
     my $content = <<EOS
-YAPC::Asia Tokyo 2013 でメールアドレスをご登録いただきありがとうございます。
+YAPC::Asia Tokyo 2013運営事務局です。
+
+こちらのメールアドレスを登録しました。
 
 メールアドレスを登録すると、トークの登録、トークへの投票などが出来るようになります。
 詳しくは http://yapcasia.org/2013/member からご確認下さい。
