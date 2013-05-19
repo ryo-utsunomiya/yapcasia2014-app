@@ -397,11 +397,11 @@ msgstr "T-shirt Size"
 msgid "Up to 100 characters"
 msgstr "Up to 100 characters"
 
-msgid "Photography"
-msgstr "Photography"
+msgid "May we take your photo?"
+msgstr "May we take your photo?"
 
-msgid "Video Photography"
-msgstr "Video Photography"
+msgid "May we record your talk?"
+msgstr "May we record your talk?"
 
 msgid "allow"
 msgstr "allow"
