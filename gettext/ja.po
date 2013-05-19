@@ -385,6 +385,9 @@ msgstr "最大100文字まで"
 msgid "Photos And Videos"
 msgstr "写真・動画"
 
+msgid "If you allow us to, your talk(s) will be uploaded to 'Youtube' and your photos will be uploaded to '30 days album', with a CC-BY-NC license"
+msgstr "許可をいただければ、トークの動画およびスピーカーの皆様の写真をそれぞれ'Youtube'と'30 days album'にCC-BY-NCライセンスでアップロードいたします"
+
 msgid "May we take your photo?"
 msgstr "写真撮影"
 

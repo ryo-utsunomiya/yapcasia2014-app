@@ -192,8 +192,8 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
                         </div>
 
 
-                        <h3>[% loc("Photos And Vidoes") %]</h3>
-                        <p style="font-size: 10pt; color:#aaa">[% loc("If you allow us to, your talk(s) will be uploaded in 'Youtube' and '30 days album', with a CC-BY-NC license")%]</p>
+                        <h3>[% loc("Photos And Videos") %]</h3>
+                        <p style="font-size: 10pt; color:#aaa">[% loc("If you allow us to, your talk(s) will be uploaded to 'Youtube' and your photos will be uploaded to '30 days album', with a CC-BY-NC license")%]</p>
                         <ul>
                             <li><a href="http://yapcasia.org/videos" target="_blank">Youtube Channel</a></li>
                             <li><a href="http://yapcasia.org/2012/photos" target="_blank">30 days album (2012)</a></li>
