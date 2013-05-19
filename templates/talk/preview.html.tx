@@ -91,6 +91,16 @@ title = 'TEST TITLE'
                     <td>[% loc("Talk Abstract") %]</td>
                     <td>[% fmt_talk_abstract(talk) %]</td>
                 </tr>
+
+                <tr>
+                    <td>[% loc("Photography") %]</td>
+                    <td>[% loc(talk.photo_permission) %]</td>
+                </tr>
+                <tr>
+                    <td>[% loc("Video Photography") %]</td>
+                    <td>[% loc(talk.video_permission) %]</td>
+                </tr>
+
                 </table>
 
                 <form id="commit-form" action="/2013/talk/commit" method="POST">

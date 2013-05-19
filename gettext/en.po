@@ -396,3 +396,21 @@ msgstr "T-shirt Size"
 
 msgid "Up to 100 characters"
 msgstr "Up to 100 characters"
+
+msgid "Photography"
+msgstr "Photography"
+
+msgid "Video Photography"
+msgstr "Video Photography"
+
+msgid "allow"
+msgstr "allow"
+
+msgid "disallow"
+msgstr "disallow"
+
+msgid "Allow"
+msgstr "Allow"
+
+msgid "Disallow"
+msgstr "Disallow"

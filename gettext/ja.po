@@ -381,3 +381,21 @@ msgstr "Tシャツサイズ"
 
 msgid "Up to 100 characters"
 msgstr "最大100文字まで"
+
+msgid "Photography"
+msgstr "写真撮影"
+
+msgid "Video Photography"
+msgstr "ビデオ撮影"
+
+msgid "allow"
+msgstr "許可"
+
+msgid "Allow"
+msgstr "許可"
+
+msgid "disallow"
+msgstr "禁止"
+
+msgid "Disallow"
+msgstr "禁止"

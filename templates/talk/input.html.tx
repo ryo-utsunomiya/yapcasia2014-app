@@ -191,6 +191,31 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
                             </div>
                         </div>
 
+
+                        <h3>[% loc("Photo and video shooting") %]</h3>
+                        <p style="font-size: 10pt; color:#aaa">[% loc("It will be published in the CC-BY-NC or 30 days album at a later date.") %]<br /><a href="http://30d.jp/" target="_new">http://30d.jp/</a><br /><a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_new">http://creativecommons.org/licenses/by-nc/2.0/</a></p></h3>
+
+                        <div class="control-group">
+                            <label class="control-label" for="">[% loc("Photography") %]</label>
+                            <div class="controls">
+                                <select name="photo_permission">
+                                    <option value="allow" selected="selected">[% loc("Allow") %]</option>
+                                    <option value="disallow">[% loc("Disallow") %]</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" for="">[% loc("Video Photography") %]</label>
+                            <div class="controls">
+                              <select name="video_permission">
+                                    <option value="allow" selected="selected">[% loc("Allow") %]</option>
+                                    <option value="disallow">[% loc("Disallow") %]</option>
+                                </select>
+                            </div>
+                        </div>
+
+
                         <button type="submit" class="button button-yapc">[% loc("Submit") %]</button>
 
                     </fieldset>

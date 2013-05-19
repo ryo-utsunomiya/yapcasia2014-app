@@ -18,6 +18,8 @@ use Data::FormValidator::Constraints qw(email);
             material_level
             tshirt_size
             abstract
+            photo_permission
+            video_permission
         ) ],
         require_some => {
             titles => [ 1, qw(title title_en) ]
@@ -44,6 +46,8 @@ use Data::FormValidator::Constraints qw(email);
             category => qr/^(tutorial|app|infra|library|other|community|testing)$/,
             slide_url => [ qr/^$/, qr/^https?:\/\//i ],
             video_url => [ qr/^$/, qr/^https?:\/\//i ],
+            photo_permission => qr/^(allow|disallow)/,
+            video_permission => qr/^(allow|disallow)/,
         },
     },
     "talk_lt.check" => {
