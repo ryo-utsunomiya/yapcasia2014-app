@@ -10,8 +10,8 @@ title = 'TEST TITLE'
 <h2 class="corners"></h2>
 
 <ul>
-  <li><s><a class="button button-primary" href="./_fb">Facebook</a></s></li>
-  <li><a class="button button-info" href="/2013/auth/auth_twitter">Twitter</a></li>
+  <li style="list-style: none; !important"><a class="button button-primary" href="/2013/auth/auth_fb">[% loc("Login via [_1]", "Facebook") %]</a></li>
+  <li style="list-style: none; !important"><a class="button button-info" href="/2013/auth/auth_twitter">[% loc("Login via [_1]", "Twitter") %]</a></li>
   <li><s><a class="button button-success" href="./_github">Github</a></s></li>
 </ul>
 

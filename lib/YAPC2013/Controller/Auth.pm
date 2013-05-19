@@ -21,11 +21,6 @@ sub logout {
     $self->redirect_to( "/2013/login" );
 }
 
-# XXX 今回はちゃんと実装する
-sub need_email {
-
-}
-
 sub auth_twitter {
     my $self = shift;
 
@@ -69,6 +64,78 @@ sub auth_twitter {
         };
 
         $self->create_member( $member );
+    }
+}
+
+sub auth_fb {
+    my $self = shift;
+
+    my $req   = $self->req;
+    my $code  = $req->param('code');
+    my $error = $req->param('error');
+    if ( $error) {
+        die;
+    } elsif ( ! $code) {
+        my $fb_state = Digest::SHA::sha1_hex( Digest::SHA::sha1_hex( time(), {}, rand(), $$ ) );
+        $self->sessions->set('fb_s', $fb_state);
+        my $uri = URI->new( "https://www.facebook.com/dialog/oauth" );
+        $uri->query_form(
+            client_id => $self->config->{Facebook}->{client_id},
+            redirect_uri => "http://yapcasia.org/2013/auth/auth_fb",
+            scope => "email",
+            state => $fb_state
+        );
+        $self->redirect_to( $uri );
+    } elsif ($code) {
+        my $state = $req->param('state');
+        my $expected_state = $self->sessions->get('fb_s');
+        if ($state ne $expected_state) {
+            die "Fuck";
+        }
+        my $uri = URI->new( "https://graph.facebook.com/oauth/access_token" );
+        $uri->query_form(
+            client_id => $self->config->{Facebook}->{client_id},
+            redirect_uri => "http://yapcasia.org/2013/auth/auth_fb",
+            client_secret => $self->config->{Facebook}->{client_secret},
+            code => $code
+        );
+
+        my (undef, $h_code, undef, $h_hdrs, $h_body);
+
+        for (1..5) {
+            eval {
+                (undef, $h_code, undef, $h_hdrs, $h_body) = $self->get('Furl')->get($uri);
+            };
+            last unless $@;
+            last if $h_code eq 200;
+            select(undef, undef, undef, rand());
+        }
+
+        if ($h_code ne 200) {
+            die "HTTP request to fetch access token failed: $h_code: $h_body";
+        }
+        my $res = URI->new( "?$h_body" );
+        my %q   = $res->query_form;
+        $uri = URI->new( "https://graph.facebook.com/me" );
+        $uri->query_form(
+            access_token => $q{access_token}
+        );
+        (undef, $h_code, undef, $h_hdrs, $h_body) = $self->get('Furl')->get($uri);
+
+        my $fb = $self->get('JSON')->decode($h_body);
+        my %member = (
+            remote_id => $fb->{id},
+            nickname  => $fb->{username},
+            name      => $fb->{name},
+            authenticated_by => "facebook",
+        );
+        if ($fb->{email}) {
+            $member{email} = $fb->{email};
+        }
+
+        $self->create_member(\%member);
+    } else {
+        die;
     }
 }
 

@@ -78,6 +78,7 @@ sub setup_routes {
     $auth->get("/")->to("auth#index");
     $auth->get("/index")->to("auth#index");
     $auth->get("/auth_twitter")->to("auth#auth_twitter");
+    $auth->get("/auth_fb")->to("auth#auth_fb");
 
     # member
     my $member = $r->under("/2013/member");
