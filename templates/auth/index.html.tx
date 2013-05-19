@@ -12,7 +12,7 @@ title = 'TEST TITLE'
 <ul>
   <li style="list-style: none; !important"><a class="button button-primary" href="/2013/auth/auth_fb">[% loc("Login via [_1]", "Facebook") %]</a></li>
   <li style="list-style: none; !important"><a class="button button-info" href="/2013/auth/auth_twitter">[% loc("Login via [_1]", "Twitter") %]</a></li>
-  <li><s><a class="button button-success" href="./_github">Github</a></s></li>
+  <li style="list-style: none; !important"><a class="button button-success" href="/2013/auth/auth_github">[% loc("Login via [_1]", "Github") %]</a></li>
 </ul>
 
 </div><!--  / .body /  -->

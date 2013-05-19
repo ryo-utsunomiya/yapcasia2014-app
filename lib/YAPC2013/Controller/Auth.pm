@@ -139,6 +139,89 @@ sub auth_fb {
     }
 }
 
+
+sub auth_github {
+    my $self = shift;
+
+    my $req   = $self->req;
+    my $code  = $req->param('code');
+    my $error = $req->param('error');
+    if ( $error) {
+        die;
+    } elsif ( ! $code) {
+        my $github_state = Digest::SHA::sha1_hex( Digest::SHA::sha1_hex( time(), {}, rand(), $$ ) );
+        $self->sessions->set('github_s', $github_state);
+        
+        my $redirect_uri = URI->new( "http://yapcasia.org/2013/auth/auth_github" );
+        $redirect_uri->query_form(
+            state => $github_state
+        );
+        my $uri = URI->new( "https://github.com/login/oauth/authorize" );
+        $uri->query_form(
+            client_id => $self->config->{Github}->{client_id},
+            redirect_uri => $redirect_uri,
+            state => $github_state
+        );
+        $self->redirect_to( $uri );
+    } elsif ($code) {
+        my $state = $req->param('state');
+        my $expected_state = $self->sessions->get('github_s');
+        if ($state ne $expected_state) {
+            $self->render_text( "Expected state token didn't match for github login" );
+            $self->rendered(500);
+            return;
+        }
+
+        my $uri = URI->new( "https://github.com/login/oauth/access_token" );
+        my ($h_code, $h_body);
+        (undef, $h_code, undef, undef, $h_body) = $self->get('Furl')->post(
+            $uri,
+            [],
+            [
+                client_id => $self->config->{Github}->{client_id},
+                client_secret => $self->config->{Github}->{client_secret},
+                code => $code
+            ]
+        );
+
+        if ($h_code ne 200) {
+            die "HTTP request to fetch access token failed: $h_code: $h_body";
+        }
+
+        # Too fucking lazy to load an XML parsing module here
+        if ($h_body !~ /access_token=([\w]+)/) {
+            $self->render_text( "Failed to get access token" );
+            $self->rendered(500);
+            return;
+        }
+
+        my $access_token = $1;
+        $uri = URI->new("https://api.github.com/user");
+        $uri->query_form(
+            access_token => $access_token
+        );
+
+        (undef, $h_code, undef, undef, $h_body) = $self->get('Furl')->get($uri);
+
+        my $gb = $self->get('JSON')->decode($h_body);
+
+        my %member = (
+            remote_id => $gb->{id},
+            nickname  => $gb->{login},
+            name      => $gb->{name},
+            authenticated_by => "github",
+        );
+        if ($gb->{email}) {
+            $member{email} = $gb->{email};
+        }
+
+        $self->create_member(\%member);
+    } else {
+        warn "REALLY FUCK";
+    }
+}
+
+
 sub create_member {
     my ($self, $member) = @_;
 
