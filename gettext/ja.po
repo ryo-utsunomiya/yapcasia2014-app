@@ -382,6 +382,9 @@ msgstr "Tシャツサイズ"
 msgid "Up to 100 characters"
 msgstr "最大100文字まで"
 
+msgid "Photos And Videos"
+msgstr "写真・動画"
+
 msgid "May we take your photo?"
 msgstr "写真撮影"
 
