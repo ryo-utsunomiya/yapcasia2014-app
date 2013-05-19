@@ -9,7 +9,7 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
 <div id="main">
 
 <div id="lead" class="section">
-<h1 class="corners">トーク登録<span>Registation of talk</span></h1>
+<h1 class="corners">トーク登録<span>Submmit A Talk Proposal</span></h1>
 <div class="body">
 <h2 class="corners"></h2>
 
