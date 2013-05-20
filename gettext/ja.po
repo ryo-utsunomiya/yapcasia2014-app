@@ -424,5 +424,5 @@ msgstr "Perl 事例 (大規模、特殊事例 - mod_perlでApache魔改造とか
 msgid "Know-how (Maintaining and working on legacy systems, Development Methods, Testing, etc)"
 msgstr "ノウハウ (レガシーシステムの運用と開発、開発手法、テスト手法等)"
 
-msgid "Email address not registered"
+msgid "Email address not registered."
 msgstr "メールアドレスが登録されていません"
