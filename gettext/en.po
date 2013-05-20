@@ -400,11 +400,17 @@ msgstr "T-shirt Size"
 msgid "Up to 100 characters"
 msgstr "Up to 100 characters"
 
-msgid "Photography"
-msgstr "Photography"
+msgid "Photos And Videos"
+msgstr "Photos And Videos"
 
-msgid "Video Photography"
-msgstr "Video Photography"
+msgid "If you allow us to, your talk(s) will be uploaded to 'Youtube' and your photos will be uploaded to '30 days album', with a CC-BY-NC license"
+msgstr "If you allow us to, your talk(s) will be uploaded to 'Youtube' and your photos will be uploaded to '30 days album', with a CC-BY-NC license"
+
+msgid "May we take your photo?"
+msgstr "May we take your photo?"
+
+msgid "May we record your talk?"
+msgstr "May we record your talk?"
 
 msgid "allow"
 msgstr "allow"
@@ -417,3 +423,20 @@ msgstr "Allow"
 
 msgid "Disallow"
 msgstr "Disallow"
+
+msgid "We're looking for talks about the following subjects (please note that these are just suggestions: it's totally okay if your proposal does not match the following subjects)"
+msgstr "We're looking for talks about the following subjects (please note that these are just suggestions: it's totally okay if your proposal does not match the following subjects)"
+
+msgid "Introduction to Perl / Frameworks"
+msgstr "Introduction to Perl / Frameworks"
+
+msgid "Modern Best Practices (carton, cpanfile, cpanm, perlbrew, plenv, xbuild, Milla, Minilla, suggested modules, module administration, application deployment)"
+msgstr "Modern Best Practices (carton, cpanfile, cpanm, perlbrew, plenv, xbuild, Milla, Minilla, suggested modules, module administration, application deployment)"
+
+msgid "Perl Use Cases (Large scale, \"unique\" cases, big data, PDL, etc)"
+msgstr "Perl Use Cases (Large scale, \"unique\" cases, big data, PDL, etc)"
+
+msgid "Know-how (Maintaining and working on legacy systems, Development Methods, Testing, etc)"
+msgstr "Know-how (Maintaining and working on legacy systems, Development Methods, Testing, etc)"
+
+
