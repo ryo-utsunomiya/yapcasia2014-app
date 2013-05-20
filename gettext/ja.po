@@ -426,3 +426,9 @@ msgstr "ノウハウ (レガシーシステムの運用と開発、開発手法�
 
 msgid "Email address not registered."
 msgstr "メールアドレスが登録されていません"
+
+msgid "Edit your Email"
+msgstr "メールアドレスを変更する"
+
+msgid "Submit a new talk"
+msgstr "新しいトークを登録する"

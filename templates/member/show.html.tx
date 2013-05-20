@@ -5,7 +5,7 @@ title = 'Member'
 <div id="main">
 
 <div id="lead" class="section">
-<h1 class="corners">Member<span>Member</span></h1>
+<h1 class="corners">[% loc("[_1]'s Page", member.name || member.nickname) %]</h1>
 <div class="body">
 
 <style type="text/css">
@@ -27,7 +27,6 @@ title = 'Member'
 
 <div id="main-contents">
     <div class="section posts">
-        <h2>[% loc("[_1]'s Page", member.name || member.nickname) %]</h2>
         <div class="innerblock">
             <div class="entry">
                 <div class="entry-contents">
@@ -71,10 +70,10 @@ title = 'Member'
                 <h4>Link</h4>
                 <ul>
                   <li>
-                    <a href="/2013/member/email_edit">Edit your Email</a>
+                    <a href="/2013/member/email_edit">[% loc("Edit your Email") %]</a>
                   </li>
                   <li>
-                    <a href="/2013/talk/input">Submit a new talk</a>
+                    <a href="/2013/talk/input">[% loc("Submit a new talk") %]</a>
                   </li>
                 </ul>
 [% END %]

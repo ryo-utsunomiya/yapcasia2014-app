@@ -440,4 +440,10 @@ msgid "Know-how (Maintaining and working on legacy systems, Development Methods,
 msgstr "Know-how (Maintaining and working on legacy systems, Development Methods, Testing, etc)"
 
 msgid "Email address not registered."
-msgstr "Email address not registered"
+msgstr "Email address not registered."
+
+msgid "Edit your Email"
+msgstr "Edit your Email"
+
+msgid "Submit a new talk"
+msgstr "Submit a new talk"
