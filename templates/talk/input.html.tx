@@ -20,12 +20,12 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
     <div class="innerblock">
         <div class="entry">
             <div class="entry-contents">
-            <p>[% loc("We're looking for talks about the following subjects (please note that these are just suggestions: it's totally okay if your proposal does not match the following subjects)") %]</p>
+            <p>[% loc("We're looking for talks about the following subjects (please note that these are just suggestions: it's totally okay if your proposal does not match the following subjects)") | raw %]</p>
             <ul>
-                <li>Introduction to Perl / Frameworks</li>
-                <li>Modern Best Practices (carton, cpanfile, cpanm, perlbrew, plenv, xbuild, Milla, Minilla, suggested modules, module administration, application deployment)</li>
-                <li>Perl Use Cases (Large scale, "unique" cases, big data, PDL, etc)</li>
-                <li>Know-how (Maintaining and working on legacy systems, Development Methods, Testing, etc)</li>
+                <li>[% loc("Introduction to Perl / Frameworks") %]</li>
+                <li>[% loc("Modern Best Practices (carton, cpanfile, cpanm, perlbrew, plenv, xbuild, Milla, Minilla, suggested modules, module administration, application deployment)") %]</li>
+                <li>[% loc("Perl Use Cases (Large scale, "unique" cases, big data, PDL, etc)") %]</li>
+                <li>[% loc("Know-how (Maintaining and working on legacy systems, Development Methods, Testing, etc)") %]</li>
             </ul>
 
 [% FILTER fillinform %]
