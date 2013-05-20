@@ -1,11 +1,11 @@
-[% WRAPPER "layouts/default.html.tx" 
-title = ""
+[% WRAPPER "layouts/default.html.tx" WITH
+title = "Confirm Email"
 %]
 
 <div id="main">
 
 <div id="lead" class="section">
-<h1 class="corners">メールアドレス確認<span>confirm email</span></h1>
+<h1 class="corners">メールアドレス確認<span>Confirm Email</span></h1>
 <div class="body">
 
 [% IF invalid.email || member.email == email %]

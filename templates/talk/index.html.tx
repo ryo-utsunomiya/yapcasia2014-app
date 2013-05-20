@@ -1,5 +1,5 @@
-[% WRAPPER 'layouts/default.html.tx'
-title = 'TEST TITLE'
+[% WRAPPER 'layouts/default.html.tx' WITH
+title = 'Talk'
 %]
 
 <div id="main">

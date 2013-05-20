@@ -1,13 +1,12 @@
-[% WRAPPER "layouts/default.html.tx" 
-title = ""
+[% WRAPPER "layouts/default.html.tx" WITH
+title = (is_edit) ? loc("Edit done") : loc("Thank you for your submission!")
 %]
 
 <div id="main">
 
 <div id="lead" class="section">
-<h1 class="corners">Member<span>Member</span></h1>
+<h1 class="corners">[% IF (is_edit) %][% loc("Edit done") %][% ELSE %][% loc("Thank you for your submission!") %][% END %]</h1>
 <div class="body">
-<h2 class="corners">Member show</h2>
 
 <div id="main-contents">
 

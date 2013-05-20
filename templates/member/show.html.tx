@@ -1,5 +1,5 @@
-[% WRAPPER "layouts/default.html.tx" 
-title = ""
+[% WRAPPER "layouts/default.html.tx" WITH
+title = 'Member'
 %]
 
 <div id="main">
@@ -71,7 +71,7 @@ title = ""
                 <h4>Link</h4>
                 <ul>
                   <li>
-                    <a href="/2013/member/email_edit">Edit your Email </a>
+                    <a href="/2013/member/email_edit">Edit your Email</a>
                   </li>
                   <li>
                     <a href="/2013/talk/input">Submit a new talk</a>

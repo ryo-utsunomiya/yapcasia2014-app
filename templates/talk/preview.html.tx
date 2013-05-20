@@ -1,19 +1,16 @@
 [% WRAPPER 'layouts/default.html.tx'
-title = 'TEST TITLE'
+title = loc("Please verify your submission")
 %]
 
 <div id="main">
 
 <div id="lead" class="section">
-<h1 class="corners">トーク登録<span>Registation of talk</span></h1>
+<h1 class="corners">[% loc("Please verify your submission") %]</h1>
 <div class="body">
-<h2 class="corners"></h2>
-
 
 <div id="main-contents">
 
 <div class="section posts">
-    <h2>[% loc("Please verify your submission") %]</h2>
     <div class="innerblock">
         <div class="entry">
             <div class="entry-contents">

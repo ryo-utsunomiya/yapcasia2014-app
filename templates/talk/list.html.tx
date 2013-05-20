@@ -1,14 +1,12 @@
-[% WRAPPER 'layouts/default.html.tx'
-title = 'TEST TITLE'
+[% WRAPPER 'layouts/default.html.tx' WITH
+title = 'Talks'
 %]
 
 <div id="main">
 
 <div id="lead" class="section">
-<h1 class="corners">トーク登録<span>Registation of talk</span></h1>
+<h1 class="corners">トークリスト<span>Talks</span></h1>
 <div class="body">
-<h2 class="corners"></h2>
-
 
 <style type="text/css">
 <!--

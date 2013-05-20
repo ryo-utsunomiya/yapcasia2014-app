@@ -1,11 +1,11 @@
 [% WRAPPER 'layouts/default.html.tx'
-title = 'TEST TITLE'
+title = 'Login'
 %]
 
 <div id="main">
 
 <div id="lead" class="section">
-<h1 class="corners">ログイン<span>login</span></h1>
+<h1 class="corners">ログイン<span>Login</span></h1>
 <div class="body">
 <h2 class="corners"></h2>
 
