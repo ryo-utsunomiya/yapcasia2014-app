@@ -20,8 +20,13 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
     <div class="innerblock">
         <div class="entry">
             <div class="entry-contents">
-
-            <!-- こういうトークが欲しい! 文言 -->
+            <p>[% loc("We're looking for talks about the following subjects (please note that these are just suggestions: it's totally okay if your proposal does not match the following subjects)") %]</p>
+            <ul>
+                <li>Introduction to Perl / Frameworks</li>
+                <li>Modern Best Practices (carton, cpanfile, cpanm, perlbrew, plenv, xbuild, Milla, Minilla, suggested modules, module administration, application deployment)</li>
+                <li>Perl Use Cases (Large scale, "unique" cases, big data, PDL, etc)</li>
+                <li>Know-how (Maintaining and working on legacy systems, Development Methods, Testing, etc)</li>
+            </ul>
 
 [% FILTER fillinform %]
                 <form action="/2013/talk/check" method="post" class="form-horizontal">

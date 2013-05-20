@@ -405,3 +405,20 @@ msgstr "禁止"
 
 msgid "Disallow"
 msgstr "禁止"
+
+msgid "We're looking for talks about the following subjects (please note that these are just suggestions: it's totally okay if your proposal does not match the following subjects)"
+msgstr "今回のYAPCでは以下のようなテーマを募集しています（注：この内容に限定しているわけではありません。以下はあくまで提案ですので、我々の想像を超えるおもしろいものを是非応募してください！）。なお Perl5 Census Japan 2013というアンケートでいただいた「YAPCで聞きたいトーク」を<a href=\"https://gist.github.com/lestrrat/5544896\">まとめたものもこちらにありますので参考までにどうぞ</a>"
+
+msgid "Introduction to Perl / Frameworks"
+msgstr "Perl / WAFなどのフレームワーク入門"
+
+msgid "Modern Best Practices (carton, cpanfile, cpanm, perlbrew, plenv, xbuild, Milla, Minilla, suggested modules, module administration, application deployment)"
+msgstr "モダンなベストプラクティス (carton, cpanfile, cpanm, perlbrew plenv, xbuild, Milla, Minilla, おすすめモジュール、モジュール管理、アプリケーションデプロイと管理"
+
+msgid "Perl Use Cases (Large scale, \"unique\" cases, big data, PDL, etc)"
+msgstr "Perl 事例 (大規模、特殊事例 - mod_perlでApache魔改造とか、ビッグデータ、数値計算/PDL、その他）"
+
+msgid "Know-how (Maintaining and working on legacy systems, Development Methods, Testing, etc)"
+msgstr "ノウハウ (レガシーシステムの運用と開発、開発手法、テスト手法等)"
+
+
