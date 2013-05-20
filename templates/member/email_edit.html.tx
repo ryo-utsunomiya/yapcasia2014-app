@@ -1,13 +1,12 @@
-[% WRAPPER "layouts/default.html.tx" 
-title = ""
+[% WRAPPER "layouts/default.html.tx" WITH
+title = loc("Register Your Email Address")
 %]
 
 <div id="main">
 
 <div id="lead" class="section">
-<h1 class="corners">メールアドレス編集<span>edit email</span></h1>
+<h1 class="corners">[% loc("Register Your Email Address") %]</h1>
 <div class="body">
-<h2 class="corners">email edit</h2>
 <p>
 確実に連絡の取れるメールアドレスを登録してください。<br />
 登録されたメールアドレスは、以下のような内容で使用されます。<br />

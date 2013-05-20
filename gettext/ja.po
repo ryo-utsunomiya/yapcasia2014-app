@@ -157,6 +157,9 @@ msgstr "メールアドレスを入力してください"
 msgid "Email Registration"
 msgstr "メールアドレス登録"
 
+msgid "Register Your Email Address"
+msgstr "メールアドレス登録"
+
 msgid "Registration Code"
 msgstr "登録コード"
 

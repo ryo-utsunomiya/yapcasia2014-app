@@ -172,6 +172,9 @@ msgstr "Enter Your Email Address"
 msgid "Email Registration"
 msgstr "Email Registration"
 
+msgid "Register Your Email Address"
+msgstr "Register Your Email Address"
+
 msgid "Registration Code"
 msgstr "Registration Code"
 
