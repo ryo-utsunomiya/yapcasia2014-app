@@ -5,7 +5,7 @@ title = loc("Talk Information")
 <div id="main">
 
 <div id="lead" class="section">
-<h1 class="corners">loc("Talk Information")</h1>
+<h1 class="corners">[% loc("Talk Information") %]</h1>
 <div class="body">
 
 [% SET talk_url = "http://yapcasia.org/2013/talk/show/" _ talk.id %]
@@ -27,7 +27,6 @@ title = loc("Talk Information")
 <div class="section posts">
     <div class="innerblock">
         <div class="entry">
-            <h2>[% loc("Talk Information") %]</h2>
             <div class="entry-contents">
 
 <style>
@@ -39,6 +38,7 @@ title = loc("Talk Information")
     .speaker .data .name { word-wrap: break-word; font-size: 0.8em;}
 -->
 </style>
+
 <div class="speaker">
     <div class="icon">[% fmt_member_icon_tag(speaker) %]</div>
     <div class="data">
