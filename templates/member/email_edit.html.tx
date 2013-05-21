@@ -16,12 +16,19 @@ title = loc("Register Your Email Address")
 
 <p>[% loc("We need your email addres in order to proceed, as we will be notifying you about important updates, such as when your talk gets accepted. This is the only reason we need your email address, and it will not be used for anything else") %]</p>
 
+<p>[% loc("Please specify a reachable address below, and follow the instructions in the email that will be sent to that address") %]
+</p>
+
 <form action="/2013/member/email_submit" method="post" class="form-horizontal">
   <input type="hidden" name="id" value="[% member.id %]" />
   <p>[% loc("Enter Your Email Address") %]:</p>
-  [% IF invalid_email %]<p style="color:red">メールアドレスの形式でないか、既に登録されているメールアドレスです</p>[% END %]
-  <input type="text" name="email" value="[% email %]" class="input-large" />
-  <input type="submit" class="button button-info">
+  [% IF invalid_email %]
+    <p style="color:red">
+      [% loc("It is not in the form of e-mail address, or This Email address is already registered") %]
+    </p>
+  [% END %]
+  <input type="text" name="email" value="" class="input-large" />
+  <input type="submit" value="hoge" class="button button-info">
 </form>
 
 </div><!--  / .body /  -->

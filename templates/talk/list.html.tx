@@ -5,7 +5,7 @@ title = 'Talks'
 <div id="main">
 
 <div id="lead" class="section">
-<h1 class="corners">トークリスト<span>Talks</span></h1>
+<h1 class="corners">Talks</h1>
 <div class="body">
 
 <style type="text/css">
@@ -89,13 +89,12 @@ title = 'Talks'
 <div id="main-contents">
 
 <div class="section posts">
-    <h2>[% loc("Talks") %]</h2>
     <div class="innerblock">
         <div class="entry">
             <div class="entry-contents">
 
 
-<h3>[% loc("applied talks") %] ([% applied_talks.size() %])</h3>
+<h3>[% loc("Pending Talks") %] ([% applied_talks.size() %])</h3>
 [% FOREACH talk IN applied_talks %]
 [% talk_details(talk) %]
 [% END %]

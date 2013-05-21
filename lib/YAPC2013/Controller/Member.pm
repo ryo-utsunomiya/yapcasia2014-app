@@ -53,10 +53,9 @@ sub email_submit {
     $self->stash(member => $member);
 
     my $email = $self->req->param('email');
-warn $email;
     if (! Email::Valid::Loose->address($email) || $member->{email} eq $email ) {
         $self->stash( invalid_email => 1, email => $email );
-        $self->render("member/email_edit");
+        $self->render("member/email_edit", format => "html");
         return;
     }
 
