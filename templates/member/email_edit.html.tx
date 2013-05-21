@@ -7,23 +7,20 @@ title = loc("Register Your Email Address")
 <div id="lead" class="section">
 <h1 class="corners">[% loc("Register Your Email Address") %]</h1>
 <div class="body">
-<p>
-確実に連絡の取れるメールアドレスを登録してください。<br />
-登録されたメールアドレスは、以下のような内容で使用されます。<br />
-</p>
-<ul>
-<li>YAPCチケットとの連携のため</li>
-<li>景品の受け渡しなどの連絡で使用するため</li>
-<li>トークを応募した人に連絡事項を送るため</li>
-<li>問い合わせに柔軟に対応するため</li>
-</ul>
 
-<p>現在登録されてるメールアドレス : [% member.email %]</p>
+[% IF !member.email %]
+<p>[% loc("we don't seem to have an email associated with your account (This is probably because you used Github which doesn't always give us your email, or Twitter which never gives us your email).") %]</p>
+[% END %]
 
-<form action="/2013/member/email_confirm" method="post" class="form-horizontal">
+<h3>[% loc("Why Are We Asking For Your Email?") %]</h3>
+
+<p>[% loc("We need your email addres in order to proceed, as we will be notifying you about important updates, such as when your talk gets accepted. This is the only reason we need your email address, and it will not be used for anything else") %]</p>
+
+<form action="/2013/member/email_submit" method="post" class="form-horizontal">
   <input type="hidden" name="id" value="[% member.id %]" />
-  [% IF invalid %]<p style="color:red">メールアドレスの形式でないか、既に登録されているメールアドレスです</p>[% END %]
-  <input type="text" name="email" value="" class="input-large" />
+  <p>[% loc("Enter Your Email Address") %]:</p>
+  [% IF invalid_email %]<p style="color:red">メールアドレスの形式でないか、既に登録されているメールアドレスです</p>[% END %]
+  <input type="text" name="email" value="[% email %]" class="input-large" />
   <input type="submit" class="button button-info">
 </form>
 

@@ -44,32 +44,22 @@ sub email_edit {
     $self->render( member => $member );
 }
 
-sub email_confirm {
-    my $self = shift;
-    $self->assert_logged_in() or return;
-
-    my $member = $self->get_member;
-    my $email = $self->req->param('email');
-    my $fv = $self->get('FormValidator');
-    my $params = $self->req->params->to_hash;
-    my $results = $fv->check( { %$params }, 'email.check' );
-
-    $self->render( member => $member, email => $email, invalid => $results->{invalid} );
-}
-
 sub email_submit {
     my $self = shift;
     warn 'email_submit';
     $self->assert_logged_in() or return;
 
+    my $member = $self->get_member;
+    $self->stash(member => $member);
+
     my $email = $self->req->param('email');
-    if (! Email::Valid::Loose->address($email)) {
-        $self->stash(invalid_email => 1);
+warn $email;
+    if (! Email::Valid::Loose->address($email) || $member->{email} eq $email ) {
+        $self->stash( invalid_email => 1, email => $email );
+        $self->render("member/email_edit");
         return;
     }
 
-    my $member = $self->get_member;
-    $self->stash(member => $member);
     my $subscription = $self->get('API::MemberTemp')->create({
         member_id  => $member->{id},
         email      => $email,
