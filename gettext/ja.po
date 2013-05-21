@@ -139,6 +139,9 @@ msgstr "なんでメールアドレスが必要なの？"
 msgid "Thank you for being interested in presenting at YAPC::Asia Tokyo 2012. However, we don't seem to have an email associated with your account (This is probably because you used Github which doesn't always give us your email, or Twitter which never gives us your email)."
 msgstr "YAPC::Asia Tokyo 2012トーク応募ありがとうございます。現在ご使用のアカウントでメールアドレスが未設定のようです（これはGithub経由でログインした際にGithubでメールアドレスを設定していなかったか、Twitter経由でログインしたからだと推測されます)"
 
+msgid "we don't seem to have an email associated with your account (This is probably because you used Github which doesn't always give us your email, or Twitter which never gives us your email)."
+msgstr "現在ご使用のアカウントでメールアドレスが未設定のようです（これはGithub経由でログインした際にGithubでメールアドレスを設定していなかったか、Twitter経由でログインしたからだと推測されます)"
+
 msgid "We need your email addres in order to proceed, as we will be notifying you about important updates, such as when your talk gets accepted. This is the only reason we need your email address, and it will not be used for anything else"
 msgstr "応募を続けるためにはメールアドレスを設定する必要があります。これはトークが採択された時など重要なお知らせをお届けするために使われます。ここで入力いただくメールアドレスはこのためのみに使用されます。"
 
@@ -159,6 +162,9 @@ msgstr "メールアドレス登録"
 
 msgid "Register Your Email Address"
 msgstr "メールアドレス登録"
+
+msgid "It is not in the form of e-mail address, or This Email address is already registered"
+msgstr " メールアドレスの形式でないか、このメールアドレスは既に登録されています"
 
 msgid "Registration Code"
 msgstr "登録コード"

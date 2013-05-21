@@ -154,6 +154,9 @@ msgstr "Why Are We Asking For Your Email?"
 msgid "Thank you for being interested in presenting at YAPC::Asia Tokyo 2012. However, we don't seem to have an email associated with your account (This is probably because you used Github which doesn't always give us your email, or Twitter which never gives us your email)."
 msgstr "Thank you for being interested in presenting at YAPC::Asia Tokyo 2012. However, we don't seem to have an email associated with your account (This is probably because you used Github which doesn't always give us your email, or Twitter which never gives us your email)."
 
+msgid "we don't seem to have an email associated with your account (This is probably because you used Github which doesn't always give us your email, or Twitter which never gives us your email)."
+msgstr "we don't seem to have an email associated with your account (This is probably because you used Github which doesn't always give us your email, or Twitter which never gives us your email)."
+
 msgid "We need your email addres in order to proceed, as we will be notifying you about important updates, such as when your talk gets accepted. This is the only reason we need your email address, and it will not be used for anything else"
 msgstr "We need your email addres in order to proceed, as we will be notifying you about important updates, such as when your talk gets accepted. This is the only reason we need your email address, and it will not be used for anything else"
 
@@ -174,6 +177,9 @@ msgstr "Email Registration"
 
 msgid "Register Your Email Address"
 msgstr "Register Your Email Address"
+
+msgid "It is not in the form of e-mail address, or This Email address is already registered"
+msgstr "It is not in the form of e-mail address, or This Email address is already registered"
 
 msgid "Registration Code"
 msgstr "Registration Code"
