@@ -70,7 +70,7 @@ title = 'Member'
                 <h4>Link</h4>
                 <ul>
                   <li>
-                    <a href="/2013/member/email_edit">[% loc("Edit your Email") %]</a>
+                    <a href="/2013/member/email_edit">[% loc("Register a new email address") %]</a>
                   </li>
                   <li>
                     <a href="/2013/talk/input">[% loc("Submit a new talk") %]</a>
