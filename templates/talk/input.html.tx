@@ -37,6 +37,8 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
                         <h3>[% loc("Talk Title") %] </h3>
                         <p style="font-size: 10pt;">[% loc("Please enter at least one of Japanese/English talk titles") %] ([% loc("Up to 100 characters")%])</p>
                         [% fmt_error_message(results, "titles", "Talk Title") %]
+                        [% fmt_error_message(results, "title", "Talk Title (Japanese)") %]
+                        [% fmt_error_message(results, "title_en", "Talk Title (English)") %]
                         <div class="control-group">
                             <label class="control-label" for="">[% loc("Talk Title (Japanese)" ) %]</label>
                             <div class="controls docs-input-sizes">
