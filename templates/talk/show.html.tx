@@ -120,11 +120,11 @@ title = loc("Talk Information")
                         <td>[% loc(talk.material_level) %]</td>
                     </tr>
                     <tr>
-                        <td>[% loc("Photography") %]</td>
+                        <td>[% loc("May we take your photo?") %]</td>
                         <td>[% loc(talk.photo_permission) %]</td>
                     </tr>
                     <tr>
-                        <td>[% loc("Video Photography") %]</td>
+                        <td>[% loc("May we record your talk?") %]</td>
                         <td>[% loc(talk.video_permission) %]</td>
                     </tr>
 [% ELSE %]
