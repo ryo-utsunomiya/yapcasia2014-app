@@ -64,7 +64,7 @@ sub setup_routes {
     my $self = shift;
     my $r = $self->routes;
 
-    $r->namespace('YAPC2013::Controller');
+    push @{$r->namespaces}, 'YAPC2013::Controller';
 
     $r->route('/')->to(cb => sub {
         shift->redirect_to("/2013/");
