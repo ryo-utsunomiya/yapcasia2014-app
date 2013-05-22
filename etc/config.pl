@@ -21,7 +21,7 @@
     ],
     Localizer => {
         localizers => [
-            { class => 'Gettext', path => app->home->rel_file("etc/gettext/*.po") },
+            { class => 'Gettext', path => app->home->rel_file("gettext/*.po") },
         ]
     },
     FormValidator => {
