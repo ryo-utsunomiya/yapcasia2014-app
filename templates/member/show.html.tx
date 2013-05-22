@@ -67,7 +67,7 @@ title = 'Member'
 [% END %]
 
 [% IF member.email %]
-                <h4>Link</h4>
+                <h4>[% loc("Menu") %]</h4>
                 <ul>
                   <li>
                     <a href="/2013/member/email_edit">[% loc("Register a new email address") %]</a>

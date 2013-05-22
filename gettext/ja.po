@@ -438,3 +438,6 @@ msgstr "メールアドレスを変更する"
 
 msgid "Submit a new talk"
 msgstr "新しいトークを登録する"
+
+msgid "Menu"
+msgstr "メニュー"

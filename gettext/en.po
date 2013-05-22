@@ -453,3 +453,6 @@ msgstr "Edit your Email"
 
 msgid "Submit a new talk"
 msgstr "Submit a new talk"
+
+msgid "Menu"
+msgstr "Menu"
