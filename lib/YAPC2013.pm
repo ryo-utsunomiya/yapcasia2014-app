@@ -20,7 +20,7 @@ sub production_mode {
 sub startup {
     my $self = shift;
 
-    $self->plugin(Config => { file => "etc/config.pl" });
+    $self->plugin(Config => { file => "etc/config_local.pl" });
     $self->setup_container;
     $self->setup_xslate;
     $self->setup_routes;
@@ -38,6 +38,7 @@ sub startup {
     $self->hook(around_dispatch => sub {
         my ($next, $c) = @_;
         my $guard = $c->app->container->new_scope;
+        my $localizer = $self->get('Localizer');
 
         # set_lang
         my $lang = $c->req->param('lang')
@@ -50,6 +51,8 @@ sub startup {
         if( ($c->sessions->get('lang') || '' ) ne $lang ){
             $c->sessions->set(lang => $lang);
         }
+
+        $localizer->set_languages( $lang );
 
         $next->();
         undef $guard;
@@ -112,10 +115,10 @@ sub setup_xslate {
     my $self = shift;
 
     my $renderer = $self->renderer;
+    my $loc = $self->get('Localizer');
     my $fif = HTML::FillInForm::Lite->new();
     my $markdown = $self->get('Markdown');
     my $scrubber = $self->get('Scrubber');
-    my $loc = $self->get('Localizer');
     $renderer->add_handler(tx => YAPC2013::Renderer->build(
         app => $self,
         syntax => "TTerse",
@@ -126,13 +129,16 @@ sub setup_xslate {
                 my $dumper = Dumper @_;
                 return "<pre>" . $dumper . "</pre>";
             },
-            loc => sub {
-                $self->loc(@_);
-            },
+            #loc => sub {
+            #    $self->loc(@_);
+            #},
+            loc => Text::Xslate::html_builder(sub {
+                    $loc->localize(@_);
+            } ),
             fillinform => Text::Xslate::html_builder(sub {
                 my $html =  shift;
                 if ( my $fill = Text::Xslate->current_vars->{fif} ){
-                    $html = (Encode::is_utf8($html))? $html : Encode::decode_utf8($html);
+                    #$html = (Encode::is_utf8($html))? $html : Encode::decode_utf8($html);
                     return  $fif->fill(\$html, $fill);
                 }
                 return $html;

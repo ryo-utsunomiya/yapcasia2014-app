@@ -19,6 +19,11 @@
             mysql_enable_utf8 => 1,
         }
     ],
+    Localizer => {
+        localizers => [
+            { class => 'Gettext', path => app->home->rel_file("etc/gettext/*.po") },
+        ]
+    },
     FormValidator => {
         file => app->home->rel_file( "etc/profiles.pl" )
     }

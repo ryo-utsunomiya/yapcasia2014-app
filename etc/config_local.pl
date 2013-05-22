@@ -1,21 +1,9 @@
-use HTTP::Session::Store::Memcached;
-use HTTP::Session::State::Cookie;
-use Cache::Memcached::Fast;
-
 warn "config, load 'config_test.pl'";
 
 +{
-    ENV => 'test',
-    Memcached => +{ servers => [ '127.0.0.1:12345' ] },
-    Session => +{
-        store =>
-            HTTP::Session::Store::Memcached->new(
-                memd => Cache::Memcached::Fast->new( +{ servers => [ '127.0.0.1:12345' ] } )
-            ),
-        state => HTTP::Session::State::Cookie->new(),
-    },
-    DBI => +[
-        'dbi:mysql:dbname=yapc2013_test',
+    Memcached => +{ servers => [ '127.0.0.1:11211' ] },
+    'DB::Master' => +[
+        'dbi:mysql:dbname=yapc2013',
         'root',
         '',
         +{
@@ -39,7 +27,16 @@ warn "config, load 'config_test.pl'";
         consumer_secret => 'zN48zGLw1d5MfDzssB5R9y4mMFgKzbr0EgOaRsIYdU',
         callback_url => 'http://localhost:3000/2013/auth/auth_twitter'
     },
+    Localizer => {
+        localizers => [
+            { class => 'Gettext', path => app->home->rel_file("gettext/*.po") },
+        ]
+    },
     FormValidator => {
         file => app->home->rel_file( "etc/profiles.pl" )
+    },
+    'Session::State::Cookie' => {
+        path => undef,
+        domain => undef,
     }
 };
