@@ -34,7 +34,7 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
 <input type="hidden" name="is_edit" value="1" />
 [% END %]
                     <fieldset>
-                        <h3>[% loc("Talk Title") %] <p style="font-size: 10pt; color: #aaa">[% loc("Please enter at least one of Japanese/English talk titles") %] ([% loc("Up to 100 characters")%])</p></h3>
+                        <h3>[% loc("Talk Title") %] <p style="font-size: 10pt;">[% loc("Please enter at least one of Japanese/English talk titles") %] ([% loc("Up to 100 characters")%])</p></h3>
                         [% fmt_error_message(results, "titles", "Talk Title") %]
                         <div class="control-group">
                             <label class="control-label" for="">[% loc("Talk Title (Japanese)" ) %]</label>
@@ -49,7 +49,7 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
                             </div>
                         </div>
 
-                        <h3>[% loc("T-Shirt Size") %] <p style="font-size: 10pt; color:#aaa">[% loc("We provide speakers with free YAPC::Asia T-shirts, so please let us know what size you want. If you for some reason don't want one, please select 'Don't need it'") %]</p></h3>
+                        <h3>[% loc("T-Shirt Size") %] <p style="font-size: 10pt;">[% loc("We provide speakers with free YAPC::Asia T-shirts, so please let us know what size you want. If you for some reason don't want one, please select 'Don't need it'") %]</p></h3>
                         <div class="control-group">
                             [% fmt_error_message(results, "tshirt_size", "T-Shirt Size") %]
                             <label class="control-label" for="">[% loc("T-Shirt Size") %]</label>
@@ -196,7 +196,7 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
 
 
                         <h3>[% loc("Photos And Videos") %]</h3>
-                        <p style="font-size: 10pt; color:#aaa">[% loc("If you allow us to, your talk(s) will be uploaded to 'Youtube' and your photos will be uploaded to '30 days album', with a CC-BY-NC license")%]</p>
+                        <p style="font-size: 10pt;">[% loc("If you allow us to, your talk(s) will be uploaded to 'Youtube' and your photos will be uploaded to '30 days album', with a CC-BY-NC license")%]</p>
                         <ul>
                             <li><a href="http://yapcasia.org/videos" target="_blank">Youtube Channel</a></li>
                             <li><a href="http://yapcasia.org/2012/photos" target="_blank">30 days album (2012)</a></li>
