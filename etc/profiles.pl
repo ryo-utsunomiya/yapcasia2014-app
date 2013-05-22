@@ -30,12 +30,12 @@ use Data::FormValidator::Constraints qw(email);
         constraint_methods => {
             title => sub {
                 my ($dfv, $value) = @_;
-                return length( $value ) <= 100;
+                return length( $value ) <= 100 && length( $value ) > 0;
             },
             title_en => sub {
                 my ($dfv, $value) = @_;
                 warn length( $value );
-                return length( $value ) <= 100;
+                return length( $value ) <= 100 && length( $value ) > 0;
             },
             status => qr/^(pending|accepted|rejected)$/,
             language => qr/^(en|ja)$/,
