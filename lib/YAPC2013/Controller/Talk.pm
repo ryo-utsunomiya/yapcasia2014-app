@@ -33,7 +33,7 @@ sub show {
             }
         }
 
-        my $venue = VENUE_ID->{ $talk->{venue_id} };
+        my $venue = $talk->{venue_id} && VENUE_ID->{ $talk->{venue_id} };
         if ($venue) {
             $talk->{venue} = $venue;
         }
