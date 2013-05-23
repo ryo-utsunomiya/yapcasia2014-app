@@ -65,10 +65,11 @@ title = loc("Talk Information")
                     [% talk_title %]
                     </div>
                     <div class="social-btns">
-                        <div class="fb-like" data-href="http://yapcasia.org/2013/[% talk_url %]" data-layout="button_count" data-send="false" data-width="50" data-show-faces="false"></div>
-                        <g:plusone size="tall" annotation="none" href="http://yapcasia.org/2013/[% talk_url %]"></g:plusone>
-                        <div data-plugins-type="mixi-favorite" data-service-key="c42621fa3b01434ead73c1ad76af5a35df298cf2" data-href="http://yapcasia.org/2013/[% talk_url %]" data-show-faces="false" data-show-count="true" data-width="100"></div>
-                        <a href="http://b.hatena.ne.jp/entry/[% talk_url %]" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="yapcasia" data-count="vertical">Tweet</a>
+                        <span style="height: 90px; width: 50px; vertical-align:top; display: inline-block"><div class="fb-like" data-send="false" data-layout="box_count" data-width="50" data-show-faces="false" data-font="verdana"></div></span>
+                        <g:plusone size="tall"></g:plusone>
+                        <div data-plugins-type="mixi-favorite" data-service-key="c42621fa3b01434ead73c1ad76af5a35df298cf2" data-size="large" data-href="" data-show-faces="false" data-show-count="true" data-show-comment="true" data-width=""></div>
+                        <a href="#" class="hatena-bookmark-button" data-hatena-bookmark-layout="vertical" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
 [% IF (talk.status == 'pending') %]
 <div style="margin-top: 1em; color: #999; font-size: 0.8em">
 [% loc("Currently this talk is in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons above to express  your interest!") %]
