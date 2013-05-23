@@ -1,5 +1,5 @@
 [% WRAPPER 'layouts/default.html.tx' WITH
-title = loc("Talk Information")
+    title = talk.title || talk.title_en
 %]
 
 <div id="main">
