@@ -2,8 +2,6 @@
 # Record 
 #   * Number of pending, rejected, accepted talks
 use strict;
-use lib "local/lib/perl5";
-use lib "lib";
 use Encode qw(decode_utf8);
 use YAPC2013;
 
