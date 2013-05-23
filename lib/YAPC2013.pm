@@ -159,6 +159,14 @@ EOHTML
 <a href="/2013/member/show/$member->{id}"><img src="$url" width="50" height="50" /></a>
 EOHTML
             }),
+            fmt_talk_abstract_as_og_description => sub {
+                my $text = $self->get_talk_abstract($_[0], $scrubber, $markdown);
+                # remove all markup
+                $text =~ s{<[^>]+>}{}smg;
+                # truncate to 140 chars
+                substr $text, 0, 140, '';
+                return $text;
+            }),
             fmt_talk_abstract => Text::Xslate::html_builder(sub {
                 $self->get_talk_abstract($_[0], $scrubber, $markdown);
             }),
