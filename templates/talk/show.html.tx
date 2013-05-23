@@ -75,9 +75,9 @@ title = loc("Talk Information")
 [% IF (member.is_admin || owner || talk.duration != 5 || talk.lt_visible) %][% fmt_talk_abstract(talk) %][% ELSE %]Lightning Talk[% END %]</div>
                         </td>
                         <td width="90" style="padding: 5px" valign="top">
-                            <div class="fb-like" data-href="[% talk_url %]" data-layout="button_count" data-send="false" data-width="50" data-show-faces="false"></div>
-                            <g:plusone size="tall" annotation="none" href="[% talk_url %]"></g:plusone>
-                            <div data-plugins-type="mixi-favorite" data-service-key="c42621fa3b01434ead73c1ad76af5a35df298cf2" data-href="[% talk_url %]" data-show-faces="false" data-show-count="true" data-width="100"></div>
+                            <div class="fb-like" data-href="http://yapcasia.org/2013/[% talk_url %]" data-layout="button_count" data-send="false" data-width="50" data-show-faces="false"></div>
+                            <g:plusone size="tall" annotation="none" href="http://yapcasia.org/2013/[% talk_url %]"></g:plusone>
+                            <div data-plugins-type="mixi-favorite" data-service-key="c42621fa3b01434ead73c1ad76af5a35df298cf2" data-href="http://yapcasia.org/2013/[% talk_url %]" data-show-faces="false" data-show-count="true" data-width="100"></div>
                             <a href="http://b.hatena.ne.jp/entry/[% talk_url %]" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
 [% IF (talk.status == 'pending') %]
 <div style="margin-top: 1em; color: #999; font-size: 0.8em">
