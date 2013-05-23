@@ -133,11 +133,14 @@ title = loc("Talk Information")
 [% END %]
                     </table>
 
+[% IF (talk.video_url) %]
                     <h4>[% loc("Video") %]</h4>
-                    <div class="video">[% IF 0 && embed_talk_video(talk.video_url); END %]</div>
-
+                    <div class="video">[% embed_talk_video(talk.video_url) %]</div>
+[% END %]
+[% IF (talk.slide_url) %]
                     <h4>[% loc("Slide") %]</h4>
-                    <div class="slide">[% IF 0 && embed_talk_slide(talk.slide_url); END %]</div>
+                    <div class="slide">[% embed_talk_slide(talk.slide_url) %]</div>
+[% END %]
                 </div>
                 
             </div>
