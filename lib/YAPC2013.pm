@@ -166,7 +166,7 @@ EOHTML
                 # truncate to 140 chars
                 substr $text, 0, 140, '';
                 return $text;
-            }),
+            },
             fmt_talk_abstract => Text::Xslate::html_builder(sub {
                 $self->get_talk_abstract($_[0], $scrubber, $markdown);
             }),
