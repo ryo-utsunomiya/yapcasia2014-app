@@ -1,6 +1,6 @@
 (English follows Japanese)
 
-[% member.email %]様
+[% member.nickname || member.email %]様
 
 YAPC::Asia 2013 Tokyoのトークへ応募いただきありがとうございます。
 以下のトーク申し込みを受け付けました。
@@ -28,7 +28,7 @@ YAPC::Asia 2013 Tokyoのトークへ応募いただきありがとうござい�
 
 ====
 
-Dear [% member.email %]
+Dear [% member.nickname || member.email %]
 
 Thank you for submitting the following talk proposal to
 YAPC::Asia Tokyo 2013.
