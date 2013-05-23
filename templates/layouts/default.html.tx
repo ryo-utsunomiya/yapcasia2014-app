@@ -4,6 +4,7 @@
 <html lang="ja" xmlns:og="http://ogp.me/ns#" xmlns:mixi="http://mixi-platform.com/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
 <meta charset="utf-8" />
+<meta property="fb:app_id" content="144267325643659" />
 <meta property="og:title" content="[% og_title || page_title %]"/>
 <meta property="og:type" content="article"/>
 <meta property="og:image" content="[% og_image || "http://yapcasia.org/2013/static/images/footer_character.png" %]" />
