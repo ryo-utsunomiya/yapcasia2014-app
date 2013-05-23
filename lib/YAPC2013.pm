@@ -345,7 +345,6 @@ sub get_member_icon_url {
             }
         } elsif ($authenticated_by eq 'twitter') {
             $url = "http://api.twitter.com/1/users/profile_image/$member->{nickname}";
-warn $url;
             if ($size eq "large") {
                 $url .= "?size=original";
             }
