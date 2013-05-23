@@ -143,9 +143,6 @@ sub setup_xslate {
                 }
                 return $html;
             }),
-            fmt_talk_abstract => Text::Xslate::html_builder(sub {
-                $markdown->markdown( $scrubber->scrub($_[0]) );
-            }),
             fmt_member_icon_url => sub {
                 $self->get_member_icon_url(@_);
             },
