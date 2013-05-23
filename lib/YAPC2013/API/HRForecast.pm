@@ -8,6 +8,8 @@ has 'hf_url' => (is => 'ro');
 
 sub record {
     my ($self, $service, $section, $graph, $count, $epoch) = @_;
+
+    $epoch ||= time();
     my $furl = $self->get('Furl');
     my $url = sprintf
         '%s/api/%s/%s/%s',
