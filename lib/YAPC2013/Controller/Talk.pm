@@ -180,6 +180,7 @@ sub commit {
         my $message;
         {
             local $self->stash->{format} = "eml";
+            local $self->stash->{member} = $member;
             $message = $self->render_partial("talk/thankyou");
         }
 
