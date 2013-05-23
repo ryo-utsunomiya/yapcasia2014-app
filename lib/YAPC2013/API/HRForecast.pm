@@ -1,6 +1,7 @@
 package YAPC2013::API::HRForecast;
 use Moo;
 use POSIX ();
+use URI::Escape ();
 
 with 'YAPC2013::API::WithContainer';
 
@@ -21,7 +22,7 @@ sub record {
     my $content = sprintf
         'number=%d&datetime=%s',
         $count,
-        POSIX::strftime("%Y-%m-%d %H:%M:%S -0900", localtime($epoch))
+        URI::Escape::uri_escape(POSIX::strftime("%Y-%m-%d %H:%M:%S -0900", localtime($epoch)))
     ;
         
     $furl->post($url, [], $content);
