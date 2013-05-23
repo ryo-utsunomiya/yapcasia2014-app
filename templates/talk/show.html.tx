@@ -1,6 +1,6 @@
 [% WRAPPER 'layouts/default.html.tx' WITH
     title = talk.title || talk.title_en,
-    og_description = fmt_talk_abstract_as_og_description(talk)),
+    og_description = fmt_talk_abstract_as_og_description(talk),
 %]
 
 <div id="main">
