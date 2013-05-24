@@ -125,8 +125,8 @@ sub auth_fb {
         my $fb = $self->get('JSON')->decode($h_body);
         my %member = (
             remote_id => $fb->{id},
-            nickname  => $fb->{username},
-            name      => $fb->{name},
+            nickname  => $fb->{username} || $fb->{name} || "No Name",
+            name      => $fb->{name} || $fb->{username} || "No Name",
             authenticated_by => "facebook",
         );
         if ($fb->{email}) {
@@ -207,8 +207,8 @@ sub auth_github {
 
         my %member = (
             remote_id => $gb->{id},
-            nickname  => $gb->{login},
-            name      => $gb->{name},
+            nickname  => $gb->{login} || $gb->{name} || "No name",
+            name      => $gb->{name} || $gb->{login} || "No name",
             authenticated_by => "github",
         );
         if ($gb->{email}) {
