@@ -456,3 +456,6 @@ msgstr "Submit a new talk"
 
 msgid "Menu"
 msgstr "Menu"
+
+msgid "You did not specify a T-shirt size, so you will NOT receive a T-shirt!"
+msgstr "You did not specify a T-shirt size, so you will NOT receive a T-shirt!"

@@ -33,7 +33,7 @@ title = 'Member'
 
 <div class="speaker">
     <div class="icon">[% fmt_member_icon_tag(member) %]</div>
-    <p class="name"><a href="/2013/member/show/[% member.id %]">[% member.name || member.nickname %]</a></p>
+    <p class="name"><a href="/2013/member/show/[% member.id %]">[% member.name || member.nickname %]</a>[% IF (owner) %] ([% member.authenticated_by %])[% END %]</p>
 [% IF (owner) %]
                 <p>(<a href="/2013/logout">logout</a>)</p>
 [% END %]

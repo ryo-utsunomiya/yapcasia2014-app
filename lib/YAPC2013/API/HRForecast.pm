@@ -8,6 +8,8 @@ has 'hf_url' => (is => 'ro');
 
 sub record {
     my ($self, $service, $section, $graph, $count, $epoch) = @_;
+
+    $epoch ||= time();
     my $furl = $self->get('Furl');
     my $url = sprintf
         '%s/api/%s/%s/%s',
@@ -16,13 +18,11 @@ sub record {
         $section,
         $graph,
     ;
-    my $content = sprintf
-        'number=%d&datetime=%s',
-        $count,
-        POSIX::strftime("%Y-%m-%d %H:%M:%S -0900", localtime($epoch))
-    ;
-        
-    $furl->post($url, [], $content);
+
+    $furl->post($url, [], [
+        number => $count, 
+        datetime => POSIX::strftime("%Y-%m-%d", localtime($epoch)),
+    ]);
 }
 
 no Moo;

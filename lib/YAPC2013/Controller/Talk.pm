@@ -33,7 +33,7 @@ sub show {
             }
         }
 
-        my $venue = VENUE_ID->{ $talk->{venue_id} };
+        my $venue = $talk->{venue_id} && VENUE_ID->{ $talk->{venue_id} };
         if ($venue) {
             $talk->{venue} = $venue;
         }
@@ -174,6 +174,24 @@ sub commit {
     delete $data->{start_on_time};
 
     $self->SUPER::commit();
+
+    if (! $data->{is_edit}) {
+        # all done, send a notification
+        my $message;
+        {
+            local $self->stash->{format} = "eml";
+            local $self->stash->{member} = $member;
+            $message = $self->render_partial("talk/thankyou");
+        }
+
+        $self->get('API::Email')->send_email({
+            to      => $member->{email},
+            subject => "[YAPC::Asia Tokyho 2013] Thank you for your talk submission!",
+            message => $message->to_string,
+        });
+    }
+
+    $self->stash(template => "talk/commit");
 }
 
 1;

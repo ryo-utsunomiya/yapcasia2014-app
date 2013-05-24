@@ -1,5 +1,6 @@
 [% WRAPPER 'layouts/default.html.tx' WITH
-title = loc("Talk Information")
+    title = talk.title || talk.title_en,
+    og_description = fmt_talk_abstract_as_og_description(talk),
 %]
 
 <div id="main">
@@ -33,7 +34,7 @@ title = loc("Talk Information")
 <!--
     .speaker { float: left }
     .speaker .icon img { width: 50px; height: 50px }
-    .speaker .data { width: 50px }
+    .speaker .data { width: 100px }
     #container #main-contents .posts 
     .speaker .data .name { word-wrap: break-word; font-size: 0.8em;}
 -->
@@ -42,7 +43,7 @@ title = loc("Talk Information")
 <div class="speaker">
     <div class="icon">[% fmt_member_icon_tag(speaker) %]</div>
     <div class="data">
-       <p class="name"><a href="/2013/member/show/[% speaker.id %]">[% speaker.name || speacker.nickname %]</a></p>
+       <p class="name"><a href="/2013/member/show/[% speaker.id %]">[% speaker.name || speaker.nickname %]</a></p>
        <p><a href="/2013/talk/edit/[% talk.id %][% IF (talk.duration == 5) %]?lt=1[% END %]">[% loc("Edit Talk") %]</a></p>
 [% IF (owner || member.is_admin) %]
         <p><a id="talk-delete" href="/2013/talk/delete/[% talk.id %]">[% loc("Delete Talk") %]</a></p>
@@ -51,9 +52,6 @@ title = loc("Talk Information")
 </div>
 
                 <div style="margin-left: 100px">
-[% IF (talk.status != 'accepted') %]
-<div style="color: #f00; text-align: center; font-weight: bold">[% loc("This talk is currently in '[_1]' state", loc(talk.status)) %]</div>
-[% END %]
                     <h4>[% loc("Talk Title") %]</h4>
 [%- SET talk_title = "" -%]
 [%- IF (member.is_admin || owner || talk.duration != 5 || talk.lt_visible) %]
@@ -64,29 +62,30 @@ title = loc("Talk Information")
                     <div style="margin-bottom: 1em; margin-left: 1em; font-weight: bold">
                     [% talk_title %]
                     </div>
-                    <h4>[% loc("Abstract") %]</h4>
-                    <table>
-                    <tr>
-                        <td width="400" valign="top">
-[% IF (talk.profile_url) %]
-                            <img src="/2012/photo/crop?maxwidth=150&url=[% talk.profile_url %]" width="150" height="150" style="float: left; margin-bottom: 1em; margin-right: 1em;" />
+[% IF (talk.status != 'accepted') %]
+                    <div style="color: #f00; text-align: center; font-weight: bold">[% loc("This talk is currently in '[_1]' state", loc(talk.status)) %]</div>
 [% END %]
-                            <div class="abstract">
-[% IF (member.is_admin || owner || talk.duration != 5 || talk.lt_visible) %][% fmt_talk_abstract(talk) %][% ELSE %]Lightning Talk[% END %]</div>
-                        </td>
-                        <td width="90" style="padding: 5px" valign="top">
-                            <div class="fb-like" data-href="[% talk_url %]" data-layout="button_count" data-send="false" data-width="50" data-show-faces="false"></div>
-                            <g:plusone size="tall" annotation="none" href="[% talk_url %]"></g:plusone>
-                            <div data-plugins-type="mixi-favorite" data-service-key="c42621fa3b01434ead73c1ad76af5a35df298cf2" data-href="[% talk_url %]" data-show-faces="false" data-show-count="true" data-width="100"></div>
-                            <a href="http://b.hatena.ne.jp/entry/[% talk_url %]" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
 [% IF (talk.status == 'pending') %]
-<div style="margin-top: 1em; color: #999; font-size: 0.8em">
-[% loc("Currently this talk is in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons above to express  your interest!") %]
-</div>
+                    <div style="margin-top: 1em; color: #999; font-size: 0.8em">
+                        [% loc("Currently this talk is in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons above to express  your interest!") %]
+                    </div>
 [% END %]
-                        </td>
-                    </tr>
-                    </table>
+                    <div class="social-btns">
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="yapcasia" data-count="vertical">Tweet</a>
+                        <span style="height: 90px; width: 50px; vertical-align:top; display: inline-block"><div class="fb-like" data-send="false" data-layout="box_count" data-width="50" data-show-faces="false" data-font="verdana"></div></span>
+                        <g:plusone size="tall"></g:plusone>
+                        <div data-plugins-type="mixi-favorite" data-service-key="c42621fa3b01434ead73c1ad76af5a35df298cf2" data-size="large" data-href="" data-show-faces="false" data-show-count="true" data-show-comment="true" data-width=""></div>
+                        <a href="#" class="hatena-bookmark-button" data-hatena-bookmark-layout="vertical" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+                    </div><!-- social-btns -->
+
+                    <h4>[% loc("Abstract") %]</h4>
+                    <div class="abstract-container">
+[% IF (talk.profile_url) %]
+                        <img src="/2012/photo/crop?maxwidth=150&url=[% talk.profile_url %]" width="150" height="150" style="float: left; margin-bottom: 1em; margin-right: 1em;" />
+[% END %]
+                        <div class="abstract">
+[% IF (member.is_admin || owner || talk.duration != 5 || talk.lt_visible) %][% fmt_talk_abstract(talk) %][% ELSE %]Lightning Talk[% END %]</div>
+                    </div><!-- abstract-container -->
 
                     <h4>[% loc("Talk Details") %]</h4>
                     <table class="table">
@@ -96,7 +95,7 @@ title = loc("Talk Information")
                     </tr>
                     <tr>
                         <td>[% loc("Starts On") %]</td>
-                        <td>[% IF (talk.start_on) %][% talk.start_on%][% ELSE %]TBD[% END %]</td>
+                        <td>[% IF (talk.start_on && talk.start_on != '0000-00-00 00:00:00') %][% talk.start_on%][% ELSE %]TBD[% END %]</td>
                     </tr>
 [% IF (talk.duration != 5) %]
                     <tr>
@@ -135,11 +134,14 @@ title = loc("Talk Information")
 [% END %]
                     </table>
 
+[% IF (talk.video_url) %]
                     <h4>[% loc("Video") %]</h4>
-                    <div class="video">[% IF 0 && embed_talk_video(talk.video_url); END %]</div>
-
+                    <div class="video">[% embed_talk_video(talk.video_url) %]</div>
+[% END %]
+[% IF (talk.slide_url) %]
                     <h4>[% loc("Slide") %]</h4>
-                    <div class="slide">[% IF 0 && embed_talk_slide(talk.slide_url); END %]</div>
+                    <div class="slide">[% embed_talk_slide(talk.slide_url) %]</div>
+[% END %]
                 </div>
                 
             </div>

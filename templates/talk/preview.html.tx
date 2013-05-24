@@ -15,14 +15,12 @@ title = loc("Please verify your submission")
         <div class="entry">
             <div class="entry-contents">
                 <table class="table">
+[% IF (is_edit) %]
                 <tr>
                     <td>ID</td>
-[% IF (is_edit) %]
                     <td><a href="/2012/talk/[% talk.id %]">[% talk.id %]</a></td>
-[% ELSE %]
-                    <td>[% loc("New Submission") %]</td>
-[% END %]
                 </tr>
+[% END %]
                 <tr>
                     <td>[% loc("Talk Title (Japanese)") %]</td>
                     <td>[% talk.title %]</td>
@@ -44,7 +42,7 @@ title = loc("Please verify your submission")
 [% IF (talk.duration != 5) %]
                 <tr>
                     <td>[% loc("T-shirt Size") %]</td>
-                    <td>[% loc(talk.tshirt_size) %]</td>
+                    <td>[% loc(talk.tshirt_size) %][% IF(talk.tshirt_size == 'none') %] - <strong>[% loc("You did not specify a T-shirt size, so you will NOT receive a T-shirt!") %]</strong>[% END %]</td>
                 </tr>
                 <tr>
                     <td>[% loc("Talk Category") %]</td>
@@ -90,11 +88,11 @@ title = loc("Please verify your submission")
                 </tr>
 
                 <tr>
-                    <td>[% loc("Photography") %]</td>
+                    <td>[% loc("May we take your photo?") %]</td>
                     <td>[% loc(talk.photo_permission) %]</td>
                 </tr>
                 <tr>
-                    <td>[% loc("Video Photography") %]</td>
+                    <td>[% loc("May we record your talk?") %]</td>
                     <td>[% loc(talk.video_permission) %]</td>
                 </tr>
 

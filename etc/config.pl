@@ -26,5 +26,8 @@
     },
     FormValidator => {
         file => app->home->rel_file( "etc/profiles.pl" )
+    },
+    'API::HRForecast' => {
+        hf_url => "http://127.0.0.1:5127"
     }
 }

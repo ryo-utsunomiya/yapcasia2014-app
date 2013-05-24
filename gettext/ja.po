@@ -441,3 +441,6 @@ msgstr "新しいトークを登録する"
 
 msgid "Menu"
 msgstr "メニュー"
+
+msgid "You did not specify a T-shirt size, so you will NOT receive a T-shirt!"
+msgstr "Tシャツサイズを指定しないとTシャツを受け取れませんのでご注意ください！"

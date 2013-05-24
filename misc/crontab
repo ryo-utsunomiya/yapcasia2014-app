@@ -1,0 +1,1 @@
+0 6 * * * root /var/lib/jpa/yapcasia.org/yapcasia2013-app/script/carton.sh ./script/hf_talks

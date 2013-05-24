@@ -1,24 +1,24 @@
+[%- SET page_title = "YAPC::Asia Tokyo 2013" -%]
+[%- IF (title) -%][% SET page_title = title _ " - " _ page_title %][% END -%]
 <!DOCTYPE html>
 <html lang="ja" xmlns:og="http://ogp.me/ns#" xmlns:mixi="http://mixi-platform.com/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
 <meta charset="utf-8" />
-<meta property="og:title" content="YAPC::Asia Tokyo 2013"/>
+<meta property="fb:app_id" content="144267325643659" />
+<meta property="og:title" content="[% og_title || page_title %]"/>
 <meta property="og:type" content="article"/>
-
-
-<meta property="og:image" content="http://yapcasia.org/2013/static/images/footer_character.png" />
+<meta property="og:image" content="[% og_image || "http://yapcasia.org/2013/static/images/footer_character.png" %]" />
 <meta property="og:site_name" content="YAPC::Asia TOKYO 2013"/>
 
-<meta property="og:description" content="エンジニアのエンジニアによるエンジニアのためのお祭り YAPC::Asia Tokyo 2013 今秋開催決定！" />
+<meta property="og:description" content="[% og_description || "エンジニアのエンジニアによるエンジニアのためのお祭り YAPC::Asia Tokyo 2013 今秋開催決定！" %]" />
 
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@yapcasia">
 
-<title>[% title %] - YAPC::Asia Tokyo 2013</title>
-<meta name="description" content="エンジニアのエンジニアによるエンジニアのためのお祭り YAPC::Asia Tokyo 2013 今秋開催決定！">
+<title>[% page_title %]</title>
 <meta name="keywords" content="YAPC::Asia,YAPC,ヤプシー,Perl,PM,Japan Perl Association,JPA">
-<meta name="author" content="Dausuke Maki">
+<meta name="author" content="Japan Perl Association">
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1 , maximum-scale=1">
 <link rel="shortcut icon" href="http://yapcasia.org/2013/static/images/favicon.ico">
 <link rel="stylesheet" href="http://yapcasia.org/2013/static/css/style.css">
