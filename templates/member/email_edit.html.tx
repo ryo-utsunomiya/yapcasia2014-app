@@ -28,7 +28,7 @@ title = loc("Register Your Email Address")
     </p>
   [% END %]
   <input type="text" name="email" value="" class="input-large" />
-  <input type="submit" value="hoge" class="button button-info">
+  <input type="submit" class="button button-info">
 </form>
 
 </div><!--  / .body /  -->
