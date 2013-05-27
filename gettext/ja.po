@@ -450,3 +450,6 @@ msgstr "以下のトークは現在「保留中」です。 もしあなたが�
 
 msgid "Of course, if you have something more creative than this, or something that you're passionate about that you want to share, that's usually the best choice! Don't hesitate, you can send in as many proposals as you want"
 msgstr "もちろん上記にあてはまらないものなどでも「これについて喋りたい！」という熱意があればそれが一番です。応募は何個でもできますので、恐れずに好きなテーマで応募してみてください！"
+
+msgid "Also, while this is a Perl event, it is 100% OKAY to talk about subject matter that doesn't focus on Perl. In previous years, people have talked about PHP, Python, Ruby, etc. Just make it interesting, and please utter the word 'Perl' a couple of times during your presentation."
+msgstr "なおYAPCはPerlのイベントではありますが、応募されるトークはPerlをメインに据えない話でも結構です。過去にはPHP, Python, Ruby等様々な技術に関しての発表が行われてきました。運営からお願いするのは技術者が楽しめるトークにしてもらうことと、トーク中に「Perl」という言葉を数回交えていただきたい、ということだけです！"
