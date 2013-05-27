@@ -93,7 +93,17 @@ title = 'Talks'
         <div class="entry">
             <div class="entry-contents">
 
+<h2>[% loc("We're Currently Accepting Talk Proposals!") %]</h2>
 
+<p>[% loc("There's no better way to enjoy YAPC::Asia Tokyo than to be a speaker yourself! We're currently accepting talk proposals (due Jun 30 JST). Share your passion about Perl, or anything else that you want!") %]</p>
+<p>[% loc("Even if this is your first time, don't hesitate! Don't worry, you will most likely not be talking to the entire YAPC attendee. The smallest room is for 60 people or so.") %]</p>
+<p>[% loc("Also, while this is a Perl event, it is 100% OKAY to talk about subject matter that doesn't focus on Perl. In previous years, people have talked about PHP, Python, Ruby, etc. Just make it interesting, and please utter the word 'Perl' a couple of times during your presentation.") %]</p>
+
+<div style="text-align: center; font-size: 3em; font-weight: bold">
+    <a href="/2013/talk/input">[% loc("Submit You Talk HERE!") %]</a>
+</div>
+
+<hr noshade="noshade" />
 <h3>[% loc("Pending Talks") %] ([% applied_talks.size() %])</h3>
 <p>[% loc("Currently these talks are in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons on each page to express your interest!") %]</p>
 [% FOREACH talk IN applied_talks %]

@@ -462,3 +462,22 @@ msgstr "You did not specify a T-shirt size, so you will NOT receive a T-shirt!"
 
 msgid "Currently these talks are in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons on each page to express your interest!"
 msgstr "Currently these talks are in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons on each page to express your interest!"
+
+msgid "Of course, if you have something more creative than this, or something that you're passionate about that you want to share, that's usually the best choice! Don't hesitate, you can send in as many proposals as you want"
+msgstr "Of course, if you have something more creative than this, or something that you're passionate about that you want to share, that's usually the best choice! Don't hesitate, you can send in as many proposals as you want"
+
+msgid "Also, while this is a Perl event, it is 100% OKAY to talk about subject matter that doesn't focus on Perl. In previous years, people have talked about PHP, Python, Ruby, etc. Just make it interesting, and please utter the word 'Perl' a couple of times during your presentation."
+msgstr "Also, while this is a Perl event, it is 100% OKAY to talk about subject matter that doesn't focus on Perl. In previous years, people have talked about PHP, Python, Ruby, etc. Just make it interesting, and please utter the word 'Perl' a couple of times during your presentation."
+
+msgid "We're Currently Accepting Talk Proposals!"
+msgstr  "We're Currently Accepting Talk Proposals!"
+
+msgid "There's no better way to enjoy YAPC::Asia Tokyo than to be a speaker yourself! We're currently accepting talk proposals (due Jun 30 JST). Share your passion about Perl, or anything else that you want!"
+msgstr "There's no better way to enjoy YAPC::Asia Tokyo than to be a speaker yourself! We're currently accepting talk proposals (due Jun 30 JST). Share your passion about Perl, or anything else that you want!"
+
+msgid "Even if this is your first time, don't hesitate! Don't worry, you will most likely not be talking to the entire YAPC attendee. The smallest room is for 60 people or so."
+msgstr "Even if this is your first time, don't hesitate! Don't worry, you will most likely not be talking to the entire YAPC attendee. The smallest room is for 60 people or so."
+
+msgid "Submit You Talk HERE!"
+msgstr "Submit You Talk HERE!"
+

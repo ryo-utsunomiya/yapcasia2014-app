@@ -447,3 +447,21 @@ msgstr "Tシャツサイズを指定しないとTシャツを受け取れませ�
 
 msgid "Currently these talks are in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons on each page to express your interest!"
 msgstr "以下のトークは現在「保留中」です。 もしあなたが「これは是非YAPCで見たい！」と思ったら、各トークページ内のソーシャルメディアボタンを押して応援してみてください。選考の際に参考にさせていただきます"
+
+msgid "Of course, if you have something more creative than this, or something that you're passionate about that you want to share, that's usually the best choice! Don't hesitate, you can send in as many proposals as you want"
+msgstr "もちろん上記にあてはまらないものなどでも「これについて喋りたい！」という熱意があればそれが一番です。応募は何個でもできますので、恐れずに好きなテーマで応募してみてください！"
+
+msgid "Also, while this is a Perl event, it is 100% OKAY to talk about subject matter that doesn't focus on Perl. In previous years, people have talked about PHP, Python, Ruby, etc. Just make it interesting, and please utter the word 'Perl' a couple of times during your presentation."
+msgstr "なおYAPCはPerlのイベントではありますが、応募されるトークはPerlをメインに据えない話でも結構です。過去にはPHP, Python, Ruby等様々な技術に関しての発表が行われてきました。運営からお願いするのは技術者が楽しめるトークにしてもらうことと、トーク中に「Perl」という言葉を数回交えていただきたい、ということだけです！"
+
+msgid "We're Currently Accepting Talk Proposals!"
+msgstr "皆様のトーク応募をお待ちしております！"
+
+msgid "There's no better way to enjoy YAPC::Asia Tokyo than to be a speaker yourself! We're currently accepting talk proposals (due Jun 30 JST). Share your passion about Perl, or anything else that you want!"
+msgstr "YAPC::Asia Tokyoを100%楽しむためにはスピーカーになるのがベストです！現在6/30までトークを絶賛受付中です。Perl関連の技術や想い、もしくはそれ以外の全く違う奇想天外な話でもかまいません、是非この機会に皆さんとシェアしませんか？"
+
+msgid "Even if this is your first time, don't hesitate! Don't worry, you will most likely not be talking to the entire YAPC attendee. The smallest room is for 60 people or so."
+msgstr "これまでYAPCで登壇したことがない方も歓迎です！小さめの部屋もありますので、初心の方も大歓迎です"
+
+msgid "Submit You Talk HERE!"
+msgstr "応募はこちらから！"
