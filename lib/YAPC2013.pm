@@ -119,6 +119,7 @@ sub setup_xslate {
     my $fif = HTML::FillInForm::Lite->new();
     my $markdown = $self->get('Markdown');
     my $scrubber = $self->get('Scrubber');
+    my $oembed = $self->get('API::OEmbed');
     $renderer->add_handler(tx => YAPC2013::Renderer->build(
         app => $self,
         syntax => "TTerse",
@@ -129,12 +130,41 @@ sub setup_xslate {
                 my $dumper = Dumper @_;
                 return "<pre>" . $dumper . "</pre>";
             },
-            #loc => sub {
-            #    $self->loc(@_);
-            #},
             loc => Text::Xslate::html_builder(sub {
                     $loc->localize(@_);
             } ),
+            embed_talk_video => Text::Xslate::html_builder(sub {
+                my $url = shift;
+                if (! $url) {
+                    return $loc->localize("No video available");
+                }
+                $url = URI->new($url);
+                if ($url->host =~ /youtube\.com$/) {
+                    my $oembed_url = URI->new( "http://www.youtube.com/oembed" );
+                    $oembed_url->query_form(
+                        url => $url,
+                        format => "json",
+                    );
+                    return $oembed->html_for( $oembed_url );
+                }
+                return $url;
+            }),
+            embed_talk_slide => Text::Xslate::html_builder(sub {
+                my $url = shift;
+                if (! $url) {
+                    return $loc->localize("No slides available");
+                }
+                 $url = URI->new($url);
+                if ($url->host =~ /slideshare\.net$/) {
+                    my $oembed_url = URI->new( "http://www.slideshare.net/api/oembed/2" ); 
+                    $oembed_url->query_form(
+                        url => $url,
+                        format => "json",
+                    );
+                     return $oembed->html_for( $oembed_url );
+                }
+                return $url;
+            }),
             fillinform => Text::Xslate::html_builder(sub {
                 my $html =  shift;
                 if ( my $fill = Text::Xslate->current_vars->{fif} ){
