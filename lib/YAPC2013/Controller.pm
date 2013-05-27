@@ -15,7 +15,7 @@ sub assert_email {
     }
 
     if (! $member->{email}) {
-        $self->redirect_to($self->url_for("/2012/member/email_edit"));
+        $self->redirect_to($self->url_for("/2013/member/email_edit"));
         return;
     }
     return $member;
