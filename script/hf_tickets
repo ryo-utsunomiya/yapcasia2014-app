@@ -1,0 +1,23 @@
+#!/usr/bin/env perl
+# Record
+#   * Number of tickets sold for each ticket type
+use strict;
+use Encode qw(decode_utf8);
+use YAPC2013;
+use JSON;
+
+my $app = YAPC2013->new;
+
+my $hf_api = $app->container->get('API::HRForecast');
+
+my %event2id = (
+    sponsor => 11777,
+    sponsor_en => 11779,
+);
+foreach my $event (keys %event2id) {
+    my $id = $event2id{$event};
+    my $json = `$^X ./script/fetch_csv $id`;
+    my $data = JSON::decode_json($json);
+    my $count = scalar keys %$data;
+    $hf_api->record("yapcasia2013", "ticket", $event, $count);
+}
