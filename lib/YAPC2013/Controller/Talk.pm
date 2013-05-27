@@ -2,6 +2,10 @@ package YAPC2013::Controller::Talk;
 use Mojo::Base 'YAPC2013::Controller::CRUD';
 use YAPC2013::Constants;
 
+sub index {
+    $_[0]->redirect_to("http://yapcasia.org/2013/talk/list");
+}
+
 sub list {
     my $self = shift;
 
