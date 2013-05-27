@@ -27,7 +27,7 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
                 <li>[% loc("Know-how (Maintaining and working on legacy systems, Development Methods, Testing, etc)") %]</li>
             </ul>
             <p>[% loc("Of course, if you have something more creative than this, or something that you're passionate about that you want to share, that's usually the best choice! Don't hesitate, you can send in as many proposals as you want") %]</p>
-            <p>[% loc("Also, while this is a Perl event, it is 100% OKAY to talk about subject matter that doesn't focus on Perl. In previous years, people have talked about PHP, Pyhthon, Ruby, etc. Just make it interesting, and please utter the word 'Perl' a couple of times during your presentation. ") %]</p>
+            <p>[% loc("Also, while this is a Perl event, it is 100% OKAY to talk about subject matter that doesn't focus on Perl. In previous years, people have talked about PHP, Python, Ruby, etc. Just make it interesting, and please utter the word 'Perl' a couple of times during your presentation. ") %]</p>
 
 [% FILTER fillinform %]
                 <form action="/2013/talk/check" method="post" class="form-horizontal">
