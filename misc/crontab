@@ -1,2 +1,2 @@
-0 6 * * * root /var/lib/jpa/yapcasia.org/yapcasia2013-app/script/carton.sh ./script/hf_talks
-5 6 * * * root /var/lib/jpa/yapcasia.org/yapcasia2013-app/script/carton.sh ./script/hf_tickets
+*/15 * * * * root /var/lib/jpa/yapcasia.org/yapcasia2013-app/script/carton.sh ./script/hf_talks
+*/15 * * * * root /var/lib/jpa/yapcasia.org/yapcasia2013-app/script/carton.sh ./script/hf_tickets
