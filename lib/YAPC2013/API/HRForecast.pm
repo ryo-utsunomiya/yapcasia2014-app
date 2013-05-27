@@ -21,7 +21,7 @@ sub record {
 
     $furl->post($url, [], [
         number => $count, 
-        datetime => POSIX::strftime("%Y-%m-%d", localtime($epoch)),
+        datetime => POSIX::strftime("%Y-%m-%d %H:%M", localtime($epoch)),
     ]);
 }
 
