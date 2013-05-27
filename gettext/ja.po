@@ -444,3 +444,6 @@ msgstr "メニュー"
 
 msgid "You did not specify a T-shirt size, so you will NOT receive a T-shirt!"
 msgstr "Tシャツサイズを指定しないとTシャツを受け取れませんのでご注意ください！"
+
+msgid "Currently these talks are in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons on each page to express your interest!"
+msgstr "以下のトークは現在「保留中」です。 もしあなたが「これは是非YAPCで見たい！」と思ったら、各トークページ内のソーシャルメディアボタンを押して応援してみてください。選考の際に参考にさせていただきます"

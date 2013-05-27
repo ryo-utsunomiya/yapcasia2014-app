@@ -459,3 +459,6 @@ msgstr "Menu"
 
 msgid "You did not specify a T-shirt size, so you will NOT receive a T-shirt!"
 msgstr "You did not specify a T-shirt size, so you will NOT receive a T-shirt!"
+
+msgid "Currently these talks are in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons on each page to express your interest!"
+msgstr "Currently these talks are in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons on each page to express your interest!"
