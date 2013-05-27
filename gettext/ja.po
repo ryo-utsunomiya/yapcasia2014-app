@@ -454,6 +454,9 @@ msgstr "もちろん上記にあてはまらないものなどでも「これに
 msgid "Also, while this is a Perl event, it is 100% OKAY to talk about subject matter that doesn't focus on Perl. In previous years, people have talked about PHP, Python, Ruby, etc. Just make it interesting, and please utter the word 'Perl' a couple of times during your presentation."
 msgstr "なおYAPCはPerlのイベントではありますが、応募されるトークはPerlをメインに据えない話でも結構です。過去にはPHP, Python, Ruby等様々な技術に関しての発表が行われてきました。運営からお願いするのは技術者が楽しめるトークにしてもらうことと、トーク中に「Perl」という言葉を数回交えていただきたい、ということだけです！"
 
+msgid "We're Currently Accepting Talk Proposals!"
+msgstr "皆様のトーク応募をお待ちしております！"
+
 msgid "There's no better way to enjoy YAPC::Asia Tokyo than to be a speaker yourself! We're currently accepting talk proposals (due Jun 30 JST). Share your passion about Perl, or anything else that you want!"
 msgstr "YAPC::Asia Tokyoを100%楽しむためにはスピーカーになるのがベストです！現在6/30までトークを絶賛受付中です。Perl関連の技術や想い、もしくはそれ以外の全く違う奇想天外な話でもかまいません、是非この機会に皆さんとシェアしませんか？"
 
