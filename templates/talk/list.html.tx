@@ -103,7 +103,7 @@ title = 'Talks'
     <a href="/2013/talk/input">[% loc("Submit You Talk HERE!") %]</a>
 </div>
 
-
+<hr noshade="noshade" />
 <h3>[% loc("Pending Talks") %] ([% applied_talks.size() %])</h3>
 <p>[% loc("Currently these talks are in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons on each page to express your interest!") %]</p>
 [% FOREACH talk IN applied_talks %]
