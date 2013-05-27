@@ -319,8 +319,8 @@ msgstr "Talk Status"
 msgid "Talks below are still being considered for YAPC::Asia Tokyo 2012. If you are interested in seeing at the event, please consider expressing your interest using one of the social media buttons, so we can take it into consideration"
 msgstr "Talks below are still being considered for YAPC::Asia Tokyo 2012. If you are interested in seeing at the event, please consider expressing your interest using one of the social media buttons, so we can take it into consideration"
 
-msgid "Currently this talk is in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons above to express  your interest!"
-msgstr "Currently this talk is in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons above to express  your interest!"
+msgid "Currently this talk is in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons below to express  your interest!"
+msgstr "Currently this talk is in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons below to express  your interest!"
 
 msgid "Talk Information"
 msgstr "Talk Information"

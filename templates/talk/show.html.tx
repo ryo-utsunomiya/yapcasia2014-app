@@ -67,7 +67,7 @@
 [% END %]
 [% IF (talk.status == 'pending') %]
                     <div style="margin-top: 1em; font-size: 0.8em">
-                        [% loc("Currently this talk is in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons above to express  your interest!") %]
+                        [% loc("Currently this talk is in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons below to express  your interest!") %]
                     </div>
 [% END %]
                     <div class="social-btns">
