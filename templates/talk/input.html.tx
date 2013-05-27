@@ -26,6 +26,7 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
                 <li>[% loc("Perl Use Cases (Large scale, \"unique\" cases, big data, PDL, etc)") %]</li>
                 <li>[% loc("Know-how (Maintaining and working on legacy systems, Development Methods, Testing, etc)") %]</li>
             </ul>
+            <p>[% loc("Of course, if you have something more creative than this, or something that you're passionate about that you want to share, that's usually the best choice! Don't hesitate, you can send in as many proposals as you want") %]</p>
 
 [% FILTER fillinform %]
                 <form action="/2013/talk/check" method="post" class="form-horizontal">

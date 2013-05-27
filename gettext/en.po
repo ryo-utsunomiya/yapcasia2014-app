@@ -462,3 +462,8 @@ msgstr "You did not specify a T-shirt size, so you will NOT receive a T-shirt!"
 
 msgid "Currently these talks are in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons on each page to express your interest!"
 msgstr "Currently these talks are in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons on each page to express your interest!"
+
+msgid "Of course, if you have something more creative than this, or something that you're passionate about that you want to share, that's usually the best choice! Don't hesitate, you can send in as many proposals as you want"
+msgstr "Of course, if you have something more creative than this, or something that you're passionate about that you want to share, that's usually the best choice! Don't hesitate, you can send in as many proposals as you want"
+
+

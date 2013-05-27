@@ -447,3 +447,6 @@ msgstr "Tシャツサイズを指定しないとTシャツを受け取れませ�
 
 msgid "Currently these talks are in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons on each page to express your interest!"
 msgstr "以下のトークは現在「保留中」です。 もしあなたが「これは是非YAPCで見たい！」と思ったら、各トークページ内のソーシャルメディアボタンを押して応援してみてください。選考の際に参考にさせていただきます"
+
+msgid "Of course, if you have something more creative than this, or something that you're passionate about that you want to share, that's usually the best choice! Don't hesitate, you can send in as many proposals as you want"
+msgstr "もちろん上記にあてはまらないものなどでも「これについて喋りたい！」という熱意があればそれが一番です。応募は何個でもできますので、恐れずに好きなテーマで応募してみてください！"
