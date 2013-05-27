@@ -463,3 +463,5 @@ msgstr "YAPC::Asia Tokyoを100%楽しむためにはスピーカーになるの�
 msgid "Even if this is your first time, don't hesitate! Don't worry, you will most likely not be talking to the entire YAPC attendee. The smallest room is for 60 people or so."
 msgstr "これまでYAPCで登壇したことがない方も歓迎です！小さめの部屋もありますので、初心の方も大歓迎です"
 
+msgid "Submit You Talk HERE!"
+msgstr "応募はこちらから！"

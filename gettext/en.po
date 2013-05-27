@@ -478,3 +478,6 @@ msgstr "There's no better way to enjoy YAPC::Asia Tokyo than to be a speaker you
 msgid "Even if this is your first time, don't hesitate! Don't worry, you will most likely not be talking to the entire YAPC attendee. The smallest room is for 60 people or so."
 msgstr "Even if this is your first time, don't hesitate! Don't worry, you will most likely not be talking to the entire YAPC attendee. The smallest room is for 60 people or so."
 
+msgid "Submit You Talk HERE!"
+msgstr "Submit You Talk HERE!"
+
