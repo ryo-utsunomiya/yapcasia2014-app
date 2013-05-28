@@ -48,9 +48,10 @@ sub get_event_data {
             next if $. == 1;
             $tickets{$row->[0]} = {
                 ticket_type => $row->[3],
+                ticket_count => $row->[4],
                 twitter_id => $row->[6],
                 tshirt_size => $row->[8],
-                vote_id => $row->[5],
+                vote_id => [ split /\s*,\s*/, $row->[5] ],
             };
         }
     }
