@@ -6,7 +6,7 @@ use LWP::UserAgent;
 use Text::CSV_XS;
 
 sub get_event_data {
-    my $event = shift;
+    my $event_id = shift;
     my $login_url = "http://peatix.com/signin";
     my $csv_url = "http://peatix.com/event/$event_id/form_results/csv";
     my $event_url = "http://peatix.com/event/$event_id";
