@@ -1,0 +1,100 @@
+#!/usr/bin/env perl
+use strict;
+use utf8;
+use Getopt::Long;
+use LWP::UserAgent;
+use Text::CSV_XS;
+
+sub get_event_data {
+    my $event = shift;
+    my $login_url = "http://peatix.com/signin";
+    my $csv_url = "http://peatix.com/event/$event_id/form_results/csv";
+    my $event_url = "http://peatix.com/event/$event_id";
+    my $attendee_url = "http://peatix.com/event/$event_id/download_attendances";
+    my $ua = LWP::UserAgent->new(
+        parse_head => 0,
+        cookie_jar => {},
+    );
+
+    my $res;
+    {
+        # please give me a cookie
+        $res = $ua->get($event_url);
+        if (! $res->is_success) {
+            die $res->as_string;
+        }
+    }
+
+    {
+        $res = $ua->post($login_url, [
+            # Q: なんでこのフィールド空なの？configからもってきてないの？
+            # A: 一応お金が絡むところなのでレポジトリとかにいれたくない！
+            #    本番ローカルでとりあえず変更しちゃってる。コミットすんなよ！
+            username => '',
+            password => '',
+            signin_Peatix => 'ログイン',
+        ]);
+        if (! $res->is_success) {
+            die $res->as_string;
+        }
+    }
+
+    my %tickets;
+    {
+        $res = $ua->get($attendee_url);
+        open my $io, "<:encoding(utf8)", \$res->decoded_content or die;
+        my $csv = Text::CSV_XS->new({ binary => 1});
+        while (my $row = $csv->getline($io)) {
+            next if $. == 1;
+            $tickets{$row->[0]} = {
+                ticket_type => $row->[3],
+                twitter_id => $row->[6],
+                tshirt_size => $row->[8],
+                vote_id => $row->[5],
+            };
+        }
+    }
+
+    return \%tickets;
+}
+
+sub getopts {
+    my %opts = (
+        format => 'json'
+    );
+    my $p = Getopt::Long::Parser->new;
+    $p->configure(qw(
+        posix_default
+        no_ignore_case
+        auto_help
+    ));
+    my @optspec = qw(
+        format=s
+    );
+    if (! $p->getoptions(\%opts, @optspec)) {
+        print STDERR "Failed to parse options\n";
+        exit 1;
+    }
+
+    return \%opts;
+}
+
+sub main {
+    my $opts = getopts();
+    my $event_id = shift @ARGV;
+
+    my $tickets = get_event_data($event_id);
+    my %formats = (
+        json => sub {
+            require JSON;
+            print JSON::encode_json(@_);
+        },
+        dumper => sub {
+            require Data::Dumper;
+            print Data::Dumper::Dumper(@_);
+        },
+    );
+
+    my $serializer = $formats{ $opts->{format} };
+    $serializer->($tickets);
+}
