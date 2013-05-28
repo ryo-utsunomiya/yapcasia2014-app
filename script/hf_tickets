@@ -18,6 +18,9 @@ foreach my $event (keys %event2id) {
     my $id = $event2id{$event};
     my $json = `$^X ./script/fetch_csv $id`;
     my $data = JSON::decode_json($json);
-    my $count = scalar keys %$data;
+    my $count = 0;
+    foreach my $key (keys %$data) {
+        $count += $data->{$key}->{ticket_count};
+    }
     $hf_api->record("yapcasia2013", "ticket", $event, $count);
 }
