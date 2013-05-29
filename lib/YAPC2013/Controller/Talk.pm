@@ -193,6 +193,16 @@ sub commit {
             subject => "[YAPC::Asia Tokyho 2013] Thank you for your talk submission!",
             message => $message->to_string,
         });
+
+        my $talk = $self->stash->{talk};
+        $self->get('API::Twitter')->post(
+            sprintf(
+                "New talk submitted%s! '%s' %s #yapcasia",
+                $member->{nickname} ? " by $member->{nickname}" : "",
+                $talk->{title} || $talk->{title_en},
+                "http://yapcasia.org/2013/talk/show/$talk->{id}",
+            )
+        );
     }
 
     $self->stash(template => "talk/commit");

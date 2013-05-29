@@ -33,3 +33,4 @@ requires 'Locale::Maketext::Lexicon';
 requires 'HTML::FillInForm::Lite';
 requires 'Data::Recursive::Encode';
 requires 'IO::Socket::SSL';
+requires 'Net::Twitter::Lite' => '0.12004';
