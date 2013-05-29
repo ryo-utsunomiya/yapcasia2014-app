@@ -7,7 +7,8 @@ use OAuth::Lite::Consumer;
 sub index {
     my $self = shift;
 
-    $self->render( hoge => 'test');
+    my $error = $self->req->param('error');
+    $self->render( error => $error );
 }
 
 sub login {
@@ -26,6 +27,12 @@ sub auth_twitter {
 
     my $config = $self->app->config;
     my $verifier = $self->req->param('oauth_verifier');
+
+    if ( my $denied = $self->req->param('denied') ){
+        $self->redirect_to( "/2013/login?error=access_denied" );
+        return;
+    }
+
     my $consumer = OAuth::Lite::Consumer->new(
         consumer_key       => $config->{Twitter}->{consumer_key},
         consumer_secret    => $config->{Twitter}->{consumer_secret},
@@ -74,7 +81,12 @@ sub auth_fb {
     my $code  = $req->param('code');
     my $error = $req->param('error');
     if ( $error) {
-        die;
+        if ( $error eq 'access_denied' ){
+            $self->redirect_to( "/2013/login?error=access_denied" );
+            return;
+        } else {
+            return;
+        }
     } elsif ( ! $code) {
         my $fb_state = Digest::SHA::sha1_hex( Digest::SHA::sha1_hex( time(), {}, rand(), $$ ) );
         $self->sessions->set('fb_s', $fb_state);
@@ -147,7 +159,12 @@ sub auth_github {
     my $code  = $req->param('code');
     my $error = $req->param('error');
     if ( $error) {
-        die;
+        if ( $error eq 'access_denied' ){
+            $self->redirect_to( "/2013/login?error=access_denied" );
+            return;
+        } else {
+            return;
+        }
     } elsif ( ! $code) {
         my $github_state = Digest::SHA::sha1_hex( Digest::SHA::sha1_hex( time(), {}, rand(), $$ ) );
         $self->sessions->set('github_s', $github_state);

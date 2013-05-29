@@ -12,16 +12,22 @@ sub list {
     my $talk_api = $self->get('API::Talk');
     my $member_api = $self->get('API::Member');
 
-    my $applied_talks = $talk_api->search(
-        {},
+    my $pending_talks = $talk_api->search(
+        { status => 'pending' },
         { order_by => "created_on DESC" },
     );
 
-    foreach my $talk ( @$applied_talks ){
+    my $accepted_talks = $talk_api->search(
+        { status => 'accepted' },
+        { order_by => "created_on DESC" },
+    );
+
+    foreach my $talk ( ( @$pending_talks, @$accepted_talks ) ){
         $talk->{speaker} = $member_api->lookup( $talk->{member_id} );
     }
 
-    $self->render( applied_talks => $applied_talks );
+    $self->render( pending_talks => $pending_talks );
+    $self->render( accepted_talks => $accepted_talks );
 }
 
 sub show {
@@ -75,14 +81,10 @@ sub input {
         $self->stash(
             template => "talk/input_lt",
         );
-    } elsif (0 && $member->{is_admin}) {
-        $self->render("No auth");
-        $self->rendered(403);
-        return;
     }
 
     $self->SUPER::input();
-
+    
     if (my $start_on = $self->stash->{fif}->{start_on} ) {
         my($date, $time) = split / /, $start_on;
         $self->stash->{fif}->{start_on_date} = $date;
@@ -93,6 +95,7 @@ sub input {
 sub edit {
     my $self = shift;
     my $member = $self->assert_email or return;
+
     my $id = $self->match->captures->{object_id};
     my $object = $self->load_object( $id );
     if (! $object) {
@@ -157,6 +160,9 @@ sub check {
 sub preview {
     my $self = shift;
     my $member = $self->assert_email or return;
+    $member->{is_admin} = 1;
+    $self->stash( member => $member );
+
     $self->SUPER::preview();
 }
 
