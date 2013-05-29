@@ -7,7 +7,16 @@ title = 'Login'
 <div id="lead" class="section">
 <h1 class="corners">ログイン<span>Login</span></h1>
 <div class="body">
-<h2 class="corners"></h2>
+
+<style>
+    .error {
+        color:red;
+    }
+</style>
+
+[% IF error == 'access_denied' %]
+<p class="error">ログインを中止しました / Login via OAuth access denied.</p>
+[% END %]
 
 <ul>
   <li style="list-style: none; !important"><a class="button button-primary" href="/2013/auth/auth_fb">[% loc("Login via [_1]", "Facebook") %]</a></li>
