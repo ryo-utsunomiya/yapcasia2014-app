@@ -30,6 +30,8 @@ sub assert_logged_in {
         $self->redirect_to($self->url_for("/2013/login"));
         return;
     }
+
+    $self->stash( member => $member );
     return $member;
 }
 
