@@ -144,15 +144,17 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
                             [% fmt_error_message(results, "duration", "Talk Duration") %]
                             <label class="control-label" for="">[% loc("Talk Duration") %]</label>
                             <div class="controls">
-                                <select name="duration">
 [% IF (member.is_admin) %]
+                                <input type="text" name="duration">
+[% ELSE %]
+                                <select name="duration">
+[% IF (ALLOW_LIGHTNING_TALKS) %]
                                   <option value="5">Lightning Talk</option>
-                                  <option value="60">60 [% loc("minutes") %]</option>
 [% END %]
                                   <option value="40">40 [% loc("minutes") %]</option>
                                   <option value="20">20 [% loc("minutes") %]</option>
                                 </select>
-
+[% END # (IF member.is_admin // ELSE) %]
                             </div>
                         </div>
 
