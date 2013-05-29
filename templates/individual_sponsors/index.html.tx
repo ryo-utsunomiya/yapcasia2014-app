@@ -27,11 +27,18 @@ $(document).ready( function(){
 </style>
 
 <table>
-
 <tr>
 [% FOREACH sponsor IN sponsors %]
 <td>
-  <img src="http://api.twitter.com/1/users/profile_image/[% sponsor %]?size=bigger" /><br />[% sponsor || 'No Name' %]
+
+[% IF !sponsor %]
+  <img src="http://api.twitter.com/1/users/profile_image/[% sponsor %]?size=bigger" /><br />
+  anonymous
+[% ELSE %]
+  <img src="http://api.twitter.com/1/users/profile_image/[% sponsor %]?size=bigger" /><br />
+  [% sponsor %]
+[% END %]
+
 </td>
 [% IF (loop.count % 5) == 0 %]</tr><tr>[% END %]
 [% END %]
