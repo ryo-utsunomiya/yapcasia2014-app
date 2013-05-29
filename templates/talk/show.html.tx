@@ -13,6 +13,11 @@
 
 <style type="text/css">
 <!--
+    #container #main-contents .posts .entry-contents .abstract {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 1em;
+    }
     #container #main-contents .posts .entry-contents .abstract h1,
     #container #main-contents .posts .entry-contents .abstract h2,
     #container #main-contents .posts .entry-contents .abstract h3,
