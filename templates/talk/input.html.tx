@@ -184,13 +184,6 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
                                 <input type="text" class="input-xlarge" name="video_url">
                             </div>
                         </div>
-                        <div class="control-group">
-                            [% fmt_error_message(results, "profile_url", "Profile Photo URL") %]
-                            <label class="control-label" for="">[% loc("Profile Photo URL") %]</label>
-                            <div class="controls">
-                                <input type="text" class="input-xlarge" name="profile_url">
-                            </div>
-                        </div>
 [% END %]
 [% END %]
 
