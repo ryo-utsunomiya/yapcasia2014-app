@@ -73,6 +73,9 @@ sub setup_routes {
     #notices
     $r->route("/2013/notices/:action")->to(controller => 'notices');
 
+    #individual_sponsors
+    $r->route("/2013/individual_sponsors/")->to(controller => 'individual_sponsors', action => 'index');
+
     #login 
     $r->get("/2013/login")->to("auth#index");
     $r->get("/2013/logout")->to("auth#logout");

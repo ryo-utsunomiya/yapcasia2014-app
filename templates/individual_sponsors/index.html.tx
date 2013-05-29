@@ -1,0 +1,46 @@
+[% WRAPPER 'layouts/default.html.tx' WITH
+title = 'Individual Sponsors'
+%]
+
+<div id="main">
+
+<div id="lead" class="section">
+<h1 class="corners">個人スポンサーのみなさま<span>Individual Sponsors</span></h1>
+<div class="body">
+
+<script type="text/javascript">
+$(document).ready( function(){
+    $("img").error(function(){
+        $(this).attr('src','http://yapcasia.org/2013/static/images/footer_character.png');
+        $(this).attr('width','75');
+        return true;
+    });
+});
+</script>
+
+<style>
+    table tr td {
+        width: 120px;
+        height: 120px;
+        text-align:center;
+    }
+</style>
+
+<table>
+
+<tr>
+[% FOREACH sponsor IN sponsors %]
+<td>
+  <img src="http://api.twitter.com/1/users/profile_image/[% sponsor %]?size=bigger" /><br />[% sponsor || 'No Name' %]
+</td>
+[% IF (loop.count % 5) == 0 %]</tr><tr>[% END %]
+[% END %]
+</tr>
+</table>
+
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+</div><!--  / #main /  -->
+
+[% END %]
