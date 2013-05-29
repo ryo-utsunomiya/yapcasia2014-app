@@ -1,0 +1,17 @@
+#!/usr/bin/env perl
+
+use strict;
+use Encode qw(decode_utf8);
+use YAPC2013;
+use JSON;
+
+my $id = 11777;
+my $json = `$^X ./script/fetch_csv $id`;
+my $data = JSON::decode_json($json);
+
+my @sponsors;
+for my $key ( keys( $data ) ){
+    my $twitter_id = $data->{$key}->{twitter_id};
+    push @sponsors, $twitter_id; 
+}
+print JSON::encode_json(\@sponsors);
