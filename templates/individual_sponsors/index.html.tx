@@ -32,7 +32,7 @@ $(document).ready( function(){
 <td>
 
 [% IF !sponsor %]
-  <img src="http://api.twitter.com/1/users/profile_image/[% sponsor %]?size=bigger" /><br />
+  <img src="http://yapcasia.org/2013/static/images/footer_character.png" width="75"/><br />
   anonymous
 [% ELSE %]
   <img src="http://api.twitter.com/1/users/profile_image/[% sponsor %]?size=bigger" /><br />
