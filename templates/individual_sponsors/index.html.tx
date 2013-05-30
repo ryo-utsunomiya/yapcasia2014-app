@@ -24,7 +24,7 @@ $(document).ready( function(){
 <style>
     table tr td {
         width: 120px;
-        height: 120px;
+        height: 100px;
         text-align:center;
     }
 </style>
