@@ -40,7 +40,7 @@ use Data::FormValidator::Constraints qw(email);
             status => qr/^(pending|accepted|rejected)$/,
             language => qr/^(en|ja)$/,
             subtitles => qr/^(en|ja|none)$/,
-            tshirt_size => qr/^(none|XS|S|M|L|XL|XXL)$/,
+            tshirt_size => qr/^(none|XS|S|M|L|XL|XXL|XXXL)$/,
             material_level => qr/^(advanced|regular|beginner)$/,
             duration => qr/^(60|40|20|10|5)$/,
             category => qr/^(tutorial|app|infra|library|other|community|testing)$/,
