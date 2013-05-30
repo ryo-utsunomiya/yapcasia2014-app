@@ -42,7 +42,7 @@ sub post {
     my ($self, $tweet) = @_;
 
     if (length $tweet > 140) {
-        substr $tweet, 137, length $tweet - 137, "...";
+        substr $tweet, 137, length($tweet) - 137, "...";
     }
 
     eval {
