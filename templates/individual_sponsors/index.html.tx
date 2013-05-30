@@ -1,3 +1,4 @@
+
 [% WRAPPER 'layouts/default.html.tx' WITH
 title = 'Individual Sponsors'
 %]
@@ -7,6 +8,8 @@ title = 'Individual Sponsors'
 <div id="lead" class="section">
 <h1 class="corners">個人スポンサーのみなさま<span>Individual Sponsors</span></h1>
 <div class="body">
+
+<p>皆様ありがとうございます！ このリストに載りたい方は是非<a href="http://peatix.com/event/11777">個人スポンサーをご検討ください!</a></p>
 
 <script type="text/javascript">
 $(document).ready( function(){
