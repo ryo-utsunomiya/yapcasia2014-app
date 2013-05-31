@@ -210,8 +210,8 @@ sub commit {
                 $talk->{title} || $talk->{title_en},
             );
             my $length = length $text;
-            if ($length > 58) {
-                substr $text, 55, $length - (58 + 3), '...';
+            if ($length > 53) {
+                substr $text, 50, $length - 50, '...';
             }
             $self->get('API::Twitter')->post(
                 sprintf(
