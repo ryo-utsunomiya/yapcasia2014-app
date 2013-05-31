@@ -202,11 +202,21 @@ sub commit {
 
         my $talk = $self->stash->{talk};
         if ($talk->{duration} != 5) {
+            # The url must be protected, so we need to calculate
+            # the number of bytes UP to the URL, and it needs to be 58 chars
+            my $text = sprintf(
+                "New talk submitted%s! '%s' %s #yapcasia",
+                $member->{nickname} ? " by $member->{nickname}" : "",
+                $talk->{title} || $talk->{title_en},
+            );
+            my $length = length $text;
+            if ($length > 58) {
+                substr $text, 55, $length - 58, '...';
+            }
             $self->get('API::Twitter')->post(
                 sprintf(
-                    "New talk submitted%s! '%s' %s #yapcasia",
-                    $member->{nickname} ? " by $member->{nickname}" : "",
-                    $talk->{title} || $talk->{title_en},
+                    "%s %s #yapcasia",
+                    $text,
                     "http://yapcasia.org/2013/talk/show/$talk->{id}",
                 )
             );
