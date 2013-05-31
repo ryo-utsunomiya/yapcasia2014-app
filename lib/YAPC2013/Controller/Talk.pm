@@ -211,7 +211,7 @@ sub commit {
             );
             my $length = length $text;
             if ($length > 58) {
-                substr $text, 55, $length - 58, '...';
+                substr $text, 55, $length - (58 + 3), '...';
             }
             $self->get('API::Twitter')->post(
                 sprintf(
