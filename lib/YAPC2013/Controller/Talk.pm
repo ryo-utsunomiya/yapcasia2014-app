@@ -205,7 +205,7 @@ sub commit {
             # The url must be protected, so we need to calculate
             # the number of bytes UP to the URL, and it needs to be 58 chars
             my $text = sprintf(
-                "New talk submitted%s! '%s' %s #yapcasia",
+                "New talk submitted%s! '%s'",
                 $member->{nickname} ? " by $member->{nickname}" : "",
                 $talk->{title} || $talk->{title_en},
             );
