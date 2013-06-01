@@ -2,10 +2,7 @@ package YAPC2013::Controller::IndividualSponsors;
 use Mojo::Base 'YAPC2013::Controller::CRUD';
 use YAPC2013::Constants;
 
-has file => (
-    is => 'rw',
-    default => "var/individual_sponsors.json",
-);
+has file => "var/individual_sponsors.json";
 
 sub index {
     my $self = shift;
