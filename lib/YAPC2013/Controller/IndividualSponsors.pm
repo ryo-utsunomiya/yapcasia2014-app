@@ -15,7 +15,10 @@ sub index {
     my $data = $cache->get($cache_key);
     if (! $data) {
         my $json = $self->get('JSON');
-        open my $fp, "<", $self->file;
+        my $fp;
+        if (! open $fp, "<", $self->file) {
+            die "Failed to open @{[ $self->file ]}: $!";
+        }
         $data = $json->decode(do { local $/; <$fp> });
         close $fp;
 
