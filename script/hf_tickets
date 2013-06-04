@@ -5,6 +5,7 @@ use strict;
 use Encode qw(decode_utf8);
 use YAPC2013;
 use JSON;
+use utf8;
 
 my $app = YAPC2013->new;
 
