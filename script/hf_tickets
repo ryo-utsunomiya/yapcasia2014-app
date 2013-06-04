@@ -24,3 +24,29 @@ foreach my $event (keys %event2id) {
     }
     $hf_api->record("yapcasia2013", "ticket", $event, $count);
 }
+
+# we need to be more specific with tickets
+my @event_ids = (
+    11775
+    11778
+);
+my %ticket_name2id = (
+    "学生チケット（無料）" => "student",
+    "先行販売 2日通し券(Tシャツ付き)" => "early_bird"
+);
+foreach my $event (
+    my $json = `$^X ./script/fetch_csv $id`;
+    my $data = JSON::decode_json($json);
+
+    my %tickets;
+    foreach my $key (keys %$data) {
+        my $entry = $data->{$key};
+        my $ticket_type_id = $ticket_name2id{ $entry->{ticket_type} };
+        $tickets{ $ticket_type_id } += $entry->{ticket_count};
+    }
+
+    foreach my $ticket_type (keys %tickets) {
+        my $count = $tickets{$ticket_type};
+        $hf_api->record("yapcasia2013", "ticket", $ticket_type, $count);
+    }
+}
