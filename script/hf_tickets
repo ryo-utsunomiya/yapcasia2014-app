@@ -27,15 +27,15 @@ foreach my $event (keys %event2id) {
 
 # we need to be more specific with tickets
 my @event_ids = (
-    11775
+    11775,
     11778
 );
 my %ticket_name2id = (
     "学生チケット（無料）" => "student",
     "先行販売 2日通し券(Tシャツ付き)" => "early_bird"
 );
-foreach my $event (
-    my $json = `$^X ./script/fetch_csv $id`;
+foreach my $event (@event_ids) {
+    my $json = `$^X ./script/fetch_csv $event`;
     my $data = JSON::decode_json($json);
 
     my %tickets;
