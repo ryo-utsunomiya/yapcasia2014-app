@@ -571,3 +571,6 @@ msgstr "If you plan to have people signup for your event, please use and specify
 msgid "Please describe this event. Please make sure to include max cap, fees, deadlines, etc. This text will be interprted as Markdown formatted text."
 msgstr "Please describe this event. Please make sure to include max cap, fees, deadlines, etc. This text will be interprted as Markdown formatted text."
 
+msgid "Events Organized By [_1]"
+msgstr "Events Organized By %1" 
+

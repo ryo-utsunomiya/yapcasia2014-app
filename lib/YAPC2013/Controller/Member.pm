@@ -31,8 +31,14 @@ sub show {
     my $talks = $self->get('API::Talk')->search({
         member_id => $object->{id}
     });
+    my $events = $self->get('API::Event')->search({
+        member_id => $object->{id}
+    });
 
-    $self->stash( talks => $talks );
+    $self->stash(
+        talks   => $talks,
+        events  => $events,
+    );
     $self->SUPER::show();
 }
 

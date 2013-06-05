@@ -555,3 +555,6 @@ msgstr "参加登録が必要なイベントの場合はPeatix, ATND, zussar, co
 
 msgid "Please describe this event. Please make sure to include max cap, fees, deadlines, etc. This text will be interprted as Markdown formatted text."
 msgstr "イベントの詳細を記してください。参加人数、費用（あれば）、締め切り（あれば）等を書いてください。このテキストはマークダウンとして認識されます"
+
+msgid "Events Organized By [_1]"
+msgstr "%1さんが登録しているイベント"
