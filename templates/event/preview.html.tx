@@ -1,0 +1,99 @@
+[% WRAPPER 'layouts/default.html.tx'
+    title = loc("Please verify your submission")
+%]
+
+<div id="main">
+
+<div id="lead" class="section">
+<h1 class="corners">[% loc("Please verify your submission") %]</h1>
+<div class="body">
+
+<div id="main-contents">
+
+<div class="section posts">
+    <div class="innerblock">
+        <div class="entry">
+            <div class="entry-contents">
+                <table class="table">
+[% IF (is_edit) %]
+                <tr>
+                    <td>ID</td>
+                    <td><a href="/2012/event/[% event.id %]">[% event.id %]</a></td>
+                </tr>
+[% END %]
+                <tr>
+                    <td>[% loc("Event Title") %]</td>
+                    <td>[% event.title %]</td>
+                </tr>
+                <tr>
+                    <td>[% loc("Event Location") %]</td>
+                    <td>[% event.location %]</td>
+                </tr>
+[% IF (member.is_admin) %]
+                <tr>
+                    <td>[% loc("Official/Unofficial") %]</td>
+                    <td>[% loc(event.is_official ? "Official" : "Unofficial") %]</td>
+                </tr>
+[% END %]
+                <tr>
+                    <td>[% loc("Event Date") %]</td>
+                    <td>[% event.start_on_date %]</td>
+                </tr>
+                <tr>
+                    <td>[% loc("Event Time") %]</td>
+                    <td>[% event.start_on_time %]</td>
+                </tr>
+                <tr>
+                    <td>[% loc("Event Duration") %]</td>
+                    <td>[% loc("[_1] minutes") %]</td>
+                </tr>
+                <tr>
+                    <td>[% loc("Event Description") %]</td>
+                    <td>[% fmt_event_description(event) %]</td>
+                </tr>
+
+                </table>
+
+                <form id="commit-form" action="/2013/event/commit" method="POST">
+                    <input type="hidden" name="p" value="[% subsession_id %]" />
+                    <button class="button button-yapc">[% loc("Submit") %]</button>
+                    <button class="button button-danger">[% loc("Go Back") %]</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+<!--
+    $(document).ready( function() {
+        $(".button-danger", "#commit-form").each(function(i,e) {
+            $(e).click(function() {
+                location.href = "/2013/event/input?p=[% subsession_id %]"
+                return false;
+            });
+        });
+    } );
+-->
+</script>
+
+
+
+
+
+
+
+
+
+
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+</div><!--  / #main /  -->
+
+
+
+
+[% END %]

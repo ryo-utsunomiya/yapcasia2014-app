@@ -218,6 +218,9 @@ EOHTML
             fmt_talk_abstract_very_short => Text::Xslate::html_builder(sub {
                 $self->get_talk_abstract($_[0], $scrubber, $markdown, 70);
             }),
+            fmt_event_abstract => Text::Xslate::html_builder(sub {
+                $self->get_event_description($_[0], $scrubber, $markdown);
+            }),
             fmt_error_class => sub {
                 my $results = shift;
                 if (! defined $results) {
@@ -349,6 +352,11 @@ EOM
             $l10n->maketext( $format );
         }
     }
+}
+
+sub get_event_description {
+    my ($self, $event, $scrubber, $markdown) = @_;
+    return $markdown->markdown($scrubber->scrub($event->{description}));
 }
 
 sub get_talk_abstract{
