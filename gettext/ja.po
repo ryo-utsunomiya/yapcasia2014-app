@@ -520,3 +520,9 @@ msgstr "イベント詳細"
 msgid "Are you sure you want to delete this event? You can't undo this!"
 msgstr "本当にこのイベントを削除しますか？この操作は取り消せません！"
 
+msgid "Event Deleted!"
+msgstr "イベントが削除されました"
+
+msgid "Your event was successfully deleted"
+msgstr "指定されたイベントが削除されました"
+

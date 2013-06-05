@@ -535,3 +535,10 @@ msgstr "Event Details"
 msgid "Are you sure you want to delete this event? You can't undo this!"
 msgstr "Are you sure you want to delete this event? You can't undo this!"
 
+msgid "Event Deleted!"
+msgstr "Event Deleted!"
+
+msgid "Your event was successfully deleted"
+msgstr "Your event was successfully deleted"
+
+
