@@ -70,3 +70,20 @@ CREATE TABLE member_temp (
     modified_on TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (member_id) REFERENCES member (id)
 ) ENGINE=InnoDB DEFAULT CHARSET='utf8';
+
+CREATE TABLE event (
+    id CHAR(40) NOT NULL PRIMARY KEY,
+    member_id CHAR(40) NOT NULL,
+    status TINYINT(1) NOT NULL DEFAULT 1,
+    is_official TINYINT(1) NOT NULL DEFAULT 0,
+    title TEXT NOT NULL,
+    location TEXT NOT NULL,
+    description TEXT NOT NULL,
+    start_on DATETIME DEFAULT NULL,
+    duration INTEGER DEFAULT NULL,
+    created_on DATETIME NOT NULL,
+    modified_on TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    KEY(status),
+    KEY(start_on),
+    FOREIGN KEY (member_id) REFERENCES member (id)
+) ENGINE=InnoDB DEFAULT CHARSET='utf8';

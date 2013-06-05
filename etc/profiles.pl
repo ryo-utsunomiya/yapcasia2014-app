@@ -34,7 +34,6 @@ use Data::FormValidator::Constraints qw(email);
             },
             title_en => sub {
                 my ($dfv, $value) = @_;
-                warn length( $value );
                 return length( $value ) <= 100 && length( $value ) > 0;
             },
             status => qr/^(pending|accepted|rejected)$/,
@@ -84,7 +83,26 @@ use Data::FormValidator::Constraints qw(email);
             slide_url => [ qr/^$/, qr/^https?:\/\//i ],
             video_url => [ qr/^$/, qr/^https?:\/\//i ],
         },
-    }
+    },
+    'event.check' => {
+        required => [ qw(member_id title description is_official) ],
+        optional => [ qw(id location start_on_date start_on_time duration) ],
+        dependency_groups => {
+            start_on_components => [ qw/start_on_date start_on_time/ ]
+        },
+        constraint_methods => {
+            title => sub {
+                my ($dfv, $value) = @_;
+                return length( $value ) <= 100 && length( $value ) > 0;
+            },
+            location => sub {
+                my ($dfv, $value) = @_;
+                return length( $value ) <= 100 && length( $value ) > 0;
+            },
+            duration => qr/^\d+$/,
+            is_official => qr/^1|0$/,
+        },
+    },
 };
 
 

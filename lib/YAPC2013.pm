@@ -99,19 +99,24 @@ sub setup_routes {
         $member->post($action)->to("member#$action");
     }
 
-    # talk
-    my $talk = $r->under("/2013/talk");
-    $talk->get("/")->to("talk#index");
-    foreach my $action ( qw(show edit delete) ){
-        $talk->get("$action/:object_id")->to("talk#$action");
-    }
-    foreach my $action ( qw(list input preview) ){
-        $talk->get($action)->to("talk#$action");
-    }
-    $talk->post("/check")->to("talk#check");
-    $talk->post("/commit")->to("talk#commit");
+    my $mk_crud = sub {
+        my $name = shift;
+        my $base = $r->under("/2013/$name");
+        $base->get("/")->to("$name#index");
+        foreach my $action ( qw(show edit delete) ){
+            $base->get("$action/:object_id")->to("$name#$action");
+        }
+        foreach my $action ( qw(list input preview) ){
+            $base->get($action)->to("$name#$action");
+        }
+        foreach my $action ( qw(check commit) ) {
+            $base->post($action)->to("$name#$action");
+        }
+    };
 
-
+    foreach my $crud_object ( qw(talk event) ) {
+        $mk_crud->($crud_object);
+    }
 }
 
 sub setup_xslate {

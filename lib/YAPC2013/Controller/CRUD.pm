@@ -43,9 +43,9 @@ sub show {
 }
 
 sub list {
-    my ($self, $c, %args) = @_;
+    my ($self, %args) = @_;
 
-    my $params = $c->req->params->to_hash;
+    my $params = $self->req->params->to_hash;
     if ( ! exists $params->{status} && !$args{allow_empty_status}) {
         $params->{status} = 1;
     }
@@ -71,8 +71,8 @@ sub list {
         { order_by => $order_by, limit => $limit },
     );
 
-    my $list = $c->get( $self->api_name )->search(@args);
-    $c->stash->{ $self->object_type . "s" } = $list;
+    my $list = $self->get( $self->api_name )->search(@args);
+    $self->stash( $self->object_type . "s", $list);
 }
 
 sub input {
