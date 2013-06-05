@@ -7,7 +7,7 @@ sub input {
     my $self = shift;
     my $member = $self->assert_email or return;
 
-    $self->SUEPR::input(@_);
+    $self->SUPER::input(@_);
 }
 
 1;
