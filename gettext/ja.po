@@ -465,3 +465,25 @@ msgstr "これまでYAPCで登壇したことがない方も歓迎です！小�
 
 msgid "Submit You Talk HERE!"
 msgstr "応募はこちらから！"
+
+msgid "required"
+msgstr "必須"
+
+msgid "Event Title"
+msgstr "イベント名称"
+
+msgid "Event Location"
+msgstr "開催場所"
+
+msgid "Event Date"
+msgstr "開催日"
+
+msgid "Event Time"
+msgstr "開催時刻"
+
+msgid "Event Duration"
+msgstr "開催時間（分）"
+
+msgid "Event Description"
+msgstr "イベント概要"
+

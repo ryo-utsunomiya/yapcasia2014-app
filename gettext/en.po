@@ -481,3 +481,25 @@ msgstr "Even if this is your first time, don't hesitate! Don't worry, you will m
 msgid "Submit You Talk HERE!"
 msgstr "Submit You Talk HERE!"
 
+msgid "required"
+msgstr "required"
+
+msgid "Event Title"
+msgstr "Event Title"
+
+msgid "Event Location"
+msgstr "Event Location"
+
+msgid "Event Date"
+msgstr "Event Date"
+
+msgid "Event Time"
+msgstr "Event Time"
+
+msgid "Event Duration"
+msgstr "Event Duration"
+
+msgid "Event Description"
+msgstr "Event Description"
+
+
