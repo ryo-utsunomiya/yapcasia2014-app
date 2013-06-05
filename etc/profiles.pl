@@ -90,7 +90,7 @@ use Data::FormValidator::Constraints qw(email);
         defaults => {
             location => 'TBD',
             is_official => 0,
-        }
+        },
         constraint_methods => {
             title => sub {
                 my ($dfv, $value) = @_;
