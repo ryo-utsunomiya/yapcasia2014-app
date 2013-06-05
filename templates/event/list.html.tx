@@ -95,8 +95,8 @@ title = 'Events'
         <div class="entry">
             <div class="entry-contents">
 <p>[% loc("Here you can see the list of events (other than talk sessions) that are taking place during YAPC::Asia Tokyo 2013.") %]</p>
-<p>[% loc("Please note that these are mostly 'unofficial' -- i.e., the YAPC::Asia Tokyo 2013 is NOT affiliated with these events. Should you decide to join any of these event, please do so at your own discretion") %]</p>
-<p><a href="/2013/event/input">[% loc("If you would like to submit a new event, please use this form") %]</a></p>
+<p>[% loc("Please note that YAPC::Asia Tokyo 2013 is NOT affiliated with any of the 'unofficial' events. Should you decide to join any of these event, please do so at your own discretion.") %]</p>
+<p><a href="/2013/event/input">[% loc("If you would like to organize a new event such as a hackathon, a BOF, a drinkup, an after party, etc, please use this form.") %]</a></p>
 
 [% IF (official_events.size() > 0) %]
 <hr noshade="noshade" />
