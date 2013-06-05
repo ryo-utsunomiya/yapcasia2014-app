@@ -64,6 +64,8 @@ title = 'Member'
                 <ul>
                     <li>[% loc("Coming soon") %]</li>
                 </ul>
+[% END %]
+
 [% IF (events.size() > 0) %]
                 <h4>[% loc("Events Organized By [_1]", member.name || member.nickname) %]</h4>
                 <ul>
@@ -72,7 +74,6 @@ title = 'Member'
 [% END %]
                 </ul>
 [% END # IF (events.size) %]
-[% END %]
 
 [% IF (owner) %]
                 <h4>[% loc("Menu") %]</h4>
