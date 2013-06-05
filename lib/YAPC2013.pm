@@ -221,6 +221,9 @@ EOHTML
             fmt_event_description => Text::Xslate::html_builder(sub {
                 $self->get_event_description($_[0], $scrubber, $markdown);
             }),
+            fmt_event_description_short => Text::Xslate::html_builder(sub {
+                $self->get_event_description($_[0], $scrubber, $markdown, 140);
+            }),
             fmt_error_class => sub {
                 my $results = shift;
                 if (! defined $results) {
@@ -356,7 +359,18 @@ EOM
 
 sub get_event_description {
     my ($self, $event, $scrubber, $markdown) = @_;
-    return $markdown->markdown($scrubber->scrub($event->{description}));
+    my $description = $event->{description};
+    my $len = length $description;
+    my $truncated = 0;
+    if (defined $max && $len >= $max) {
+        substr $description, $max - 3, $len - ($max - 3), "...";
+        $truncated = 1;
+    }
+    my $html = $markdown->markdown( $scrubber->scrub($description) );
+    if ($truncated) {
+        $html .= qq|\n<p><a href="/2013/event/show/$event->{id}">read more...</a></p>|;
+    }
+    return $html;
 }
 
 sub get_talk_abstract{

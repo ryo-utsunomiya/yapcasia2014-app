@@ -10,27 +10,27 @@ title = 'Events'
 
 <style type="text/css">
 <!--
-    #container #main-contents .posts .talk .speaker .name {
+    #container #main-contents .posts .event .organizer .name {
         font-size: 0.8em;
         width: 60px;
         word-wrap: break-word
     }
 
-    .talk .speaker .icon { width: 50px; height: 50px }
-    .talk .speaker .icon img {
+    .event .organizer .icon { width: 50px; height: 50px }
+    .event .organizer .icon img {
         width: 50px;
         height: 50px;
     }
-    .talk {
+    .event {
         clear: both;
     }
-    .talk .speaker {
+    .event .organizer {
         float: left;
     }
-    .talk .details {
+    .event .details {
         margin-left: 80px;
     }
-    .talk .details .title {
+    .event .details .title {
         padding: 5px;
         font-size: 1.1em;
         font-weight: bold;
@@ -58,12 +58,12 @@ title = 'Events'
 -->
 </style>
 
-[% MACRO talk_details(talk) BLOCK %]
-[%- SET talk_url = "http://yapcasia.org/2013/talk/show/" _ talk.id %]
-<div class="talk unhandled">
-<div class="speaker">
-    <div class="icon">[% fmt_member_icon_tag(talk.speaker) %]</div>
-    <p class="name"><a href="/2013/member/show/[% talk.speaker.id %]">[% talk.speaker.name || talk.speaker.nickname %]</a></p>
+[% MACRO event_details(event) BLOCK %]
+[%- SET event_url = "http://yapcasia.org/2013/event/show/" _ event.id %]
+<div class="event unhandled">
+<div class="organizer">
+    <div class="icon">[% fmt_member_icon_tag(event.organizer) %]</div>
+    <p class="name"><a href="/2013/member/show/[% event.organizer.id %]">[% event.organizer.name || event.organizer.nickname %]</a></p>
 </div>
 <div class="details">
     <table class="table">
@@ -71,15 +71,15 @@ title = 'Events'
         <td width="400">
             <div class="title">
                 <div>
-                    <a href="/2013/talk/show/[% talk.id %]">[% talk.title || talk.title_en %]</a> ([% talk.duration %] min)
+                    <a href="/2013/event/show/[% event.id %]">[% event.title %]</a> ([% event.duration %] min)
                 </div>
-                <div class="social-buttons" data-url="[% talk_url %]"></div>
+                <div class="social-buttons" data-url="[% event_url %]"></div>
             </div>
         </td>
     </tr>
     <tr>
         <td class="abstract">
-            [% fmt_talk_abstract_short(talk) %]</td>
+            [% fmt_event_description_short(event) %]</td>
     </tr>
     </table>
 </div>
