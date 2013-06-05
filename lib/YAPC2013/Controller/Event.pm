@@ -26,11 +26,13 @@ sub commit {
     local $data->{start_on_time};
 
     my $start_on;
-    if ($data->{start_on_date}) {
+    my $start_on_date = delete $data->{start_on_date};
+    my $start_on_time = delete $data->{start_on_time};
+    if ($start_on_date) {
         $data->{start_on} = sprintf(
             "%s %s",
-            delete $data->{start_on_date},
-            delete $data->{start_on_time} || '00:00'
+            $start_on_date,
+            $start_on_time || '00:00'
         );
     }
     $self->SUPER::commit();
