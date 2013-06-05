@@ -559,4 +559,13 @@ msgstr "Please note that YAPC::Asia Tokyo 2013 is NOT affiliated with any of the
 msgid "If you would like to organize a new event such as a hackathon, a BOF, a drinkup, an after party, etc, please use this form."
 msgstr "If you would like to organize a new event such as a hackathon, a BOF, a drinkup, an after party, etc, please use this form."
 
+msgid "Create A New Event"
+msgstr "Create A New Event"
+
+msgid "Here, you can submit a new event (e.g. hackathons, drinkups, BOFs, etc). "
+msgstr "Here, you can submit a new event (e.g. hackathons, drinkups, BOFs, etc). "
+
+msgid "If you plan to have people signup for your event, please use and specify an external service like Peatix, ATND, zussar, connpass, etc."
+msgstr "If you plan to have people signup for your event, please use and specify an external service like Peatix, ATND, zussar, connpass, etc."
+
 

@@ -19,7 +19,7 @@
     <div class="innerblock">
         <div class="entry">
             <div class="entry-contents">
-            <p>[% loc("Here, you can submit a new event (e.g. hackathons, drinkups, BOFs, etc). Please note that YAPC::Asia Tokyo organizers keep the right to delete/modify the event as necessary") %]</p>
+            <p>[% loc("Here, you can submit a new event (e.g. hackathons, drinkups, BOFs, etc).") %]</p>
 
 [% FILTER fillinform %]
                 <form action="/2013/event/check" method="post" class="form-horizontal">
