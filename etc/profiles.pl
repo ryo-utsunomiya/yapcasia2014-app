@@ -85,8 +85,8 @@ use Data::FormValidator::Constraints qw(email);
         },
     },
     'event.check' => {
-        required => [ qw(member_id title description is_official) ],
-        optional => [ qw(id location start_on_date start_on_time duration) ],
+        required => [ qw(title description) ],
+        optional => [ qw(id location start_on_date start_on_time duration is_official member_id) ],
         constraint_methods => {
             title => sub {
                 my ($dfv, $value) = @_;
