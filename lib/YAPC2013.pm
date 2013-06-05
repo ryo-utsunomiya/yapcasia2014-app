@@ -6,6 +6,7 @@ use YAPC2013::L10N;
 use Plack::Session;
 use HTML::FillInForm::Lite;
 use Data::Dumper;
+use utf8;
 
 has container => sub { YAPC2013::Container->new };
 
