@@ -45,14 +45,34 @@ sub list {
 
 sub input {
     my $self = shift;
-    my $member = $self->assert_email or return;
+    my $member = $self->assert_member or return;
 
     $self->SUPER::input(@_);
 }
 
+sub edit {
+    my $self = shift;
+    my $member = $self->assert_member or return;
+
+    my $id = $self->match->captures->{object_id};
+    my $object = $self->load_object( $id );
+    if (! $object) {
+        $self->render_not_found();
+        return;
+    }
+
+    if ($member->{id} ne $object->{member_id} && !$member->{is_admin}) {
+        $self->render("No auth");
+        $self->rendered(403);
+        return;
+    }
+
+    $self->SUPER::edit();
+}
+
 sub commit {
     my $self = shift;
-    my $member = $self->assert_email or return;
+    my $member = $self->assert_member or return;
     my $data = $self->load_from_subsession();
     if (! $data) {
         $self->subsession_not_found();
