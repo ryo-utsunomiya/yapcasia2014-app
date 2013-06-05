@@ -568,4 +568,6 @@ msgstr "Here, you can submit a new event (e.g. hackathons, drinkups, BOFs, etc).
 msgid "If you plan to have people signup for your event, please use and specify an external service like Peatix, ATND, zussar, connpass, etc."
 msgstr "If you plan to have people signup for your event, please use and specify an external service like Peatix, ATND, zussar, connpass, etc."
 
+msgid "Please describe this event. Please make sure to include max cap, fees, deadlines, etc. This text will be interprted as Markdown formatted text."
+msgstr "Please describe this event. Please make sure to include max cap, fees, deadlines, etc. This text will be interprted as Markdown formatted text."
 

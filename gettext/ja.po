@@ -553,3 +553,5 @@ msgstr "こちらではYAPC::Asia Tokyo 2013関連のイベント（ハッカソ
 msgid "If you plan to have people signup for your event, please use and specify an external service like Peatix, ATND, zussar, connpass, etc."
 msgstr "参加登録が必要なイベントの場合はPeatix, ATND, zussar, connpass等の外部サービスを使用してURLをこちらに登録してください"
 
+msgid "Please describe this event. Please make sure to include max cap, fees, deadlines, etc. This text will be interprted as Markdown formatted text."
+msgstr "イベントの詳細を記してください。参加人数、費用（あれば）、締め切り（あれば）等を書いてください。このテキストはマークダウンとして認識されます"
