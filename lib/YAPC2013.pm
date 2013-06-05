@@ -218,7 +218,7 @@ EOHTML
             fmt_talk_abstract_very_short => Text::Xslate::html_builder(sub {
                 $self->get_talk_abstract($_[0], $scrubber, $markdown, 70);
             }),
-            fmt_event_abstract => Text::Xslate::html_builder(sub {
+            fmt_event_description => Text::Xslate::html_builder(sub {
                 $self->get_event_description($_[0], $scrubber, $markdown);
             }),
             fmt_error_class => sub {
