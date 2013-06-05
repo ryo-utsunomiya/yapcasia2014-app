@@ -81,6 +81,7 @@ CREATE TABLE event (
     description TEXT NOT NULL,
     start_on DATETIME DEFAULT NULL,
     duration INTEGER DEFAULT NULL,
+    signup_url TEXT,
     created_on DATETIME NOT NULL,
     modified_on TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     KEY(status),
