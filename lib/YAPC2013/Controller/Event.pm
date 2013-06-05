@@ -15,7 +15,7 @@ sub list {
     );
 
     my $unofficial_events = $event_api->search(
-        { status => 1, is_official => 1 },
+        { status => 1, is_official => 0 },
         { order_by => "start_on ASC, created_on ASC" },
     );
 
