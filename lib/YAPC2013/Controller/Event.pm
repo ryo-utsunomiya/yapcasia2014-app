@@ -24,6 +24,10 @@ sub commit {
     }
     local $data->{start_on_date};
     local $data->{start_on_time};
+    local $data->{start_on} = $data->{start_on};
+    if (! $data->{start_on}) {
+        delete $data->{start_on};
+    }
 
     my $start_on;
     my $start_on_date = delete $data->{start_on_date};
