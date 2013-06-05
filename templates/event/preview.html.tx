@@ -45,7 +45,7 @@
                 </tr>
                 <tr>
                     <td>[% loc("Event Duration") %]</td>
-                    <td>[% loc("[_1] minutes") %]</td>
+                    <td>[% loc("[_1] minutes", event.duration) %]</td>
                 </tr>
                 <tr>
                     <td>[% loc("Event Description") %]</td>
