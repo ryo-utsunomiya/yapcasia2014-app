@@ -358,7 +358,7 @@ EOM
 }
 
 sub get_event_description {
-    my ($self, $event, $scrubber, $markdown) = @_;
+    my ($self, $event, $scrubber, $markdown, $max) = @_;
     my $description = $event->{description};
     my $len = length $description;
     my $truncated = 0;
