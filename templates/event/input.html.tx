@@ -1,0 +1,127 @@
+[% WRAPPER 'layouts/default.html.tx' WITH
+    title = (is_edit) ? loc("Edit Your Event") : loc("Create A New Event ")
+%]
+
+<style>
+  .error { color : red }
+</style>
+
+<div id="main">
+
+<div id="lead" class="section">
+<h1 class="corners">[% IF (is_edit) %][% loc("Edit Your Event") %][% ELSE %][% loc("Create A New Event") %][% END %]</h1>
+<div class="body">
+<h2 class="corners"></h2>
+
+<div id="main-contents">
+
+<div class="section posts">
+    <div class="innerblock">
+        <div class="entry">
+            <div class="entry-contents">
+            <p>[% loc("Here, you can submit a new event (e.g. hackathons, drinkups, BOFs, etc). Please note that YAPC::Asia Tokyo organizers keep the right to delete/modify the event as necessary") %]</p>
+            <p>[% loc("If you plan to have people signup for your event, please use an external service like Peatix, ATND, zussar, conpass, etc.") %]</p>
+
+[% FILTER fillinform %]
+                <form action="/2013/talk/check" method="post" class="form-horizontal">
+[% IF (is_edit) %]
+<input type="hidden" name="id" />
+<input type="hidden" name="is_edit" value="1" />
+[% END %]
+                    <fieldset>
+                        <h3>[% loc("Event Details") %] </h3>
+                        [% fmt_error_message(results, "title", "Event Title") %]
+                        <div class="control-group">
+                            <label class="control-label" for="">[% loc("Event Title" ) %] ([% loc("required") %])</label>
+                            <div class="controls docs-input-sizes">
+                                <input type="text" class="input-xlarge" name="title">
+                            </div>
+                        </div>
+
+[% IF (member.is_admin) %]
+                        <div class="control-group">
+                            <label class="control-label" for="">[% loc("Official/Unofficial") %]</label>
+                            <div class="controls">
+                                <select name="is_official">
+                                    <option value="0">[% loc("Unofficial Event") %]</option>
+                                    <option value="1">[% loc("Official Event") %]</option>
+                                </select>
+                            </div>
+                        </div>
+[% END %]
+
+                        <div class="control-group">
+                            [% fmt_error_message(results, "location", "Event Location") %]
+                            <label class="control-label" for="">[% loc("Event Location") %]</label>
+                            <div class="controls">
+                                <input type="text" name="location">
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            [% fmt_error_message(results, "start_on_date", "Event Date") %]
+                            <label class="control-label" for="">[% loc("Event Date") %]</label>
+                            <div class="controls">
+                                <input type="text" name="start_on_date" id="datepicker" />
+                            </div>
+                        </div>
+
+
+                        <div class="control-group">
+                            [% fmt_error_message(results, "start_on_time", "Event Time") %]
+                            <label class="control-label" for="">[% loc("Event Time") %]</label>
+                            <div class="controls">
+                                <input type="text" name="start_on_time" placeholder="HH:MM">
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            [% fmt_error_message(results, "duration", "Event Duration") %]
+                            <label class="control-label" for="">[% loc("Event Duration") %]</label>
+                            <div class="controls">
+                                <input type="text" name="duration" placeholder="[% loc("in minutes, please") %]">
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            [% fmt_error_message(results, "description", "Event Description") %]
+                            <label class="control-label" for="">[% loc("Event Description") %] ([% loc("required") %])</label>
+                            <div class="controls">
+                                <textarea name="abstract" style="width: 300px; height: 20em" placeholder="[% loc("Please describe this event. Please make sure to include signup URLs, fees, etc. This text will be interprted as Markdown formatted text.") %]"></textarea>
+                            </div>
+                        </div>
+
+
+                        <button type="submit" class="button button-yapc">[% loc("Submit") %]</button>
+
+                    </fieldset>
+                </form>
+[% END # fillinform %]
+            </div>
+        </div>
+    </div><!-- innerblock -->
+</div>
+
+</div><!-- main-contents -->
+
+
+
+
+
+
+
+
+
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+</div><!--  / #main /  -->
+
+<script type="text/javascript">
+<!--
+    $(document).ready(function() {
+        $("#datepicker").datepicker({ "dateFormat": "yy-mm-dd" });
+    });
+-->
+</script>
+[% END %]
