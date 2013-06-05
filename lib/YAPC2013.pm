@@ -218,6 +218,14 @@ EOHTML
             fmt_talk_abstract_very_short => Text::Xslate::html_builder(sub {
                 $self->get_talk_abstract($_[0], $scrubber, $markdown, 70);
             }),
+            fmt_event_description_as_og_description => sub {
+                my $text = $self->get_event_description($_[0], $scrubber, $markdown);
+                # remove all markup
+                $text =~ s{<[^>]+>}{}smg;
+                # truncate to 140 chars
+                substr $text, 0, 140, '';
+                return $text;
+            },
             fmt_event_description => Text::Xslate::html_builder(sub {
                 $self->get_event_description($_[0], $scrubber, $markdown);
             }),

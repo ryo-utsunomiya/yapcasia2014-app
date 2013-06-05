@@ -1,6 +1,6 @@
 [% WRAPPER 'layouts/default.html.tx' WITH
     title = event.title,
-    og_description = fmt_event_abstract_as_og_description(event),
+    og_description = fmt_event_description_as_og_description(event),
 %]
 
 <div id="main">
