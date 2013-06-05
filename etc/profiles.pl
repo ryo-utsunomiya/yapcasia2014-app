@@ -1,4 +1,5 @@
 use strict;
+use URI;
 use Data::FormValidator::Constraints qw(email);
 
 +{
@@ -91,6 +92,14 @@ use Data::FormValidator::Constraints qw(email);
             location => 'TBD',
             is_official => 0,
         },
+        field_filters => {
+            signup_url => sub {
+                if (length $_[0] <= 0) {
+                    return $_[0];
+                }
+                return URI->new($_[0])->as_string;
+            }
+        },
         constraint_methods => {
             title => sub {
                 my ($dfv, $value) = @_;
@@ -104,7 +113,10 @@ use Data::FormValidator::Constraints qw(email);
             start_on_time => qr/^\d{2}:\d{2}$/,
             duration => qr/^\d+$/,
             is_official => qr/^1|0$/,
-            signup_url => [ qr/^$/, qr/^https?:\/\//i ],
+            signup_url => sub {
+                my ($dfv, $value) = @_;
+                !$value || $value =~ qr/^https?:\/\//i;
+            },
         },
     },
 };
