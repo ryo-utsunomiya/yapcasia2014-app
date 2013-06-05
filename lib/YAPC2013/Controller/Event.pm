@@ -3,6 +3,32 @@ use Mojo::Base 'YAPC2013::Controller::CRUD';
 
 sub index { $_[0]->redirect_to("/2013/event/list") }
 
+sub list {
+    my $self = shift;
+
+    my $event_api = $self->get('API::Talk');
+    my $member_api = $self->get('API::Member');
+
+    my $official_events = $event_api->search(
+        { status => 1, is_official => 1 },
+        { order_by => "start_on ASC, created_on ASC" },
+    );
+
+    my $unofficial_events = $talk_api->search(
+        { status => 1, is_official => 1 },
+        { order_by => "start_on ASC, created_on ASC" },
+    );
+
+    foreach my $event ( ( @$official_events, @$unofficial_events ) ){
+        $event->{organizer} = $member_api->lookup( $event->{member_id} );
+    }
+
+    $self->stash(
+        official_events     => $official_events,
+        unofficial_events   => $unofficial_events,
+    );
+}
+
 sub input {
     my $self = shift;
     my $member = $self->assert_email or return;
