@@ -68,7 +68,7 @@ title = 'Member'
                 <h4>[% loc("Events Organized By [_1]", member.name || member.nickname) %]</h4>
                 <ul>
 [% FOREACH event IN events %]
-                    <li><a href="/2013/event/show" _ event.id) %]">[% event.title %]</a></li>
+                    <li><a href="/2013/event/show/" _ event.id) %]">[% event.title %]</a></li>
 [% END %]
                 </ul>
 [% END # IF (events.size) %]
