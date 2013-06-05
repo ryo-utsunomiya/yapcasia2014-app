@@ -72,7 +72,7 @@ sub show {
 
 sub input {
     my $self = shift;
-    my $member = $self->assert_logged_in or return;
+    my $member = $self->assert_email or return;
 
     # if this is a submission for LT, then we need to switch profile and
     # template that we use here
@@ -94,7 +94,7 @@ sub input {
 
 sub edit {
     my $self = shift;
-    my $member = $self->assert_logged_in or return;
+    my $member = $self->assert_email or return;
 
     my $id = $self->match->captures->{object_id};
     my $object = $self->load_object( $id );
@@ -139,7 +139,7 @@ sub edit {
 
 sub check {
     my $self = shift;
-    my $member = $self->assert_logged_in or return;
+    my $member = $self->assert_email or return;
 
     # LT
     my $is_lt = $self->req->param('lt');
@@ -159,7 +159,7 @@ sub check {
 
 sub preview {
     my $self = shift;
-    my $member = $self->assert_logged_in or return;
+    my $member = $self->assert_email or return;
     $member->{is_admin} = 1;
     $self->stash( member => $member );
 
@@ -168,7 +168,7 @@ sub preview {
 
 sub commit {
     my $self = shift;
-    my $member = $self->assert_logged_in or return;
+    my $member = $self->assert_email or return;
     my $data = $self->load_from_subsession();
     if (! $data) {
         $self->subsession_not_found();
