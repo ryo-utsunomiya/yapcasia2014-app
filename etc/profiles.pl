@@ -87,9 +87,6 @@ use Data::FormValidator::Constraints qw(email);
     'event.check' => {
         required => [ qw(member_id title description is_official) ],
         optional => [ qw(id location start_on_date start_on_time duration) ],
-        dependency_groups => {
-            start_on_components => [ qw/start_on_date start_on_time/ ]
-        },
         constraint_methods => {
             title => sub {
                 my ($dfv, $value) = @_;
@@ -99,6 +96,8 @@ use Data::FormValidator::Constraints qw(email);
                 my ($dfv, $value) = @_;
                 return length( $value ) <= 100 && length( $value ) > 0;
             },
+            start_on_date => qr/^\d{3}-\d{2}-\d{2}$/,
+            start_on_time => qr/^\d{2}:\d{2}$/,
             duration => qr/^\d+$/,
             is_official => qr/^1|0$/,
         },
