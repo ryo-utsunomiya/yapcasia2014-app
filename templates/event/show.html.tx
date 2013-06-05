@@ -1,0 +1,148 @@
+[% WRAPPER 'layouts/default.html.tx' WITH
+    title = event.title,
+    og_description = fmt_event_abstract_as_og_description(event),
+%]
+
+<div id="main">
+
+<div id="lead" class="section">
+<h1 class="corners">[% loc("Event Information") %]</h1>
+<div class="body">
+
+[% SET event_url = "http://yapcasia.org/2013/event/show/" _ event.id %]
+
+<style type="text/css">
+<!--
+    #container #main-contents .posts .entry-contents .abstract {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 1em;
+    }
+    #container #main-contents .posts .entry-contents .abstract h1,
+    #container #main-contents .posts .entry-contents .abstract h2,
+    #container #main-contents .posts .entry-contents .abstract h3,
+    #container #main-contents .posts .entry-contents .abstract h4,
+    #container #main-contents .posts .entry-contents .abstract h5,
+    #container #main-contents .posts .entry-contents .abstract h6 {
+        width: 300px;
+    }
+-->
+</style>
+<div id="main-contents">
+
+<div class="section posts">
+    <div class="innerblock">
+        <div class="entry">
+            <div class="entry-contents">
+
+<style>
+<!--
+    .speaker { float: left }
+    .speaker .icon img { width: 50px; height: 50px }
+    .speaker .data { width: 100px }
+    #container #main-contents .posts 
+    .speaker .data .name { word-wrap: break-word; font-size: 0.8em;}
+-->
+</style>
+
+<div class="speaker">
+    <div class="icon">[% fmt_member_icon_tag(speaker) %]</div>
+    <div class="data">
+       <p class="name"><a href="/2013/member/show/[% speaker.id %]">[% speaker.name || speaker.nickname %]</a></p>
+       <p><a href="/2013/event/edit/[% event.id %]">[% loc("Edit Event") %]</a></p>
+[% IF (owner || member.is_admin) %]
+        <p><a id="event-delete" href="/2013/event/delete/[% event.id %]">[% loc("Delete Event") %]</a></p>
+[% END %]
+    </div>
+</div>
+
+                <div style="margin-left: 100px">
+                    <h4>[% loc("Event Title") %]</h4>
+                    <div style="margin-bottom: 1em; margin-left: 1em; font-weight: bold">
+                    [% event.title %]
+                    </div>
+                    <div class="social-btns">
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="yapcasia" data-count="vertical">Tweet</a>
+                        <span style="height: 90px; width: 50px; vertical-align:top; display: inline-block"><div class="fb-like" data-send="false" data-layout="box_count" data-width="50" data-show-faces="false" data-font="verdana"></div></span>
+                        <g:plusone size="tall"></g:plusone>
+                        <div data-plugins-type="mixi-favorite" data-service-key="c42621fa3b01434ead73c1ad76af5a35df298cf2" data-size="large" data-href="" data-show-faces="false" data-show-count="true" data-show-comment="true" data-width=""></div>
+                        <a href="#" class="hatena-bookmark-button" data-hatena-bookmark-layout="vertical-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+                    </div><!-- social-btns -->
+
+                    <h4>[% loc("Abstract") %]</h4>
+                    <div class="description-container">
+                        <div class="description">[% fmt_event_description(event) %]</div>
+                    </div><!-- description-container -->
+
+                    <h4>[% loc("Event Details") %]</h4>
+                    <table class="table">
+                    <tr>
+                        <td>[% loc("Event Location") %]</td>
+                        <td>[% event.location %]</td>
+                    </tr>
+                    <tr>
+                        <td>[% loc("Starts On") %]</td>
+                        <td>[% IF (event.start_on && event.start_on != '0000-00-00 00:00:00') %][% event.start_on%][% ELSE %]TBD[% END %]</td>
+                    </tr>
+                    <tr>
+                        <td>[% loc("Event Duration") %]</td>
+                        <td>[% loc("[_1] minutes", event.duration) %]</td>
+                    </tr>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+<!--
+    $(document).ready( function() {
+        $("#event-delete").click( function() {
+            return confirm("[% loc("Are you sure you want to delete this event? You can't undo this!") %]");
+        });
+    });
+    $([
+        { 
+            src: "http://b.st-hatena.com/js/bookmark_button.js",
+            id: "hatena-bookmark"
+        },
+        {
+            src: "http://static.mixi.jp/js/plugins.js#lang=ja",
+            id: "mixi-check"
+        },
+        {
+            src: "http://platform.twitter.com/widgets.js",
+            id: "twitter-wjs"
+        },
+        {
+            src: "http://connect.facebook.net/en_US/all.js#xfbml=1&appId=144267325643659",
+            id: "facebook-jssdk"
+        },
+        {
+            src: 'https://apis.google.com/js/plusone.js',
+            id: "google-plusone"
+        }
+    ]).each( function(i, e) {
+        var s = document.getElementById(e.id);
+        if (! s) {
+            s = document.createElement('script');
+            s.id = e.id;
+            s.src = e.src;
+            s.async = true;
+            document.getElementsByTagName('head')[0].appendChild(s);
+        }
+    });
+-->
+</script>
+
+
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+</div><!--  / #main /  -->
+
+[% END %]
