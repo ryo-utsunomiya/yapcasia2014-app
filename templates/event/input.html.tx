@@ -87,7 +87,7 @@
                             [% fmt_error_message(results, "description", "Event Description") %]
                             <label class="control-label" for="">[% loc("Event Description") %] ([% loc("required") %])</label>
                             <div class="controls">
-                                <textarea name="abstract" style="width: 300px; height: 20em" placeholder="[% loc("Please describe this event. Please make sure to include signup URLs, fees, etc. This text will be interprted as Markdown formatted text.") %]"></textarea>
+                                <textarea name="description" style="width: 300px; height: 20em" placeholder="[% loc("Please describe this event. Please make sure to include signup URLs, fees, etc. This text will be interprted as Markdown formatted text.") %]"></textarea>
                             </div>
                         </div>
 
