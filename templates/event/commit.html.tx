@@ -1,0 +1,47 @@
+[% WRAPPER "layouts/default.html.tx" WITH
+title = (is_edit) ? loc("Edit done") : loc("Thank you for your submission!")
+%]
+
+<div id="main">
+
+<div id="lead" class="section">
+<h1 class="corners">[% IF (is_edit) %][% loc("Edit done") %][% ELSE %][% loc("Thank you for your submission!") %][% END %]</h1>
+<div class="body">
+
+<div id="main-contents">
+
+<div class="section posts">
+    <div class="innerblock">
+        <div class="entry">
+            <div class="entry-contents">
+[% IF (is_edit) %]
+                <p>[% loc("Your event has been updated") %]</p>
+[% ELSE %]
+                <p>[% loc("Thank you for your submission.") %]</p>
+[% END %]
+
+                <p><a href="/2013/event/show/[% event.id %]">[% loc("Proceed To Event Page") %]</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+<!--
+    $(document).ready(function() {
+        setTimeout(function() {
+            location.href = "/2013/event/show/[% event.id %]"
+        }, 3000);
+    });
+-->
+</script>
+
+
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+</div><!-- / .main / -->
+
+[% END %]
