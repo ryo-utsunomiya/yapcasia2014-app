@@ -14,7 +14,7 @@ sub list {
         { order_by => "start_on ASC, created_on ASC" },
     );
 
-    my $unofficial_events = $talk_api->search(
+    my $unofficial_events = $event_api->search(
         { status => 1, is_official => 1 },
         { order_by => "start_on ASC, created_on ASC" },
     );
