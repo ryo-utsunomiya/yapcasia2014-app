@@ -528,3 +528,6 @@ msgstr "Official/Unofficial"
 
 msgid "Event Information"
 msgstr "Event Information"
+
+msgid "Event Details"
+msgstr "Event Details"

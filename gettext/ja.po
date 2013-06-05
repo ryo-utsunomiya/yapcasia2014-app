@@ -514,3 +514,6 @@ msgstr "公式・非公式イベント区分"
 msgid "Event Information"
 msgstr "イベント情報"
 
+msgid "Event Details"
+msgstr "イベント詳細"
+
