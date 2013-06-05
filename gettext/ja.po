@@ -495,3 +495,15 @@ msgstr "イベントページへ移動する"
 
 msgid "Signup URL (External Site)"
 msgstr "参加登録 (外部サイト)"
+
+msgid "Edit Event"
+msgstr "イベント編集"
+
+msgid "Delete Event"
+msgstr "イベント削除"
+
+msgid "Official Event"
+msgstr "公式イベント"
+
+msgid "Unofficial Event"
+msgstr "非公式イベント"

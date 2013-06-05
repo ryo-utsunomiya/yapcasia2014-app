@@ -69,13 +69,21 @@
                         <a href="#" class="hatena-bookmark-button" data-hatena-bookmark-layout="vertical-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
                     </div><!-- social-btns -->
 
-                    <h4>[% loc("Abstract") %]</h4>
+                    <h4>[% loc("Event Description") %]</h4>
                     <div class="description-container">
                         <div class="description">[% fmt_event_description(event) %]</div>
                     </div><!-- description-container -->
 
                     <h4>[% loc("Event Details") %]</h4>
                     <table class="table">
+                    <tr>
+                        <td>[% loc("Official/Unofficial") %]</td>
+                        <td>
+                            [% IF (!event.is_official) %]<strong>[% END %]
+                            [% loc(event.is_official ? "Official Event" : "Unofficial Event") %]
+                            [% IF (!event.is_official) %]</strong>[% END %]
+                        <td>
+                    </tr>
                     <tr>
                         <td>[% loc("Event Location") %]</td>
                         <td>[% event.location %]</td>

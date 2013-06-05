@@ -511,3 +511,15 @@ msgstr "Proceed To Event Page"
 msgid "Signup URL (External Site)"
 msgstr "Signup URL (External Site)"
 
+msgid "Edit Event"
+msgstr "Edit Event"
+
+msgid "Delete Event"
+msgstr "Delete Event"
+
+msgid "Official Event"
+msgstr "Official Event"
+
+msgid "Unofficial Event"
+msgstr "Unofficial Event"
+
