@@ -37,18 +37,18 @@
 
 <style>
 <!--
-    .speaker { float: left }
-    .speaker .icon img { width: 50px; height: 50px }
-    .speaker .data { width: 100px }
+    .organizer { float: left }
+    .organizer .icon img { width: 50px; height: 50px }
+    .organizer .data { width: 100px }
     #container #main-contents .posts 
-    .speaker .data .name { word-wrap: break-word; font-size: 0.8em;}
+    .organizer .data .name { word-wrap: break-word; font-size: 0.8em;}
 -->
 </style>
 
-<div class="speaker">
-    <div class="icon">[% fmt_member_icon_tag(speaker) %]</div>
+<div class="organizer">
+    <div class="icon">[% fmt_member_icon_tag(organizer) %]</div>
     <div class="data">
-       <p class="name"><a href="/2013/member/show/[% speaker.id %]">[% speaker.name || speaker.nickname %]</a></p>
+       <p class="name"><a href="/2013/member/show/[% organizer.id %]">[% organizer.name || organizer.nickname %]</a></p>
        <p><a href="/2013/event/edit/[% event.id %]">[% loc("Edit Event") %]</a></p>
 [% IF (owner || member.is_admin) %]
         <p><a id="event-delete" href="/2013/event/delete/[% event.id %]">[% loc("Delete Event") %]</a></p>

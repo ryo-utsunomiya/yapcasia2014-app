@@ -3,6 +3,20 @@ use Mojo::Base 'YAPC2013::Controller::CRUD';
 
 sub index { $_[0]->redirect_to("/2013/event/list") }
 
+sub show {
+    my $self = shift;
+    $self->SUPER::show();
+    if (my $event = $self->stash->{event}) {
+        my $organizer = $self->get('API::Member')->lookup($event->{member_id});
+        if (my $member = $self->get_member) {
+            if ($event->{member_id} eq $member->{id}) {
+                $self->stash( owner => 1 );
+            }
+        }
+        $self->stash(organizer => $organizer);
+    }
+}
+
 sub list {
     my $self = shift;
 
