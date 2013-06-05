@@ -96,7 +96,7 @@ use Data::FormValidator::Constraints qw(email);
                 my ($dfv, $value) = @_;
                 return length( $value ) <= 100 && length( $value ) > 0;
             },
-            start_on_date => qr/^\d{3}-\d{2}-\d{2}$/,
+            start_on_date => qr/^\d{4}-\d{2}-\d{2}$/,
             start_on_time => qr/^\d{2}:\d{2}$/,
             duration => qr/^\d+$/,
             is_official => qr/^1|0$/,
