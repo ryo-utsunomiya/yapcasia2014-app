@@ -73,13 +73,15 @@ title = 'Events'
                 <div>
                     <a href="/2013/event/show/[% event.id %]">[% event.title %]</a>[% IF(event.duration) %] ([% loc("[_1] minutes", event.duration ) %])[% END %]
                 </div>
-                [% IF (event.signup_url) %]<div><a href="[% event.signup_url %]">[% loc("Signup URL (External Site)") %]</a></div>[% END %]
             </div>
         </td>
     </tr>
     <tr>
-        <td class="abstract">
-            [% fmt_event_description_short(event) %]</td>
+        <td class="description">
+            [% fmt_event_description_short(event) %]
+
+        [% IF (event.signup_url) %]<div style="font-weight: bold"><a href="[% event.signup_url %]">[% loc("Signup URL (External Site)") %]</a></div>[% END %]
+        </td>
     </tr>
     </table>
 </div>
