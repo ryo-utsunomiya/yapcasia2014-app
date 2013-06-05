@@ -3,11 +3,11 @@ use Mojo::Base 'YAPC2013::Controller::CRUD';
 
 sub index { $_[0]->redirect_to("/2013/event/list") }
 
-# 名称
-# 主催者(member)
-# 日時
-# 時間
-# 場所
-# 概要
+sub input {
+    my $self = shift;
+    my $member = $self->assert_email or return;
+
+    $self->SUEPR::input(@_);
+}
 
 1;
