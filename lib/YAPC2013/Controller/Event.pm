@@ -45,14 +45,14 @@ sub list {
 
 sub input {
     my $self = shift;
-    my $member = $self->assert_member or return;
+    my $member = $self->assert_logged_in or return;
 
     $self->SUPER::input(@_);
 }
 
 sub edit {
     my $self = shift;
-    my $member = $self->assert_member or return;
+    my $member = $self->assert_logged_in or return;
 
     my $id = $self->match->captures->{object_id};
     my $object = $self->load_object( $id );
@@ -72,7 +72,7 @@ sub edit {
 
 sub commit {
     my $self = shift;
-    my $member = $self->assert_member or return;
+    my $member = $self->assert_logged_in or return;
     my $data = $self->load_from_subsession();
     if (! $data) {
         $self->subsession_not_found();
