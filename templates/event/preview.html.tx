@@ -26,6 +26,10 @@
                     <td>[% event.title %]</td>
                 </tr>
                 <tr>
+                    <td>[% loc("Signup URL") %]</td>
+                    <td>[% event.signup_url %]</td>
+                </tr>
+                <tr>
                     <td>[% loc("Event Location") %]</td>
                     <td>[% event.location %]</td>
                 </tr>

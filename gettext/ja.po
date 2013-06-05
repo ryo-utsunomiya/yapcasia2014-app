@@ -493,6 +493,9 @@ msgstr "イベントが作成されました"
 msgid "Proceed To Event Page"
 msgstr "イベントページへ移動する"
 
+msgid "Signup URL"
+msgstr "参加登録 URL"
+
 msgid "Signup URL (External Site)"
 msgstr "参加登録 (外部サイト)"
 
