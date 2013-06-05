@@ -487,3 +487,8 @@ msgstr "開催時間（分）"
 msgid "Event Description"
 msgstr "イベント概要"
 
+msgid "Event Created"
+msgstr "イベントが作成されました"
+
+msgid "Proceed To Event Page"
+msgstr "イベントページへ移動する"

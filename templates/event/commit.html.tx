@@ -1,11 +1,11 @@
 [% WRAPPER "layouts/default.html.tx" WITH
-title = (is_edit) ? loc("Edit done") : loc("Thank you for your submission!")
+title = (is_edit) ? loc("Edit done") : loc("Event Created")
 %]
 
 <div id="main">
 
 <div id="lead" class="section">
-<h1 class="corners">[% IF (is_edit) %][% loc("Edit done") %][% ELSE %][% loc("Thank you for your submission!") %][% END %]</h1>
+<h1 class="corners">[% IF (is_edit) %][% loc("Edit done") %][% ELSE %][% loc("Event Created") %][% END %]</h1>
 <div class="body">
 
 <div id="main-contents">
@@ -16,8 +16,6 @@ title = (is_edit) ? loc("Edit done") : loc("Thank you for your submission!")
             <div class="entry-contents">
 [% IF (is_edit) %]
                 <p>[% loc("Your event has been updated") %]</p>
-[% ELSE %]
-                <p>[% loc("Thank you for your submission.") %]</p>
 [% END %]
 
                 <p><a href="/2013/event/show/[% event.id %]">[% loc("Proceed To Event Page") %]</a></p>

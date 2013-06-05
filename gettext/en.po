@@ -502,4 +502,9 @@ msgstr "Event Duration"
 msgid "Event Description"
 msgstr "Event Description"
 
+msgid "Event Created"
+msgstr "Event Created"
+
+msgid "Proceed To Event Page"
+msgstr "Proceed To Event Page"
 
