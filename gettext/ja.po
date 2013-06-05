@@ -507,3 +507,10 @@ msgstr "公式イベント"
 
 msgid "Unofficial Event"
 msgstr "非公式イベント"
+
+msgid "Official/Unofficial"
+msgstr "公式・非公式イベント区分"
+
+msgid "Event Information"
+msgstr "イベント情報"
+

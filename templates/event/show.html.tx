@@ -82,7 +82,7 @@
                             [% IF (!event.is_official) %]<strong>[% END %]
                             [% loc(event.is_official ? "Official Event" : "Unofficial Event") %]
                             [% IF (!event.is_official) %]</strong>[% END %]
-                        <td>
+                        </td>
                     </tr>
                     <tr>
                         <td>[% loc("Event Location") %]</td>
