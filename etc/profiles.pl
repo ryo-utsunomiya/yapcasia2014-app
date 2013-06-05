@@ -86,7 +86,7 @@ use Data::FormValidator::Constraints qw(email);
     },
     'event.check' => {
         required => [ qw(title description) ],
-        optional => [ qw(id location start_on_date start_on_time duration is_official member_id) ],
+        optional => [ qw(id location start_on_date start_on_time duration is_official member_id signup_url) ],
         defaults => {
             location => 'TBD',
             is_official => 0,
@@ -104,6 +104,7 @@ use Data::FormValidator::Constraints qw(email);
             start_on_time => qr/^\d{2}:\d{2}$/,
             duration => qr/^\d+$/,
             is_official => qr/^1|0$/,
+            signup_url => [ qr/^$/, qr/^https?:\/\//i ],
         },
     },
 };
