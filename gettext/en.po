@@ -508,3 +508,6 @@ msgstr "Event Created"
 msgid "Proceed To Event Page"
 msgstr "Proceed To Event Page"
 
+msgid "Signup URL (External Site)"
+msgstr "Signup URL (External Site)"
+
