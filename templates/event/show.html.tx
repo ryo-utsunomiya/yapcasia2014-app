@@ -86,7 +86,7 @@
                     </tr>
                     <tr>
                         <td>[% loc("Signup URL (External Site)") %]</td>
-                        <td>[IF (event.signup_url) %]<a href="[% event.signup_url %]">[% event.signup_url %]</a>[% END %]</td>
+                        <td>[% IF (event.signup_url) %]<a href="[% event.signup_url %]">[% event.signup_url %]</a>[% END %]</td>
                     </tr>
                     <tr>
                         <td>[% loc("Event Location") %]</td>
