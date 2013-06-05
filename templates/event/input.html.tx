@@ -23,7 +23,7 @@
             <p>[% loc("If you plan to have people signup for your event, please use an external service like Peatix, ATND, zussar, conpass, etc.") %]</p>
 
 [% FILTER fillinform %]
-                <form action="/2013/talk/check" method="post" class="form-horizontal">
+                <form action="/2013/event/check" method="post" class="form-horizontal">
 [% IF (is_edit) %]
 <input type="hidden" name="id" />
 <input type="hidden" name="is_edit" value="1" />
