@@ -517,3 +517,6 @@ msgstr "イベント情報"
 msgid "Event Details"
 msgstr "イベント詳細"
 
+msgid "Are you sure you want to delete this event? You can't undo this!"
+msgstr "本当にこのイベントを削除しますか？この操作は取り消せません！"
+
