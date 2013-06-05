@@ -6,7 +6,7 @@ sub index { $_[0]->redirect_to("/2013/event/list") }
 sub list {
     my $self = shift;
 
-    my $event_api = $self->get('API::Talk');
+    my $event_api = $self->get('API::Event');
     my $member_api = $self->get('API::Member');
 
     my $official_events = $event_api->search(
