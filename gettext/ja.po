@@ -547,8 +547,9 @@ msgstr "ハッカソン、BOF、 飲み会、後夜祭等のイベントを開�
 msgid "Create A New Event"
 msgstr "イベントの作成"
 
-msgid "Here, you can submit a new event (e.g. hackathons, drinkups, BOFs, etc). "
+msgid "Here, you can submit a new event (e.g. hackathons, drinkups, BOFs, etc)."
 msgstr "こちらではYAPC::Asia Tokyo 2013関連のイベント（ハッカソン、飲み会、BOF等）の登録ができます。"
 
 msgid "If you plan to have people signup for your event, please use and specify an external service like Peatix, ATND, zussar, connpass, etc."
 msgstr "参加登録が必要なイベントの場合はPeatix, ATND, zussar, connpass等の外部サービスを使用してURLをこちらに登録してください"
+

@@ -39,7 +39,7 @@
 
                         [% fmt_error_message(results, "signup_url", "Signup URL") %]
                         <div class="control-group">
-                            <p style="font-size: 8px">[% loc("If you plan to have people signup for your event, please use and specify an external service like Peatix, ATND, zussar, conpass, etc.") %]</p>
+                            <p style="font-size: 8px">[% loc("If you plan to have people signup for your event, please use and specify an external service like Peatix, ATND, zussar, connpass, etc.") %]</p>
                             <label class="control-label" for="">[% loc("Signup URL" ) %]</label>
                             <div class="controls docs-input-sizes">
                                 <input type="text" class="input-xlarge" name="signup_url">
