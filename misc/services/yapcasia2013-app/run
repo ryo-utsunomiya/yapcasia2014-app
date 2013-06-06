@@ -3,4 +3,4 @@
 APP_HOME=/var/lib/jpa/yapcasia.org/yapcasia2013-app
 
 cd $APP_HOME
-exec $APP_HOME/script/carton.sh exec plackup etc/app.psgi -p 5004 -o 127.0.0.1 2>&1
+exec $APP_HOME/script/carton.sh plackup etc/app.psgi -p 5004 -o 127.0.0.1 2>&1
