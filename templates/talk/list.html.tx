@@ -104,16 +104,16 @@ title = 'Talks'
 </div>
 
 <hr noshade="noshade" />
-<h3>[% loc("Pending Talks") %] ([% pending_talks.size() %])</h3>
-<p>[% loc("Currently these talks are in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons on each page to express your interest!") %]</p>
-[% FOREACH talk IN pending_talks %]
+<h3>[% loc("Accepted Talks") %] ([% accepted_talks.size() %])</h3>
+<p></p>
+[% FOREACH talk IN accepted_talks %]
 [% talk_details(talk) %]
 [% END %]
 
 <hr noshade="noshade" />
-<h3>[% loc("Accepted Talks") %] ([% accepted_talks.size() %])</h3>
-<p></p>
-[% FOREACH talk IN accepted_talks %]
+<h3>[% loc("Pending Talks") %] ([% pending_talks.size() %])</h3>
+<p>[% loc("Currently these talks are in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons on each page to express your interest!") %]</p>
+[% FOREACH talk IN pending_talks %]
 [% talk_details(talk) %]
 [% END %]
 
