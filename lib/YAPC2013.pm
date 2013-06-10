@@ -119,8 +119,8 @@ sub setup_routes {
         $mk_crud->($crud_object);
     }
 
-    $r->get('/2013/api/talk/list')->to('talk#api_list')
-    $r->get('/2013/api/talk/show/:object_id')->to('talk#api_show')
+    $r->get('/2013/api/talk/list')->to('talk#api_list');
+    $r->get('/2013/api/talk/show/:object_id')->to('talk#api_show');
 }
 
 sub setup_xslate {
