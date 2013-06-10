@@ -267,7 +267,7 @@ sub _serialize_talk {
     foreach my $column (@columns) {
         $serialized->{$column} = $talk->{$column};
     }
-    my $speaker = $self->get('API::Member')->get($talk->{member_id});
+    my $speaker = $self->get('API::Member')->lookup($talk->{member_id});
     $serialized->{speaker} = {
         name        => $speaker->{name},
         nickname    => $speaker->{nickname},
