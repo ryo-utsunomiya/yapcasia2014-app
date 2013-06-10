@@ -245,4 +245,61 @@ sub delete {
     $self->SUPER::delete();
 }
 
+sub _serialize_talk {
+    my ($self, $talk) = @_;
+
+    my @columns = qw(
+        title
+        title_en
+        language
+        subtitles
+        category
+        start_on
+        duration
+        material_level
+        abstract
+        slide_url
+        video_url
+        photo_permission
+        video_permission
+    );
+    my $serialized = {};
+    foreach my $column (@columns) {
+        $serialized->{$column} = $talk->{$column};
+    }
+    my $speaker = $self->get('API::Member')->get($talk->{member_id});
+    $serialized->{speaker} = {
+        name        => $speaker->{name},
+        nickname    => $speaker->{nickname},
+        service     => $speaker->{authenticated_by}
+    };
+
+    # venue... implement later
+    $serialized->{venue} = {}; 
+    return $serialized;
+}
+
+sub api_show {
+    my $self = shift;
+    $self->show();
+
+    $self->render(json => { talk => $self->_serialize_talk($self->stash->{talk}) });
+}
+
+sub api_list {
+    my $self = shift;
+    my $raw_talks = $self->get('API::Talk')->search(
+        { status => 'accepted' },
+        { order_by => 'sort_order ASC' },
+    );
+
+    my @talks;
+    foreach my $talk (@$raw_talks) {
+        my $serialized = $self->_serialize_talk($talk);
+        push @talks, $serialized;
+    }
+
+    $self->render(json => { talks => \@talks });
+}
+
 1;
