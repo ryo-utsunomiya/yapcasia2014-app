@@ -1,6 +1,7 @@
 package YAPC2013::API::Twitter;
 use Moo;
 use Net::Twitter::Lite::WithAPIv1_1;
+use Scalar::Util qw/blessed/;
 
 with 'YAPC2013::API::WithCache';
 
@@ -59,16 +60,25 @@ sub get_user {
     my ($self, $screen_name) = @_;
 
     my $memcached = $self->container->get('Memcached');
-    my $key = $self->cache_key( __PACKAGE__ , 'get_user', $screen_name );
-    warn $key;
+    my $key = $self->cache_key( blessed $self , 'get_user', $screen_name );
     my $user = $self->cache_get($key);
 
     if( $user ){
         my $get_data = $self->cache_get($key);
         return $user;
     } else {
-        my $tw_user = $self->twitter->show_user({screen_name => $screen_name});
-        $self->cache_set($key, $tw_user, 60 * 60 * 24);
+        my $tw_user = 
+            eval{ $self->twitter->show_user({screen_name => $screen_name}) };
+        if( $@ ){
+            warn "API::Twitter $@ '\@$screen_name'";
+            $self->cache_set($key, undef, 60 * 60 * 24);
+        }
+        elsif ( !$tw_user ){
+            $self->cache_set($key, undef, 60 * 60 * 24);
+        }
+        else {
+            $self->cache_set($key, $tw_user, 60 * 60 * 24);
+        }
         return $tw_user;
     }
 }
