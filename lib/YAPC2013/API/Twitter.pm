@@ -2,6 +2,8 @@ package YAPC2013::API::Twitter;
 use Moo;
 use Net::Twitter::Lite::WithAPIv1_1;
 
+with 'YAPC2013::API::WithCache';
+
 has twitter => (
     is => 'rw',
     lazy => 1,
@@ -51,6 +53,36 @@ sub post {
     if ($@) {
         warn "Failed to post to twitter: $@";
     }
+}
+
+sub get_user {
+    my ($self, $screen_name) = @_;
+
+    my $memcached = $self->container->get('Memcached');
+    my $key = $self->cache_key( __PACKAGE__ , 'get_user', $screen_name );
+    warn $key;
+    my $user = $self->cache_get($key);
+
+    if( $user ){
+        my $get_data = $self->cache_get($key);
+        return $user;
+    } else {
+        my $tw_user = $self->twitter->show_user({screen_name => $screen_name});
+        $self->cache_set($key, $tw_user, 60 * 60 * 24);
+        return $tw_user;
+    }
+}
+
+sub get_user_icon {
+    my ($self, $screen_name, $size) = @_;
+
+    my $tw_user = $self->get_user($screen_name);
+    my $icon = $tw_user->{profile_image_url};
+
+    if( $icon && $size && $size eq 'bigger' || $size eq 'large' ) {
+        $icon =~ s/_normal/_bigger/;
+    }
+    return $icon;
 }
 
 no Moo;

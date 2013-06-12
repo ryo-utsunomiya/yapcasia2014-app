@@ -416,10 +416,7 @@ sub get_member_icon_url {
                 $url .= "?type=large";
             }
         } elsif ($authenticated_by eq 'twitter') {
-            $url = "http://api.twitter.com/1/users/profile_image/$member->{nickname}";
-            if ($size eq "large") {
-                $url .= "?size=original";
-            }
+            $url = $self->get('API::Twitter')->get_user_icon($member->{nickname}, $size);
         }
         elsif ($authenticated_by eq 'github') {
             my (undef, $code, undef, undef, $body) = $self->get('Furl')->get("https://api.github.com/users/$member->{nickname}");
