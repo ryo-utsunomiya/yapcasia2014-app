@@ -71,10 +71,10 @@ sub get_user {
             eval{ $self->twitter->show_user({screen_name => $screen_name}) };
         if( $@ ){
             warn "API::Twitter $@ '\@$screen_name'";
-            $self->cache_set($key, '', 60 * 60 * 24);
+            $self->cache_set($key, 'no data', 60 * 60 * 24);
         }
         elsif ( !$tw_user ){
-            $self->cache_set($key, '', 60 * 60 * 24);
+            $self->cache_set($key, 'no data', 60 * 60 * 24);
         }
         else {
             $self->cache_set($key, $tw_user, 60 * 60 * 24);
