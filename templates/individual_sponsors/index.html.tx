@@ -38,7 +38,7 @@ $(document).ready( function(){
   <img src="http://yapcasia.org/2013/static/images/footer_character.png" width="75"/><br />
   anonymous
 [% ELSE %]
-  <img src="http://api.twitter.com/1/users/profile_image/[% sponsor %]?size=bigger" /><br />
+  <img src="[% twitter_api.get_user_icon( sponsor, 'bigger' ) %]" /><br />
   [% sponsor %]
 [% END %]
 

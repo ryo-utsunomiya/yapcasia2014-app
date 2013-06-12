@@ -21,7 +21,8 @@ sub index {
 
         $cache->set($cache_key, $data, 5 * 60);
     }
-    $self->stash( sponsors => $data );
+
+    $self->stash( sponsors => $data, twitter_api => $self->get('API::Twitter') );
 }
 
 1;
