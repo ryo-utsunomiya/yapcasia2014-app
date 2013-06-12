@@ -8,20 +8,29 @@ sub index {
     my $self = shift;
 
     my $cache = $self->get('Memcached');
-    my $cache_key = "faces.json";
-    my $data = $cache->get($cache_key);
-    if (! $data) {
+    my $cache_key = "faces.json-api-1.1";
+    my $sponsors = $cache->get($cache_key);
+    if (! $sponsors) {
         my $json = $self->get('JSON');
         my $fp;
         if (! open $fp, "<", $self->file) {
             die "Failed to open @{[ $self->file ]}: $!";
         }
-        $data = $json->decode(do { local $/; <$fp> });
+        my $data = $json->decode(do { local $/; <$fp> });
         close $fp;
 
-        $cache->set($cache_key, $data, 5 * 60);
+        $sponsors = [];
+        foreach my $sponsor (@$data) {
+            if (! $sponsor) { # anonymous? 
+                push @$sponsors, undef;
+            } else {
+                push @$sponsors, $twitter_api->get_user_icon($sponsor);
+            }
+        }
+
+        $cache->set($cache_key, $sponsors, 5 * 60);
     }
-    $self->stash( sponsors => $data );
+    $self->stash( sponsors => $sponsors );
 }
 
 1;
