@@ -65,6 +65,9 @@ sub get_user {
 
     if( $user ){
         my $get_data = $self->cache_get($key);
+        if( $get_data eq 'no data' ){
+            return;
+        }
         return $user;
     } else {
         my $tw_user = 
@@ -87,9 +90,10 @@ sub get_user_icon {
     my ($self, $screen_name, $size) = @_;
 
     my $tw_user = $self->get_user($screen_name);
-    my $icon = $tw_user->{profile_image_url};
+    return if( !$tw_user );
 
-    if( $icon && $size && $size eq 'bigger' || $size eq 'large' ) {
+    my $icon = $tw_user->{profile_image_url};
+    if( $icon && $size && ( $size eq 'bigger' || $size eq 'large' ) ) {
         $icon =~ s/_normal/_bigger/;
     }
     return $icon;
