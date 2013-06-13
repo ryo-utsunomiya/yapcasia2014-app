@@ -20,6 +20,7 @@ sub index {
         close $fp;
 
         $sponsors = [];
+        my $twitter_api = $self->get('API::Twitter');
         foreach my $sponsor (@$data) {
             if (! $sponsor) { # anonymous? 
                 push @$sponsors, undef;
