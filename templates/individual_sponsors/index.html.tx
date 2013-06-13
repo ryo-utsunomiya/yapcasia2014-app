@@ -38,7 +38,8 @@ $(document).ready( function(){
   <img src="http://yapcasia.org/2013/static/images/footer_character.png" width="75"/><br />
   anonymous
 [% ELSE %]
-  <img src="[% sponsor %]" /><br />
+  <img src="[% sponsor.icon_url %]" /><br />
+  [% sponsor.name %]
 [% END %]
 
 </td>

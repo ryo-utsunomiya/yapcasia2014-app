@@ -8,7 +8,7 @@ sub index {
     my $self = shift;
 
     my $cache = $self->get('Memcached');
-    my $cache_key = "faces.json-api-1.1";
+    my $cache_key = "faces.json-api-1.1-take2";
     my $sponsors = $cache->get($cache_key);
     if (! $sponsors) {
         my $json = $self->get('JSON');
@@ -25,7 +25,10 @@ sub index {
             if (! $sponsor) { # anonymous? 
                 push @$sponsors, undef;
             } else {
-                push @$sponsors, $twitter_api->get_user_icon($sponsor, "bigger");
+                push @$sponsors, {
+                    icon_url => $twitter_api->get_user_icon($sponsor, "bigger"),
+                    name     => $sponsor
+                };
             }
         }
 
