@@ -24,7 +24,7 @@ sub index {
             if (! $sponsor) { # anonymous? 
                 push @$sponsors, undef;
             } else {
-                push @$sponsors, $twitter_api->get_user_icon($sponsor);
+                push @$sponsors, $twitter_api->get_user_icon($sponsor, "bigger");
             }
         }
 
