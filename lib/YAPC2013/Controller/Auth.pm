@@ -36,7 +36,7 @@ sub auth_twitter {
     my $consumer = OAuth::Lite::Consumer->new(
         consumer_key       => $config->{Twitter}->{consumer_key},
         consumer_secret    => $config->{Twitter}->{consumer_secret},
-        site               => q{http://api.twitter.com},
+        site               => q{https://api.twitter.com},
         request_token_path => q{/oauth/request_token},
         access_token_path  => q{/oauth/access_token},
         authorize_path     => q{/oauth/authorize},
@@ -58,10 +58,13 @@ sub auth_twitter {
         $self->sessions->remove('request_token');
         my $res = $consumer->request(
             method => 'GET',
-            url    => q{http://api.twitter.com/1/account/verify_credentials.json},
+            url    => q{http://api.twitter.com/1.1/account/verify_credentials.json},
             token  => $access_token,
         );
         my $tw = $self->get('JSON')->decode($res->decoded_content);
+
+        use Data::Dumper;
+        warn Dumper $tw;
 
         my $member = {
             remote_id => $tw->{id},
