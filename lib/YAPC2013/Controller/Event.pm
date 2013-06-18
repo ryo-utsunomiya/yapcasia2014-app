@@ -15,6 +15,8 @@ sub show {
         }
         $self->stash(organizer => $organizer);
     }
+
+    $self->stash(member => $self->get_member());
 }
 
 sub list {
