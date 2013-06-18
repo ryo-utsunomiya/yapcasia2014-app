@@ -160,7 +160,6 @@ sub check {
 sub preview {
     my $self = shift;
     my $member = $self->assert_email or return;
-    $member->{is_admin} = 1;
     $self->stash( member => $member );
 
     $self->SUPER::preview();
