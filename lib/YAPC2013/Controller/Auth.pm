@@ -63,9 +63,6 @@ sub auth_twitter {
         );
         my $tw = $self->get('JSON')->decode($res->decoded_content);
 
-        use Data::Dumper;
-        warn Dumper $tw;
-
         my $member = {
             remote_id => $tw->{id},
             nickname  => $tw->{screen_name},
