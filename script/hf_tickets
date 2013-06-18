@@ -32,8 +32,16 @@ my @event_ids = (
     11778
 );
 my %ticket_name2id = (
+    "Sudent pass" => "student_en",
     "学生チケット（無料）" => "student",
-    "先行販売 2日通し券(Tシャツ付き)" => "early_bird"
+    "Early Bird 2 day pass" => "early_bird_en",
+    "先行販売 2日通し券(Tシャツ付き)" => "early_bird",
+    "2 day pass" => "twoday_pass_en",
+    "2日通し券 (Tシャツ付き）" => "twoday_pass",
+    "9/20 1 day pass" => "oneday_pass_1_en",
+    "9/20 1日券 (Tシャツ付き）" => "oneday_pass_1",
+    "9/21 1 day pass" => "oneday_pass_2_en",
+    "9/21 1日券 (Tシャツ付き）" => "oneday_pass_2",
 );
 foreach my $event (@event_ids) {
     my $json = `$^X ./script/fetch_csv $event`;
