@@ -101,6 +101,10 @@ sub commit {
             $start_on_time || '00:00'
         );
     }
+    if (! $data->{signup_url}) {
+        # Make sure there's aun undef in there
+        $data->{signup_url} = undef;
+    }
     $self->SUPER::commit();
 }
 
