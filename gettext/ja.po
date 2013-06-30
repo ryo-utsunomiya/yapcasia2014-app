@@ -457,8 +457,8 @@ msgstr "なおYAPCはPerlのイベントではありますが、応募される�
 msgid "We're Currently Accepting Talk Proposals!"
 msgstr "皆様のトーク応募をお待ちしております！"
 
-msgid "There's no better way to enjoy YAPC::Asia Tokyo than to be a speaker yourself! We're currently accepting talk proposals (due Jun 30 JST). Share your passion about Perl, or anything else that you want!"
-msgstr "YAPC::Asia Tokyoを100%楽しむためにはスピーカーになるのがベストです！現在6/30までトークを絶賛受付中です。Perl関連の技術や想い、もしくはそれ以外の全く違う奇想天外な話でもかまいません、是非この機会に皆さんとシェアしませんか？"
+msgid "There's no better way to enjoy YAPC::Asia Tokyo than to be a speaker yourself! We're currently accepting talk proposals (due Jul 12 JST). Share your passion about Perl, or anything else that you want!"
+msgstr "YAPC::Asia Tokyoを100%楽しむためにはスピーカーになるのがベストです！現在7/12までトークを絶賛受付中です。Perl関連の技術や想い、もしくはそれ以外の全く違う奇想天外な話でもかまいません、是非この機会に皆さんとシェアしませんか？"
 
 msgid "Even if this is your first time, don't hesitate! Don't worry, you will most likely not be talking to the entire YAPC attendee. The smallest room is for 60 people or so."
 msgstr "これまでYAPCで登壇したことがない方も歓迎です！小さめの部屋もありますので、初心の方も大歓迎です"

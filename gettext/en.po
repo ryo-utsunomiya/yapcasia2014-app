@@ -472,8 +472,8 @@ msgstr "Also, while this is a Perl event, it is 100% OKAY to talk about subject 
 msgid "We're Currently Accepting Talk Proposals!"
 msgstr  "We're Currently Accepting Talk Proposals!"
 
-msgid "There's no better way to enjoy YAPC::Asia Tokyo than to be a speaker yourself! We're currently accepting talk proposals (due Jun 30 JST). Share your passion about Perl, or anything else that you want!"
-msgstr "There's no better way to enjoy YAPC::Asia Tokyo than to be a speaker yourself! We're currently accepting talk proposals (due Jun 30 JST). Share your passion about Perl, or anything else that you want!"
+msgid "There's no better way to enjoy YAPC::Asia Tokyo than to be a speaker yourself! We're currently accepting talk proposals (due Jul 12 JST). Share your passion about Perl, or anything else that you want!"
+msgstr "There's no better way to enjoy YAPC::Asia Tokyo than to be a speaker yourself! We're currently accepting talk proposals (due Jul 12 JST). Share your passion about Perl, or anything else that you want!"
 
 msgid "Even if this is your first time, don't hesitate! Don't worry, you will most likely not be talking to the entire YAPC attendee. The smallest room is for 60 people or so."
 msgstr "Even if this is your first time, don't hesitate! Don't worry, you will most likely not be talking to the entire YAPC attendee. The smallest room is for 60 people or so."
