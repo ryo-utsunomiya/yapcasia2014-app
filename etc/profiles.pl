@@ -86,7 +86,7 @@ use Data::FormValidator::Constraints qw(email);
         },
     },
     'event.check' => {
-        required => [ qw(title description signup_url) ],
+        required => [ qw(title description) ],
         optional => [ qw(is_edit id location start_on_date start_on_time duration is_official member_id signup_url) ],
         defaults => {
             location => 'TBD',

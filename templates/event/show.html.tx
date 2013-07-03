@@ -114,7 +114,21 @@
 <!--
     $(document).ready( function() {
         $("#event-delete").click( function() {
-            return confirm("[% loc("Are you sure you want to delete this event? You can't undo this!") %]");
+            if (! confirm("[% loc("Are you sure you want to delete this event? You can't undo this!") %]")) {
+                return false;
+            }
+
+            $.ajax({
+                type: "POST",
+                url: $("#event-dalete").attr("href"),
+                success: function() {
+                    location.ref = "/2013/event/list";
+                },
+                error: function() {
+                    alert("Error Deleting Event");
+                }
+            });
+            return false;
         });
     });
     $([
