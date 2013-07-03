@@ -104,13 +104,13 @@ sub setup_routes {
         my $name = shift;
         my $base = $r->under("/2013/$name");
         $base->get("/")->to("$name#index");
-        foreach my $action ( qw(show edit delete) ){
+        foreach my $action ( qw(show edit) ){
             $base->get("$action/:object_id")->to("$name#$action");
         }
         foreach my $action ( qw(list input preview) ){
             $base->get($action)->to("$name#$action");
         }
-        foreach my $action ( qw(check commit) ) {
+        foreach my $action ( qw(check commit delete) ) {
             $base->post($action)->to("$name#$action");
         }
     };
