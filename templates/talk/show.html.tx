@@ -160,7 +160,21 @@
 <!--
     $(document).ready( function() {
         $("#talk-delete").click( function() {
-            return confirm("[% loc("Are you sure you want to delete this talk? You can't undo this!") %]");
+            if (! confirm("[% loc("Are you sure you want to delete this talk? You can't undo this!") %]")) {
+                return;
+            }
+
+            $.ajax({
+                type: "POST",
+                url: $("#talk-delete").attr("href"),
+                success: function() {
+                    location.href = "/2013/talk/list";
+                },
+                error: function() {
+                    alert("Error Deleting Talk");
+                }
+            });
+            return false;
         });
     });
     $([
