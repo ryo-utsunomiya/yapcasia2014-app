@@ -63,8 +63,8 @@ sub edit {
         return;
     }
 
-    if ($member->{id} ne $object->{member_id} && $member->{is_admin} != 9) {
-        $self->render_text("No auth");
+    if ($member->{id} ne $object->{member_id} && !$member->{is_admin}) {
+        $self->render("No auth");
         $self->rendered(403);
         return;
     }
