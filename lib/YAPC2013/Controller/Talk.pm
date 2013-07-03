@@ -104,7 +104,7 @@ sub edit {
     }
 
     if ($member->{id} ne $object->{member_id} && $member->{is_admin} != 9) {
-        $self->render("No auth");
+        $self->render_text("No auth");
         $self->rendered(403);
         return;
     }
@@ -236,7 +236,7 @@ sub delete {
         return;
     }
     if ($member->{id} ne $object->{member_id} && $member->{is_admin} != 9) {
-        $self->render("No auth");
+        $self->render_text("No auth");
         $self->rendered(403);
         return;
     }
