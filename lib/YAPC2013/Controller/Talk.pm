@@ -41,6 +41,7 @@ sub show {
             if ($talk->{member_id} eq $member->{id}) {
                 $self->stash( owner => 1 );
             }
+            $self->stash( member => $member );
         }
 
         my $venue = $talk->{venue_id} && VENUE_ID->{ $talk->{venue_id} };
@@ -104,7 +105,7 @@ sub edit {
     }
 
     if ($member->{id} ne $object->{member_id} && !$member->{is_admin}) {
-        $self->render("No auth");
+        $self->render_text("No auth");
         $self->rendered(403);
         return;
     }
@@ -236,7 +237,7 @@ sub delete {
         return;
     }
     if ($member->{id} ne $object->{member_id} && !$member->{is_admin}) {
-        $self->render("No auth");
+        $self->render_text("No auth");
         $self->rendered(403);
         return;
     }
