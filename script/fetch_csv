@@ -43,7 +43,7 @@ sub get_event_data {
     {
         $res = $ua->get($attendee_url);
         open my $io, "<:encoding(utf8)", \$res->decoded_content or die;
-        my $csv = Text::CSV_XS->new({ binary => 1});
+        my $csv = Text::CSV_XS->new({ binary => 1, allow_loose_quotes => 1 });
         while (my $row = $csv->getline($io)) {
             next if $. == 1;
             $tickets{$row->[0]} = {
