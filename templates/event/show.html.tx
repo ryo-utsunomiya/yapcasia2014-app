@@ -122,7 +122,7 @@
                 type: "POST",
                 url: $("#event-delete").attr("href"),
                 success: function() {
-                    location.ref = "/2013/event/list";
+                    location.href = "/2013/event/list";
                 },
                 error: function() {
                     alert("Error Deleting Event");
