@@ -110,7 +110,10 @@ sub setup_routes {
         foreach my $action ( qw(list input preview) ){
             $base->get($action)->to("$name#$action");
         }
-        foreach my $action ( qw(check commit delete) ) {
+        foreach my $action ( qw(delete) ) {
+            $base->post("$action/:object_id")->to("$name#$action");
+        }
+        foreach my $action ( qw(check commit) ) {
             $base->post($action)->to("$name#$action");
         }
     };
