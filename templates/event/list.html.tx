@@ -71,7 +71,7 @@ title = 'Events'
         <td width="400">
             <div class="title">
                 <div>
-                    <a href="/2013/event/show/[% event.id %]">[% event.title %]</a>[% IF(event.duration) %] ([% loc("[_1] minutes", event.duration ) %])[% END %]
+                    <a href="/2013/event/show/[% event.id %]">[% event.title %]</a>[% IF(event.duration) %] ([% event.start_on %] ~ [% loc("[_1] minutes", event.duration ) %])[% END %]
                 </div>
             </div>
         </td>
