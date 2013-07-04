@@ -86,8 +86,8 @@ sub commit {
     if (! $data->{is_edit}) {
         $data->{member_id} = $member->{id};
     }
-    local $data->{start_on_date};
-    local $data->{start_on_time};
+    local $data->{start_on_date} = $data->{start_on_date};
+    local $data->{start_on_time} = $data->{start_on_time};
     local $data->{start_on} = $data->{start_on};
     if (! $data->{start_on}) {
         delete $data->{start_on};
