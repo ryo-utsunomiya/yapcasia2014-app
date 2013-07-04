@@ -70,6 +70,8 @@ sub edit {
     }
 
     $self->SUPER::edit();
+    ($object->{start_on_date}, $object->{start_on_time}) =
+        ($object->{start_on} =~ /^(\d+-\d+-\d+) (\d+):(\d+)/);
 }
 
 sub commit {
