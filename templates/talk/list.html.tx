@@ -93,7 +93,9 @@ title = 'Talks'
         <div class="entry">
             <div class="entry-contents">
 
-<h2>[% loc("Thanks for your submissions. We're Currently Evaluating The Submitted Talk Proposals. Please take some time to +1 the talk(s) that you would like to see at this YAPC") %]</h2>
+<h2>[% loc("Thanks for your submissions!")</h2>
+
+<p>[% loc("We're Currently Evaluating The Submitted Talk Proposals. Please take some time to +1 the talk(s) that you would like to see at this YAPC") %]</p>
 
 <hr noshade="noshade" />
 <h3>[% loc("Accepted Talks") %] ([% accepted_talks.size() %])</h3>

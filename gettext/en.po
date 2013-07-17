@@ -574,5 +574,8 @@ msgstr "Please describe this event. Please make sure to include max cap, fees, d
 msgid "Events Organized By [_1]"
 msgstr "Events Organized By %1" 
 
-msgid "Thanks for your submissions. We're Currently Evaluating The Submitted Talk Proposals. Please take some time to +1 the talk(s) that you would like to see at this YAPC"
-msgstr "Thanks for your submissions. We're Currently Evaluating The Submitted Talk Proposals. Please take some time to +1 the talk(s) that you would like to see at this YAPC"
+msgid "Thanks for your submissions."
+msgstr "Thanks for your submissions."
+
+msgid "We're Currently Evaluating The Submitted Talk Proposals. Please take some time to +1 the talk(s) that you would like to see at this YAPC"
+msgstr "We're Currently Evaluating The Submitted Talk Proposals. Please take some time to +1 the talk(s) that you would like to see at this YAPC"
