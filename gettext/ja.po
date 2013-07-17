@@ -558,3 +558,7 @@ msgstr "イベントの詳細を記してください。参加人数、費用（
 
 msgid "Events Organized By [_1]"
 msgstr "%1さんが登録しているイベント"
+
+msgid "Thanks for your submissions. We're Currently Evaluating The Submitted Talk Proposals. Please take some time to +1 the talk(s) that you would like to see at this YAPC"
+msgstr "多くのご応募ありがとうございました。現在トークの選考を行っています。下記リストの中で見たい！と思うトークがありましたら、是非ソーシャルボタンを押したり、ブックマークに追加したりしてください。選考の参考とさせていただきます。"
+
