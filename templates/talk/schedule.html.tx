@@ -1,0 +1,146 @@
+[% WRAPPER "layouts/default.html.tx" WITH title = "Talk Schedules" %]
+
+<div id="main">
+
+<div id="lead" class="section">
+<h1 class="corners">[% loc("Talk Schedules") %]</h1>
+<div class="body">
+
+
+<style>
+<!--
+    .schedule {
+        margin-left: 1em;
+    }
+    .schedule .timeaxis {
+        font-size: 0.6em;
+        float: left;
+        width: 50px;
+        background: #eee;
+    }
+    .schedule .timeaxis .row:first-child {
+        margin-top: 25px;
+        border: 1px solid #ccc;
+        border-right: none;
+    }
+    .schedule .timeaxis .row {
+        text-align: right;
+        vertical-align: middle;
+        height: 25px;
+        border: 1px solid #ccc;
+        border-right: none;
+        border-top: none;
+    }
+    .schedule .timeaxis .row .hm {
+        margin-right: 3px;
+    }
+    .schedule .venue {
+        position: relative;
+        float: left;
+        width: 130px;
+        background: #bbb;
+        height: [% IF(date == "2012-09-27") %]1584[% ELSE %]3924[% END %]px;
+        border: 1px solid #ccc;
+        border-right: none;
+    }
+    .schedule .venue:last-child {
+        border-right: 1px solid #ccc;
+    }
+    .schedule .venue .venue-name {
+        background-color: #fff;
+        height: 24px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.8em;
+        border-bottom: 1px solid #ccc;
+    }
+    .schedule .venue .talk {
+        position: absolute;
+        font-size: 0.6em;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        overflow: hidden;
+        background-color: #fff;
+    }
+    .schedule .venue .talk .title a {
+        font-weight: bold;
+    }
+    .schedule .venue .talk .title {
+        margin: 5px 0 0 5px;
+    }
+    .schedule .venue .talk .detail {
+        margin: 0 0 0 5px;
+    }
+
+    ul.dates {
+        margin: 1em;
+    }
+    ul.dates li {
+        padding-left: 2em;
+        padding-right: 2em;
+        list-style: none;
+        display: inline;
+        font-size: 9pt;
+        font-weight: normal;
+        border-left: 1px solid #000;
+    }
+    ul.dates li:first-child {
+        border: none;
+    }
+-->
+</style>
+
+<div id="main-contents">
+
+<div class="section">
+<ul class="dates">
+[% FOREACH x IN [ "2013-09-19", "2013-09-20", "2013-09-21" ] %]
+    <li>[% IF (x == date) %][% x %][% ELSE %]<a href="/2013/talk/schedule?date=[% x %]">[% x %]</a>[% END %]</li>
+[% END %]
+</ul>
+<div class="schedule">
+<div class="timeaxis">
+[% SET hours = [ 9..21 ] %]
+[% IF (date == "2013-09-19") %][% SET hours = [ 9..21 ] %][% END %]
+[% FOREACH hour IN hours %]
+[% IF (hour == 9) %]
+[% FOREACH minute IN [ 30, 35, 40, 45, 50, 55 ] %]
+<div class="row"><span class="hm">[% hour %]:[% minute %]</span></div>
+[% END %]
+[% ELSE %]
+[% FOREACH minute IN [ "00", "05", 10, 15, 20, 25, 30, 35, 40, 45, 50, 55 ] %]
+<div class="row"><span class="hm">[% hour %]:[% minute %]</span></div>
+[% END # minute %]
+[% END %]
+[% END # hour %]
+</div>
+[% FOREACH venue IN venues %]
+<div class="venue">
+    <div class="venue-name">[% venue.name %]</div>
+[% FOREACH talk IN talks_by_venue.item(loop.index) %]
+<div class="talk" style="top: [% fmt_talk_schedule_top(talk) %]px; height: [% fmt_talk_schedule_height(talk) %]px">
+<div class="title">
+    <a href="/2013/talk/show/[% talk.id %]">[% talk.title || talk.title_en %]</a>
+    (<span class="duration">[% loc("[_1] minutes", talk.duration) %]</span>)
+</div>
+<div class="detail">
+    <span class="speaker"><a href="/2013/member/show/[% talk.speaker.id %]">[% talk.speaker.name || talk.speaker.nickname %]</a></span>
+    <span class="level">[[% loc(talk.material_level) %]]</span>
+    <span class="category">[[% loc(talk.category) %]]</span>
+    <span class="language">[[% loc(talk.language) %]]</span>
+</div>
+</div>
+[% END %]
+</div>
+[% END %]
+</div>
+
+</div><!-- section -->
+</div><!-- #main-contents -->
+
+
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+</div><!--  / #main /  -->
+[% END %]
