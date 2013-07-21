@@ -6,6 +6,75 @@ sub index {
     $_[0]->redirect_to("http://yapcasia.org/2013/talk/list");
 }
 
+sub schedule {
+    my $self = shift;
+
+    my $date = $self->req->param('date');
+    if ( !$date ){
+        $date = '2013-09-21';
+    }
+    $self->stash( date => $date );
+
+    my $cache     = $self->get('Memcached');
+    my $format    = $self->req->param('format') || 'html';
+    my $cache_key = join ".", qw(talk schedule), $format, $date;
+    my $data      = $cache->get($cache_key . "hoge");
+    if (! $data) {
+        warn "inininin!!!";
+        my $talk_api = $self->get('API::Talk');
+        my $member_api = $self->get('API::Member');
+        my $venues = VENUES;
+        my @talks_by_venue;
+        foreach my $venue ( @$venues ) {
+            my @talks = $talk_api->search(
+                {
+                    venue_id => $venue->{id},
+#                    status   => "accepted",
+                    duration => { "!=", 5 },
+                    start_on => { "between" => [ "$date 00:00:00", "$date 23:59:59" ] }
+                },
+                {
+                    order_by => "start_on ASC",
+                }
+            );
+            foreach my $talk (@talks) {
+                $talk->{speaker} = $member_api->lookup($talk->{member_id});
+            }
+            push @talks_by_venue, \@talks;
+        }
+
+        $data = {
+            venues => $venues,
+            venue_id2name => VENUE_ID2NAME,
+            talks_by_venue => \@talks_by_venue,
+            date => $date,
+        };
+
+        if ($format eq 'json') {
+            foreach my $talks (@talks_by_venue) {
+                foreach my $talk (@$talks) {
+                    my $speaker = $talk->{speaker};
+                    delete $speaker->{email};
+                    delete $speaker->{is_admin};
+                    delete $speaker->{remote_id};
+                    delete $speaker->{authenticated_by};
+                    delete $speaker->{updated_on};
+                    delete $speaker->{created_on};
+                }
+            }
+        }
+        $cache->set($cache_key, $data, 60);
+    }
+
+    if ($format ne 'html') {
+        $self->render($format, $data);
+    } else {
+        use Data::Dumper;
+        warn Dumper $data;
+        $self->stash($data);
+    }
+}
+
 sub list {
     my $self = shift;
 
@@ -44,9 +113,8 @@ sub show {
             $self->stash( member => $member );
         }
 
-        my $venue = $talk->{venue_id} && VENUE_ID->{ $talk->{venue_id} };
-        if ($venue) {
-            $talk->{venue} = $venue;
+        if( my $venue_id = $talk->{venue_id} ){
+            $talk->{venue} = VENUE_ID2NAME->{$venue_id};
         }
 
         $talk->{speaker} = $speaker;
@@ -91,7 +159,8 @@ sub input {
     }
 
     $self->SUPER::input();
-    
+    $self->stash(venues => VENUES );
+
     if (my $start_on = $self->stash->{fif}->{start_on} ) {
         my($date, $time) = split / /, $start_on;
         $self->stash->{fif}->{start_on_date} = $date;
@@ -124,6 +193,7 @@ sub edit {
     }
 
     $self->SUPER::edit();
+    $self->stash(venues => VENUES );
 
     if (my $start_on = $self->stash->{fif}->{start_on} ) {
         my($date, $time) = split / /, $start_on;
@@ -170,6 +240,7 @@ sub preview {
     $self->stash( member => $member );
 
     $self->SUPER::preview();
+    $self->stash(venue_id2name => VENUE_ID2NAME );
 }
 
 sub commit {
@@ -184,10 +255,16 @@ sub commit {
     if (! $data->{is_edit}) {
         $data->{member_id} = $member->{id};
     }
-    local $data->{start_on_date};
-    local $data->{start_on_time};
-    delete $data->{start_on_date};
-    delete $data->{start_on_time};
+
+    my $start_on_date = delete $data->{start_on_date};
+    my $start_on_time = delete $data->{start_on_time};
+    if ($start_on_date) {
+        $data->{start_on} = sprintf(
+            "%s %s",
+            $start_on_date,
+            $start_on_time || '00:00'
+        );
+    }
 
     $self->SUPER::commit();
 

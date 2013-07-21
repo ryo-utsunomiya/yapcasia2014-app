@@ -36,7 +36,17 @@ title = loc("Please verify your submission")
                 </tr>
                 <tr>
                     <td>[% loc("Starts On") %]</td>
-                    <td>[% talk.start_on %]</td>
+                    <td>
+                      [% IF talk.start_on %]
+                        [% talk.start_on %]
+                      [% ELSE %]
+                      [% talk.start_on_date %] [% talk.start_on_time %]
+                      [% END %]
+                    </td>
+                </tr>
+                <tr>
+                    <td>[% loc("Venue") %]</td>
+                    <td>[% venue_id2name.${talk.venue_id} %] (id=[% talk.venue_id %])</td>
                 </tr>
 [% END %]
 [% IF (talk.duration != 5) %]

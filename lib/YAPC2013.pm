@@ -107,7 +107,7 @@ sub setup_routes {
         foreach my $action ( qw(show edit) ){
             $base->get("$action/:object_id")->to("$name#$action");
         }
-        foreach my $action ( qw(list input preview) ){
+        foreach my $action ( qw(list input preview schedule) ){
             $base->get($action)->to("$name#$action");
         }
         foreach my $action ( qw(delete) ) {
@@ -224,6 +224,20 @@ EOHTML
             fmt_talk_abstract_very_short => Text::Xslate::html_builder(sub {
                 $self->get_talk_abstract($_[0], $scrubber, $markdown, 70);
             }),
+            fmt_talk_schedule_top => sub {
+                my $start_on = $_[0]->{start_on};
+                $start_on =~ /(\d{4}-\d{2}-\d{2}) (\d{2}):(\d{2}):00/;
+                my $offset = 
+                    ( ($1 eq '2012-09-27') ?
+                        int($2 - 7) * 60 + int($3 - 30) :
+                        int($2) * 60 + int($3) 
+                    ) - (9 * 60 + 30);
+                return int(($offset / 5) * 26) + 25 - 1;
+            },
+            fmt_talk_schedule_height => sub {
+                my $duration = $_[0]->{duration};
+                return ( $duration / 5 ) * 26 - 1;
+            },
             fmt_event_description_as_og_description => sub {
                 my $text = $self->get_event_description($_[0], $scrubber, $markdown);
                 # remove all markup
