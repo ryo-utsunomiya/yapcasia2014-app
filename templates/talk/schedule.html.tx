@@ -101,7 +101,7 @@
 <div class="schedule">
 <div class="timeaxis">
 [% SET hours = [ 9..21 ] %]
-[% IF (date == "2013-09-19") %][% SET hours = [ 9..21 ] %][% END %]
+[% IF (date == "2013-09-19") %][% SET hours = [ 17..21 ] %][% END %]
 [% FOREACH hour IN hours %]
 [% IF (hour == 9) %]
 [% FOREACH minute IN [ 30, 35, 40, 45, 50, 55 ] %]
