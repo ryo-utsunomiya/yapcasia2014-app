@@ -8,16 +8,16 @@ our @EXPORT;
 use Exporter::Constants (
     \@EXPORT => +{
         VENUES => [
-            { id => 1, name => 'main'},
-            { id => 2, name => 'sub1'},
-            { id => 3, name => 'sub2'},
-            { id => 4, name => 'sub3'},
+            { id => 1, name => 'Main Hall'},
+            { id => 2, name => 'Event Hall'},
+            { id => 3, name => 'Sub Room1'},
+            { id => 4, name => 'Sub Room2'},
         ],
         VENUE_ID2NAME => {
-            1 => 'main',
-            2 => 'sub1',
-            3 => 'sub2',
-            4 => 'sub3',
+            1 => 'Main Hall',
+            2 => 'Event Hall',
+            3 => 'Sub Room1',
+            4 => 'Sub Room2',
         },
     },
 );
