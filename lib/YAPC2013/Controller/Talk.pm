@@ -265,7 +265,7 @@ sub commit {
             $start_on_time || '00:00'
         );
     } else {
-        $data->{start_on} = \'NULL';
+        $data->{start_on} = '0000-00-00 00:00:00';
     }
 
     $self->SUPER::commit();
