@@ -18,7 +18,7 @@ sub schedule {
     my $cache     = $self->get('Memcached');
     my $format    = $self->req->param('format') || 'html';
     my $cache_key = join ".", qw(talk schedule), $format, $date;
-    my $data      = $cache->get($cache_key . "hoge");
+    my $data      = $cache->get($cache_key);
     if (! $data) {
         warn "inininin!!!";
         my $talk_api = $self->get('API::Talk');
@@ -264,6 +264,8 @@ sub commit {
             $start_on_date,
             $start_on_time || '00:00'
         );
+    } else {
+        $data->{start_on} = \'NULL';
     }
 
     $self->SUPER::commit();
