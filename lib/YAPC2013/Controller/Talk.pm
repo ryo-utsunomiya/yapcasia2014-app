@@ -18,7 +18,7 @@ sub schedule {
     my $cache     = $self->get('Memcached');
     my $format    = $self->req->param('format') || 'html';
     my $cache_key = join ".", qw(talk schedule), $format, $date;
-    my $data      = $cache->get($cache_key . "hoge");
+    my $data      = $cache->get($cache_key);
     if (! $data) {
         warn "inininin!!!";
         my $talk_api = $self->get('API::Talk');
@@ -83,12 +83,12 @@ sub list {
 
     my $pending_talks = $talk_api->search(
         { status => 'pending' },
-        { order_by => "created_on DESC" },
+        { order_by => "start_on ASC, created_on DESC" },
     );
 
     my $accepted_talks = $talk_api->search(
         { status => 'accepted' },
-        { order_by => "created_on DESC" },
+        { order_by => "start_on ASC, created_on DESC" },
     );
 
     foreach my $talk ( ( @$pending_talks, @$accepted_talks ) ){
@@ -264,6 +264,8 @@ sub commit {
             $start_on_date,
             $start_on_time || '00:00'
         );
+    } else {
+        $data->{start_on} = '0000-00-00 00:00:00';
     }
 
     $self->SUPER::commit();
