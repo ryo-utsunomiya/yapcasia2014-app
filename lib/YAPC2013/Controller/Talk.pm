@@ -83,7 +83,7 @@ sub list {
 
     my $pending_talks = $talk_api->search(
         { status => 'pending' },
-        { order_by => "created_on DESC" },
+        { order_by => "created_on DESC, start_on DESC" },
     );
 
     my $accepted_talks = $talk_api->search(
