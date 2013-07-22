@@ -39,7 +39,7 @@
         float: left;
         width: 130px;
         background: #bbb;
-        height: [% IF(date == "2012-09-27") %]1584[% ELSE %]3924[% END %]px;
+        height: [% IF(date == "2013-09-19") %]1584[% ELSE %]3924[% END %]px;
         border: 1px solid #ccc;
         border-right: none;
     }
@@ -92,6 +92,7 @@
 
 <div id="main-contents">
 
+<h2>[% date %]</h2>
 <div class="section">
 <ul class="dates">
 [% FOREACH x IN [ "2013-09-19", "2013-09-20", "2013-09-21" ] %]
