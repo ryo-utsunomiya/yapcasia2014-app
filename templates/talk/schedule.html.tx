@@ -1,4 +1,4 @@
-[% WRAPPER "layouts/default.html.tx" WITH title = "Talk Schedules" %]
+[% WRAPPER "layouts/default.html.tx" WITH title = "Talk Schedule" %]
 
 <div id="main">
 
