@@ -17,9 +17,9 @@ sub schedule {
         state $day2_start = timelocal(0, 0, 0, 21, 8, 113);
 
         my $now = time();
-        if ($day1_start < $now) {
+        if ($now < $day1_start) {
             $date = '2013-09-19';
-        } elsif ($day2_start < $now) {
+        } elsif ($now < $day2_start) {
             $date = '2013-09-20';
         } else {
             $date = '2013-09-21';
