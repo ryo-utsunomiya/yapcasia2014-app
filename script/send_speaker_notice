@@ -9,9 +9,6 @@ use YAPC2013;
 my $app = YAPC2013->new;
 
 my $file = shift;
-open my $fh, '<', $file or die;
-my $subject = decode_utf8(<$fh>);
-my $message = decode_utf8(do { local $/; <$fh> });
 my $email_api = $app->container->get('API::Email');
 my $talk_api = $app->container->get('API::Talk');
 my $member_api = $app->container->get('API::Member');
@@ -31,6 +28,9 @@ foreach my $talk (@accepted) {
         talk   => $talk
     });
 
+    $message =~ s/^([^\n]+)\n//;
+    my $subject = $1;
+    warn $subject;
     warn $message;
 
 #     $email_api->send_email({
@@ -55,6 +55,10 @@ foreach my $talk (@rejected) {
         talk   => $talk
     });
 
+    $message =~ s/^([^\n]+)\n//;
+    my $subject = $1;
+
+    warn $subject;
     warn $message;
 
 #     $email_api->send_email({
