@@ -21,6 +21,7 @@ foreach my $talk (@accepted) {
     my $member = $member_api->lookup($talk->{member_id});
     if ($member->{name} eq '941' || $member->{name} eq 'Daisuke Maki') {
         warn "Skipping $member->{name}";
+        next;
     }
 
     my $message = $xslate->render('notices/speaker-accepted.eml', {
@@ -47,6 +48,7 @@ foreach my $talk (@rejected) {
     my $member = $member_api->lookup($talk->{member_id});
     if ($member->{name} eq '941' || $member->{name} eq 'Daisuke Maki') {
         warn "Skipping $member->{name}";
+        next;
     }
 
     my $message = $xslate->render('notices/speaker-rejected.eml', {
