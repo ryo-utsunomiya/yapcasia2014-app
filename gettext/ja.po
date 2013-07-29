@@ -565,6 +565,8 @@ msgstr "多くのご応募ありがとうございました。"
 msgid "We're Currently Evaluating The Submitted Talk Proposals. Please take some time to +1 the talk(s) that you would like to see at this YAPC"
 msgstr "現在トークの選考を行っています。下記リストの中で見たい！と思うトークがありましたら、是非ソーシャルボタンを押したり、ブックマークに追加したりしてください。選考の参考とさせていただきます。"
 
+msgid "Talk Schedule"
+msgstr "トークスケジュール"
 
 msgid "Talk Schedule: [_1]"
 msgstr "トークスケジュール： %1 "

@@ -580,6 +580,9 @@ msgstr "Thanks for your submissions."
 msgid "We're Currently Evaluating The Submitted Talk Proposals. Please take some time to +1 the talk(s) that you would like to see at this YAPC"
 msgstr "We're Currently Evaluating The Submitted Talk Proposals. Please take some time to +1 the talk(s) that you would like to see at this YAPC"
 
+msgid "Talk Schedule"
+msgstr "Talk Schedule"
+
 msgid "Talk Schedule: [_1]"
 msgstr "Talk Schedule: %1"
 
