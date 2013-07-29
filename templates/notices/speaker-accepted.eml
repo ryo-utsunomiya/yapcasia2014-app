@@ -1,0 +1,43 @@
+[YAPC::Asia Tokyo 2013] Talk Accepted!
+
+(English follows Japanese)
+
+[% member.name %]様
+応募いただいた下記のトークがYAPC::Asia Tokyo 2013にトークとして採択されました！
+
+    URL: http://yapcasia.org/talk/show/[% talk.id %]
+    タイトル: [% talk.title || talk.title_en %]
+    日時: [% talk.start_on %]
+
+その他のトークも含めたYAPC::Asia Tokyo 2013全体のスケジュールは以下から確認
+できます：
+
+    [% loc("Day 0") %]: http://yapcasia.org/2013/talk/schedule?date=2013-09-19
+    [% loc("Day 1") %]: http://yapcasia.org/2013/talk/schedule?date=2013-09-20
+    [% loc("Day 2") %]: http://yapcasia.org/2013/talk/schedule?date=2013-09-21
+
+もしスケジュールに問題があったり、ご都合が合わなくなったりした場合
+yapc@perlassociation.orgまでご連絡ください。
+変更・入れ替えが可能かどうか検討させていただきます。
+
+---
+
+Dear [% member.name %],
+
+Your talk proposal has been accepted for YAPC::Asia Tokyo 2013:
+
+    URL: http://yapcasia.org/talk/show/[% talk.id %]
+    Title: [% talk.title_en || talk.title %]
+    Date/Time: [% talk.start_on %]
+
+Talk schedule including all the other sessions can be found here:
+
+    [% loc("Day 0") %]: http://yapcasia.org/2013/talk/schedule?date=2013-09-19
+    [% loc("Day 1") %]: http://yapcasia.org/2013/talk/schedule?date=2013-09-20
+    [% loc("Day 2") %]: http://yapcasia.org/2013/talk/schedule?date=2013-09-21
+
+Should you have any conflicts in your schedule, or if you had change of plans,
+please contact yapc@perlassociation.org. We will see if we can adjust the schedule.
+
+Regards,
+YAPC::Asia Tokyo 2013 Team
