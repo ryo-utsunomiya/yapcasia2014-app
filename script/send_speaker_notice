@@ -12,7 +12,7 @@ my $file = shift;
 my $email_api = $app->container->get('API::Email');
 my $talk_api = $app->container->get('API::Talk');
 my $member_api = $app->container->get('API::Member');
-my $xslate = Text::Xslate->new(path => "templates");
+my $xslate = Text::Xslate->new(path => "templates", syntax => "TTerse");
 my @accepted = $talk_api->search({
     status => "accepted"
 });
