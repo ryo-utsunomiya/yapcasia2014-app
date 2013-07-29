@@ -1,6 +1,8 @@
 package YAPC2013::Controller::Talk;
 use Mojo::Base 'YAPC2013::Controller::CRUD';
 use YAPC2013::Constants;
+use Time::Local;
+use feature 'state';
 
 sub index {
     $_[0]->redirect_to("http://yapcasia.org/2013/talk/list");
@@ -11,7 +13,17 @@ sub schedule {
 
     my $date = $self->req->param('date');
     if ( !$date ){
-        $date = '2013-09-21';
+        state $day1_start = timelocal(0, 0, 0, 20, 8, 113);
+        state $day2_start = timelocal(0, 0, 0, 21, 8, 113);
+
+        my $now = time();
+        if ($day1_start < $now) {
+            $date = '2013-09-19';
+        } elsif ($day2_start < $now) {
+            $date = '2013-09-20';
+        } else {
+            $date = '2013-09-21';
+        }
     }
     $self->stash( date => $date );
 
