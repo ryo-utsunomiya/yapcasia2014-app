@@ -15,4 +15,34 @@ YAPC::Asia Tokyo 2013 にトークを応募いただきましてありがとう�
         * http://yapcasia.org/2013/talk/schedule?date=2013-09-20#2eff4906-f297-11e2-8bb9-069a6aeab6a4
         * http://yapcasia.org/2013/talk/schedule?date=2013-09-21#841bdeea-f297-11e2-8bb9-069a6aeab6a4
 
+トークが採択されなかった場合YAPCに参加するにはチケットの購入が必要となりますので8/11までにこちらでご購入ください： http://peatix.com/event/11775
+
+なお、採択されたトークの中から辞退等があった場合は別途連絡させていただくことが
+あります。
 以上よろしくお願いいたします。
+
+YAPC::Asia Tokyo 2013 運営チーム
+
+---
+
+Dear [% member.name %]
+
+Thanks for your talks submission to YAPC::Asia Tokyo 2013.
+Unfortunately we were not able to accept your talk:
+
+    URL: http://yapcasia.org/2013/talk/show/[% talk.id %]
+
+Although we could not include your talk in our main tracks, please consider
+using the time we have alloted for socialization and BOFs to share your
+ideas:
+
+    Blog Entry URL: http://yapcasia.org/2013/08/bof-and-socializing-space.html
+    Schedule:
+        * http://yapcasia.org/2013/talk/schedule?date=2013-09-20#2eff4906-f297-11e2-8bb9-069a6aeab6a4
+        * http://yapcasia.org/2013/talk/schedule?date=2013-09-21#841bdeea-f297-11e2-8bb9-069a6aeab6a4
+
+Finally, should there be cancellation on other accepted talks, we might 
+contact you again to see if you can fill the cancelled slot.
+
+Regards,
+YAPC::Asia Tokyo 2013 Team
