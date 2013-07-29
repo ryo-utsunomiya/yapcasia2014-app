@@ -23,7 +23,7 @@ foreach my $talk (@accepted) {
         warn "Skipping $member->{name}";
     }
 
-    my $message = $xslate->render('notice/speaker-accepted.eml', {
+    my $message = $xslate->render('notices/speaker-accepted.eml', {
         member => $member,
         talk   => $talk
     });
@@ -50,7 +50,7 @@ foreach my $talk (@rejected) {
         warn "Skipping $member->{name}";
     }
 
-    my $message = $xslate->render('notice/speaker-rejected.eml', {
+    my $message = $xslate->render('notices/speaker-rejected.eml', {
         member => $member,
         talk   => $talk
     });
