@@ -118,6 +118,7 @@
     <div class="venue-name">[% loc(venue.name) %]</div>
 [% FOREACH talk IN talks_by_venue.item(loop.index) %]
 <div class="talk" style="top: [% fmt_talk_schedule_top(talk) %]px; height: [% fmt_talk_schedule_height(talk) %]px">
+<a id="[% talk.id %]"></a>
 <div class="title">
     <a href="/2013/talk/show/[% talk.id %]">[% talk.title || talk.title_en %]</a>
     (<span class="duration">[% loc("[_1] minutes", talk.duration) %]</span>)

@@ -101,7 +101,17 @@
                     </tr>
                     <tr>
                         <td>[% loc("Starts On") %]</td>
-                        <td>[% IF (talk.start_on && talk.start_on != '0000-00-00 00:00:00') %][% talk.start_on%][% ELSE %]TBD[% END %]</td>
+                        <td>
+[%- IF (talk.status == "accepted") -%]
+[%-     IF (talk.start_on && talk.start_on != '0000-00-00 00:00:00') -%]
+<a href="/2013/talk/schedule?date=[% talk.start_on.match(/^(\d+-\d+-\d+)/) %]#[% talk.id %]">[% talk.start_on%]</a>
+[%-     ELSE -%]
+TBD
+[%-     END # IF (talk.start_on..) -%]
+[%- ELSE -%]
+TBD
+[%- END -%]
+                        </td>
                     </tr>
 [% END %]
 [% IF (talk.duration != 5) %]
