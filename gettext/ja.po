@@ -341,13 +341,13 @@ msgid "Here are the list of talks for YAPC::Asia Tokyo 2012. Click on the links 
 msgstr "YAPC::Asia Tokyo 2012のトークリストです。タイムテーブルは下記リンクからご覧ください"
 
 msgid "Day 0"
-msgstr "前夜祭 (9/27)"
+msgstr "前夜祭 (9/19)"
 
 msgid "Day 1"
-msgstr "1日目 (9/28)"
+msgstr "1日目 (9/20)"
 
 msgid "Day 2"
-msgstr "2日目 (9/29)"
+msgstr "2日目 (9/21)"
 
 msgid "This is the talk submission form for Lightning Talks."
 msgstr "Lightning Talk (LT) の応募フォームです"

@@ -356,13 +356,13 @@ msgid "Here are the list of talks for YAPC::Asia Tokyo 2012. Click on the links 
 msgstr "Here are the list of talks for YAPC::Asia Tokyo 2012. Click on the links below to see a timetable!"
 
 msgid "Day 0"
-msgstr "Day 0"
+msgstr "Day 0 (9/19)"
 
 msgid "Day 1"
-msgstr "Day 1"
+msgstr "Day 1 (9/20)"
 
 msgid "Day 2"
-msgstr "Day 2"
+msgstr "Day 2 (9/21)"
 
 msgid "This is the talk submission form for Lightning Talks."
 msgstr "This is the talk submission form for Lightning Talks."
