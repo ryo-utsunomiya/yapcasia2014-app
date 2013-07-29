@@ -14,6 +14,8 @@ my $subject = decode_utf8(<$fh>);
 my $message = decode_utf8(do { local $/; <$fh> });
 my $email_api = $app->container->get('API::Email');
 my $talk_api = $app->container->get('API::Talk');
+my $member_api = $app->container->get('API::Member');
+my $xslate = Text::Xslate->new(path => "templates");
 my @accepted = $talk_api->search({
     status => "accepted"
 });

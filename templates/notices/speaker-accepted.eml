@@ -12,9 +12,9 @@
 その他のトークも含めたYAPC::Asia Tokyo 2013全体のスケジュールは以下から確認
 できます：
 
-    [% loc("Day 0") %]: http://yapcasia.org/2013/talk/schedule?date=2013-09-19
-    [% loc("Day 1") %]: http://yapcasia.org/2013/talk/schedule?date=2013-09-20
-    [% loc("Day 2") %]: http://yapcasia.org/2013/talk/schedule?date=2013-09-21
+    前夜祭 (9/19): http://yapcasia.org/2013/talk/schedule?date=2013-09-19
+    一日目 (9/20): http://yapcasia.org/2013/talk/schedule?date=2013-09-20
+    二日目 (9/21): http://yapcasia.org/2013/talk/schedule?date=2013-09-21
 
 もしスケジュールに問題があったり、ご都合が合わなくなったりした場合
 yapc@perlassociation.orgまでご連絡ください。
@@ -32,9 +32,9 @@ Your talk proposal has been accepted for YAPC::Asia Tokyo 2013:
 
 Talk schedule including all the other sessions can be found here:
 
-    [% loc("Day 0") %]: http://yapcasia.org/2013/talk/schedule?date=2013-09-19
-    [% loc("Day 1") %]: http://yapcasia.org/2013/talk/schedule?date=2013-09-20
-    [% loc("Day 2") %]: http://yapcasia.org/2013/talk/schedule?date=2013-09-21
+    Day 0 (9/19): http://yapcasia.org/2013/talk/schedule?date=2013-09-19
+    Day 1 (9/20): http://yapcasia.org/2013/talk/schedule?date=2013-09-20
+    Day 2 (9/21): http://yapcasia.org/2013/talk/schedule?date=2013-09-21
 
 Should you have any conflicts in your schedule, or if you had change of plans,
 please contact yapc@perlassociation.org. We will see if we can adjust the schedule.
