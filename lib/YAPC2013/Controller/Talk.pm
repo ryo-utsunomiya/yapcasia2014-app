@@ -268,16 +268,18 @@ sub commit {
         $data->{member_id} = $member->{id};
     }
 
-    my $start_on_date = delete $data->{start_on_date};
-    my $start_on_time = delete $data->{start_on_time};
-    if ($start_on_date) {
-        $data->{start_on} = sprintf(
-            "%s %s",
-            $start_on_date,
-            $start_on_time || '00:00'
-        );
-    } else {
-        $data->{start_on} = '0000-00-00 00:00:00';
+    if ($member->{is_admin}) {
+        my $start_on_date = delete $data->{start_on_date};
+        my $start_on_time = delete $data->{start_on_time};
+        if ($start_on_date) {
+            $data->{start_on} = sprintf(
+                "%s %s",
+                $start_on_date,
+                $start_on_time || '00:00'
+            );
+        } else {
+            $data->{start_on} = '0000-00-00 00:00:00';
+        }
     }
 
     $self->SUPER::commit();
