@@ -93,53 +93,20 @@ title = 'Talks'
         <div class="entry">
             <div class="entry-contents">
 
-<h2>[% loc("Thanks for your submissions!") %]</h2>
-
-<p>[% loc("We're Currently Evaluating The Submitted Talk Proposals. Please take some time to +1 the talk(s) that you would like to see at this YAPC") %]</p>
+<h2>[% loc("Talk Schedule") %]</h2>
+<ul>
+    <li><a href="/2013/talk/schedule?date=2013-09-19">Day 0 (9/19)</a></li>
+    <li><a href="/2013/talk/schedule?date=2013-09-20">Day 1 (9/20)</a></li>
+    <li><a href="/2013/talk/schedule?date=2013-09-21">Day 1 (9/21)</a></li>
+</ul>
 
 <hr noshade="noshade" />
+<h2>[% loc("List of Talks") %]</h2>
 <h3>[% loc("Accepted Talks") %] ([% accepted_talks.size() %])</h3>
 <p></p>
 [% FOREACH talk IN accepted_talks %]
 [% talk_details(talk) %]
 [% END %]
-
-<hr noshade="noshade" />
-<h3>[% loc("Pending Talks") %] ([% pending_talks.size() %])</h3>
-<p>[% loc("Currently these talks are in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons on each page to express your interest!") %]</p>
-[% FOREACH talk IN pending_talks %]
-[% talk_details(talk) %]
-[% END %]
-
-
-<!--
-
-<p>[% loc("Here are the list of talks for YAPC::Asia Tokyo 2012. Click on the links below to see a timetable!") %]</p>
-<ul>
-<li><a href="/2012/talk/schedule?date=2012-09-27">[% loc("Day 0") %]</a></li>
-<li><a href="/2012/talk/schedule?date=2012-09-28">[% loc("Day 1") %]</a></li>
-<li><a href="/2012/talk/schedule?date=2012-09-29">[% loc("Day 2") %]</a></li>
-</ul>
-
-            <p style="font-size: 2em"><a href="http://yapcasia.org/2012/news/cfp-for-lightning-talks.html">現在Lightning Talks 募集中です！</a></p>
-
-<h3>[% loc("Day 0") %] ([% day0_talks.size() %])</h3>
-[% FOREACH talk IN day0_talks %]
-[% talk_details(talk) %]
-[% END %]
-
-<h3>[% loc("Day 1") %] ([% day1_talks.size() %])</h3>
-[% FOREACH talk IN day1_talks %]
-[% talk_details(talk) %]
-[% END %]
-
-<h3>[% loc("Day 2") %] ([% day2_talks.size() %])</h3>
-[% FOREACH talk IN day2_talks %]
-[% talk_details(talk) %]
-[% END %]
-
--->
-
             </div>
         </div>
     </div>
