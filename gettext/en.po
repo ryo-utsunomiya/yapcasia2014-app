@@ -598,3 +598,6 @@ msgstr "Multipurpose Room 2"
 msgid "Sub Room2"
 msgstr "Multiprupose Room 3"
 
+msgid "List of Talks"
+msgstr "List of Talks"
+

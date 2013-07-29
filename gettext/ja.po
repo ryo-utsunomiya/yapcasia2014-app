@@ -582,3 +582,6 @@ msgstr "多目的教室2"
 
 msgid "Sub Room2"
 msgstr "多目的教室3"
+
+msgid "List of Talks"
+msgstr "トーク一覧"
