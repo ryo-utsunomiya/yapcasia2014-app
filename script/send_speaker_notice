@@ -30,14 +30,13 @@ foreach my $talk (@accepted) {
 
     $message =~ s/^([^\n]+)\n//;
     my $subject = $1;
-    warn $subject;
-    warn $message;
 
-#     $email_api->send_email({
-#         to => $member->{email},
-#         subject => $subject,
-#         message => $message,
-#     });
+    warn "Send ACCEPT for $member->{email}";
+    $email_api->send_email({
+        to => $member->{email},
+        subject => $subject,
+        message => $message,
+    });
 }
 
 my @rejected = $talk_api->search({
@@ -58,12 +57,10 @@ foreach my $talk (@rejected) {
     $message =~ s/^([^\n]+)\n//;
     my $subject = $1;
 
-    warn $subject;
-    warn $message;
-
-#     $email_api->send_email({
-#         to => $member->{email},
-#         subject => $subject,
-#         message => $message,
-#     });
+    warn "Send REJECT for $member->{email}";
+    $email_api->send_email({
+        to => $member->{email},
+        subject => $subject,
+        message => $message,
+    });
 }
