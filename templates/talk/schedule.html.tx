@@ -3,9 +3,8 @@
 <div id="main">
 
 <div id="lead" class="section">
-<h1 class="corners">[% loc("Talk Schedules") %]</h1>
+<h1 class="corners">[% loc("Talk Schedule: [_1]", date) %]</h1>
 <div class="body">
-
 
 <style>
 <!--
@@ -92,7 +91,6 @@
 
 <div id="main-contents">
 
-<h2>[% date %]</h2>
 <div class="section">
 <ul class="dates">
 [% FOREACH x IN [ "2013-09-19", "2013-09-20", "2013-09-21" ] %]
@@ -117,7 +115,7 @@
 </div>
 [% FOREACH venue IN venues %]
 <div class="venue">
-    <div class="venue-name">[% venue.name %]</div>
+    <div class="venue-name">[% loc(venue.name) %]</div>
 [% FOREACH talk IN talks_by_venue.item(loop.index) %]
 <div class="talk" style="top: [% fmt_talk_schedule_top(talk) %]px; height: [% fmt_talk_schedule_height(talk) %]px">
 <div class="title">

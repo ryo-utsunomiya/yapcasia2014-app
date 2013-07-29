@@ -579,3 +579,19 @@ msgstr "Thanks for your submissions."
 
 msgid "We're Currently Evaluating The Submitted Talk Proposals. Please take some time to +1 the talk(s) that you would like to see at this YAPC"
 msgstr "We're Currently Evaluating The Submitted Talk Proposals. Please take some time to +1 the talk(s) that you would like to see at this YAPC"
+
+msgid "Talk Schedule: [_1]"
+msgstr "Talk Schedule: %1"
+
+msgid "Main Hall"
+msgstr "Main Hall (Fujiwara Hiroshi Hall)"
+
+msgid "Event Hall"
+msgstr "Event Hall"
+
+msgid "Sub Room1"
+msgstr "Multipurpose Room 2"
+
+msgid "Sub Room2"
+msgstr "Multiprupose Room 3"
+
