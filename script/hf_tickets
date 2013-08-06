@@ -32,7 +32,7 @@ my @event_ids = (
     11778
 );
 my %ticket_name2id = (
-    "Sudent pass" => "student_en",
+    "Student pass" => "student_en",
     "学生チケット（無料）" => "student",
     "Early Bird 2 day pass" => "early_bird_en",
     "先行販売 2日通し券(Tシャツ付き)" => "early_bird",
