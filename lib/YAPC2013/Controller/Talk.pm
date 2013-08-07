@@ -70,8 +70,10 @@ sub schedule {
                     delete $speaker->{is_admin};
                     delete $speaker->{remote_id};
                     delete $speaker->{authenticated_by};
+                    delete $speaker->{modified_on};
                     delete $speaker->{updated_on};
                     delete $speaker->{created_on};
+                    delete $talk->{tshirt_size};
                 }
             }
         }
