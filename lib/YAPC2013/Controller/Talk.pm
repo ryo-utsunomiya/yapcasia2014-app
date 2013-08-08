@@ -66,6 +66,7 @@ sub schedule {
             foreach my $talks (@talks_by_venue) {
                 foreach my $talk (@$talks) {
                     my $speaker = $talk->{speaker};
+                    $speaker->{icon_url} = $self->app->get_member_icon_url($speaker);
                     delete $speaker->{email};
                     delete $speaker->{is_admin};
                     delete $speaker->{remote_id};
