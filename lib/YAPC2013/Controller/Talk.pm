@@ -356,6 +356,7 @@ sub _serialize_talk {
         language
         subtitles
         category
+        venue_id
         start_on
         duration
         material_level
