@@ -102,6 +102,7 @@ title = 'Talks'
 
 <hr noshade="noshade" />
 <h2>[% loc("List of Talks") %]</h2>
+
 <h3>[% loc("Accepted Talks") %] ([% accepted_talks.size() %])</h3>
 <p></p>
 [% FOREACH talk IN accepted_talks %]

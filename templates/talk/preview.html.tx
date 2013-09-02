@@ -125,7 +125,7 @@ title = loc("Please verify your submission")
     $(document).ready( function() {
         $(".button-danger", "#commit-form").each(function(i,e) {
             $(e).click(function() {
-                location.href = "/2013/talk/input?p=[% subsession_id %]"
+                location.href = "/2013/talk/input?p=[% subsession_id %][% IF (talk.duration == '5') %]&lt=1[% END %]"
                 return false;
             });
         });

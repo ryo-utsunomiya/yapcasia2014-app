@@ -158,12 +158,6 @@ sub input {
     my $self = shift;
     my $member = $self->assert_email or return;
 
-    if (!$member->{is_admin}) {
-        $self->render_text("Currently talk submissions are disabled");
-        $self->rendered(403);
-        return;
-    }
-
     # if this is a submission for LT, then we need to switch profile and
     # template that we use here
     my $is_lt = $self->req->param('lt');
@@ -171,6 +165,12 @@ sub input {
         $self->stash(
             template => "talk/input_lt",
         );
+    }
+
+    if (!$member->{is_admin} && !$is_lt) {
+        $self->render_text("Currently talk submissions are disabled");
+        $self->rendered(403);
+        return;
     }
 
     $self->SUPER::input();
@@ -200,7 +200,7 @@ sub edit {
         return;
     }
 
-    my $is_lt = $self->req->param('lt');
+    my $is_lt = $self->req->param('lt') || ( $object->{duration} == 5 );
     if ($is_lt) {
         $self->stash(
             profile  => "talk_lt.check",
