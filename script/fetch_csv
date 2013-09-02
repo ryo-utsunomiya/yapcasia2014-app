@@ -7,7 +7,7 @@ use Text::CSV_XS;
 
 sub get_event_data {
     my $event_id = shift;
-    my $login_url = "http://peatix.com/signin";
+    my $login_url = "https://peatix.com/signin";
     my $csv_url = "http://peatix.com/event/$event_id/form_results/csv";
     my $event_url = "http://peatix.com/event/$event_id";
     my $attendee_url = "http://peatix.com/event/$event_id/download_attendances";
@@ -21,6 +21,7 @@ sub get_event_data {
         # please give me a cookie
         $res = $ua->get($event_url);
         if (! $res->is_success) {
+            warn "Failed to retrieve $event_url";
             die $res->as_string;
         }
     }
@@ -34,25 +35,31 @@ sub get_event_data {
             password => '',
             signin_Peatix => 'ログイン',
         ]);
-        if (! $res->is_success) {
+        if (! $res->is_success && $res->code ne '302') {
+            warn "Failed to post to $login_url";
             die $res->as_string;
         }
     }
 
     my %tickets;
     {
+        warn "fetching $attendee_url";
         $res = $ua->get($attendee_url);
-        open my $io, "<:encoding(utf8)", \$res->decoded_content or die;
-        my $csv = Text::CSV_XS->new({ binary => 1, allow_loose_quotes => 1 });
-        while (my $row = $csv->getline($io)) {
-            next if $. == 1;
-            $tickets{$row->[0]} = {
-                ticket_type => $row->[3],
-                ticket_count => $row->[4],
-                twitter_id => $row->[7],
-                tshirt_size => $row->[8],
-                vote_id => [ split /\s*,\s*/, $row->[5] ],
-            };
+        if ($res->content_type !~ /csv/) {
+            warn $res->decoded_content;
+        } else {
+            open my $io, "<:encoding(utf8)", \$res->decoded_content or die;
+            my $csv = Text::CSV_XS->new({ binary => 1, allow_loose_quotes => 1 });
+            while (my $row = $csv->getline($io)) {
+                next if $. == 1;
+                $tickets{$row->[0]} = {
+                    ticket_type => $row->[3],
+                    ticket_count => $row->[4],
+                    twitter_id => $row->[7],
+                    tshirt_size => $row->[8],
+                    vote_id => [ split /\s*,\s*/, $row->[5] ],
+                };
+            }
         }
     }
 
