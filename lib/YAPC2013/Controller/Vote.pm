@@ -99,9 +99,6 @@ sub list {
         { ballot_id => $ballot_id }
     );
 
-    use Data::Dumper;
-    warn Dumper @votes;
-
     $self->stash(
         ballot_id => $ballot_id,
         date  => $date,
