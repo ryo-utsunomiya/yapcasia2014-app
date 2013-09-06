@@ -34,7 +34,13 @@ title = 'Vote'
 <div class="control-group">
     [% FOREACH talk IN talks %]
     <input type="checkbox" name="talk_id" value="[% talk.id %]" />
-    <a href="/2013/talk/show/[% talk.id %]">[% talk.title %]</a>
+    <a href="/2013/talk/show/[% talk.id %]">
+        [%- IF lang == 'ja' %]
+          [%- talk.title || talk.title_en %]
+        [%- ELSE %]
+          [%- talk.title_en || talk.title %]
+        [%- END %]
+    </a>
     <br />
     [% END %]
 <input type="submit" value="削除" class="button button-danger button-mini" />

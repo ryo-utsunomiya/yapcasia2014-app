@@ -32,7 +32,13 @@ title = 'Vote'
 [% FOREACH talk IN talks %]
 <div class="checkbox">
       <input type="checkbox" name="talk_id" id="[% talk.id %]" value="[% talk.id %]"[% IF votes.${talk.id} %] checked="checked"[% END %] />
-      <a href="/2013/talk/show/[% talk.id %]" target="_new">[% talk.title %]</a>
+      <a href="/2013/talk/show/[% talk.id %]" target="_new">
+        [%- IF lang == 'ja' %]
+          [%- talk.title || talk.title_en %]
+        [%- ELSE %]
+          [%- talk.title_en || talk.title %]
+        [%- END %]
+      </a>
 </div>
 [% END %]
 
