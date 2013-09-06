@@ -88,3 +88,22 @@ CREATE TABLE event (
     KEY(start_on),
     FOREIGN KEY (member_id) REFERENCES member (id)
 ) ENGINE=InnoDB DEFAULT CHARSET='utf8';
+
+CREATE TABLE ballot (
+    id                 CHAR(11) BINARY NOT NULL PRIMARY KEY,
+    peatix_purchase_id INT NOT NULL,
+    peatix_ticket_id   INT NOT NULL,
+    peatix_event_id    INT NOT NULL,
+    ticket_type        CHAR(8) -- "day1", "day2", "twodays"
+) ENGINE=InnoDB DEFAULT CHARSET='utf8';
+
+CREATE TABLE vote (
+    id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    talk_id   CHAR(40) NOT NULL,
+    ballot_id CHAR(11) BINARY NOT NULL,
+    created_on DATETIME NOT NULL,
+    modified_on TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (talk_id) REFERENCES talk (id),
+    FOREIGN KEY (ballot_id) REFERENCES ballot (id),
+    UNIQUE KEY (talk_id, ballot_id)
+) ENGINE=InnoDB DEFAULT CHARSET='utf8';

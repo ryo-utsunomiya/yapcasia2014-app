@@ -1,0 +1,55 @@
+[% WRAPPER 'layouts/default.html.tx' WITH
+title = 'Vote'
+%]
+
+<div id="main">
+
+<div id="lead" class="section">
+<h1 class="corners">Vote</h1>
+<div class="body">
+
+<style type="text/css">
+<!--
+
+-->
+</style>
+
+<div id="main-contents">
+
+<h2>投票ID : [% ballot_id %]</h2>
+<h3>投票リンク</h3>
+
+チケットの種類に応じて参加したそれぞれの開催日ごとに、２つのトークに投票できます。
+
+[% IF ballot.ticket_type == 'day1' || ballot.ticket_type == 'twodays' %]
+<p><a href="/2013/vote/list/2013-09-20">9/20のトークに投票する</a></p>
+[% END %]
+[% IF ballot.ticket_type == 'day2' || ballot.ticket_type == 'twodays' %]
+<p><a href="/2013/vote/list/2013-09-21">9/21のトークに投票する</a></p>
+[% END %]
+
+<h3>投票したトーク一覧</h3>
+[% IF talks || 1 %]
+<form action="./cancel" method="post">
+<div class="control-group">
+    [% FOREACH talk IN talks %]
+    <input type="checkbox" name="talk_id" value="[% talk.id %]" />
+    <a href="/2013/talk/show/[% talk.id %]">[% talk.title %]</a>
+    <br />
+    [% END %]
+<input type="submit" value="削除" class="button button-danger button-mini" />
+</div>
+
+</form>
+[% END %]
+
+</div>
+
+
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+</div><!--  / #main /  -->
+
+[% END %]
+

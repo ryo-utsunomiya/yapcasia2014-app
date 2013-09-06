@@ -1,0 +1,51 @@
+[% WRAPPER 'layouts/default.html.tx' WITH
+title = 'Vote'
+%]
+
+<div id="main">
+
+<div id="lead" class="section">
+<h1 class="corners">Vote</h1>
+<div class="body">
+
+<style type="text/css">
+<!--
+
+-->
+</style>
+
+<div id="main-contents">
+
+<h2>[% loc('vote list') %] - [% date %]</h2>
+
+<p>
+  投票したいトークにチェックを入れて投票ボタンを押してください。<br />
+  トークは２つまで選択することができます。
+</p>
+
+<form action="/2013/vote/cast" method="post" class="form-horizontal">
+
+<input type="submit" value="vote!" class="button button-success button-large" />
+
+<div class="control-group">
+
+[% FOREACH talk IN talks %]
+<div class="checkbox">
+      <input type="checkbox" name="talk_id" id="[% talk.id %]" value="[% talk.id %]"[% IF votes.${talk.id} %] checked="checked"[% END %] />
+      <a href="/2013/talk/show/[% talk.id %]" target="_new">[% talk.title %]</a>
+</div>
+[% END %]
+
+</div>
+
+</form>
+
+</div>
+
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+</div><!--  / #main /  -->
+
+[% END %]
+

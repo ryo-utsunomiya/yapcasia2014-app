@@ -80,6 +80,15 @@ sub setup_routes {
     #login 
     $r->get("/2013/login")->to("auth#index");
     $r->get("/2013/logout")->to("auth#logout");
+
+    #vote
+    my $vote = $r->under("/2013/vote");
+    $vote->get("/")->to("vote#ballot");
+    $vote->get("/list/:date")->to("vote#list");
+    $vote->get("/ballot")->to("vote#ballot");
+    $vote->post("/cast")->to("vote#cast");
+    $vote->post("/cancel")->to("vote#cancel");
+
     #auth
     my $auth = $r->under("/2013/auth");
     $auth->get("/")->to("auth#index");
