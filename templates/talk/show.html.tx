@@ -94,7 +94,6 @@
 
                     <h4>[% loc("Talk Details") %]</h4>
                     <table class="table">
-[% IF (member.is_admin) %]
                     <tr>
                         <td>[% loc("Venue") %]</td>
                         <td>[% IF (talk.venue) %][% loc(talk.venue) %][% ELSE %]TBD[% END %]</td>
@@ -113,7 +112,6 @@ TBD
 [%- END -%]
                         </td>
                     </tr>
-[% END %]
 [% IF (talk.duration != 5) %]
                     <tr>
                         <td>[% loc("Talk Category") %]</td>
