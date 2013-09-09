@@ -86,6 +86,13 @@
     ul.dates li:first-child {
         border: none;
     }
+    ul.info {
+        margin: 1em;
+    }
+    ul.info li {
+        padding-left: 2em;
+        font-size: 10pt;
+    }
 -->
 </style>
 
@@ -96,6 +103,10 @@
 [% FOREACH x IN [ "2013-09-19", "2013-09-20", "2013-09-21" ] %]
     <li>[% IF (x == date) %][% x %][% ELSE %]<a href="/2013/talk/schedule?date=[% x %]">[% x %]</a>[% END %]</li>
 [% END %]
+</ul>
+<ul class="info">
+    <li><a href="http://yapcasia.org/2013/09/lunch-session-registration.html">ランチセッションと懇親会は事前登録制です！</a></li>
+    <li><a href="http://yapcasia.org/2013/09/get-the-perl-entrance-ticket.html">Perl入学式も参加登録をお忘れなく！</a></li>
 </ul>
 <div class="schedule">
 <div class="timeaxis">
