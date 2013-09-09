@@ -87,7 +87,7 @@ title = 'Member'
                     <a href="/2013/member/email_edit">[% loc("Register a new email address") %]</a>
                   </li>
                   <li>
-                    <a href="/2013/talk/input">[% loc("Submit a new talk") %]</a>
+                    <a href="/2013/talk/input?lt=1">[% loc("Submit a new talk") %] (LT)</a>
                   </li>
 [% END %]
                   <li>
