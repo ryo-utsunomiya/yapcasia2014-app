@@ -373,8 +373,8 @@ msgstr "Talk details WILL BE used to determine if your talk is accepted. Please 
 msgid "Talk details will not be publically seen until after your talk has been given."
 msgstr "Talk details will not be publically seen until after your talk has been given."
 
-msgid "When your talk is accepted, your talk title will be shown in the <a href=\"/2012/talk/show/72256d20-dbad-11e1-bcf1-95936aeab6a4\">Lightning Talks Day 1</a> and <a href=\"/2012/talk/show/c9c6fcb0-dbad-11e1-bcf1-95936aeab6a4\">Lightning Talks Day 2</a>"
-msgstr "When your talk is accepted, your talk title will be shown in the <a href=\"/2012/talk/show/72256d20-dbad-11e1-bcf1-95936aeab6a4\">Lightning Talks Day 1</a> and <a href=\"/2012/talk/show/c9c6fcb0-dbad-11e1-bcf1-95936aeab6a4\">Lightning Talks Day 2</a>"
+msgid "When your talk is accepted, your talk title will be shown in the <a href=\"2013/talk/show/e58af7dc-f266-11e2-ba15-895a6aeab6a4\">Lightning Talks Day 1</a> and <a href=\"/2013/talk/show/ff9983ba-f2bf-11e2-a36f-e9ae6aeab6a4\">Lightning Talks Day 2</a>"
+msgstr "When your talk is accepted, your talk title will be shown in the <a href=\"2013/talk/show/e58af7dc-f266-11e2-ba15-895a6aeab6a4\">Lightning Talks Day 1</a> and <a href=\"/2013/talk/show/ff9983ba-f2bf-11e2-a36f-e9ae6aeab6a4\">Lightning Talks Day 2</a>"
 
 msgid "Vote For Best Talk Awards"
 msgstr "Vote For Best Talk Awards"

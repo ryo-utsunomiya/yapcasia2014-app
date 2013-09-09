@@ -24,7 +24,7 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
         <ul>
             <li>[% loc("Talk details WILL BE used to determine if your talk is accepted. Please make sure to put enough details for us to be able to figure out if your talk is going to be fun/interesting/etc.") %]</li>
             <li>[% loc("Talk details will not be publically seen until after your talk has been given.") %]</li>
-            <li>[% loc("When your talk is accepted, your talk title will be shown in the <a href=\"/2012/talk/show/72256d20-dbad-11e1-bcf1-95936aeab6a4\">Lightning Talks Day 1</a> and <a href=\"/2012/talk/show/c9c6fcb0-dbad-11e1-bcf1-95936aeab6a4\">Lightning Talks Day 2</a>") %]</li>
+            <li>[% loc("When your talk is accepted, your talk title will be shown in the <a href=\"2013/talk/show/e58af7dc-f266-11e2-ba15-895a6aeab6a4\">Lightning Talks Day 1</a> and <a href=\"/2013/talk/show/ff9983ba-f2bf-11e2-a36f-e9ae6aeab6a4\">Lightning Talks Day 2</a>") %]</li>
         </ul>
 
 [% FILTER fillinform %]
