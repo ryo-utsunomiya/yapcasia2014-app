@@ -22,10 +22,10 @@ title = 'Vote'
 チケットの種類に応じて参加したそれぞれの開催日ごとに、２つのトークに投票できます。
 
 [% IF ballot.ticket_type == 'day1' || ballot.ticket_type == 'twodays' %]
-<p><a href="/2013/vote/list/2013-09-20">9/20のトークに投票する</a></p>
+<p><a href="/2013/vote/list/2013-09-20" target="_new">9/20のトークに投票する</a></p>
 [% END %]
 [% IF ballot.ticket_type == 'day2' || ballot.ticket_type == 'twodays' %]
-<p><a href="/2013/vote/list/2013-09-21">9/21のトークに投票する</a></p>
+<p><a href="/2013/vote/list/2013-09-21" target="_new">9/21のトークに投票する</a></p>
 [% END %]
 
 <h3>投票したトーク一覧</h3>
