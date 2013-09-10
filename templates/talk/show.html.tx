@@ -1,6 +1,6 @@
 [% WRAPPER 'layouts/default.html.tx' WITH
-    title = talk.duration == 5 ? '' : talk.title || talk.title_en,
-    og_description = talk.duration == 5 ? '' : fmt_talk_abstract_as_og_description(talk),
+    title = talk.duration == 5 ? '' : (talk.title || talk.title_en),
+    og_description = talk.duration == 5 ? '' : fmt_talk_abstract_as_og_description(talk)
 %]
 
 <div id="main">
