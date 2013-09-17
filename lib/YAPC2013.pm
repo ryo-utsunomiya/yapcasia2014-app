@@ -197,6 +197,11 @@ sub setup_xslate {
                 }
                 return $html;
             }),
+            get_talk_schedule_time => sub {
+                my $start_on = $_[0]->{start_on};
+                $start_on =~ /(\d{4}-\d{2}-\d{2}) (\d{2}):(\d{2}):00/;
+                return { hour => $2, minute => $3 };
+            },
             fmt_member_icon_url => sub {
                 $self->get_member_icon_url(@_);
             },
