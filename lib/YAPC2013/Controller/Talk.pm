@@ -81,11 +81,15 @@ sub schedule {
         $cache->set($cache_key, $data, 60);
     }
 
+    if ( $self->req->param('print') ){
+        $self->stash(
+            template => "talk/schedule_print",
+        );
+    }
+
     if ($format ne 'html') {
         $self->render($format, $data);
     } else {
-        use Data::Dumper;
-        warn Dumper $data;
         $self->stash($data);
     }
 }
