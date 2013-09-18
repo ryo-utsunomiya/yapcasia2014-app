@@ -133,6 +133,7 @@ sub setup_routes {
 
     $r->get('/2013/api/talk/list')->to('talk#api_list');
     $r->get('/2013/api/talk/show/:object_id')->to('talk#api_show');
+    $r->get('/2013/api/timeline/')->to('info#api_timeline');
 }
 
 sub setup_xslate {
