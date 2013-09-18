@@ -105,8 +105,7 @@
 [% END %]
 </ul>
 <ul class="info">
-    <li><a href="http://yapcasia.org/2013/09/lunch-session-registration.html">ランチセッションと懇親会は事前登録制です！</a></li>
-    <li><a href="http://yapcasia.org/2013/09/get-the-perl-entrance-ticket.html">Perl入学式も参加登録をお忘れなく！</a></li>
+    <li><a href="http://yapcasia.org/2013/09/released-yapcasia-tokyo-2013-schedule-viewer-for-ios.html">iOS版YAPC::Asia Tokyo 2013 スケジュールビューアがリリースされました！</a></li>
 </ul>
 <div class="schedule">
 <div class="timeaxis">
