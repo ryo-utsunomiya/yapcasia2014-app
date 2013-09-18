@@ -32,7 +32,6 @@ sub schedule {
     my $cache_key = join ".", qw(talk schedule), $format, $date;
     my $data      = $cache->get($cache_key);
     if (! $data) {
-        warn "inininin!!!";
         my $talk_api = $self->get('API::Talk');
         my $member_api = $self->get('API::Member');
         my $venues = VENUES;
