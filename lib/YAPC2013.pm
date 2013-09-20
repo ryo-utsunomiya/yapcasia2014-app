@@ -84,6 +84,7 @@ sub setup_routes {
     #vote
     my $vote = $r->under("/2013/vote");
     $vote->get("/")->to("vote#ballot");
+    $vote->get("/form")->to("vote#form");
     $vote->get("/list/:date")->to("vote#list");
     $vote->get("/ballot")->to("vote#ballot");
     $vote->post("/cast")->to("vote#cast");

@@ -28,6 +28,10 @@ EOSQL
     return \@talks;
 }
 
+sub form {
+    my $self = shift;
+}
+
 sub ballot {
     my $self = shift;
 
