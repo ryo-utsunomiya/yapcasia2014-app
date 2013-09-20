@@ -66,7 +66,7 @@ title = 'Member'
 [% IF (owner) %]
                 <h4>[% loc("Best Talk Votes") %]</h4>
                 <ul>
-                    <li>[% loc("Coming soon") %]</li>
+                    <li><a href="/2013/vote/form/">[% loc("Best Talk Votes") %]</a></li>
                 </ul>
 [% END %]
 
