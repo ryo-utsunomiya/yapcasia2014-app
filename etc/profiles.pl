@@ -44,7 +44,11 @@ use Data::FormValidator::Constraints qw(email);
             material_level => qr/^(advanced|regular|beginner)$/,
             duration => qr/^(60|40|20|10|5)$/,
             category => qr/^(tutorial|app|infra|library|other|community|testing)$/,
-            slide_url => [ qr/^$/, qr/^https?:\/\//i ],
+            slide_url => sub {
+                 my ($dfv, $value) = @_;
+                 warn $value;
+                 return (length( $value ) == 0 || $value =~ /^https?:\/\//) ;
+            },
             video_url => [ qr/^$/, qr/^https?:\/\//i ],
             photo_permission => qr/^(allow|disallow)/,
             video_permission => qr/^(allow|disallow)/,
