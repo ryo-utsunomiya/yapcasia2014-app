@@ -1,0 +1,36 @@
+[% WRAPPER 'layouts/default.html.tx' WITH
+title = 'Vote'
+%]
+
+<div id="main">
+
+<div id="lead" class="section">
+<h1 class="corners">Vote</h1>
+<div class="body">
+
+<style type="text/css">
+<!--
+
+-->
+</style>
+
+<div id="main-contents">
+
+<form action="./" method="get">
+  <div class="controls">
+  チケット番号：  
+  <input type="text" name="ballot_id" value="" />
+  <input type="submit" class="button button-yapc" />
+</form>
+
+</div>
+
+</div>
+
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+</div><!--  / #main /  -->
+
+[% END %]
+
