@@ -26,6 +26,7 @@ sub cast {
             WHERE
                 start_on BETWEEN ? AND DATE_ADD(?, INTERVAL 1 DAY)
 EOSQL
+
     foreach my $date( keys %bydate ) {
         my $list = $bydate{$date};
         next unless $list;
@@ -42,13 +43,13 @@ EOSQL
         while ($sth->fetchrow_arrayref) {
             $self->delete( { ballot_id => $ballot_id, talk_id => $talk_id } );
         }
-    }
-
-    foreach my $talk_id (@{$args->{talk_id}}) {
-        $self->create({
-            ballot_id => $ballot_id,
-            talk_id   => $talk_id
-        });
+    
+        foreach my $talk (@$list) {
+            $self->create({
+                ballot_id => $ballot_id,
+                talk_id   => $talk->{id}
+            });
+        }
     }
 }
 
