@@ -1,171 +1,145 @@
-<html>
-<body>
+<!DOCTYPE html>
+<html lang="ja" xmlns:og="http://ogp.me/ns#" xmlns:mixi="http://mixi-platform.com/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+<meta charset="utf-8" />
+<link rel="shortcut icon" href="http://yapcasia.org/2013/static/images/favicon.ico">
+<link rel="stylesheet" href="http://yapcasia.org/2013/static/css/style.css">
+<link rel="start" href="http://yapcasia.org/2013/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://yapcasia.org/2013/atom.xml" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
+<!--[if lt IE 9]>
+<script src="http://yapcasia.org/2013/static/js/html5shiv.js"></script>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+
 <style>
 <!--
-@media print, screen {
-    body {
-        margin: 0;
-        padding: 0;
-        font-size: 0.8em;
-        font-family: "ＭＳ ゴシック",sans-serif;
+/* ざっくりスタイル書きます */
+    img {
+        display: inline-block;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
     }
-    .schedule {
-        margin-top: 0;
-        padding-top: 0;
-        margin-left: 0em;
+    table {
+        display: inline-block;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        border: solid 1px #ddd;
+        background-color: #fff;
     }
-    .schedule .timeaxis {
-        font-size: 0.5em;
-        float: left;
-        width: 30px;
-        background: #eee;
+    caption {
+        padding: 5px 5px 5px 10px;
+        font-weight: bold;
+        font-size: 1.5em;
+        border-bottom: 1px solid #ddd;
     }
-    .schedule .timeaxis .row:first-child {
-        margin-top: 15px;
-        border: 1px solid #ccc;
-        border-right: none;
+    td {
+        vertical-align:top;
+        border-bottom: 1px solid #ddd;
     }
-    .schedule .timeaxis .row {
+    td.img {
+        text-align:center;
+        padding: 5px;
+        width: 50px;
+    }
+    td.text {
+        padding: 5px 5px 5px 0;
+    }
+    span.name {
+        font-weight: bold;
+    }
+    span.date {
+        display: inline-block;
+        width: 100%;
         text-align: right;
-        vertical-align: middle;
-        height: 15px;
-        border: 1px solid #ccc;
-        border-right: none;
-        border-top: none;
+        color: #999;
     }
-
-    .schedule .timeaxis .row .hm {
-        margin-right: 3px;
-    }
-    .schedule .venue {
-        position: relative;
-        float: left;
-        width: 165px;
-        background: #bbb;
-        height: 904px;
-        border: 1px solid #ccc;
-        border-right: none;
-    }
-    .schedule .venue:last-child {
-        border-right: 1px solid #ccc;
-    }
-    .schedule .venue .venue-name {
-        background-color: #fff;
-        height: 15px;
-        text-align: center;
-        font-weight: bold;
-        font-size: 0.75em;
-        border-bottom: 1px solid #ccc;
-    }
-    .schedule .venue .talk {
-        position: absolute;
-        font-size: 0.6em;
-        border-top: 1px solid #ccc;
-        border-bottom: 1px solid #ccc;
-        overflow: hidden;
-        background-color: #fff;
-    }
-    .schedule .venue .talk .title a {
-        font-weight: bold;
-    }
-    .schedule .venue .talk .title {
-        margin: 5px 0 0 5px;
-    }
-    .schedule .venue .talk .detail {
-        margin: 0 0 0 5px;
-    }
-
-    ul.dates {
-        margin: 1em;
-    }
-    ul.dates li {
-        padding-left: 2em;
-        padding-right: 2em;
-        list-style: none;
-        display: inline;
-        font-size: 9pt;
-        font-weight: normal;
-        border-left: 1px solid #000;
-    }
-    ul.dates li:first-child {
-        border: none;
-    }
-    ul.info {
-        margin: 1em;
-    }
-    ul.info li {
-        padding-left: 2em;
-        font-size: 10pt;
-    }
-    a {
-        color: #333;
-    }
-}
--->
+//-->
 </style>
 
-<div id="main-contents">
-YAPC::Asia Tokyo 2013 - [% IF date == '2013-09-20' %] 9/20 (金)[% ELSE %] 9/21 (土)[% END %] トークスケジュール<br />
-<span style="font-size:0.4em">(*)各エントリは「タイトル スピーカー[対象][ジャンル][言語]」　(*)Each entry is showing " title speaker[audience][genre][language]"</span><br />
-<span style="font-size:0.4em">(*)当日の最新情報はウェブサイトをご参照ください。 (*)Latest information on the day, please refer to the website.  "http://yapcasia.org/2013/talk/schedule"
+</head>
+
+<title>YAPC::Asia Information</title>
+
+<body>
+<header>
+<div id="logo"><a href="http://yapcasia.org/2013/"><img src="http://yapcasia.org/2013/static/images/logo.png" alt="YAPC::Asia TOKYO 2013" width="100%" /></a></div>
+</header>
+
+<div id="main">
+
 <div class="section">
-<div class="schedule">
-<div class="timeaxis">
-[% SET hours = [ 9..18 ] %]
-[% IF (date == "2013-09-19") %][% SET hours = [ 17..21 ] %][% END %]
-[% FOREACH hour IN hours %]
-[% IF (hour == 9) %]
-[% FOREACH minute IN [ 30, 40, 50 ] %]
-<div class="row"><span class="hm">[% hour %]:[% minute %]</span></div>
-[% END %]
-[% ELSIF hour == 18 %]
-[% FOREACH minute IN [ "00", 10, 20, 30 ] %]
-<div class="row"><span class="hm">[% hour %]:[% minute %]</span></div>
-[% END # minute %]
-[% ELSE %]
-[% FOREACH minute IN [ "00", 10, 20, 30, 40, 50 ] %]
-<div class="row" [% IF hour == 11 && ( minute == 40 || minute == 50 ) %]style="height: 20px;"[% END %]><span class="hm">[% hour %]:[% minute %]</span></div>
-[% END # minute %]
-[% END %]
-[% END # hour %]
-</div>
-[% FOREACH venue IN venues %]
-<div class="venue">
-    <div class="venue-name">[% loc(venue.name) %]</div>
+<div class="body">
+<table id="content">
+    <caption>YAPC::Asia 最新情報</caption>
+</table>
 
-[% FOREACH talk IN talks_by_venue.item(loop.index) %]
-[% SET t = get_talk_schedule_time(talk) %]
-[% SET top = ( 4 + (t.hour - 10) * 6 + t.minute/10) * 16 -2 %]
-[% IF t.hour > 11 %]
-[% top = top + 10 %]
-[% END %]
+<script>
+<!--
+// ざっくりスクリプト書きます
+$(document).ready(function(){
+    var since_id = 0;
+    var has_ids = {};
+    function get_timeline (since_id){
+        var v = Math.round( Math.random() * 10000000 );
+        var elements = new Array();
+        $.getJSON("/2013/api/timeline/?since_id="+since_id+"&v=" + v, function(json){
+            json.reverse();
+            for( var i = 0; i < json.length; i++){
+                // すでに取得していたら飛ばすし、ないなら手持ちidに追加
+                if ( json[i].id　in has_ids ){
+                    continue;
+                }
+                has_ids[json[i].id] = 1;
 
-[% SET h = talk.duration / 10 * 16 -1 %]
-[% IF (t.hour == 11 && t.minute == 40) || (t.hour == 11 && t.minute == 20 && talk.duration == 40) %]
-[% h = h + 10 %]
-[% ELSIF talk.id == '389f68b0-00e3-11e3-8088-bc4f6aeab6a4' %]
-[% h = 64 -1 %]
-[% END %]
+                // 日付変換
+                var date = new Date(json[i].created_at);
+                var date_str = (date.getMonth()+1) + "月" + date.getDate() + "日 " + date.getHours() + ":" + date.getMinutes();
+                console.log(json[i].id);
+                console.log("tw: " + json[i].text); 
 
-<div class="talk" style="top: [% top %]px; height: [% h %]px">
-<a id="[% talk.id %]"></a>
-<div class="title" style="font-size:8px;">
-    <a href="/2013/talk/show/[% talk.id %]">
-[% IF talk.id == '1973a82a-c781-11e2-be2e-7ec06aeab6a4' %]オープニング
-[% ELSIF talk.id == '961396b6-c82f-11e2-9315-13836aeab6a4'%]クロージング
-[% ELSE %]
-[% talk.title || talk.title_en %]
-[% END %]
-</a>
-    <span class="speaker"><a href="/2013/member/show/[% talk.speaker.id %]"></a> [% talk.speaker.name || talk.speaker.nickname %]</span> <span class="level">[[% talk.material_level %]][[% talk.category %]][[% talk.language %]]</span>
-    [% IF talk.id == '389f68b0-00e3-11e3-8088-bc4f6aeab6a4' %]<br />(*)懇親会は20:00までです[% END %]
-　　　　　　　　　　
-</div>
-</div>
-[% END %]
-</div>
-[% END %]
-</div>
-</div><!-- section -->
-</div><!-- #main-contents -->
-</body></html>
+                // エレメント組み立て
+                var html = $("#content").html();
+                var el = '<tr class="'+ v +'">';
+                el += '<td class="img"><img src="' + json[i].user.profile_image_url + '" class="rounded-img"/></td>';
+                el += '<td class="text"><span class="name">' + json[i].user.name + '</span><br />' + json[i].text + '<br /><span class="date">' + date_str + '</span></td>';
+                el += '</tr>';
+
+                // 後ろに入れる
+                $("caption").after(el);
+            }
+
+            // 最初はhighlight animationはしない
+            if( since_id != 0 ){
+                $("tr."+v).stop().animate({ backgroundColor: "#ffff99"}, 500).animate({ backgroundColor: "#ffffff"}, 500).animate({ backgroundColor: "#ffff99"}, 500).animate({ backgroundColor: "#ffffff"}, 500);
+            }
+
+            // １分後に次のデータを取得
+            if ( json ){
+                since_id = json[0].id_str;
+            }
+            v = Math.round( Math.random() * 10000000 );
+            var nexturl = "/2013/api/timeline/";
+            var params = { "since_id" : since_id, "v": v };
+            var callee = arguments.callee;
+            setTimeout( function() {
+                $.getJSON( nexturl, params, callee );
+            }, 60000 );
+        });
+    }
+    get_timeline(since_id);
+});
+//-->
+</script>
+
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+
+</div><!--  / #main /  -->
+
+</body>
+</html>
