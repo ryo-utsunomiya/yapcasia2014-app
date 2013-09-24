@@ -204,7 +204,7 @@ sub setup_xslate {
 <iframe src="$url" frameborder="0" width="500" height="450"allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 EOHTML
                 }
-                return <<EOTHML;
+                return <<EOHTML;
 <a href="$url">$url</a>
 EOHTML
             }),
