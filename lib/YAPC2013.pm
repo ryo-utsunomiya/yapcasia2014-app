@@ -204,7 +204,9 @@ sub setup_xslate {
 <iframe src="$url" frameborder="0" width="500" height="450"allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 EOHTML
                 }
-                return $url;
+                return <<EOTHML;
+<a href="$url">$url</a>
+EOHTML
             }),
             fillinform => Text::Xslate::html_builder(sub {
                 my $html =  shift;
