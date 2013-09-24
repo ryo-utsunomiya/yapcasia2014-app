@@ -189,6 +189,13 @@ sub setup_xslate {
                     );
                     return $oembed->html_for( $oembed_url );
                 }
+                elsif ($url->host /speakerdeck\.com$/) {
+                    my $oembed_url = URI->new( "http://speakerdeck.com/oembed.json" );
+                    $oembed_url->query_form(
+                        url => $url,
+                    );
+                    return $oembed->html_for( $oembed_url );
+                }
                 elsif ($url->host =~ /^docs\.google\.com$/) {
                     # the path should be /presentation/.../pub
                     my $path = $url->path;
