@@ -180,14 +180,27 @@ sub setup_xslate {
                 if (! $url) {
                     return $loc->localize("No slides available");
                 }
-                 $url = URI->new($url);
+                $url = URI->new($url);
                 if ($url->host =~ /slideshare\.net$/) {
                     my $oembed_url = URI->new( "http://www.slideshare.net/api/oembed/2" ); 
                     $oembed_url->query_form(
                         url => $url,
                         format => "json",
                     );
-                     return $oembed->html_for( $oembed_url );
+                    return $oembed->html_for( $oembed_url );
+                }
+                elsif ($url->host =~ /^docs\.google\.com$/) {
+                    # the path should be /presentation/.../pub
+                    my $path = $url->path;
+                    if ($path =~ s{/pub$}{/embed}) {
+                        $url->path($path);
+                    }
+                    my %form = $url->query_form;
+                    $url->query_form(
+                        %form,
+                        width => 400,
+                    );
+                    return $url;
                 }
                 return $url;
             }),
