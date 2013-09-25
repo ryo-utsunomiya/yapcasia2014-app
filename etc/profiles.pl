@@ -49,7 +49,11 @@ use Data::FormValidator::Constraints qw(email);
                  warn $value;
                  return (length( $value ) == 0 || $value =~ /^https?:\/\//) ;
             },
-            video_url => [ qr/^$/, qr/^https?:\/\//i ],
+            video_url => sub {
+                 my ($dfv, $value) = @_;
+                 warn $value;
+                 return (length( $value ) == 0 || $value =~ /^https?:\/\//) ;
+            },
             photo_permission => qr/^(allow|disallow)/,
             video_permission => qr/^(allow|disallow)/,
         },
@@ -88,6 +92,8 @@ use Data::FormValidator::Constraints qw(email);
             slide_url => [ qr/^$/, qr/^https?:\/\//i ],
             video_url => [ qr/^$/, qr/^https?:\/\//i ],
         },
+        photo_permission => qr/^(allow|disallow)/,
+        video_permission => qr/^(allow|disallow)/,
     },
     'event.check' => {
         required => [ qw(title description) ],
