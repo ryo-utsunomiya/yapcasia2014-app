@@ -91,9 +91,9 @@ use Data::FormValidator::Constraints qw(email);
             status => qr/^(pending|accepted|rejected)$/,
             slide_url => [ qr/^$/, qr/^https?:\/\//i ],
             video_url => [ qr/^$/, qr/^https?:\/\//i ],
+            photo_permission => qr/^(allow|disallow)/,
+            video_permission => qr/^(allow|disallow)/,
         },
-        photo_permission => qr/^(allow|disallow)/,
-        video_permission => qr/^(allow|disallow)/,
     },
     'event.check' => {
         required => [ qw(title description) ],
