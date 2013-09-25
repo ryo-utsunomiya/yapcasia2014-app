@@ -46,12 +46,10 @@ use Data::FormValidator::Constraints qw(email);
             category => qr/^(tutorial|app|infra|library|other|community|testing)$/,
             slide_url => sub {
                  my ($dfv, $value) = @_;
-                 warn $value;
                  return (length( $value ) == 0 || $value =~ /^https?:\/\//) ;
             },
             video_url => sub {
                  my ($dfv, $value) = @_;
-                 warn $value;
                  return (length( $value ) == 0 || $value =~ /^https?:\/\//) ;
             },
             photo_permission => qr/^(allow|disallow)/,
@@ -91,8 +89,14 @@ use Data::FormValidator::Constraints qw(email);
         },
         constraint_methods => {
             status => qr/^(pending|accepted|rejected)$/,
-            slide_url => [ qr/^$/, qr/^https?:\/\//i ],
-            video_url => [ qr/^$/, qr/^https?:\/\//i ],
+            slide_url => sub {
+                 my ($dfv, $value) = @_;
+                 return ( !$value || $value =~ /^https?:\/\//) ;
+            },
+            video_url =>  sub {
+                 my ($dfv, $value) = @_;
+                 return (length( $value ) == 0 || $value =~ /^https?:\/\//) ;
+            },
             photo_permission => qr/^(allow|disallow)/,
             video_permission => qr/^(allow|disallow)/,
         },
