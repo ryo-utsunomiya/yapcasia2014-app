@@ -68,6 +68,8 @@ use Data::FormValidator::Constraints qw(email);
             category
             material_level
             tshirt_size
+            photo_permission
+            video_permission
             )
         ],
         required => [ qw(
