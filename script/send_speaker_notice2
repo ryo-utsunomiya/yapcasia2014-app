@@ -1,0 +1,41 @@
+#!perl
+
+use strict;
+use lib "local/lib/perl5";
+use lib "lib";
+use Encode qw(decode_utf8);
+use YAPC2013;
+
+my $app = YAPC2013->new;
+
+my $file = shift;
+my $email_api = $app->container->get('API::Email');
+my $talk_api = $app->container->get('API::Talk');
+my $member_api = $app->container->get('API::Member');
+my $xslate = Text::Xslate->new(path => "templates", syntax => "TTerse");
+my @accepted = $talk_api->search({
+    status => "accepted"
+});
+
+foreach my $talk (@accepted) {
+    my $member = $member_api->lookup($talk->{member_id});
+    if ($member->{name} eq '941' || $member->{name} eq 'Daisuke Maki') {
+        warn "Skipping $member->{name}";
+        next;
+    }
+
+    my $message = $xslate->render('notices/pls-check-permissions.eml', {
+        member => $member,
+        talk   => $talk
+    });
+
+    $message =~ s/^([^\n]+)\n//;
+    my $subject = $1;
+
+    warn "Send for $member->{email}";
+    $email_api->send_email({
+        to => $member->{email},
+        subject => $subject,
+        message => $message,
+    });
+}
