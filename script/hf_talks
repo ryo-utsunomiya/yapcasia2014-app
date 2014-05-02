@@ -3,9 +3,9 @@
 #   * Number of pending, rejected, accepted talks
 use strict;
 use Encode qw(decode_utf8);
-use YAPC2013;
+use YAPCApp;
 
-my $app = YAPC2013->new;
+my $app = YAPCApp->new;
 
 my $talk_api = $app->container->get('API::Talk');
 my $hf_api   = $app->container->get('API::HRForecast');

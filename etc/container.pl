@@ -36,7 +36,7 @@ register 'DB::Master' => sub {
 
 foreach my $name (qw(Member Email Talk NoticesSubscriptionTemp NoticesSubscription HRForecast MemberTemp OEmbed Twitter Event Vote Ballot)) {
     my $key = "API::$name";
-    my $klass = "YAPC2013::API::$name";
+    my $klass = "YAPCApp::API::$name";
     eval "require $klass" or die;
     register $key => sub {
         my $c = shift;
@@ -60,7 +60,7 @@ register 'Session::Store' => sub {
 register 'Session::State' => sub {
     my $config = $_[0]->get('config');
     Plack::Session::State::Cookie->new(
-        path => "/2013/",
+        path => "/2014/",
         domain => "yapcasia.org",
         expires => "86400",
         httponly => 1,

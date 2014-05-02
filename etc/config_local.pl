@@ -3,7 +3,7 @@ warn "config, load 'config_test.pl'";
 +{
     Memcached => +{ servers => [ '127.0.0.1:11211' ] },
     'DB::Master' => +[
-        'dbi:mysql:dbname=yapc2013',
+        'dbi:mysql:dbname=yapc2014',
         'root',
         '',
         +{
@@ -22,10 +22,10 @@ warn "config, load 'config_test.pl'";
             mysql_enable_utf8 => 1,
         }
     ],
-    Twitter => {
+    Twitter => { #local dev用 twitter account
         consumer_key => '37p1zU3nzcOGELSWawufCg',
         consumer_secret => 'zN48zGLw1d5MfDzssB5R9y4mMFgKzbr0EgOaRsIYdU',
-        callback_url => 'http://localhost:3000/2013/auth/auth_twitter'
+        callback_url => 'http://localhost:3000/2014/auth/auth_twitter'
     },
     Localizer => {
         localizers => [

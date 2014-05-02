@@ -4,7 +4,7 @@ my $credentials = require 'credentials.pl';
     %$credentials,
     Memcached => +{ servers => [ '127.0.0.1:11211' ] },
     'DB::Master' => [
-        'dbi:mysql:dbname=yapc2013',
+        'dbi:mysql:dbname=yapc2014',
         'root',
         undef,
         +{

@@ -1,0 +1,18 @@
+# database => yapc2014
+
+CREATE TABLE notices_subscription_temp (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    code CHAR(40) NOT NULL UNIQUE,
+    email TEXT NOT NULL,
+    expires_on DATETIME NOT NULL,
+    created_on DATETIME NOT NULL,
+    modified_on TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET='utf8';
+
+CREATE TABLE notices_subscription (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    email TEXT NOT NULL,
+    created_on DATETIME NOT NULL,
+    modified_on TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    KEY(email(128))
+) ENGINE=InnoDB DEFAULT CHARSET='utf8';

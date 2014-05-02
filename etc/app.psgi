@@ -6,9 +6,9 @@ use Plack::Middleware::Session;
 use Plack::Session::State::Cookie;
 use Plack::Session::Store::Cache;
 use Plack::Builder;
-use YAPC2013;
+use YAPCApp;
 
-my $server = Mojo::Server::PSGI->new(app => YAPC2013->new);
+my $server = Mojo::Server::PSGI->new(app => YAPCApp->new);
 my $psgi_app = $server->to_psgi_app;
 
 builder {

@@ -3,11 +3,11 @@
 #   * Number of tickets sold for each ticket type
 use strict;
 use Encode qw(decode_utf8);
-use YAPC2013;
+use YAPCApp;
 use JSON;
 use utf8;
 
-my $app = YAPC2013->new;
+my $app = YAPCApp->new;
 
 my $hf_api = $app->container->get('API::HRForecast');
 

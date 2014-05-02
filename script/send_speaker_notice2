@@ -4,9 +4,9 @@ use strict;
 use lib "local/lib/perl5";
 use lib "lib";
 use Encode qw(decode_utf8);
-use YAPC2013;
+use YAPCApp;
 
-my $app = YAPC2013->new;
+my $app = YAPCApp->new;
 
 my $file = shift;
 my $email_api = $app->container->get('API::Email');
