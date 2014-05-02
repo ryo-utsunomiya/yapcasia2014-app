@@ -1,10 +1,13 @@
 [% WRAPPER "layouts/default.html.tx" WITH title = "YAPC::Asia 2014 イベントお知らせメール登録" %]
 
-<div id="main">
-
-<div id="lead" class="section">
-<h1 class="corners">[% title %]</h1>
+<section>
+<div class="section">
+<h1 class="title">
+<div class="innerblock">
+<span class="icon-jp_icon_paper_fan"></span> <em>[% title %]</em></div>
+</h1>
 <div class="body">
+<div class="innerblock">
 
 <style type="text/css">
 <!--
@@ -33,13 +36,21 @@
 <p>まだ登録してない、もしくは登録確認メールが手元に届いていない方は<a href="/2014/notices/subscribe">こちらから登録してください</a></p>
 
 <form action="/2014/notices/confirm" method="POST" class="form-horizontal">
-    登録コード
-    <input type="text" name="code" class="input-large">
-    <input type="submit" value="確認" class="button button-info">
+  <div class="form-group">
+    <label for="code" class="col-sm-2 control-label">登録コード</label>
+    <div class="col-sm-6">
+      <input type="text" name="code" class="form-control input-lg">
+    </div>
+    <div class="col-sm-2">
+      <input type="submit" value="確認" class="btn btn-info btn-lg">
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
 </form>
 
+</div>
 </div><!--  / .body /  -->
 </div><!--  / .section /  -->
-</div><!--  / #main /  -->
+</section>
 
 [% END %]
