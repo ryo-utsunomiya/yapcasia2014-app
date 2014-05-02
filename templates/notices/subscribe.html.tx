@@ -1,4 +1,4 @@
-[% WRAPPER "layouts/default.html.tx" WITH title = "YAPC::Asia 2013 イベントお知らせメール登録" %]
+[% WRAPPER "layouts/default.html.tx" WITH title = "YAPC::Asia 2014 イベントお知らせメール登録" %]
 
 <div id="main">
 
@@ -20,11 +20,11 @@
 <p class="error">メールアドレスが不正です。</p>
 [% END %]
 
-<p>YAPC::Asia Tokyo 2013の開催情報（ゲストスピーカーの決定、カンファレンス内容のアナウンス、チケットの販売情報など）をいち早く知りたい！という方はこちらにメールアドレスをご登録ください！</p>
+<p>YAPC::Asia Tokyo 2014の開催情報（ゲストスピーカーの決定、カンファレンス内容のアナウンス、チケットの販売情報など）をいち早く知りたい！という方はこちらにメールアドレスをご登録ください！</p>
 
 <p>メールアドレスを登録すると確認メールが送信されますが、迷惑メールフォルダに入る可能性もありますので、そちらもご確認ください。</p>
 
-<form action="/2013/notices/subscribe" method="POST" class="form-horizontal">
+<form action="/2014/notices/subscribe" method="POST" class="form-horizontal">
     <input type="text" name="email" class="input-large">
     <input type="submit" value="登録" class="button button-info">
 </form>

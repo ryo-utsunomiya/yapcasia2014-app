@@ -1,4 +1,4 @@
-[% WRAPPER "layouts/default.html.tx" WITH title = "YAPC::Asia 2013 イベントお知らせメール登録" %]
+[% WRAPPER "layouts/default.html.tx" WITH title = "YAPC::Asia 2014 イベントお知らせメール登録" %]
 
 <div id="main">
 
@@ -30,9 +30,9 @@
 <p class="error">指定された登録コードが見つかりませんでした。コードを再確認していただいても駄目な場合は再登録をしてみてください
 [% END %]
 
-<p>まだ登録してない、もしくは登録確認メールが手元に届いていない方は<a href="/2013/notices/subscribe">こちらから登録してください</a></p>
+<p>まだ登録してない、もしくは登録確認メールが手元に届いていない方は<a href="/2014/notices/subscribe">こちらから登録してください</a></p>
 
-<form action="/2013/notices/confirm" method="POST" class="form-horizontal">
+<form action="/2014/notices/confirm" method="POST" class="form-horizontal">
     登録コード
     <input type="text" name="code" class="input-large">
     <input type="submit" value="確認" class="button button-info">

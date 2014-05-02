@@ -31,7 +31,7 @@ sub subscribe {
 
         $self->get('API::Email')->send_email({
             to      => $email,
-            subject => "Thank You For Registering to YAPC::Asia Tokyo 2013 Notices",
+            subject => "Thank You For Registering to YAPC::Asia Tokyo 2014 Notices",
             message => $message->to_string,
         });
 
@@ -58,7 +58,7 @@ sub confirm {
                     email => $temp->{email},
                 });
             }
-            $self->redirect_to("/2013/notices/complete");
+            $self->redirect_to("/2014/notices/complete");
             return;
         }
     }
