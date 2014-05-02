@@ -36,3 +36,4 @@ requires 'IO::Socket::SSL';
 requires 'Net::Twitter::Lite' => '0.12004';
 requires 'Net::OAuth'         => '0.28';
 requires 'Text::CSV_XS';
+requires 'Net::Twitter::Lite::WithAPIv1_1';
