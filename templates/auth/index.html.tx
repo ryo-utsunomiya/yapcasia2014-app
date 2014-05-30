@@ -16,6 +16,9 @@ title = 'Login'
     .error {
         color:red;
     }
+    ul li {
+        margin-bottom:1em;
+    }
 -->
 </style>
 

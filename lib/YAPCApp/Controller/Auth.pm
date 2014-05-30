@@ -42,6 +42,7 @@ sub auth_twitter {
         authorize_path     => q{/oauth/authorize},
     );
     if (! $verifier) {
+        my $base_uri = $self->req->url->base;
         my $request_token = $consumer->get_request_token(
             callback_url => $config->{Twitter}->{callback_url},
         );

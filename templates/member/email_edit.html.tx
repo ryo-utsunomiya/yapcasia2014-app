@@ -22,18 +22,21 @@ title = loc("Register Your Email Address")
 <p>[% loc("Please specify a reachable address below, and follow the instructions in the email that will be sent to that address") %]
 </p>
 
-<form action="/2014/member/email_submit" method="post" class="form-horizontal">
-  <input type="hidden" name="id" value="[% member.id %]" />
-  <p>[% loc("Enter Your Email Address") %]:</p>
-  [% IF invalid_email %]
-    <p style="color:red">
-      [% loc("It is not in the form of e-mail address, or This Email address is already registered") %]
-    </p>
-  [% END %]
-  <input type="text" name="email" value="" class="input-large" />
-  <input type="submit" class="button button-info">
-</form>
 
+[% IF invalid_email %]
+<p style="color:red">
+  [% loc("It is not in the form of e-mail address, or This Email address is already registered") %]
+</p>
+[% END %]
+
+<form role="form" class="form-inline" action="/2014/member/email_submit" method="post">
+  <input type="hidden" name="id" value="[% member.id %]" />
+  <div class="form-group">
+    <label class="sr-only" for="email">[% loc("Enter Your Email Address") %]</label>
+    <input type="email" class="form-control" id="email" placeholder="Your Email Address" size="40">
+  </div>
+  <button type="submit" class="btn btn-info">Submit</button>
+</form>
 
 </div>
 </div><!--  / .body /  -->

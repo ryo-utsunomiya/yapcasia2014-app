@@ -21,7 +21,9 @@ sub production_mode {
 sub startup {
     my $self = shift;
 
-    $self->plugin(Config => { file => "etc/config.pl" });
+    my $config_file = $ENV{PLACK_ENV} =~ m!^development! ? 'etc/config_local.pl' : 'etc/config.pl';
+    $self->plugin(Config => { file => $config_file });
+
     $self->setup_container;
     $self->setup_xslate;
     $self->setup_routes;

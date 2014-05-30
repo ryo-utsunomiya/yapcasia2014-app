@@ -1,4 +1,4 @@
-warn "config, load 'config_test.pl'";
+warn "config, load 'config_local.pl'";
 
 +{
     Memcached => +{ servers => [ '127.0.0.1:11211' ] },
