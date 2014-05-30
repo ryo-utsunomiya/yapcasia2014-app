@@ -152,7 +152,7 @@ sub show {
             local $speaker->{remote_id};
             delete $speaker->{$_} for qw(authenticated_by email is_admin remote_id);
 
-            $self->render_json( $talk );
+            $self->render( json => $talk );
         }
     }
 }
@@ -170,8 +170,8 @@ sub input {
         );
     }
 
-    if (!$member->{is_admin} && !$is_lt) {
-        $self->render_text("Currently talk submissions are disabled");
+    if (!$member->{is_admin} && $is_lt) {
+        $self->render( text => "Currently talk submissions are disabled" );
         $self->rendered(403);
         return;
     }
@@ -296,12 +296,11 @@ sub commit {
         {
             local $self->stash->{format} = "eml";
             local $self->stash->{member} = $member;
-            $message = $self->render_partial("talk/thankyou");
+            $message = $self->render( "talk/thankyou", partial => 1);
         }
-
         $self->get('API::Email')->send_email({
             to      => $member->{email},
-            subject => "[YAPC::Asia Tokyho 2013] Thank you for your talk submission!",
+            subject => "[YAPC::Asia Tokyho 2014] Thank you for your talk submission!",
             message => $message->to_string,
         });
 
@@ -322,7 +321,7 @@ sub commit {
                 sprintf(
                     "%s %s #yapcasia",
                     $text,
-                    "http://yapcasia.org/2013/talk/show/$talk->{id}",
+                    "http://yapcasia.org/2014/talk/show/$talk->{id}",
                 )
             );
         }

@@ -8,13 +8,13 @@ use Email::Valid::Loose;
 sub index {
     my $self = shift;
     my $member = $self->assert_logged_in or return;
-    $self->redirect_to("/2013/member/show/$member->{id}");
+    $self->redirect_to("/2014/member/show/$member->{id}");
 }
 
 sub show {
     my $self = shift;
 
-    my $object_id = $self->match->captures->{object_id};
+    my $object_id = $self->param('object_id');
     my $object = $self->load_object( $object_id );
 
     if (! $object) {
@@ -102,7 +102,7 @@ sub confirm {
             $self->get('API::MemberTemp')->delete($temp->{id});
             $self->get('API::Member')->update( $member->{id}, { email => $email } );
             $self->sessions->set(member => $self->get('API::Member')->lookup( $member->{id} ));
-            $self->redirect_to("/2013/member/complete");
+            $self->redirect_to("/2014/member/complete");
             return;
         }
     }

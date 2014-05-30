@@ -30,7 +30,7 @@ warn "Loading $object_id from " . $self->api_name;
 sub show {
     my $self = shift;
 
-    my $object_id = $self->match->captures->{object_id};
+    my $object_id = $self->param('object_id');
     my $object = $self->load_object( $object_id );
 
     if (! $object) {
