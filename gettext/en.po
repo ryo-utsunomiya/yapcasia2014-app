@@ -329,7 +329,7 @@ msgid "Venue"
 msgstr "Venue"
 
 msgid "Starts On"
-msgstr "開始時間"
+msgstr "Starts On"
 
 msgid "MainHall"
 msgstr "Main Hall (Ito Memorial Hall)"
