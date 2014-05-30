@@ -1,4 +1,4 @@
-[% WRAPPER "layouts/default.html.tx" WITH title = "YAPC::Asia 2014 イベントお知らせメール" %]
+[% WRAPPER "layouts/default.html.tx" WITH title = "YAPC::Asia 2014 イベントお知らせメール", page = 'notices' %]
 
 <section>
 <div class="section">
