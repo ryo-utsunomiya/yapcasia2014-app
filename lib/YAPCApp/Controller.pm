@@ -15,7 +15,7 @@ sub assert_email {
     }
 
     if (! $member->{email}) {
-        $self->redirect_to($self->url_for("/2013/member/email_edit"));
+        $self->redirect_to($self->url_for("/2014/member/email_edit"));
         return;
     }
     return $member;
@@ -27,7 +27,7 @@ sub assert_logged_in {
     my $member = $self->get_member;
     if (! $member) {
         $self->sessions->set("after_login" => $self->req->url);
-        $self->redirect_to($self->url_for("/2013/login"));
+        $self->redirect_to($self->url_for("/2014/login"));
         return;
     }
 

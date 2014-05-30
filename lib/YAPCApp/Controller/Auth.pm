@@ -29,7 +29,7 @@ sub auth_twitter {
     my $verifier = $self->req->param('oauth_verifier');
 
     if ( my $denied = $self->req->param('denied') ){
-        $self->redirect_to( "/2013/login?error=access_denied" );
+        $self->redirect_to( "/2014/login?error=access_denied" );
         return;
     }
 
@@ -58,7 +58,7 @@ sub auth_twitter {
         $self->sessions->remove('request_token');
         my $res = $consumer->request(
             method => 'GET',
-            url    => q{http://api.twitter.com/1.1/account/verify_credentials.json},
+            url    => q{https://api.twitter.com/1.1/account/verify_credentials.json},
             token  => $access_token,
         );
         my $tw = $self->get('JSON')->decode($res->decoded_content);
@@ -82,7 +82,7 @@ sub auth_fb {
     my $error = $req->param('error');
     if ( $error) {
         if ( $error eq 'access_denied' ){
-            $self->redirect_to( "/2013/login?error=access_denied" );
+            $self->redirect_to( "/2014/login?error=access_denied" );
             return;
         } else {
             return;
@@ -160,7 +160,7 @@ sub auth_github {
     my $error = $req->param('error');
     if ( $error) {
         if ( $error eq 'access_denied' ){
-            $self->redirect_to( "/2013/login?error=access_denied" );
+            $self->redirect_to( "/2014/login?error=access_denied" );
             return;
         } else {
             return;
@@ -169,7 +169,7 @@ sub auth_github {
         my $github_state = Digest::SHA::sha1_hex( Digest::SHA::sha1_hex( time(), {}, rand(), $$ ) );
         $self->sessions->set('github_s', $github_state);
         
-        my $redirect_uri = URI->new( "http://yapcasia.org/2013/auth/auth_github" );
+        my $redirect_uri = URI->new( "http://yapcasia.org/2014/auth/auth_github" );
         $redirect_uri->query_form(
             state => $github_state
         );
@@ -267,7 +267,7 @@ warn Dumper($object);
     if ($url) {
         $self->sessions->remove('after_login');
     } else {
-        $url = "/2013/member/show/$object->{id}";
+        $url = "/2014/member/show/$object->{id}";
     }
     $self->redirect_to($url);
 }

@@ -2,16 +2,21 @@
 title = 'Login'
 %]
 
-<div id="main">
-
-<div id="lead" class="section">
-<h1 class="corners">ログイン<span>Login</span></h1>
+<section>
+<div class="section">
+<h1 class="title">
+<div class="innerblock">
+<span class="icon-jp_icon_paper_fan"></span> <em>[% title %]</em></div>
+</h1>
 <div class="body">
+<div class="innerblock">
 
-<style>
+<style type="text/css">
+<!--
     .error {
         color:red;
     }
+-->
 </style>
 
 [% IF error == 'access_denied' %]
@@ -19,14 +24,14 @@ title = 'Login'
 [% END %]
 
 <ul>
-  <li style="list-style: none; !important"><a class="button button-primary" href="/2013/auth/auth_fb">[% loc("Login via [_1]", "Facebook") %]</a></li>
-  <li style="list-style: none; !important"><a class="button button-info" href="/2013/auth/auth_twitter">[% loc("Login via [_1]", "Twitter") %]</a></li>
-  <li style="list-style: none; !important"><a class="button button-success" href="/2013/auth/auth_github">[% loc("Login via [_1]", "Github") %]</a></li>
+  <li style="list-style: none; !important"><a class="btn btn-lg btn-primary" href="/2014/auth/auth_fb">[% loc("Login via [_1]", "Facebook") %]</a></li>
+  <li style="list-style: none; !important"><a class="btn btn-lg btn-info" href="/2014/auth/auth_twitter">[% loc("Login via [_1]", "Twitter") %]</a></li>
+  <li style="list-style: none; !important"><a class="btn btn-lg btn-success" href="/2014/auth/auth_github">[% loc("Login via [_1]", "Github") %]</a></li>
 </ul>
 
+</div>
 </div><!--  / .body /  -->
 </div><!--  / .section /  -->
-
-</div><!--  / #main /  -->
+</section>
 
 [% END %]
