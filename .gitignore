@@ -14,3 +14,8 @@ META.yml
 MYMETA.yml
 nytprof.out
 pm_to_blib
+cpanfile.snapshot
+credentials.pl
+local/
+log/
+tmp/
