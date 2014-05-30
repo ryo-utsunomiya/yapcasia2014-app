@@ -1,6 +1,5 @@
 [%- SET page_title = "YAPC::Asia Tokyo 2014" -%]
 [%- IF (title) -%][% SET page_title = title _ " - " _ page_title %][% END -%]
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>

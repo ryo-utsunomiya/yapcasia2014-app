@@ -30,19 +30,21 @@ title = "Confirm Email"
 </style>
 
 [% IF (email_sent_message) %]
-<p class="notice">[% loc("Email sent. Please check the instructions in the email to finish registration") %]</p>
+<p class="alert alert-info">[% loc("Email sent. Please check the instructions in the email to finish registration") %]</p>
 [% END %]
 
 [% IF (code_not_found) %]
-<p class="error">[% loc("Registration code was not found. Perhaps it expired?") %]</p>
+<p class="alert alert-danger">[% loc("Registration code was not found. Perhaps it expired?") %]</p>
 [% END %]
 
-
-<form action="/2014/member/confirm" method="POST" class="form-horizontal">
-    [% loc("Registration Code") %]
-    <input type="text" name="code" class="input-large">
-    <input type="submit" class="button button-info">
+<form role="form" class="form-inline" action="/2014/member/confirm" method="post" class="form-horizontal">
+  <div class="form-group">
+    <label for="code"><b>[% loc("Registration Code") %]</b></label>&nbsp;
+    <input type="text" class="form-control" id="code" name="code" placeholder="Registration Code" size="40">
+  </div>
+  <button type="submit" class="btn btn-info">Submit</button>
 </form>
+
 
 
 </div>

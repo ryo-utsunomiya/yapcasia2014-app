@@ -52,17 +52,16 @@ sub email_edit {
 
 sub email_submit {
     my $self = shift;
-    warn 'email_submit';
     $self->assert_logged_in() or return;
 
     my $member = $self->get_member;
     $self->stash(member => $member);
 
     my $email = $self->req->param('email');
-    if (! Email::Valid::Loose->address($email) || $member->{email} eq $email ) {
+
+    if (! Email::Valid::Loose->address($email) || ( defined $member->{email} && $member->{email} eq $email ) ) {
         $self->stash( invalid_email => 1, email => $email );
-        $self->render("member/email_edit", format => "html");
-        return;
+        return $self->render("member/email_edit");
     }
 
     my $subscription = $self->get('API::MemberTemp')->create({
@@ -74,7 +73,6 @@ sub email_submit {
     $self->stash(subscription => $subscription);
 
     my $message = $self->render("member/email_confirm", format => "eml", partial => 1);
-
     #email send
     $self->get('API::Email')->send_email({
         from    => 'yapc@perlassociation.org',
@@ -83,7 +81,8 @@ sub email_submit {
         message => $message,
     });
 
-    $self->render("member/confirm", format => "html", email => $email, email_sent_message => 1 );
+    $self->res->headers->content_type('text/html; charset=UTF-8'); #XXX
+    return $self->render("member/confirm", format => 'html', email => $email, email_sent_message => 1);
 }
 
 sub confirm {

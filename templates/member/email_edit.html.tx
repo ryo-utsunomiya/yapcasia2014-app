@@ -33,7 +33,7 @@ title = loc("Register Your Email Address")
   <input type="hidden" name="id" value="[% member.id %]" />
   <div class="form-group">
     <label class="sr-only" for="email">[% loc("Enter Your Email Address") %]</label>
-    <input type="email" class="form-control" id="email" placeholder="Your Email Address" size="40">
+    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email Address" size="40">
   </div>
   <button type="submit" class="btn btn-info">Submit</button>
 </form>
