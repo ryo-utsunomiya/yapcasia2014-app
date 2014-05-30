@@ -79,7 +79,7 @@ sub email_submit {
     $self->get('API::Email')->send_email({
         from    => 'yapc@perlassociation.org',
         to      => $email,
-        subject => 'YAPC::Asia Tokyo 2013 Email Confirmation',
+        subject => 'YAPC::Asia Tokyo 2014 Email Confirmation',
         message => $message,
     });
 
