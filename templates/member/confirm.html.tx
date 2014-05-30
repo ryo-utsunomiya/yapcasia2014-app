@@ -2,11 +2,15 @@
 title = "Confirm Email"
 %]
 
-<div id="main">
-
-<div id="lead" class="section">
-<h1 class="corners">[% loc("Register Your Email Address") %]</h1>
+<section>
+<div class="section">
+<h1 class="title">
+<div class="innerblock">
+<span class="icon-jp_icon_paper_fan"></span> <em>[% loc("Register Your Email Address") %]</em></div>
+</h1>
 <div class="body">
+<div class="innerblock">
+
 
 <style type="text/css">
 <!--
@@ -34,15 +38,16 @@ title = "Confirm Email"
 [% END %]
 
 
-<form action="/2013/member/confirm" method="POST" class="form-horizontal">
+<form action="/2014/member/confirm" method="POST" class="form-horizontal">
     [% loc("Registration Code") %]
     <input type="text" name="code" class="input-large">
     <input type="submit" class="button button-info">
 </form>
 
-</div><!--  / .body /  -->
-</div><!--  / .section /  -->
 
 </div>
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+</section>
 
 [% END %]

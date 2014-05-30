@@ -2,7 +2,7 @@
 
 [% member.nickname || member.email %]様
 
-YAPC::Asia 2013 Tokyoのトークへ応募いただきありがとうございます。
+YAPC::Asia 2014 Tokyoのトークへ応募いただきありがとうございます。
 以下のトーク申し込みを受け付けました。
 
     日本語タイトル： [% talk.title %]
@@ -12,7 +12,7 @@ YAPC::Asia 2013 Tokyoのトークへ応募いただきありがとうござい�
 運営側で判断させていただきます。是非ご自分のトークを知ってもらえる
 よう、下記トーク詳細閲覧用URLをまわりに是非紹介してください。
 
-    http://yapcasia.org/2013/talk/show/[% talk.id %]
+    http://yapcasia.org/2014/talk/show/[% talk.id %]
 
 採択された場合、メールにてお知らせいたします。
 (トークページのステータスも変更となります)
@@ -20,7 +20,7 @@ YAPC::Asia 2013 Tokyoのトークへ応募いただきありがとうござい�
 応募したトーク内容を変更または削除したい場合は以下URLから
 行ってください。
 
-    http://yapcasia.org/2013/talk/edit/[% talk.id %]
+    http://yapcasia.org/2014/talk/edit/[% talk.id %]
 
 問い合わせは yapc@perlassociation.org までお願いいたします。
 また、このメールに心当たりが無い場合お手数ですが上記メールアドレスまで
@@ -31,7 +31,7 @@ YAPC::Asia 2013 Tokyoのトークへ応募いただきありがとうござい�
 Dear [% member.nickname || member.email %]
 
 Thank you for submitting the following talk proposal to
-YAPC::Asia Tokyo 2013.
+YAPC::Asia Tokyo 2014.
 
     English : [% talk.title_en %]
     Japanese: [% talk.title %]
@@ -41,7 +41,7 @@ The decision will partially based on the amount of feedback
 for each social media, so please promote your talk URL below to
 increase your chances of getting accepted.
 
-    http://yapcasia.org/2013/talk/show/[% talk.id %]
+    http://yapcasia.org/2014/talk/show/[% talk.id %]
 
 We will notify you once your talk is accepted.
 (The status shown on the talk page will also change)
@@ -49,7 +49,7 @@ We will notify you once your talk is accepted.
 If you would like to edit or delete this talk, please go to
 the following URL.
 
-    http://yapcasia.org/2013/talk/edit/[% talk.id %]
+    http://yapcasia.org/2014/talk/edit/[% talk.id %]
 
 Please send any questions or concerns you may have to
 yapc@perlassociaiton.org. 
@@ -57,4 +57,4 @@ If you believe this email has mistakenly reached you,
 please let us know at the above address.
 
 Regards,
-YAPC::Asia Tokyo 2013 Team
+YAPC::Asia Tokyo 2014 Team

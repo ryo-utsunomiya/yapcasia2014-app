@@ -2,11 +2,14 @@
 title = loc("Register Your Email Address")
 %]
 
-<div id="main">
-
-<div id="lead" class="section">
-<h1 class="corners">[% loc("Register Your Email Address") %]</h1>
+<section>
+<div class="section">
+<h1 class="title">
+<div class="innerblock">
+<span class="icon-jp_icon_paper_fan"></span> <em>[% loc("Register Your Email Address") %]</em></div>
+</h1>
 <div class="body">
+<div class="innerblock">
 
 [% IF !member.email %]
 <p>[% loc("we don't seem to have an email associated with your account (This is probably because you used Github which doesn't always give us your email, or Twitter which never gives us your email).") %]</p>
@@ -19,7 +22,7 @@ title = loc("Register Your Email Address")
 <p>[% loc("Please specify a reachable address below, and follow the instructions in the email that will be sent to that address") %]
 </p>
 
-<form action="/2013/member/email_submit" method="post" class="form-horizontal">
+<form action="/2014/member/email_submit" method="post" class="form-horizontal">
   <input type="hidden" name="id" value="[% member.id %]" />
   <p>[% loc("Enter Your Email Address") %]:</p>
   [% IF invalid_email %]
@@ -31,8 +34,11 @@ title = loc("Register Your Email Address")
   <input type="submit" class="button button-info">
 </form>
 
+
+</div>
 </div><!--  / .body /  -->
 </div><!--  / .section /  -->
+</section>
 
 </div>
 

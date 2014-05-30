@@ -2,23 +2,22 @@
 title = loc("Please verify your submission")
 %]
 
-<div id="main">
-
-<div id="lead" class="section">
-<h1 class="corners">[% loc("Please verify your submission") %]</h1>
+<section>
+<div class="section">
+<h1 class="title">
+<div class="innerblock">
+<span class="icon-jp_icon_paper_fan"></span> <em>[% loc("Please verify your submission") %]</em></div>
+</h1>
 <div class="body">
+<div class="innerblock">
 
-<div id="main-contents">
-
-<div class="section posts">
-    <div class="innerblock">
         <div class="entry">
             <div class="entry-contents">
                 <table class="table">
 [% IF (is_edit) %]
                 <tr>
                     <td>ID</td>
-                    <td><a href="/2012/talk/[% talk.id %]">[% talk.id %]</a></td>
+                    <td><a href="/2014/talk/[% talk.id %]">[% talk.id %]</a></td>
                 </tr>
 [% END %]
                 <tr>
@@ -108,7 +107,7 @@ title = loc("Please verify your submission")
 
                 </table>
 
-                <form id="commit-form" action="/2013/talk/commit" method="POST">
+                <form id="commit-form" action="/2014/talk/commit" method="POST">
                     <input type="hidden" name="p" value="[% subsession_id %]" />
                     <button class="button button-yapc">[% loc("Submit") %]</button>
                     <button class="button button-danger">[% loc("Go Back") %]</button>
@@ -137,16 +136,10 @@ title = loc("Please verify your submission")
 
 
 
-
-
-
-
-
+</div>
 </div><!--  / .body /  -->
 </div><!--  / .section /  -->
-
-</div><!--  / #main /  -->
-
+</section>
 
 
 

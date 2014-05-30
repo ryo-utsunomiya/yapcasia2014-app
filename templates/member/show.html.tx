@@ -1,12 +1,16 @@
 [% WRAPPER "layouts/default.html.tx" WITH
-title = 'Member'
+title = loc("[_1]'s Page", member.name || member.nickname)
 %]
 
-<div id="main">
 
-<div id="lead" class="section">
-<h1 class="corners">[% loc("[_1]'s Page", member.name || member.nickname) %]</h1>
+<section>
+<div class="section">
+<h1 class="title">
+<div class="innerblock">
+<span class="icon-jp_icon_paper_fan"></span> <em>[% loc("[_1]'s Page", member.name || member.nickname) %]</em></div>
+</h1>
 <div class="body">
+<div class="innerblock">
 
 <style type="text/css">
 <!--
@@ -33,19 +37,21 @@ title = 'Member'
 
 <div class="speaker">
     <div class="icon">[% fmt_member_icon_tag(member) %]</div>
-    <p class="name"><a href="/2013/member/show/[% member.id %]">[% member.name || member.nickname %]</a>[% IF (owner) %] ([% member.authenticated_by %])[% END %]</p>
+    <p class="name"><a href="/2014/member/show/[% member.id %]">[% member.name || member.nickname %]</a>[% IF (owner) %] ([% member.authenticated_by %])[% END %]</p>
 [% IF (owner) %]
-                <p>(<a href="/2013/logout">logout</a>)</p>
+                <p>(<a href="/2014/logout">logout</a>)</p>
 [% END %]
 </div>
 
             <div style="margin-left: 80px">
-[% IF (owner && ! member.email) %]
+[% IF ( owner && !member.email) %]
                 <h4>[% loc("Email") %]</h4>
                 <ul>
-                    <li><strong style="color:red">[% loc("Email address not registered.") %] <a href="/2013/member/email_edit">[% loc("Please register if you want to submit a talk") %]</a></strong></li>
+                    <li><strong style="color:red">[% loc("Email address not registered.") %]</li>
+                    <li><a href="/2014/member/email_edit">[% loc("Please register if you want to submit a talk") %]</a></strong></li>
                 </ul>
 [% END %]
+
                 <h4>[% loc("Talks Submitted by [_1]", member.name || member.nickname) %]</h4>
 
 [% IF (talks.size() < 1) %]
@@ -56,25 +62,18 @@ title = 'Member'
                     
 [% IF (owner || talk.duration != 5 || talk.lt_visible) %]
                   <li>
-                    <a href="[% c.url_for("/2013/talk/show/" _ talk.id) %]">[% talk.title || talk.title_en %]</a> ([% loc(talk.status) %])
+                    <a href="[% c.url_for("/2014/talk/show/" _ talk.id) %]">[% talk.title || talk.title_en %]</a> ([% loc(talk.status) %])
                   </li>
 [% END %]
                 </ul>
 [% END %]
 [% END %]
 
-[% IF (owner) %]
-                <h4>[% loc("Best Talk Votes") %]</h4>
-                <ul>
-                    <li><a href="/2013/vote/form/">[% loc("Best Talk Votes") %]</a></li>
-                </ul>
-[% END %]
-
 [% IF (events.size() > 0) %]
                 <h4>[% loc("Events Organized By [_1]", member.name || member.nickname) %]</h4>
                 <ul>
 [% FOREACH event IN events %]
-                    <li><a href="[% "/2013/event/show/" _ event.id %]">[% event.title %]</a></li>
+                    <li><a href="[% "/2014/event/show/" _ event.id %]">[% event.title %]</a></li>
 [% END %]
                 </ul>
 [% END # IF (events.size) %]
@@ -84,15 +83,15 @@ title = 'Member'
                 <ul>
 [% IF member.email) %]
                   <li>
-                    <a href="/2013/member/email_edit">[% loc("Register a new email address") %]</a>
+                    <a href="/2014/member/email_edit">[% loc("Register a new email address") %]</a>
                   </li>
                   <li>
-                    <a href="/2013/talk/input?lt=1">[% loc("Submit a new talk") %] (LT)</a>
+                    <a href="/2014/talk/input">[% loc("Submit a new talk") %] </a>
                   </li>
 [% END %]
                   <li>
-                    [% IF lang == 'en' %]<a href="/2013/member/?lang=ja">日本語で表示する</a>
-                    [% ELSE %]<a href="/2013/member/?lang=en">Display in English</a>
+                    [% IF lang == 'en' %]<a href="/2014/member/?lang=ja">日本語で表示する</a>
+                    [% ELSE %]<a href="/2014/member/?lang=en">Display in English</a>
                     [% END %]
                   </li>
                 </ul>
@@ -106,9 +105,10 @@ title = 'Member'
     </div>
 </div>
 
-</div><!--  / .body /  -->
-</div><!--  / .section /  -->
 
 </div>
+</div><!--  / .body /  -->
+</div><!--  / .section /  -->
+</section>
 
 [% END %]

@@ -2,16 +2,20 @@
 title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
 %]
 
+
+<section>
+<div class="section">
+<h1 class="title">
+<div class="innerblock">
+<span class="icon-jp_icon_paper_fan"></span> <em>[% IF (is_edit) %][% loc("Edit Your Talk") %][% ELSE %][% loc("Submit a new talk") %][% END %]</em></div>
+</h1>
+<div class="body">
+<div class="innerblock">
+
+
 <style>
   .error { color : red }
 </style>
-
-<div id="main">
-
-<div id="lead" class="section">
-<h1 class="corners">[% IF (is_edit) %][% loc("Edit Your Talk") %][% ELSE %][% loc("Submit a new talk") %][% END %]</h1>
-<div class="body">
-<h2 class="corners"></h2>
 
 <div id="main-contents">
 
@@ -30,7 +34,7 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
             <p>[% loc("Also, while this is a Perl event, it is 100% OKAY to talk about subject matter that doesn't focus on Perl. In previous years, people have talked about PHP, Python, Ruby, etc. Just make it interesting, and please utter the word 'Perl' a couple of times during your presentation.") %]</p>
 
 [% FILTER fillinform %]
-                <form action="/2013/talk/check" method="post" class="form-horizontal">
+                <form action="/2014/talk/check" method="post" class="form-horizontal">
 [% IF (is_edit) %]
 <input type="hidden" name="id" />
 <input type="hidden" name="is_edit" value="1" />
@@ -247,12 +251,9 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
 
 
 
-
-
-
+</div>
 </div><!--  / .body /  -->
 </div><!--  / .section /  -->
-
-</div><!--  / #main /  -->
+</section>
 
 [% END %]

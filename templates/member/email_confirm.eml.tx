@@ -1,12 +1,12 @@
-YAPC::Asia Tokyo 2013 メールアドレス登録ありがとうございます。
+YAPC::Asia Tokyo 2014 メールアドレス登録ありがとうございます。
 
 登録を完了するにはログインした状態で下記URLをクリックしていただくか、
 
-    http://yapcasia.org/2013/member/confirm?code=[% subscription.code %]
+    http://yapcasia.org/2014/member/confirm?code=[% subscription.code %]
 
 下記フォームにアクセスした上で「登録コード」を入力してください。
 
-    http://yapcasia.org/2013/member/confirm
+    http://yapcasia.org/2014/member/confirm
     登録コード： [% subscription.code %]
 
 登録が完了するまではmypageにも同様のリンクがあります。
@@ -20,11 +20,11 @@ Thank you for registering your email address with us.
 
 To finish the registration process, please access the following url:
 
-    http://yapcasia.org/2013/member/confirm?code=[% subscription.code %]
+    http://yapcasia.org/2014/member/confirm?code=[% subscription.code %]
 
 Or please open the form and submit the form using the followin code:
 
-    http://yapcasia.org/2013/member/confirm
+    http://yapcasia.org/2014/member/confirm
     code: [% subscription.code %]
 
 If you feel that this email has been sent in mistake, please let us know

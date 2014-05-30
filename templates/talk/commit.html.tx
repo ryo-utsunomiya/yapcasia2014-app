@@ -2,13 +2,16 @@
 title = (is_edit) ? loc("Edit done") : loc("Thank you for your submission!")
 %]
 
-<div id="main">
 
-<div id="lead" class="section">
-<h1 class="corners">[% IF (is_edit) %][% loc("Edit done") %][% ELSE %][% loc("Thank you for your submission!") %][% END %]</h1>
+<section>
+<div class="section">
+<h1 class="title">
+<div class="innerblock">
+<span class="icon-jp_icon_paper_fan"></span> <em>[% IF (is_edit) %][% loc("Edit done") %][% ELSE %][% loc("Thank you for your submission!") %][% END %]</em></div>
+</h1>
 <div class="body">
+<div class="innerblock">
 
-<div id="main-contents">
 
 <div class="section posts">
     <div class="innerblock">
@@ -20,12 +23,10 @@ title = (is_edit) ? loc("Edit done") : loc("Thank you for your submission!")
                 <p>[% loc("Thank you for your submission. You will be notified if you talk has been accepted or not") %]</p>
 [% END %]
 
-                <p><a href="/2013/talk/show/[% talk.id %]">[% loc("Proceed To Talk Page") %]</a></p>
+                <p><a href="/2014/talk/show/[% talk.id %]">[% loc("Proceed To Talk Page") %]</a></p>
             </div>
         </div>
     </div>
-</div>
-
 </div>
 
 <script type="text/javascript">
@@ -39,9 +40,9 @@ title = (is_edit) ? loc("Edit done") : loc("Thank you for your submission!")
 </script>
 
 
+</div>
 </div><!--  / .body /  -->
 </div><!--  / .section /  -->
-
-</div><!-- / .main / -->
+</section>
 
 [% END %]

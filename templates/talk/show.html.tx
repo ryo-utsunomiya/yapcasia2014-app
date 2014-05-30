@@ -3,11 +3,16 @@
     og_description = talk.duration == 5 ? '' : fmt_talk_abstract_as_og_description(talk)
 %]
 
-<div id="main">
 
-<div id="lead" class="section">
-<h1 class="corners">[% loc("Talk Information") %]</h1>
+<section>
+<div class="section">
+<h1 class="title">
+<div class="innerblock">
+<span class="icon-jp_icon_paper_fan"></span> <em>[% loc("Talk Information") %]</em></div>
+</h1>
 <div class="body">
+<div class="innerblock">
+
 
 [% SET talk_url = "http://yapcasia.org/2013/talk/show/" _ talk.id %]
 
@@ -28,6 +33,7 @@
     }
 -->
 </style>
+
 <div id="main-contents">
 
 <div class="section posts">
@@ -48,10 +54,10 @@
 <div class="speaker">
     <div class="icon">[% fmt_member_icon_tag(speaker) %]</div>
     <div class="data">
-       <p class="name"><a href="/2013/member/show/[% speaker.id %]">[% speaker.name || speaker.nickname %]</a></p>
-       <p><a href="/2013/talk/edit/[% talk.id %][% IF (talk.duration == 5) %]?lt=1[% END %]">[% loc("Edit Talk") %]</a></p>
+       <p class="name"><a href="/2014/member/show/[% speaker.id %]">[% speaker.name || speaker.nickname %]</a></p>
+       <p><a href="/2014/talk/edit/[% talk.id %][% IF (talk.duration == 5) %]?lt=1[% END %]">[% loc("Edit Talk") %]</a></p>
 [% IF (owner || member.is_admin) %]
-        <p><a id="talk-delete" href="/2013/talk/delete/[% talk.id %]">[% loc("Delete Talk") %]</a></p>
+        <p><a id="talk-delete" href="/2014/talk/delete/[% talk.id %]">[% loc("Delete Talk") %]</a></p>
 [% END %]
     </div>
 </div>
@@ -86,7 +92,7 @@
                     <h4>[% loc("Abstract") %]</h4>
                     <div class="abstract-container">
 [% IF (talk.profile_url) %]
-                        <img src="/2012/photo/crop?maxwidth=150&url=[% talk.profile_url %]" width="150" height="150" style="float: left; margin-bottom: 1em; margin-right: 1em;" />
+                        <img src="/2014/photo/crop?maxwidth=150&url=[% talk.profile_url %]" width="150" height="150" style="float: left; margin-bottom: 1em; margin-right: 1em;" />
 [% END %]
                         <div class="abstract">
 [% IF (member.is_admin || owner || talk.duration != 5 || talk.lt_visible) %][% fmt_talk_abstract(talk) %][% ELSE %]Lightning Talk[% END %]</div>
@@ -103,7 +109,7 @@
                         <td>
 [%- IF (talk.status == "accepted") -%]
 [%-     IF (talk.start_on && talk.start_on != '0000-00-00 00:00:00') -%]
-<a href="/2013/talk/schedule?date=[% talk.start_on.match('^(\d+-\d+-\d+)').0 %]#[% talk.id %]">[% talk.start_on%]</a>
+<a href="/2014/talk/schedule?date=[% talk.start_on.match('^(\d+-\d+-\d+)').0 %]#[% talk.id %]">[% talk.start_on%]</a>
 [%-     ELSE -%]
 TBD
 [%-     END # IF (talk.start_on..) -%]
@@ -222,9 +228,10 @@ TBD
 </script>
 
 
+
+</div>
 </div><!--  / .body /  -->
 </div><!--  / .section /  -->
-
-</div><!--  / #main /  -->
+</section>
 
 [% END %]
