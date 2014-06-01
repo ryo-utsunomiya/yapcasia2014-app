@@ -190,7 +190,7 @@ sub edit {
     my $self = shift;
     my $member = $self->assert_email or return;
 
-    my $id = $self->match->captures->{object_id};
+    my $id = $self->param("object_id");
     my $object = $self->load_object( $id );
     if (! $object) {
         $self->render_not_found();
@@ -335,7 +335,7 @@ sub delete {
     my $self = shift;
 
     my $member = $self->assert_logged_in or return;
-    my $id = $self->match->captures->{object_id};
+    my $id = $self->param("object_id");
     my $object = $self->load_object( $id );
     if (! $object) {
         $self->render_not_found();

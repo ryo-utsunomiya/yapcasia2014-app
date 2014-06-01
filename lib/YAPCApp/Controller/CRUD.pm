@@ -207,7 +207,7 @@ sub commit {
 
 sub edit {
     my $self = shift;
-    my $id = $self->match->captures->{object_id};
+    my $id = $self->param("object_id");
     my $object = $self->load_object( $id );
     if (! $object) {
         $self->render_text("Not found");
@@ -224,7 +224,7 @@ sub edit {
 
 sub delete {
     my $self = shift;
-    my $id = $self->match->captures->{object_id};
+    my $id = $self->param("object_id");
 
     my $object = $self->load_object( $id );
     if (! $object) {
