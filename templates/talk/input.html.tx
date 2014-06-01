@@ -208,30 +208,34 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
 
 
 [% IF (is_edit) %]
-                        <div class="control-group">
-                            [% fmt_error_message(results, "slide_url", "Slide URL") %]
-                            <label class="control-label" for="">[% loc("Slide URL") %]</label>
-                            <div class="controls">
-                                <input type="text" class="input-xlarge" name="slide_url">
-                            </div>
-                        </div>
-[% IF (member.is_admin) %]
-                        <div class="control-group">
-                            [% fmt_error_message(results, "video_url", "Video URL") %]
-                            <label class="control-label" for="">[% loc("Video URL") %]</label>
-                            <div class="controls">
-                                <input type="text" class="input-xlarge" name="video_url">
-                            </div>
-                        </div>
-[% END %]
-[% END %]
 
+                        <div class="form-group">
+                            <label for="slide_url" class="col-sm-2 control-label">[% loc("Slide URL") %]</label>
+                            <div class="col-sm-10">
+                                <p><input name="slide_url" class="form-control" type="text" placeholder="http:// or https://"></p>
+                                [% fmt_error_message(results, "slide_url", "Slide URL") %]
+                            </div>
+                        </div>
+
+[% IF (member.is_admin) %]
+
+                        <div class="form-group">
+                            <label for="video_url" class="col-sm-2 control-label">[% loc("Video URL") %]</label>
+                            <div class="col-sm-10">
+                                <p><input name="video_url" class="form-control" type="text" placeholder="http:// or https://"></p>
+                                [% fmt_error_message(results, "video_url", "Video URL") %]
+                            </div>
+                        </div>
+
+[% END %]
+[% END %]
 
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">[% loc("Talk Abstract") %]</label>
                             <div class="col-sm-10">
                                 [% fmt_error_message(results, "abstract", "Talk Abstract") %]
                                 <textarea name="abstract" class="form-control" id="" rows="10" placeholder="[% loc("Please describe the contents of your talk. We WILL base our decisions to accept talks depending on this abstract. This text will be interprted as Markdown formatted text.") %]"></textarea>
+                                <p style="text-align: right">* [% loc("This text will be interprted as Markdown formatted text.") %]</p>
                             </div>
                         </div>
 
