@@ -12,29 +12,29 @@ title = loc("Please verify your submission")
 <div class="innerblock">
 
         <div class="entry">
-            <div class="entry-contents">
+            <div class="entry-contents table-responsive">
                 <table class="table">
 [% IF (is_edit) %]
                 <tr>
-                    <td>ID</td>
+                    <th>ID</th>
                     <td><a href="/2014/talk/[% talk.id %]">[% talk.id %]</a></td>
                 </tr>
 [% END %]
                 <tr>
-                    <td>[% loc("Talk Title (Japanese)") %]</td>
+                    <th>[% loc("Talk Title (Japanese)") %]</th>
                     <td>[% talk.title %]</td>
                 </tr>
                 <tr>
-                    <td>[% loc("Talk Title (English)") %]</td>
+                    <th>[% loc("Talk Title (English)") %]</th>
                     <td>[% talk.title_en %]</td>
                 </tr>
 [% IF (member.is_admin) %]
                 <tr>
-                    <td>[% loc("Talk Status") %]</td>
+                    <th>[% loc("Talk Status") %]</th>
                     <td>[% loc(talk.status) %]</td>
                 </tr>
                 <tr>
-                    <td>[% loc("Starts On") %]</td>
+                    <th>[% loc("Starts On") %]</th>
                     <td>
                       [% IF talk.start_on %]
                         [% talk.start_on %]
@@ -44,64 +44,64 @@ title = loc("Please verify your submission")
                     </td>
                 </tr>
                 <tr>
-                    <td>[% loc("Venue") %]</td>
+                    <th>[% loc("Venue") %]</th>
                     <td>[% venue_id2name.${talk.venue_id} %] (id=[% talk.venue_id %])</td>
                 </tr>
 [% END %]
 [% IF (talk.duration != 5) %]
                 <tr>
-                    <td>[% loc("T-shirt Size") %]</td>
+                    <th>[% loc("T-shirt Size") %]</th>
                     <td>[% loc(talk.tshirt_size) %][% IF(talk.tshirt_size == 'none') %] - <strong>[% loc("You did not specify a T-shirt size, so you will NOT receive a T-shirt!") %]</strong>[% END %]</td>
                 </tr>
                 <tr>
-                    <td>[% loc("Talk Category") %]</td>
+                    <th>[% loc("Talk Category") %]</th>
                     <td>[% loc(talk.category) %]</td>
                 </tr>
                 <tr>
-                    <td>[% loc("Language") %]</td>
+                    <th>[% loc("Language") %]</th>
                     <td>[% loc(talk.language) %]</td>
                 </tr>
                 <tr>
-                    <td>[% loc("Slide Subtitles") %]</td>
+                    <th>[% loc("Slide Subtitles") %]</th>
                     <td>[% loc(talk.subtitles) %]</td>
                 </tr>
                 <tr>
-                    <td>[% loc("Talk Duration") %]</td>
+                    <th>[% loc("Talk Duration") %]</th>
                     <td>[% talk.duration %] [% loc("minutes") %]</td>
                 </tr>
                 <tr>
-                    <td>[% loc("Material (Difficulty) Level") %]</td>
+                    <th>[% loc("Material (Difficulty) Level") %]</th>
                     <td>[% loc(talk.material_level) %]</td>
                 </tr>
 [% ELSE %]
                 <tr>
-                    <td>[% loc("Talk Duration") %]</td>
+                    <th>[% loc("Talk Duration") %]</th>
                     <td>Lightning Talk</td>
                 </tr>
 [% END %]
 [% IF (is_edit) %]
                 <tr>
-                    <td>[% loc("Slide URL") %]</td>
+                    <th>[% loc("Slide URL") %]</th>
                     <td>[% talk.slide_url %]</td>
                 </tr>
 [% END %]
 [% IF (is_edit && member.is_admin) %]
                 <tr>
-                    <td>[% loc("Video URL") %]</td>
+                    <th>[% loc("Video URL") %]</th>
                     <td>[% talk.video_url %]</td>
                 </tr>
 [% END %]
                 <tr>
-                    <td>[% loc("Talk Abstract") %]</td>
+                    <th>[% loc("Talk Abstract") %]</th>
                     <td>[% fmt_talk_abstract(talk) %]</td>
                 </tr>
 
                 <tr>
-                    <td>[% loc("May we take your photo?") %]</td>
+                    <th>[% loc("May we take your photo?") %]</th>
                     <td>[% loc(talk.photo_permission) %]</td>
                 </tr>
                 <tr>
-                    <td>[% loc("May we record your talk?") %]</td>
+                    <th>[% loc("May we record your talk?") %]</th>
                     <td>[% loc(talk.video_permission) %]</td>
                 </tr>
 
@@ -109,8 +109,14 @@ title = loc("Please verify your submission")
 
                 <form id="commit-form" action="/2014/talk/commit" method="POST">
                     <input type="hidden" name="p" value="[% subsession_id %]" />
-                    <button class="button button-yapc">[% loc("Submit") %]</button>
-                    <button class="button button-danger">[% loc("Go Back") %]</button>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <input type="submit" value="[% loc("Submit") %]" class="btn btn-info btn-lg">
+                            <input type="submit" value="[% loc("Go Back") %]" class="btn btn-danger btn-lg">
+                        </div>
+                    </div>
+
+
                 </form>
             </div>
         </div>
