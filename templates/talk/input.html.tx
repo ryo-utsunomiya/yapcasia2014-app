@@ -7,7 +7,7 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
 <div class="section">
 <h1 class="title">
 <div class="innerblock">
-<span class="icon-jp_icon_paper_fan"></span> <em>[% IF (is_edit) %][% loc("Edit Your Talk") %][% ELSE %][% loc("Submit a new talk") %][% END %]</em></div>
+<span class="icon-jp_icon_paper_fan"></span> <b>[% IF (is_edit) %][% loc("Edit Your Talk") %][% ELSE %][% loc("Submit a new talk") %][% END %]</b></div>
 </h1>
 <div class="body">
 <div class="innerblock">
