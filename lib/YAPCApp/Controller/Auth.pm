@@ -108,7 +108,7 @@ sub auth_fb {
         my $uri = URI->new( "https://graph.facebook.com/oauth/access_token" );
         $uri->query_form(
             client_id => $self->config->{Facebook}->{client_id},
-            redirect_uri => "http://yapcasia.org/2013/auth/auth_fb",
+            redirect_uri => "http://yapcasia.org/2014/auth/auth_fb",
             client_secret => $self->config->{Facebook}->{client_secret},
             code => $code
         );
