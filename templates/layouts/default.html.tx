@@ -19,14 +19,6 @@
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="shortcut icon" href="http://yapcasia.org/2014/static/images/favicon.ico">
 <link rel="stylesheet" href="http://yapcasia.org/2014/static/css/style.css" />
-<style>
-.body{
-    font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Tahoma, arial, Sans-Serif;
-}
-.body h1, .body h2, .body h3, .body h4{
-    font-family: "07LogoTypeGothic7", "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Tahoma, arial, Sans-Serif;
-}
-</style>
 </head>
 <body>
 <a id="top" name="top"></a>
