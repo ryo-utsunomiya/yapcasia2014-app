@@ -14,8 +14,7 @@
 <meta property="og:title" content="[% title || 'YAPC::Asia Tokyo 2014' %]">
 <meta property="og:site_name" content="YAPC::Asia Tokyo 2014">
 <meta property="og:type" content="website">
-<meta property="og:url" content="[% url %]">
-<meta property="og:image" content="[% og_img %]">
+<meta property="og:image" content="http://yapcasia.org/2014/static/images/ogp_icon_350px.png">
 <meta property="og:description" content="[% og_description || description %]">
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="shortcut icon" href="http://yapcasia.org/2014/static/images/favicon.ico">
