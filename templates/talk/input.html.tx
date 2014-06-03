@@ -24,6 +24,25 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
         <div class="entry">
             <div class="entry-contents">
 
+[% IF lang == 'en' %]
+<p>Obviously, the main contents for YAPC::Asia Tokyo 2014 is YOUR talk! Please submit your proposals for 20 or 40 minute talks. Share your experiences, know-hows, and perhaps stories about a module you have written. Newbies speakers are welcome, and you may submit as many proposals as you would like. YAPC attendees will also be voting for their favorite talks to choose the recipient of the Best Speaker Award.</p>
+
+<p>Please note that we may not be able to accept your talk. It is very important to write a easy-to-understand description/summary of your talk so we can make a good judgement.</p>
+
+<p>Also, while this is a Perl event, it is 100% OKAY to talk about subject matter that doesn't focus on Perl. In previous years, people have talked about PHP, Python, Ruby, etc. Just make it interesting, and please utter the word 'Perl' a couple of times during your presentation.</p>
+
+<p>Your proposals can be anything that is interesting to engineers, but to help you choose a good subject, here are some topics that have been covered in previous YAPCs:</p>
+
+<ul class="task-list">
+<li>Libraries you have written</li>
+<li>Web Application Frameworks</li>
+<li>Modern best practices, modern modules</li>
+<li>Applications you have written, from home grown projects or large scale apps.</li>
+<li>Development best practices, testing, tutorials, </li>
+<li>Talks about the community</li>
+<li>Infrastructure, operations.</li>
+</ul><p>YAPC talks are the perfect place to show your passion as an engineer! We're waiting for your proposals!</p>
+[% ELSE %]
 <p>YAPC::Asia Tokyo 2014 の目玉は例年通り皆様のトークです！20分間もしくは40分間の枠の中でご自身の経験やノウハウから自作モジュールまで思う存分語って下さい。発表初心者の方も大歓迎。応募は何個でも出来ます。また、一般参加者による投票により「ベストスピーカー賞」も選出いたします。ただし、トークの枠数には上限があるため、応募しても採択されない場合があります。本フォームにてトークの魅力を効果的に伝えることが重要です。</p>
 
 <p>YAPCはPerlのイベントではありますが、応募されるテーマはPerlにこだわらなくて結構です。過去にはPHP、 Python、Ruby等様々な技術に関しての発表が行われてきました。「Perl」という言葉が発表中に数回出てくれば良いでしょう。</p>
@@ -40,7 +59,7 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
 <li>インフラ、運用について</li>
 </ul>
 <p>YAPCのトークの場はエンジニアのための晴れ舞台。さぁあなたの情熱を、まずは、この応募フォームにぶつけて下さい！</p>
-
+[% END %]
 <hr>
 
 [% FILTER fillinform %]
