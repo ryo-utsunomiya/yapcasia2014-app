@@ -19,7 +19,7 @@ sub login {
 sub logout {
     my $self = shift;
     $self->sessions->remove('member');
-    $self->redirect_to( "/2013/login" );
+    $self->redirect_to( "/2014/login" );
 }
 
 sub auth_twitter {
@@ -94,7 +94,7 @@ sub auth_fb {
         my $uri = URI->new( "https://www.facebook.com/dialog/oauth" );
         $uri->query_form(
             client_id => $self->config->{Facebook}->{client_id},
-            redirect_uri => "http://yapcasia.org/2013/auth/auth_fb",
+            redirect_uri => "http://yapcasia.org/2014/auth/auth_fb",
             scope => "email",
             state => $fb_state
         );
