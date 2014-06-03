@@ -41,7 +41,7 @@
 <li class="navi2"><a href="http://yapcasia.org/2014/about/">About</a></li>
 <li class="navi1"><a href="http://yapcasia.org/2014/talk/">Talk</a></li>
 <li class="navi4"><a href="http://yapcasia.org/2014/ticket/">Ticket</a></li>
-<li class="navi5"><a href="http://yapcasia.org/2014/sponsor/">Sponcer</a></li>
+<li class="navi5"><a href="http://yapcasia.org/2014/sponsor/">Sponsor</a></li>
 <li class="navi6"><a href="http://yapcasia.org/2014/news/">News</a></li>
 [% IF page != 'notices' %]
 <li class="navi3"><a href="/2014/talk/list">Talks</a></li>
