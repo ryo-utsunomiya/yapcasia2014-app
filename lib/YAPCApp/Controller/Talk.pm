@@ -317,14 +317,13 @@ sub commit {
             if ($length > 53) {
                 substr $text, 50, $length - 50, '...';
             }
-# xxx 本番まではpostしない。
-#            $self->get('API::Twitter')->post(
-#                sprintf(
-#                    "%s %s #yapcasia",
-#                    $text,
-#                    "http://yapcasia.org/2014/talk/show/$talk->{id}",
-#                )
-#            );
+            $self->get('API::Twitter')->post(
+                sprintf(
+                    "%s %s #yapcasia",
+                    $text,
+                    "http://yapcasia.org/2014/talk/show/$talk->{id}",
+                )
+            );
         }
     }
 
