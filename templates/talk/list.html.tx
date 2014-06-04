@@ -147,7 +147,7 @@ title = 'Talks'
 
 [% END %]
 
-<a href="/2014/talk/input" class="btn btn-lg btn-primary">[% loc("Submit a new talk") %] </a>
+<a href="/2014/member/" class="btn btn-lg btn-primary">[% loc("Submit a new talk") %] </a>
 
 </div>
 
