@@ -195,7 +195,7 @@ TBD
                 type: "POST",
                 url: $("#talk-delete").attr("href"),
                 success: function() {
-                    alert("Success to Delete Talk");
+                    alert("[% loc("Your talk was successfully deleted") %]");
                     location.href = "/2014/talk/list";
                 },
                 error: function() {
