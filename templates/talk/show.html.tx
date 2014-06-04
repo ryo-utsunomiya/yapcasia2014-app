@@ -14,7 +14,7 @@
 <div class="innerblock">
 
 
-[% SET talk_url = "http://yapcasia.org/2013/talk/show/" _ talk.id %]
+[% SET talk_url = "http://yapcasia.org/2014/talk/show/" _ talk.id %]
 
 <style type="text/css">
 <!--
@@ -195,7 +195,8 @@ TBD
                 type: "POST",
                 url: $("#talk-delete").attr("href"),
                 success: function() {
-                    location.href = "/2013/talk/list";
+                    alert("Success to Delete Talk");
+                    location.href = "/2014/talk/list";
                 },
                 error: function() {
                     alert("Error Deleting Talk");
