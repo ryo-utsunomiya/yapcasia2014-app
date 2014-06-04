@@ -33,7 +33,7 @@ title = (is_edit) ? loc("Edit done") : loc("Thank you for your submission!")
 <!--
     $(document).ready(function() {
         setTimeout(function() {
-            location.href = "/2013/talk/show/[% talk.id %]"
+            location.href = "/2014/talk/show/[% talk.id %]"
         }, 3000);
     });
 -->
