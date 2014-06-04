@@ -112,7 +112,7 @@ title = loc("Please verify your submission")
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <input type="submit" value="[% loc("Submit") %]" class="btn btn-info btn-lg">
-                            <input type="submit" value="[% loc("Go Back") %]" class="btn btn-danger btn-lg">
+                            <a class="btn btn-danger btn-lg">[% loc("Go Back") %]</a>
                         </div>
                     </div>
 
@@ -128,9 +128,9 @@ title = loc("Please verify your submission")
 <script type="text/javascript">
 <!--
     $(document).ready( function() {
-        $(".button-danger", "#commit-form").each(function(i,e) {
+        $(".btn-danger", "#commit-form").each(function(i,e) {
             $(e).click(function() {
-                location.href = "/2013/talk/input?p=[% subsession_id %][% IF (talk.duration == '5') %]&lt=1[% END %]"
+                location.href = "/2014/talk/input?p=[% subsession_id %][% IF (talk.duration == '5') %]&lt=1[% END %]"
                 return false;
             });
         });

@@ -19,6 +19,7 @@
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="shortcut icon" href="http://yapcasia.org/2014/static/images/favicon.ico">
 <link rel="stylesheet" href="http://yapcasia.org/2014/static/css/style.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <body>
 <a id="top" name="top"></a>
@@ -87,7 +88,6 @@
 
 </div><!--  / #wrapper /  -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://yapcasia.org/2014/static/js/bootstrap.min.js"></script>
 <script src="http://yapcasia.org/2014/static/js/functions.js"></script>
 <script>
