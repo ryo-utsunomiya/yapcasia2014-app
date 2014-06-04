@@ -108,6 +108,7 @@ title = 'Talks'
 <li>Speakers are will not need to purchase tickets.</li>
 <li>We will be calling for Lightning Talk submissions later on.</li>
 </ul>
+<br />
 
 <h3>Talk Selection Process</h3>
 
@@ -124,6 +125,8 @@ title = 'Talks'
 
 <p>We're are eagerly waiting for your talk proposals!</p>
 
+<br />
+
 [% ELSE %]
 
 <h3>応募概要</h3>
@@ -134,7 +137,11 @@ title = 'Talks'
 <li>採択トーク件数目安: 50件〜60件</li>
 <li>採択された場合スピーカーとしてチケット無しで入場出来ます</li>
 <li>Lightning Talk (LT) は別途開催日直前に募集します</li>
-</ul><h3>トークの採択について</h3>
+</ul>
+
+<br />
+
+<h3>トークの採択について</h3>
 
 <p>YAPC::Asia Tokyo 2014 実行委員長および運営スタッフの一部により選考が行われます。基本的に応募時のトークの概要から採択するかどうかを決定しますので、選考者が興味をそそられるようにトークの内容をわかりやすく記述するようにしてください。</p>
 
@@ -147,6 +154,8 @@ title = 'Talks'
 <li>他の全ての条件が同じだった場合はYAPC::Asiaでのトーク初心者を優先することがあります</li>
 </ul><p>また選考者だけで判断がつかない場合はFacebookのいいね！やはてなブックマーク等のフィードバックの数・内容によって採択されるかどうか決まる事がありますので、トークを応募した後はFacebook、Twitter、ブログ等での拡散をお勧めいたします。</p>
 
+<br />
+
 [% END %]
 
 <a href="/2014/member/" class="btn btn-lg btn-primary">[% loc("Submit a new talk") %] </a>
@@ -158,13 +167,15 @@ title = 'Talks'
 <div class="entry">
   <div class="entry-contents">
     <h2>[% loc("List of Talks") %]</h2>
-      <h3>[% loc("Pending Talks") %] ([% pending_talks.size() %])</h3>
+    <br />
+
+    <h3>[% loc("Pending Talks") %] ([% pending_talks.size() %])</h3>
 
 [% FOREACH talk IN pending_talks %]
 [% talk_details(talk) %]
 [% END %]
 
-      <h3>[% loc("Accepted Talks") %] ([% accepted_talks.size() %])</h3>
+    <h3>[% loc("Accepted Talks") %] ([% accepted_talks.size() %])</h3>
 
 [% FOREACH talk IN accepted_talks %]
 [% talk_details(talk) %]
