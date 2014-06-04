@@ -4,7 +4,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<title>[% title %]</title>
+<title>[% title %] - YAPC::Asia Tokyo 2014</title>
 <meta name="keywords" content="YAPC::Asia,YAPC,ヤプシー,Perl,PM,Japan Perl Association,JPA">
 <meta name="description" content="[% description %]">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
