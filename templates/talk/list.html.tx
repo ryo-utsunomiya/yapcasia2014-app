@@ -99,7 +99,7 @@ title = 'Talks'
 <div>
 [% IF lang == 'en' %]
 
-<p>Talk Proposal Submission Overview</p>
+<h3>Talk Proposal Submission Overview</h3>
 
 <ul class="task-list">
 <li>The deadline for submissions is Jul 4 17:00(JST).</li>
@@ -107,7 +107,9 @@ title = 'Talks'
 <li>Accepted talks will be announced on Jul 16.</li>
 <li>Speakers are will not need to purchase tickets.</li>
 <li>We will be calling for Lightning Talk submissions later on.</li>
-</ul><p>Talk Selection Process</p>
+</ul>
+
+<h3>Talk Selection Process</h3>
 
 <p>Your talk proposals will be reviewed by YAPC::Asia Tokyo Organizer Committee. It is important to make  your talk abstract as interesting and easy-to-read as possible to the reviewers, because that's what most of the decision will be based on.</p>
 
