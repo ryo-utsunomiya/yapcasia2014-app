@@ -26,6 +26,12 @@ title = 'Login'
 <p class="error">ログインを中止しました / Login via OAuth access denied.</p>
 [% END %]
 
+<h4>なぜログインが必要なの？ / Why did you need to login? </h4>
+<p>
+ログインをすることによって、トークの応募とYAPC開催期間中にトークへの投票を行うことできます。<br />
+In order to apply for your talk and vote talks on this site, we need to login.
+</p>
+
 <ul>
   <li style="list-style: none; !important"><a class="btn btn-lg btn-primary" href="/2014/auth/auth_fb">[% loc("Login via [_1]", "Facebook") %]</a></li>
   <li style="list-style: none; !important"><a class="btn btn-lg btn-info" href="/2014/auth/auth_twitter">[% loc("Login via [_1]", "Twitter") %]</a></li>
