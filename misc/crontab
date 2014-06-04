@@ -1,3 +1,1 @@
-*/9 * * * * root /usr/local/bin/setlock /tmp/hf_talks.batch /var/lib/jpa/yapcasia.org/yapcasia2013-app/script/carton.sh ./script/hf_talks
-*/7 * * * * root /usr/local/bin/setlock /tmp/hf_tickets.batch /var/lib/jpa/yapcasia.org/yapcasia2013-app/script/carton.sh ./script/hf_tickets
-03,13,23,33,43,53 * * * * root /usr/local/bin/setlock /tmp/individual_sponsors.batch /var/lib/jpa/yapcasia.org/yapcasia2013-app/script/carton.sh ./script/individual_sponsors
+28,58 * * * * root /usr/local/bin/setlock /tmp/hf_talks2014.batch /var/lib/jpa/yapcasia.org/yapcasia2014-app/script/carton.sh ./script/hf_talks > /tmp/hf_talks2014.log 2>&1
