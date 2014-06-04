@@ -1,1 +1,2 @@
 28,58 * * * * root /usr/local/bin/setlock /tmp/hf_talks2014.batch /var/lib/jpa/yapcasia.org/yapcasia2014-app/script/carton.sh ./script/hf_talks > /tmp/hf_talks2014.log 2>&1
+27,57 * * * * root /usr/local/bin/setlock /tmp/hf_tickets2014.batch /var/lib/jpa/yapcasia.org/yapcasia2014-app/script/carton.sh ./script/hf_tickets > /tmp/hf_tickets2014.log 2>&1
