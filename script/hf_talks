@@ -14,12 +14,12 @@ foreach my $status ( qw(pending rejected accepted) ) {
         status => $status,
     });
 
-    $hf_api->record("yapcasia2013", "talks", $status, $count);
+    $hf_api->record("yapcasia2014", "talks", $status, $count);
 }
 
 foreach my $duration ( qw(20 40) ) {
     my $count = $talk_api->count({
         duration => $duration
     });
-    $hf_api->record("yapcasia2013", "talks", "${duration}min", $count);
+    $hf_api->record("yapcasia2014", "talks", "${duration}min", $count);
 }

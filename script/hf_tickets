@@ -12,8 +12,8 @@ my $app = YAPCApp->new;
 my $hf_api = $app->container->get('API::HRForecast');
 
 my %event2id = (
-    sponsor => 11777,
-    sponsor_en => 11779,
+    sponsor => 38605,
+    sponsor_en => 38608,
 );
 foreach my $event (keys %event2id) {
     my $id = $event2id{$event};
@@ -23,13 +23,13 @@ foreach my $event (keys %event2id) {
     foreach my $key (keys %$data) {
         $count += $data->{$key}->{ticket_count};
     }
-    $hf_api->record("yapcasia2013", "ticket", $event, $count);
+    $hf_api->record("yapcasia2014", "ticket", $event, $count);
 }
 
 # we need to be more specific with tickets
 my @event_ids = (
-    11775,
-    11778
+    38603,
+    38607
 );
 my %ticket_name2id = (
     "Student pass" => "student_en",
@@ -56,6 +56,6 @@ foreach my $event (@event_ids) {
 
     foreach my $ticket_type (keys %tickets) {
         my $count = $tickets{$ticket_type};
-        $hf_api->record("yapcasia2013", "ticket", $ticket_type, $count);
+        $hf_api->record("yapcasia2014", "ticket", $ticket_type, $count);
     }
 }
