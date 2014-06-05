@@ -305,7 +305,7 @@ msgid "Talks below are still being considered for YAPC::Asia Tokyo 2012. If you 
 msgstr "以下のトークはまだ採択されていません。もしあなたが「これは見たい！」と思うトークがあったら、各トークの横のソーシャルメディアボタンを使って運営陣にお知らせ下さい。選考時に参考にさせていただきます"
 
 msgid "Currently this talk is in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons below to express  your interest!"
-msgstr "このトークは現在「保留中」です。もしあなたが「これは是非YAPCで見たい！」と思ったら、以下のソーシャルメディアボタンを押して応援してみてください。選考の際に参考にさせていただきます"
+msgstr "このトークは現在「保留中」です。もしあなたが「これは是非YAPCで見たい！」と思ったら、ソーシャルメディアボタンを押して応援してみてください。選考の際に参考にさせていただきます"
 
 msgid "Talk Information"
 msgstr "トーク情報"

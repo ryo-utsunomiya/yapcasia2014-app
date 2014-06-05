@@ -74,17 +74,17 @@
                     <h3>[% talk_title %]</h3>
 
 [% IF (talk.status != 'accepted') %]
-                    <div style="color: #f00; text-align: center; font-weight: bold">[% loc("This talk is currently in '[_1]' state", loc(talk.status)) %]</div>
+                    <div style="color: #f00; text-align: center; font-weight: bold;">[% loc("This talk is currently in '[_1]' state", loc(talk.status)) %]</div>
 [% END %]
 
-                    <div style="margin: 1em 0 1em 0">
-                        <div class="col-sm-6">
+                    <div style="margin: 2em 0 0 0">
+                        <div class="col-sm-6" style="padding-left:0;padding-right:0;">
 [% IF (talk.status == 'pending') %]
-                            <div style="font-size: 0.8em;">
+                            <div style="font-size: 0.8em;line-height:1.6;">
                                 [% loc("Currently this talk is in PENDING state. If you would like to see this talk at the event, please consider using the social media buttons below to express  your interest!") %]
                             </div>
 [% END %]
-                        </div>                    
+                        </div>
                         <div class="social-btns col-sm-6">
                             <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="yapcasia" data-count="vertical" data-url="[% talk_url %]">Tweet</a>
                             <span style="height: 90px; width: 50px; vertical-align:top; display: inline-block"><div class="fb-like" data-send="false" data-layout="box_count" data-width="50" data-show-faces="false" data-font="verdana" data-href="[% talk_url %]"></div></span>
@@ -93,6 +93,8 @@
                             <a href="http://b.hatena.ne.jp/entry/[% talk_url %]" class="hatena-bookmark-button" data-hatena-bookmark-layout="vertical-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
                         </div><!-- social-btns -->
                     </div>
+                    <div style="clear:both;"></div>
+                    <hr />
 
                     <h3>[% loc("Abstract") %]</h3>
                     <div class="abstract-container">
@@ -107,6 +109,8 @@
                             [% END %]
                         </div>
                     </div><!-- abstract-container -->
+
+                    <br />
 
                     <h3>[% loc("Talk Details") %]</h3>
                     <table class="table">
