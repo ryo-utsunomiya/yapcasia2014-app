@@ -3,18 +3,21 @@
 title = 'Individual Sponsors'
 %]
 
-<div id="main">
-
-<div id="lead" class="section">
-<h1 class="corners">個人スポンサーのみなさま<span>Individual Sponsors</span></h1>
+<section>
+<div class="section">
+<h1 class="title">
+<div class="innerblock">
+<span class="icon-jp_icon_paper_fan"></span> <em>個人スポンサーのみなさま / Individual Sponsors</em></div>
+</h1>
 <div class="body">
+<div class="innerblock">
 
 <p>皆様ありがとうございます!</p>
 
 <script type="text/javascript">
 $(document).ready( function(){
     $("img").error(function(){
-        $(this).attr('src','http://yapcasia.org/2013/static/images/footer_character.png');
+        $(this).attr('src','http://yapcasia.org/2014/static/images/yapc_icon.png');
         $(this).attr('width','75');
         return true;
     });
@@ -35,7 +38,7 @@ $(document).ready( function(){
 <td>
 
 [% IF !sponsor %]
-  <img src="http://yapcasia.org/2013/static/images/footer_character.png" width="75"/><br />
+  <img src="http://yapcasia.org/2014/static/images/yapc_icon.jpg" width="75"/><br />
   anonymous
 [% ELSE %]
   <img src="[% sponsor.icon_url %]" width="75" height="75"/><br />
@@ -43,14 +46,14 @@ $(document).ready( function(){
 [% END %]
 
 </td>
-[% IF (loop.count % 5) == 0 %]</tr><tr>[% END %]
+[% IF (loop.count % 7) == 0 %]</tr><tr>[% END %]
 [% END %]
 </tr>
 </table>
 
+</div>
 </div><!--  / .body /  -->
 </div><!--  / .section /  -->
-
-</div><!--  / #main /  -->
+</section>
 
 [% END %]
