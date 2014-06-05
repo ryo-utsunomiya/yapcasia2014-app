@@ -14,10 +14,6 @@ title = 'Talks'
 
 <style type="text/css">
 <!--
-    .section {
-        padding: 1em;
-    }
-
     .talk .speaker .name {
         margin-top:4px;
         font-size: 0.8em;
