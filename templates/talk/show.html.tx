@@ -45,7 +45,7 @@
 <style>
 <!--
     .speaker { float: left }
-    .speaker .icon img { width: 50px; height: 50px }
+    .speaker .icon img { width: 70px; height: 70px }
     .speaker .data { width: 100px }
     #container #main-contents .posts 
     .speaker .data .name { word-wrap: break-word; font-size: 0.8em;}

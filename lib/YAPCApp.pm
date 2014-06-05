@@ -238,12 +238,12 @@ EOHTML
                 my $url = $self->get_member_icon_url($member);
                 if (! $url) {
                     return <<EOHTML;
-<div style="width: 50px; height: 50px; background-color: #999">&nbsp;</div>
+<div style="width: 70px; height: 70px; background-color: #999">&nbsp;</div>
 EOHTML
                 }
 
                 return <<EOHTML;
-<a href="/2014/member/show/$member->{id}"><img src="$url" width="50" height="50" /></a>
+<a href="/2014/member/show/$member->{id}"><img src="$url" width="70" height="70" /></a>
 EOHTML
             }),
             fmt_talk_abstract_as_og_description => sub {

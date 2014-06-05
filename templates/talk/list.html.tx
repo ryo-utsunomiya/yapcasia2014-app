@@ -6,7 +6,7 @@ title = 'Talks'
 <div class="section">
 <h1 class="title">
 <div class="innerblock">
-<span class="icon-jp_icon_paper_fan"></span> <em>Talks</em></div>
+<span class="icon-jp_icon_paper_fan"></span> <em>Talk</em></div>
 </h1>
 <div class="body">
 <div class="innerblock">
@@ -19,17 +19,20 @@ title = 'Talks'
     }
 
     .talk .speaker .name {
+        margin-top:4px;
         font-size: 0.8em;
-        width: 60px;
+        line-height:1.4;
+        width: 70px;
         word-wrap: break-word
     }
 
-    .talk .speaker .icon { width: 50px; height: 50px }
+    .talk .speaker .icon { width: 70px; height: 70px }
     .talk .speaker .icon img {
-        width: 50px;
-        height: 50px;
+        width: 70px;
+        height: 70px;
     }
     .talk {
+        margin-bottom:3em;
         clear: both;
     }
     .talk .speaker {
@@ -161,8 +164,7 @@ title = 'Talks'
 <a href="/2014/member/" class="btn btn-lg btn-primary">[% loc("Submit a new talk") %] </a>
 
 </div>
-
-<hr />
+<br /><hr /><br />
 
 <div class="entry">
   <div class="entry-contents">
@@ -170,10 +172,14 @@ title = 'Talks'
     <br />
 
     <h3>[% loc("Pending Talks") %] ([% pending_talks.size() %])</h3>
+    <br />
 
 [% FOREACH talk IN pending_talks %]
 [% talk_details(talk) %]
 [% END %]
+
+    <br />
+    <hr />
 
     <h3>[% loc("Accepted Talks") %] ([% accepted_talks.size() %])</h3>
 
