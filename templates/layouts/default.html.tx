@@ -5,6 +5,7 @@
 <head>
 <meta charset="utf-8">
 <title>[% page_title %]</title>
+[% IF canonical %]<link rel="canonical" href="[% canonical %]" />[% END %]
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <meta name="keywords" content="YAPC::Asia,YAPC,ヤプシー,Perl,PM,Japan Perl Association,JPA">
 <meta name="description" content="[% description %]">
