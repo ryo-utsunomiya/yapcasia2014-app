@@ -16,7 +16,7 @@ title = 'Login'
     .error {
         color:red;
     }
-    ul li {
+    ul#btn-login li {
         margin-bottom:1em;
     }
 -->
@@ -32,11 +32,12 @@ title = 'Login'
 In order to apply for your talk and vote talks on this site, we need to login.
 </p>
 
-<ul>
+<ul id="btn-login">
   <li style="list-style: none; !important"><a class="btn btn-lg btn-primary" href="/2014/auth/auth_fb">[% loc("Login via [_1]", "Facebook") %]</a></li>
   <li style="list-style: none; !important"><a class="btn btn-lg btn-info" href="/2014/auth/auth_twitter">[% loc("Login via [_1]", "Twitter") %]</a></li>
   <li style="list-style: none; !important"><a class="btn btn-lg btn-success" href="/2014/auth/auth_github">[% loc("Login via [_1]", "Github") %]</a></li>
 </ul>
+
 
 </div>
 </div><!--  / .body /  -->
