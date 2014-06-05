@@ -29,6 +29,7 @@ $(document).ready( function(){
         width: 120px;
         height: 100px;
         text-align:center;
+        padding-top: 25px;
     }
 </style>
 
@@ -41,8 +42,10 @@ $(document).ready( function(){
   <img src="http://yapcasia.org/2014/static/images/yapc_icon.jpg" width="75"/><br />
   anonymous
 [% ELSE %]
-  <img src="[% sponsor.icon_url %]" width="75" height="75"/><br />
-  [% sponsor.name %]
+  <a href="https://twitter.com/[% sponsor.name %]" target="_blank">
+    <img src="[% sponsor.icon_url %]" width="75" height="75"/><br />
+    [% sponsor.name %]
+  </a>
 [% END %]
 
 </td>
