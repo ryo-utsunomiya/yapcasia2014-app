@@ -300,7 +300,7 @@ sub commit {
         }
         $self->get('API::Email')->send_email({
             to      => $member->{email},
-            subject => "[YAPC::Asia Tokyho 2014] Thank you for your talk submission!",
+            subject => "[YAPC::Asia Tokyo 2014] Thank you for your talk submission!",
             message => $message->to_string,
         });
 
