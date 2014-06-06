@@ -46,8 +46,9 @@
 <li class="navi4"><a href="http://yapcasia.org/2014/ticket/">Ticket</a></li>
 <li class="navi5"><a href="http://yapcasia.org/2014/sponsor/">Sponsor</a></li>
 <li class="navi6"><a href="http://yapcasia.org/2014/news/">News</a></li>
+<li class="navi7"><a href="http://yapcasia.org/2014/individual_sponsors">Individual Sponsor</a></li>
 [% IF page != 'notices' %]
-<li class="navi7"><a href="/2014/member">My Page</a></li>
+<li class="navi8"><a href="/2014/member">My Page</a></li>
 [% END %]
 </ul>
 </div><!--  / #gnavi /  -->
