@@ -13,7 +13,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@yapcasia">
 <meta property="fb:app_id" content="144267325643659" />
-<meta property="og:title" content="[% title || 'YAPC::Asia Tokyo 2014' %]">
+<meta property="og:title" content="[% page_title || 'YAPC::Asia Tokyo 2014' %]">
 <meta property="og:site_name" content="YAPC::Asia Tokyo 2014">
 <meta property="og:type" content="website">
 <meta property="og:image" content="http://yapcasia.org/2014/static/images/ogp_icon_350px.png">
