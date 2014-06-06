@@ -25,9 +25,12 @@ sub index {
             if (! $sponsor) { # anonymous? 
                 push @$sponsors, undef;
             } else {
+                $sponsor =~ s/^\@//;
+                my $added_at_name = '@' . $sponsor;
                 push @$sponsors, {
                     icon_url => $twitter_api->get_user_icon($sponsor, "bigger"),
-                    name     => $sponsor
+                    name     => $sponsor,
+                    at_name  => $added_at_name
                 };
             }
         }
