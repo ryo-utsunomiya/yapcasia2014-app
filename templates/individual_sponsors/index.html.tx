@@ -1,6 +1,6 @@
 
 [% WRAPPER 'layouts/default.html.tx' WITH
-title = 'Individual Sponsors'
+title = 'Individual Sponsor'
 %]
 
 <section>
