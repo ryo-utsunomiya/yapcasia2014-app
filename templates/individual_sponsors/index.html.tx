@@ -31,6 +31,9 @@ $(document).ready( function(){
         text-align:center;
         padding-top: 25px;
     }
+    table tr td img {
+        border: 1px solid #ccc;
+    }
 </style>
 
 <table>
