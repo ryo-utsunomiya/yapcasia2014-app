@@ -9,7 +9,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <meta name="keywords" content="YAPC::Asia,YAPC,ヤプシー,Perl,PM,Japan Perl Association,JPA">
 <meta name="description" content="[% description %]">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@yapcasia">
 <meta property="fb:app_id" content="144267325643659" />
