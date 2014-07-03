@@ -41,13 +41,13 @@ $(document).ready( function(){
 [% FOREACH sponsor IN sponsors %]
 <td>
 
-[% IF !sponsor %]
+[% IF !sponsor || !sponsor.name %]
   <img src="http://yapcasia.org/2014/static/images/yapc_icon.jpg" width="75"/><br />
   anonymous
 [% ELSE %]
   <a href="https://twitter.com/[% sponsor.name %]" target="_blank">
     <img src="[% sponsor.icon_url %]" width="75" height="75"/><br />
-    [% sponsor.at_name %]
+    [% sponsor.at_name || sponsor.name %]
   </a>
 [% END %]
 
