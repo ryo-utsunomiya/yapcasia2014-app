@@ -43,7 +43,7 @@
         float: left;
         width: 130px;
         background: #bbb;
-        height: [% IF(date == "2018-08-28") %]1584[% ELSE %]3924[% END %]px;
+        height: [% IF(date == "2014-08-28") %]1584[% ELSE %]3924[% END %]px;
         border: 1px solid #ccc;
         border-right: none;
     }
