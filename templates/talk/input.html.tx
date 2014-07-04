@@ -111,11 +111,12 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
                         <h3>[% loc("Talk Details") %]</h3>
 
 [% IF (member.is_admin) %]
-                        <div class="control-group">
+<div style="background-color: #fdf">
+                        <div class="form-group">
                             [% fmt_error_message(results, "status", "Talk Status") %]
-                            <label class="control-label" for="">[% loc("Talk Status") %]</label>
-                            <div class="controls">
-                                <select name="status">
+                            <label class="col-sm-2 control-label" for="status">[% loc("Talk Status") %]</label>
+                            <div class="col-sm-2">
+                                <select id="status" name="status" class="form-control">
 [% FOREACH status IN [ "pending", "accepted", "rejected" ] %]
                                     <option value="[% status %]">[% loc(status) %]</option>
 [% END %]
@@ -123,31 +124,34 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
                             </div>
                         </div>
 
-                        <div class="control-group">
+                        <div class="form-group">
                             [% fmt_error_message(results, "venue_id", "Venue") %]
-                            <label class="control-label" for="">[% loc("Venue") %]</label>
-                            <div class="controls">
-                                <select name="venue_id">
+                            <label for="venue_id" class="col-sm-2 control-label">[% loc("Venue") %]</label>
+                            <div class="col-sm-3">
+                                <select id="venue_id" name="venue_id" class="form-control">
                                     <option value="">TBD</option>
                                     [% FOREACH venue IN venues %]
-                                    <option value="[% venue.id %]">[% venue.name %]</option>
+                                    <option value="[% venue.id %]">[% loc(venue.name) %]</option>
                                     [% END %]
                                 </select>
                             </div>
                         </div>
 
-                        <div class="control-group">
-                            <label class="control-label">[% loc("Starts On") %]</label>
-                            <div class="controls">
-                                <select name="start_on_date">
+                        <div class="form-group">
+                            <label for="start_on_date" class="col-sm-2 control-label">[% loc("Starts On") %]</label>
+                            <div class="col-sm-2">
+                                <select id="start_on_date" name="start_on_date" class="form-control">
                                     <option value="">[% loc("TBD") %]</option>
-[% FOREACH date IN [ "2013-09-19", "2013-09-20", "2013-09-21" ] %]
+[% FOREACH date IN [ "2013-08-28", "2013-08-29", "2013-08-30" ] %]
                                     <option value="[% date %]">[% date %]</option>
 [% END %]
                                 </select>
-                                <br><div>Time: <input type="text" name="start_on_time"></div>
+                            </div>
+                            <div class="col-sm-2">
+                                <input name="start_on_time" class="form-control" type="text" placeholder="00:00 (text)">
                             </div>
                         </div>
+</div>
 
 [% END %]
 
@@ -192,13 +196,12 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
                         </div>
 
 
-                        <div class="form-group">
+                        <div class="form-group" [% IF (member.is_admin) %]style="background-color: #fdf"[% END %]>
                             <label for="inputEmail3" class="col-sm-2 control-label">[% loc("Talk Duration") %]</label>
                             <div class="col-sm-2">
 
 [% IF (member.is_admin) %]
-                                <input type="text" name="duration">
-                                <input name="duration" class="form-control" type="text" placeholder="[% loc("Talk Duration") %] (admin)">
+                                <input name="duration" class="form-control" type="text" placeholder="[% loc("minutes") %] (admin)">
 [% ELSE %]
                                 <select name="duration" id="select01" class="form-control">
 [% IF (ALLOW_LIGHTNING_TALKS) %]
@@ -238,7 +241,7 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
 
 [% IF (member.is_admin) %]
 
-                        <div class="form-group">
+                        <div class="form-group" style="background-color: #fdf">
                             <label for="video_url" class="col-sm-2 control-label">[% loc("Video URL") %]</label>
                             <div class="col-sm-10">
                                 <p><input name="video_url" class="form-control" type="text" placeholder="http:// or https://"></p>
@@ -294,7 +297,7 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
                                 <input type="submit" value="[% loc("Submit") %]" class="btn btn-info btn-lg">
                             </div>
                         </div>
-                        
+
 
                     </fieldset>
                 </form>

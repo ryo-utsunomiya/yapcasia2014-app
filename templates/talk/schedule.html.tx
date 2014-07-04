@@ -2,9 +2,14 @@
 
 <div id="main">
 
-<div id="lead" class="section">
-<h1 class="corners">[% loc("Talk Schedule: [_1]", date) %]</h1>
+<section>
+<div class="section">
+<h1 class="title">
+<div class="innerblock">
+<span class="icon-jp_icon_paper_fan"></span> <em>[% loc("Talk Schedule: [_1]", date) %]</em></div>
+</h1>
 <div class="body">
+<div class="innerblock">
 
 <style>
 <!--
@@ -31,7 +36,7 @@
         border-top: none;
     }
     .schedule .timeaxis .row .hm {
-        margin-right: 3px;
+        margin-right: 30px;
     }
     .schedule .venue {
         position: relative;
@@ -100,12 +105,9 @@
 
 <div class="section">
 <ul class="dates">
-[% FOREACH x IN [ "2013-09-19", "2013-09-20", "2013-09-21" ] %]
+[% FOREACH x IN [ "2013-08-28", "2013-08-29", "2013-08-30" ] %]
     <li>[% IF (x == date) %][% x %][% ELSE %]<a href="/2013/talk/schedule?date=[% x %]">[% x %]</a>[% END %]</li>
 [% END %]
-</ul>
-<ul class="info">
-    <li><a href="http://yapcasia.org/2013/09/released-yapcasia-tokyo-2013-schedule-viewer-for-ios.html">iOS版YAPC::Asia Tokyo 2013 スケジュールビューアがリリースされました！</a></li>
 </ul>
 <div class="schedule">
 <div class="timeaxis">
@@ -149,8 +151,9 @@
 </div><!-- #main-contents -->
 
 
+</div>
 </div><!--  / .body /  -->
 </div><!--  / .section /  -->
+</section>
 
-</div><!--  / #main /  -->
 [% END %]
