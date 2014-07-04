@@ -106,7 +106,7 @@
 <div class="section">
 <ul class="dates">
 [% FOREACH x IN [ "2013-08-28", "2013-08-29", "2013-08-30" ] %]
-    <li>[% IF (x == date) %][% x %][% ELSE %]<a href="/2013/talk/schedule?date=[% x %]">[% x %]</a>[% END %]</li>
+    <li>[% IF (x == date) %][% x %][% ELSE %]<a href="/2014/talk/schedule?date=[% x %]">[% x %]</a>[% END %]</li>
 [% END %]
 </ul>
 <div class="schedule">
@@ -132,11 +132,11 @@
 <div class="talk" style="top: [% fmt_talk_schedule_top(talk) %]px; height: [% fmt_talk_schedule_height(talk) %]px">
 <a id="[% talk.id %]"></a>
 <div class="title">
-    <a href="/2013/talk/show/[% talk.id %]">[% talk.title || talk.title_en %]</a>
+    <a href="/2014/talk/show/[% talk.id %]">[% talk.title || talk.title_en %]</a>
     (<span class="duration">[% loc("[_1] minutes", talk.duration) %]</span>)
 </div>
 <div class="detail">
-    <span class="speaker"><a href="/2013/member/show/[% talk.speaker.id %]">[% talk.speaker.name || talk.speaker.nickname %]</a></span>
+    <span class="speaker"><a href="/2014/member/show/[% talk.speaker.id %]">[% talk.speaker.name || talk.speaker.nickname %]</a></span>
     <span class="level">[[% loc(talk.material_level) %]]</span>
     <span class="category">[[% loc(talk.category) %]]</span>
     <span class="language">[[% loc(talk.language) %]]</span>
