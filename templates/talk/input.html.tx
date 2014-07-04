@@ -142,7 +142,7 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
                             <div class="col-sm-2">
                                 <select id="start_on_date" name="start_on_date" class="form-control">
                                     <option value="">[% loc("TBD") %]</option>
-[% FOREACH date IN [ "2013-08-28", "2013-08-29", "2013-08-30" ] %]
+[% FOREACH date IN [ "2014-08-28", "2014-08-29", "2014-08-30" ] %]
                                     <option value="[% date %]">[% date %]</option>
 [% END %]
                                 </select>
