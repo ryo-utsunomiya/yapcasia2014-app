@@ -59,7 +59,7 @@ title = loc("[_1]'s Page", member.name || member.nickname)
 [% ELSE %]
 [% FOREACH talk IN talks %]
                 <ul>
-                    
+
 [% IF (owner || talk.duration != 5 || talk.lt_visible) %]
                   <li>
                     <a href="[% c.url_for("/2014/talk/show/" _ talk.id) %]">[% talk.title || talk.title_en %]</a> ([% loc(talk.status) %])
@@ -84,9 +84,6 @@ title = loc("[_1]'s Page", member.name || member.nickname)
 [% IF member.email) %]
                   <li>
                     <a href="/2014/member/email_edit">[% loc("Register a new email address") %]</a>
-                  </li>
-                  <li>
-                    <a href="/2014/talk/input">[% loc("Submit a new talk") %] </a>
                   </li>
 [% END %]
                   <li>
