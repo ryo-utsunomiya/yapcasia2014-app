@@ -106,7 +106,7 @@
 <div class="section">
 <ul class="dates">
 [% FOREACH x IN [ "2014-08-28", "2014-08-29", "2014-08-30" ] %]
-    <li>[% IF (x == date) %][% x %][% ELSE %]<a href="/2014/talk/schedule?date=[% x %]">[% x %]</a>[% IF (date == "2014-08-28") %](前夜祭)[% END %][% END %]</li>
+    <li>[% IF (x == date) %][% x %][% IF loop.first %](前夜祭)[% END %][% ELSE %]<a href="/2014/talk/schedule?date=[% x %]">[% x %]</a>[% IF loop.first %](前夜祭)[% END %][% END %]</li>
 [% END %]
 </ul>
 <div class="schedule">
