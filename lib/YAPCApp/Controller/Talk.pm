@@ -170,7 +170,10 @@ sub input {
         );
     }
 
-    if (!$member->{is_admin} && $is_lt) {
+    ## 新規トークの受付を中止
+    state $deadline = timelocal(0, 0, 17, 4, 7-1, 114);
+    my $now = time();
+    if (!$member->{is_admin} && $now > $deadline) {
         $self->render( text => "Currently talk submissions are disabled" );
         $self->rendered(403);
         return;
@@ -256,6 +259,16 @@ sub preview {
     my $self = shift;
     my $member = $self->assert_email or return;
     $self->stash( member => $member );
+
+    ## 新規トークの受付を中止
+    my $object = $self->load_from_subsession();
+    state $deadline = timelocal(0, 0, 17, 4, 7-1, 114);
+    my $now = time();
+    if (!$member->{is_admin} && !$object->{is_edit} && $now > $deadline) {
+        $self->render( text => "Currently talk submissions are disabled" );
+        $self->rendered(403);
+        return;
+    }
 
     $self->SUPER::preview();
     $self->stash(venue_id2name => VENUE_ID2NAME );
@@ -380,7 +393,7 @@ sub _serialize_talk {
     };
 
     # venue... implement later
-    $serialized->{venue} = {}; 
+    $serialized->{venue} = {};
     return $serialized;
 }
 
