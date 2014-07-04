@@ -13,16 +13,16 @@ sub schedule {
 
     my $date = $self->req->param('date');
     if ( !$date ){
-        state $day1_start = timelocal(0, 0, 0, 20, 8, 113);
-        state $day2_start = timelocal(0, 0, 0, 21, 8, 113);
+        state $day1_start = timelocal(0, 0, 0, 29, 7, 114);
+        state $day2_start = timelocal(0, 0, 0, 30, 7, 114);
 
         my $now = time();
         if ($now < $day1_start) {
-            $date = '2013-09-19';
+            $date = '2014-08-28';
         } elsif ($now < $day2_start) {
-            $date = '2013-09-20';
+            $date = '2014-08-29';
         } else {
-            $date = '2013-09-21';
+            $date = '2014-08-30';
         }
     }
     $self->stash( date => $date );
