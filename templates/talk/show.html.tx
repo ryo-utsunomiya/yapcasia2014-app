@@ -47,7 +47,7 @@
     .speaker { float: left }
     .speaker .icon img { width: 70px; height: 70px }
     .speaker .data { width: 100px }
-    #container #main-contents .posts 
+    #container #main-contents .posts
     .speaker .data .name { word-wrap: break-word; font-size: 0.8em;}
 -->
 </style>
@@ -116,7 +116,13 @@
                     <table class="table">
                     <tr>
                         <th>[% loc("Venue") %]</th>
-                        <td>[% IF (talk.venue) %][% loc(talk.venue) %][% ELSE %]TBD[% END %]</td>
+                        <td>
+[%- IF (talk.status == "accepted") -%]
+[%-   IF (talk.venue) %][% loc(talk.venue) %][% ELSE %]TBD[% END %]
+[%- ELSE -%]
+TBD
+[%- END # IF (talk.status) -%]
+                        </td>
                     </tr>
                     <tr>
                         <th>[% loc("Starts On") %]</th>
@@ -178,7 +184,7 @@ TBD
                     <div class="slide">[% embed_talk_slide(talk.slide_url) %]</div>
 [% END %]
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -209,7 +215,7 @@ TBD
         });
     });
     $([
-        { 
+        {
             src: "http://b.st-hatena.com/js/bookmark_button.js",
             id: "hatena-bookmark"
         },
