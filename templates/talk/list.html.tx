@@ -129,7 +129,7 @@ title = 'Talks'
 [% ELSE %]
 
 <h3>応募概要</h3>
-
+<p style="color:red">トーク応募は締め切りました。</p>
 <ul class="task-list">
 <li>締め切り日時: 2014年7月4日(金) 17:00まで (予定)</li>
 <li>採択発表: 2014年7月16日(水) 頃</li>
