@@ -106,13 +106,13 @@
 <div class="section">
 <ul class="dates">
 [% FOREACH x IN [ "2013-08-28", "2013-08-29", "2013-08-30" ] %]
-    <li>[% IF (x == date) %][% x %][% ELSE %]<a href="/2014/talk/schedule?date=[% x %]">[% x %]</a>[% END %]</li>
+    <li>[% IF (x == date) %][% x %][% ELSE %]<a href="/2014/talk/schedule?date=[% x %]">[% x %]</a>[% IF (date == "2014-08-28") %](前夜祭)[% END %][% END %]</li>
 [% END %]
 </ul>
 <div class="schedule">
 <div class="timeaxis">
 [% SET hours = [ 9..21 ] %]
-[% IF (date == "2013-09-19") %][% SET hours = [ 17..21 ] %][% END %]
+[% IF (date == "2014-08-28") %][% SET hours = [ 17..21 ] %][% END %]
 [% FOREACH hour IN hours %]
 [% IF (hour == 9) %]
 [% FOREACH minute IN [ 30, 35, 40, 45, 50, 55 ] %]
