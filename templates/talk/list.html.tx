@@ -134,21 +134,34 @@ title = 'Talks'
     <h2>[% loc("List of Talks") %]</h2>
     <br />
 
+[% IF rejected_talks.size() %]
+
+    <h3>[% loc("Rejected Talks") %] ([% rejected_talks.size() %])</h3>
+    <br />
+[% FOREACH talk IN rejected_talks %]
+[% talk_details(talk) %]
+[% END %]
+
+[% END %]
+
+[% IF accepted_talks.size() %]
     <h3>[% loc("Accepted Talks") %] ([% accepted_talks.size() %])</h3>
     <br />
 [% FOREACH talk IN accepted_talks %]
 [% talk_details(talk) %]
 [% END %]
 
-    <br />
-    <hr />
-    <br />
+[% END # accepted_talks %]
+
+[% IF pending_talks.size() %]
 
     <h3>[% loc("Pending Talks") %] ([% pending_talks.size() %])</h3>
     <br />
 [% FOREACH talk IN pending_talks %]
 [% talk_details(talk) %]
 [% END %]
+
+[% END # pending_talks %]
 
   </div>
 </div>
