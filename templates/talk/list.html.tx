@@ -31,7 +31,7 @@ title = 'Talks'
         margin-bottom:3em;
         clear: both;
     }
-    
+
     @media screen and (min-width:641px){
         .talk .speaker {
             float: left;
@@ -116,21 +116,18 @@ title = 'Talks'
 
 <div>
 <h2>[% loc("Talk Schedule") %]</h2>
-<ul>
-    <li>[% loc("Day 0") %]</li>
-    <li>[% loc("Day 1") %]</li>
-    <li>[% loc("Day 2") %]</li>
-</ul>
-
-[% IF lang == 'en' %]
-<p style="color:red">We will be calling for Lightning Talk submissions later on.</p>
-[% ELSE %]
-<p style="color:red">Lightning Talk (LT) は別途開催日直前に募集します</p>
-[% END %]
+<a href="/2014/talk/schedule?date=2014-08-28" class="btn btn-lg btn-primary">[% loc("Day 0") %]</a>
+<a href="/2014/talk/schedule?date=2014-08-29" class="btn btn-lg btn-primary">[% loc("Day 1") %]</a>
+<a href="/2014/talk/schedule?date=2014-08-30" class="btn btn-lg btn-primary">[% loc("Day 2") %]</a> 
 </div>
+<br />
+[% IF lang == 'en' %]
+    <p style="color:red">* We will be calling for Lightning Talk submissions later on.</p>
+[% ELSE %]
+    <p style="color:red">* Lightning Talk (LT) は別途開催日直前に募集します</p>
+[% END %]
 
-
-<br /><hr /><br />
+<hr />
 
 <div class="entry">
   <div class="entry-contents">
