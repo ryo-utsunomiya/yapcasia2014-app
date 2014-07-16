@@ -44,8 +44,24 @@
 
 <style>
 <!--
-    .speaker { float: left }
-    .speaker .icon img { width: 70px; height: 70px }
+    @media screen and (min-width:641px){
+        .speaker {
+            float: left;
+        }
+        .talk-content {
+            margin-left: 80px;
+        }
+        .speaker-sp {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width:640px){
+        .speaker {
+            display: none;
+        }
+    }
+
     .speaker .data { width: 100px }
     #container #main-contents .posts
     .speaker .data .name { word-wrap: break-word; font-size: 0.8em;}
@@ -55,12 +71,20 @@
 <div class="speaker">
     <div class="icon">[% fmt_member_icon_tag(speaker) %]</div>
     <div class="data">
-       <p class="name"><a href="/2014/member/show/[% speaker.id %]">[% speaker.name || speaker.nickname %]</a></p>
-       <p><a href="/2014/talk/edit/[% talk.id %][% IF (talk.duration == 5) %]?lt=1[% END %]">[% loc("Edit Talk") %]</a></p>
+        <p class="name"><a href="/2014/member/show/[% speaker.id %]">[% speaker.name || speaker.nickname %]</a></p>
 [% IF (owner || member.is_admin) %]
+        <p><a href="/2014/talk/edit/[% talk.id %][% IF (talk.duration == 5) %]?lt=1[% END %]">[% loc("Edit Talk") %]</a></p>
         <p><a id="talk-delete" href="/2014/talk/delete/[% talk.id %]">[% loc("Delete Talk") %]</a></p>
 [% END %]
     </div>
+</div>
+
+<div class="speaker-sp">
+    [% fmt_member_icon_tag(speaker) %] <a href="/2014/member/show/[% speaker.id %]">[% speaker.name || speaker.nickname %]</a>
+[% IF (owner || member.is_admin) %]
+        <p><a href="/2014/talk/edit/[% talk.id %][% IF (talk.duration == 5) %]?lt=1[% END %]">[% loc("Edit Talk") %]</a></p>
+        <p><a id="talk-delete" href="/2014/talk/delete/[% talk.id %]">[% loc("Delete Talk") %]</a></p>
+[% END %]
 </div>
 
 [%- SET talk_title = "" -%]
@@ -70,7 +94,7 @@
 [% SET talk_title = "Lightning Talk" %]
 [% END -%]
 
-                <div style="margin-left: 100px">
+                <div class="talk-content">
                     <h3>[% talk_title %]</h3>
 
 [% IF (talk.status != 'accepted') %]
