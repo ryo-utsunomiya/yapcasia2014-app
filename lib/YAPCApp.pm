@@ -79,7 +79,7 @@ sub setup_routes {
     #individual_sponsors
     $r->route("/2014/individual_sponsors/")->to(controller => 'individual_sponsors', action => 'index');
 
-    #login 
+    #login
     $r->get("/2014/login")->to("auth#index");
     $r->get("/2014/logout")->to("auth#logout");
 
@@ -184,7 +184,7 @@ sub setup_xslate {
                 }
                 $url = URI->new($url);
                 if ($url->host =~ /slideshare\.net$/) {
-                    my $oembed_url = URI->new( "http://www.slideshare.net/api/oembed/2" ); 
+                    my $oembed_url = URI->new( "http://www.slideshare.net/api/oembed/2" );
                     $oembed_url->query_form(
                         url => $url,
                         format => "json",
@@ -269,10 +269,10 @@ EOHTML
             fmt_talk_schedule_top => sub {
                 my $start_on = $_[0]->{start_on};
                 $start_on =~ /(\d{4}-\d{2}-\d{2}) (\d{2}):(\d{2}):00/;
-                my $offset = 
-                    ( ($1 eq '2014-09-19') ?
+                my $offset =
+                    ( ($1 eq '2014-08-28') ?
                         int($2 - 7) * 60 + int($3 - 30) :
-                        int($2) * 60 + int($3) 
+                        int($2) * 60 + int($3)
                     ) - (9 * 60 + 30);
                 return int(($offset / 5) * 26) + 25 - 1;
             },
