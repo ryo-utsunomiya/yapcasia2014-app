@@ -96,25 +96,39 @@ sub schedule {
 sub list {
     my $self = shift;
 
+    my $status = $self->req->param('status');
+
     my $talk_api = $self->get('API::Talk');
     my $member_api = $self->get('API::Member');
 
-    my $pending_talks = $talk_api->search(
-        { status => 'pending' },
-        { order_by => "start_on ASC, created_on DESC" },
-    );
-
-    my $accepted_talks = $talk_api->search(
-        { status => 'accepted' },
-        { order_by => "start_on ASC, created_on DESC" },
-    );
-
-    foreach my $talk ( ( @$pending_talks, @$accepted_talks ) ){
-        $talk->{speaker} = $member_api->lookup( $talk->{member_id} );
+    if ( $status eq 'rejected' ){
+        my $rejected_talks = $talk_api->search(
+            { status => 'rejected' },
+            { order_by => "start_on ASC, created_on DESC" },
+        );
+        foreach my $talk ( @$rejected_talks ){
+            $talk->{speaker} = $member_api->lookup( $talk->{member_id} );
+        }
+        $self->stash(
+            rejected_talks => $rejected_talks,
+        );
+    } else {
+        my $pending_talks = $talk_api->search(
+            { status => 'pending' },
+            { order_by => "start_on ASC, created_on DESC" },
+        );
+        my $accepted_talks = $talk_api->search(
+            { status => 'accepted' },
+            { order_by => "start_on ASC, created_on DESC" },
+        );
+        foreach my $talk ( ( @$pending_talks, @$accepted_talks ) ){
+            $talk->{speaker} = $member_api->lookup( $talk->{member_id} );
+        }
+        $self->stash(
+            pending_talks => $pending_talks,
+            accepted_talks => $accepted_talks
+        );
     }
-
-    $self->render( pending_talks => $pending_talks );
-    $self->render( accepted_talks => $accepted_talks );
 }
 
 sub show {
