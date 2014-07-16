@@ -356,13 +356,13 @@ msgid "Here are the list of talks for YAPC::Asia Tokyo 2012. Click on the links 
 msgstr "Here are the list of talks for YAPC::Asia Tokyo 2012. Click on the links below to see a timetable!"
 
 msgid "Day 0"
-msgstr "Day 0 (9/19)"
+msgstr "Day 0 (8/28)"
 
 msgid "Day 1"
-msgstr "Day 1 (9/20)"
+msgstr "Day 1 (8/29)"
 
 msgid "Day 2"
-msgstr "Day 2 (9/21)"
+msgstr "Day 2 (8/30)"
 
 msgid "This is the talk submission form for Lightning Talks."
 msgstr "This is the talk submission form for Lightning Talks."
@@ -572,7 +572,7 @@ msgid "Please describe this event. Please make sure to include max cap, fees, de
 msgstr "Please describe this event. Please make sure to include max cap, fees, deadlines, etc. This text will be interprted as Markdown formatted text."
 
 msgid "Events Organized By [_1]"
-msgstr "Events Organized By %1" 
+msgstr "Events Organized By %1"
 
 msgid "Thanks for your submissions."
 msgstr "Thanks for your submissions."
@@ -600,4 +600,3 @@ msgstr "Multiprupose Room 3"
 
 msgid "List of Talks"
 msgstr "List of Talks"
-

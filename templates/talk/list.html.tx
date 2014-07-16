@@ -96,68 +96,21 @@ title = 'Talks'
 [% END %]
 
 <div>
+<h2>[% loc("Talk Schedule") %]</h2>
+<ul>
+    <li>[% loc("Day 0") %]</li>
+    <li>[% loc("Day 1") %]</li>
+    <li>[% loc("Day 2") %]</li>
+</ul>
+
 [% IF lang == 'en' %]
-
-<h3>Talk Proposal Submission Overview</h3>
-
-<ul class="task-list">
-<li>The deadline for submissions is Jul 4 17:00(JST).</li>
-<li>We will be accepting about 50 ~ 60 talks.</li>
-<li>Accepted talks will be announced on Jul 16.</li>
-<li>Speakers are will not need to purchase tickets.</li>
-<li>We will be calling for Lightning Talk submissions later on.</li>
-</ul>
-<br />
-
-<h3>Talk Selection Process</h3>
-
-<p>Your talk proposals will be reviewed by YAPC::Asia Tokyo Organizer Committee. It is important to make  your talk abstract as interesting and easy-to-read as possible to the reviewers, because that's what most of the decision will be based on.</p>
-
-<p>There are no specific restrictions in the talk topic, but please note the following:</p>
-
-<ul class="task-list">
-<li>While YAPC is a Perl event, it is 100% OKAY to talk about subject matter that does not focus on Perl. Just make it interesting, and please utter the word 'Perl' a couple of times during your presentation.</li>
-<li>We will accept a broad range of subjects: web stuff, infrastructure, tutorials, personal experiences, etc.</li>
-<li>We will obviously prefer subject matter that will appeal to the audience. The keywords are "Useful" and "Fun"</li>
-<li>We MAY prefer speakers who have never had the chance to speak at a YAPC::Asia before.</li>
-</ul><p>Your talks will also be subject to voting by site visitors via Facebook "Likes" and other social media feedback -- this feedback will be used for when there's a need for tie-breaker. Therefore it is very important for you to spread the link to your talk submission on Twitter, Facebook, etc after submission.</p>
-
-<p>We're are eagerly waiting for your talk proposals!</p>
-
-<br />
-
+<p style="color:red">We will be calling for Lightning Talk submissions later on.</p>
 [% ELSE %]
-
-<h3>応募概要</h3>
-<p style="color:red">トーク応募は締め切りました。</p>
-<ul class="task-list">
-<li>締め切り日時: 2014年7月4日(金) 17:00まで (予定)</li>
-<li>採択発表: 2014年7月16日(水) 頃</li>
-<li>採択トーク件数目安: 50件〜60件</li>
-<li>採択された場合スピーカーとしてチケット無しで入場出来ます</li>
-<li>Lightning Talk (LT) は別途開催日直前に募集します</li>
-</ul>
-
-<br />
-
-<h3>トークの採択について</h3>
-
-<p>YAPC::Asia Tokyo 2014 実行委員長および運営スタッフの一部により選考が行われます。基本的に応募時のトークの概要から採択するかどうかを決定しますので、選考者が興味をそそられるようにトークの内容をわかりやすく記述するようにしてください。</p>
-
-<p>トークのトピックに関しては細かい縛りはありませんが、以下の数点にご留意ください。 </p>
-
-<ul class="task-list">
-<li>YAPCはPerlのカンファレンスですが、Perlがメインのテーマである必要はありません（できればトーク中に1、2回は「Perl」と言ってほしいですが…）</li>
-<li>Web技術から、ノウハウ、インフラ、チュートリアル、「XXXを使って作ってみた！」まで、様々なトピックを募集します</li>
-<li>YAPC参加者が「有益で楽しい！」と思えるトピックを優先して採択する予定です</li>
-<li>他の全ての条件が同じだった場合はYAPC::Asiaでのトーク初心者を優先することがあります</li>
-</ul><p>また選考者だけで判断がつかない場合はFacebookのいいね！やはてなブックマーク等のフィードバックの数・内容によって採択されるかどうか決まる事がありますので、トークを応募した後はFacebook、Twitter、ブログ等での拡散をお勧めいたします。</p>
-
-<br />
-
+<p style="color:red">Lightning Talk (LT) は別途開催日直前に募集します</p>
 [% END %]
-
 </div>
+
+
 <br /><hr /><br />
 
 <div class="entry">
