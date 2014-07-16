@@ -116,9 +116,9 @@ title = 'Talks'
 
 <div>
 <h2>[% loc("Talk Schedule") %]</h2>
-<a href="/2014/talk/schedule?date=2014-08-28" class="btn btn-lg btn-primary">[% loc("Day 0") %]</a>
-<a href="/2014/talk/schedule?date=2014-08-29" class="btn btn-lg btn-primary">[% loc("Day 1") %]</a>
-<a href="/2014/talk/schedule?date=2014-08-30" class="btn btn-lg btn-primary">[% loc("Day 2") %]</a>
+<a href="/2014/talk/schedule?date=2014-08-28" class="btn btn-lg btn-info">[% loc("Day 0") %]</a>
+<a href="/2014/talk/schedule?date=2014-08-29" class="btn btn-lg btn-info">[% loc("Day 1") %]</a>
+<a href="/2014/talk/schedule?date=2014-08-30" class="btn btn-lg btn-info">[% loc("Day 2") %]</a>
 </div>
 <br />
 [% IF lang == 'en' %]
