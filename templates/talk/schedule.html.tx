@@ -15,6 +15,7 @@
 <!--
     .schedule {
         margin-left: 1em;
+        width: 640px;
     }
     .schedule .timeaxis {
         font-size: 0.6em;
@@ -60,7 +61,7 @@
     }
     .schedule .venue .talk {
         position: absolute;
-        font-size: 0.6em;
+        font-size: 0.7em;
         border-top: 1px solid #ccc;
         border-bottom: 1px solid #ccc;
         overflow: hidden;
