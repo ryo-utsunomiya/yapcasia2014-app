@@ -42,7 +42,7 @@ use Data::FormValidator::Constraints qw(email);
             subtitles => qr/^(en|ja|none)$/,
             tshirt_size => qr/^(none|XS|S|M|L|XL|XXL|XXXL)$/,
             material_level => qr/^(advanced|regular|beginner)$/,
-            duration => qr/^(200|140|120|60|40|20|10|5)$/,
+            duration => qr/^(240|210|200|180|150|140|120|60|40|20|10|5)$/,
             category => qr/^(tutorial|app|infra|library|other|community|testing)$/,
             slide_url => sub {
                  my ($dfv, $value) = @_;
@@ -136,5 +136,3 @@ use Data::FormValidator::Constraints qw(email);
         },
     },
 };
-
-
