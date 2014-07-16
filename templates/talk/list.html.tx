@@ -118,7 +118,7 @@ title = 'Talks'
 <h2>[% loc("Talk Schedule") %]</h2>
 <a href="/2014/talk/schedule?date=2014-08-28" class="btn btn-lg btn-primary">[% loc("Day 0") %]</a>
 <a href="/2014/talk/schedule?date=2014-08-29" class="btn btn-lg btn-primary">[% loc("Day 1") %]</a>
-<a href="/2014/talk/schedule?date=2014-08-30" class="btn btn-lg btn-primary">[% loc("Day 2") %]</a> 
+<a href="/2014/talk/schedule?date=2014-08-30" class="btn btn-lg btn-primary">[% loc("Day 2") %]</a>
 </div>
 <br />
 [% IF lang == 'en' %]
@@ -134,21 +134,22 @@ title = 'Talks'
     <h2>[% loc("List of Talks") %]</h2>
     <br />
 
-    <h3>[% loc("Pending Talks") %] ([% pending_talks.size() %])</h3>
+    <h3>[% loc("Accepted Talks") %] ([% accepted_talks.size() %])</h3>
     <br />
-
-[% FOREACH talk IN pending_talks %]
+[% FOREACH talk IN accepted_talks %]
 [% talk_details(talk) %]
 [% END %]
 
     <br />
     <hr />
+    <br />
 
-    <h3>[% loc("Accepted Talks") %] ([% accepted_talks.size() %])</h3>
-
-[% FOREACH talk IN accepted_talks %]
+    <h3>[% loc("Pending Talks") %] ([% pending_talks.size() %])</h3>
+    <br />
+[% FOREACH talk IN pending_talks %]
 [% talk_details(talk) %]
 [% END %]
+
   </div>
 </div>
 
