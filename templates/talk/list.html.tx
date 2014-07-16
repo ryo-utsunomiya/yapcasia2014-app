@@ -31,13 +31,29 @@ title = 'Talks'
         margin-bottom:3em;
         clear: both;
     }
-    .talk .speaker {
-        float: left;
+    
+    @media screen and (min-width:641px){
+        .talk .speaker {
+            float: left;
+        }
+        .talk .speaker-sp {
+            display: none;
+        }
+        .talk .details {
+            margin-left: 80px;
+            font-size: 0.85em;
+        }
     }
-    .talk .details {
-        margin-left: 80px;
-        font-size: 0.85em;
+
+    @media screen and (max-width:640px){
+        .talk .speaker {
+            display: none;
+        }
+        .talk .details {
+            font-size: 0.85em;
+        }
     }
+
     .talk .details .title {
         padding: 5px;
         font-size: 1.25em;
@@ -72,6 +88,9 @@ title = 'Talks'
 <div class="speaker">
     <div class="icon">[% fmt_member_icon_tag(talk.speaker) %]</div>
     <p class="name"><a href="/2014/member/show/[% talk.speaker.id %]">[% talk.speaker.name || talk.speaker.nickname %]</a></p>
+</div>
+<div class="speaker-sp">
+    [% fmt_member_icon_tag(talk.speaker) %]<a href="/2014/member/show/[% talk.speaker.id %]">[% talk.speaker.name || talk.speaker.nickname %]</a>
 </div>
 <div class="details">
     <table class="table table-bordered">
