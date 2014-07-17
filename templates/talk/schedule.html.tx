@@ -18,7 +18,7 @@
         width: 640px;
     }
     .schedule .timeaxis {
-        font-size: 0.6em;
+        font-size: 10px;
         float: left;
         width: 50px;
         background: #eee;
@@ -56,12 +56,12 @@
         height: 24px;
         text-align: center;
         font-weight: bold;
-        font-size: 0.8em;
+        font-size: 12px;
         border-bottom: 1px solid #ccc;
     }
     .schedule .venue .talk {
         position: absolute;
-        font-size: 0.7em;
+        font-size: 11px;
         border-top: 1px solid #ccc;
         border-bottom: 1px solid #ccc;
         overflow: hidden;
