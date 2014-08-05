@@ -9,7 +9,7 @@ title = loc("Event Deleted!")
 <div class="body">
 
 <p>[% loc("Your event was successfully deleted") %]</p>
-<p><a href="/2013/member">[% loc("Proceed To Member Page") %]</a></p>
+<p><a href="/2014/member">[% loc("Proceed To Member Page") %]</a></p>
 
 </div><!--  / .body /  -->
 </div><!--  / .section /  -->

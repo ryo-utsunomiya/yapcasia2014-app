@@ -18,7 +18,7 @@
 [% IF (is_edit) %]
                 <tr>
                     <td>ID</td>
-                    <td><a href="/2012/event/[% event.id %]">[% event.id %]</a></td>
+                    <td><a href="/2014/event/[% event.id %]">[% event.id %]</a></td>
                 </tr>
 [% END %]
                 <tr>
@@ -28,6 +28,10 @@
                 <tr>
                     <td>[% loc("Signup URL") %]</td>
                     <td>[% event.signup_url %]</td>
+                </tr>
+                <tr>
+                    <th>[% loc("Venue") %]</th>
+                    <td>[% IF event.venue_id %][% venue_id2name.${event.venue_id} %] (id=[% event.venue_id %])[% ELSE %] TBD [% END %]</td>
                 </tr>
                 <tr>
                     <td>[% loc("Event Location") %]</td>
@@ -58,7 +62,7 @@
 
                 </table>
 
-                <form id="commit-form" action="/2013/event/commit" method="POST">
+                <form id="commit-form" action="/2014/event/commit" method="POST">
                     <input type="hidden" name="p" value="[% subsession_id %]" />
                     <button class="button button-yapc">[% loc("Submit") %]</button>
                     <button class="button button-danger">[% loc("Go Back") %]</button>
@@ -75,7 +79,7 @@
     $(document).ready( function() {
         $(".button-danger", "#commit-form").each(function(i,e) {
             $(e).click(function() {
-                location.href = "/2013/event/input?p=[% subsession_id %]"
+                location.href = "/2014/event/input?p=[% subsession_id %]"
                 return false;
             });
         });

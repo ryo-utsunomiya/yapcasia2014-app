@@ -59,11 +59,11 @@ title = 'Events'
 </style>
 
 [% MACRO event_details(event) BLOCK %]
-[%- SET event_url = "http://yapcasia.org/2013/event/show/" _ event.id %]
+[%- SET event_url = "http://yapcasia.org/2014/event/show/" _ event.id %]
 <div class="event unhandled">
 <div class="organizer">
     <div class="icon">[% fmt_member_icon_tag(event.organizer) %]</div>
-    <p class="name"><a href="/2013/member/show/[% event.organizer.id %]">[% event.organizer.name || event.organizer.nickname %]</a></p>
+    <p class="name"><a href="/2014/member/show/[% event.organizer.id %]">[% event.organizer.name || event.organizer.nickname %]</a></p>
 </div>
 <div class="details">
     <table class="table">
@@ -71,7 +71,7 @@ title = 'Events'
         <td width="400">
             <div class="title">
                 <div>
-                    <a href="/2013/event/show/[% event.id %]">[% event.title %]</a> ([% IF (! event.start_on || event.start_on == '0000-00-00 00:00:00') %]TBD[% ELSE %][% event.start_on %][% END %] ~[% IF(event.duration) %] [% loc("[_1] minutes", event.duration ) %][% END %])
+                    <a href="/2014/event/show/[% event.id %]">[% event.title %]</a> ([% IF (! event.start_on || event.start_on == '0000-00-00 00:00:00') %]TBD[% ELSE %][% event.start_on %][% END %] ~[% IF(event.duration) %] [% loc("[_1] minutes", event.duration ) %][% END %])
                 </div>
             </div>
         </td>
@@ -94,9 +94,9 @@ title = 'Events'
     <div class="innerblock">
         <div class="entry">
             <div class="entry-contents">
-<p>[% loc("Here you can see the list of events (other than talk sessions) that are taking place during YAPC::Asia Tokyo 2013.") %]</p>
-<p>[% loc("Please note that YAPC::Asia Tokyo 2013 is NOT affiliated with any of the 'unofficial' events. Should you decide to join any of these event, please do so at your own discretion.") %]</p>
-<p><a href="/2013/event/input">[% loc("If you would like to organize a new event such as a hackathon, a BOF, a drinkup, an after party, etc, please use this form.") %]</a></p>
+<p>[% loc("Here you can see the list of events (other than talk sessions) that are taking place during YAPC::Asia Tokyo 2014.") %]</p>
+<p>[% loc("Please note that YAPC::Asia Tokyo 2014 is NOT affiliated with any of the 'unofficial' events. Should you decide to join any of these event, please do so at your own discretion.") %]</p>
+<p><a href="/2014/event/input">[% loc("If you would like to organize a new event such as a hackathon, a BOF, a drinkup, an after party, etc, please use this form.") %]</a></p>
 
 [% IF (official_events.size() > 0) %]
 <hr noshade="noshade" />
@@ -127,4 +127,3 @@ title = 'Events'
 </div><!--  / #main /  -->
 
 [% END %]
-

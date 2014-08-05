@@ -9,7 +9,7 @@
 <h1 class="corners">[% loc("Event Information") %]</h1>
 <div class="body">
 
-[% SET event_url = "http://yapcasia.org/2013/event/show/" _ event.id %]
+[% SET event_url = "http://yapcasia.org/2014/event/show/" _ event.id %]
 
 <style type="text/css">
 <!--
@@ -40,7 +40,7 @@
     .organizer { float: left }
     .organizer .icon img { width: 70px; height: 70px }
     .organizer .data { width: 100px }
-    #container #main-contents .posts 
+    #container #main-contents .posts
     .organizer .data .name { word-wrap: break-word; font-size: 0.8em;}
 -->
 </style>
@@ -48,10 +48,10 @@
 <div class="organizer">
     <div class="icon">[% fmt_member_icon_tag(organizer) %]</div>
     <div class="data">
-       <p class="name"><a href="/2013/member/show/[% organizer.id %]">[% organizer.name || organizer.nickname %]</a></p>
+       <p class="name"><a href="/2014/member/show/[% organizer.id %]">[% organizer.name || organizer.nickname %]</a></p>
 [% IF (owner || member.is_admin) %]
-       <p><a href="/2013/event/edit/[% event.id %]">[% loc("Edit Event") %]</a></p>
-        <p><a id="event-delete" href="/2013/event/delete/[% event.id %]">[% loc("Delete Event") %]</a></p>
+       <p><a href="/2014/event/edit/[% event.id %]">[% loc("Edit Event") %]</a></p>
+        <p><a id="event-delete" href="/2014/event/delete/[% event.id %]">[% loc("Delete Event") %]</a></p>
 [% END %]
     </div>
 </div>
@@ -89,6 +89,12 @@
                         <td>[% IF (event.signup_url) %]<a href="[% event.signup_url %]">[% event.signup_url %]</a>[% END %]</td>
                     </tr>
                     <tr>
+                        <th>[% loc("Venue") %]</th>
+                        <td>
+                        [%-   IF (event.venue) %][% loc(event.venue) %][% ELSE %]TBD[% END %]
+                        </td>
+                    </tr>
+                    <tr>
                         <td>[% loc("Event Location") %]</td>
                         <td>[% event.location %]</td>
                     </tr>
@@ -102,7 +108,7 @@
                     </tr>
                     </table>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -122,7 +128,7 @@
                 type: "POST",
                 url: $("#event-delete").attr("href"),
                 success: function() {
-                    location.href = "/2013/event/list";
+                    location.href = "/2014/event/list";
                 },
                 error: function() {
                     alert("Error Deleting Event");
@@ -132,7 +138,7 @@
         });
     });
     $([
-        { 
+        {
             src: "http://b.st-hatena.com/js/bookmark_button.js",
             id: "hatena-bookmark"
         },

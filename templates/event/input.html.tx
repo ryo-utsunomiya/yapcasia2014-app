@@ -22,7 +22,7 @@
             <p>[% loc("Here, you can submit a new event (e.g. hackathons, drinkups, BOFs, etc).") %]</p>
 
 [% FILTER fillinform %]
-                <form action="/2013/event/check" method="post" class="form-horizontal">
+                <form action="/2014/event/check" method="post" class="form-horizontal">
 [% IF (is_edit) %]
 <input type="hidden" name="id" />
 <input type="hidden" name="is_edit" value="1" />
@@ -57,6 +57,20 @@
                             </div>
                         </div>
 [% END %]
+
+                        <div class="form-group">
+                            [% fmt_error_message(results, "venue_id", "Venue") %]
+                            <label for="venue_id" class="col-sm-2 control-label">[% loc("Venue") %]</label>
+                            <div class="col-sm-3">
+                                <select id="venue_id" name="venue_id" class="form-control">
+                                    <option value="">TBD</option>
+                                    [% FOREACH venue IN venues %]
+                                    <option value="[% venue.id %]">[% loc(venue.name) %]</option>
+                                    [% END %]
+                                    <option value="5">その他</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <div class="control-group">
                             [% fmt_error_message(results, "location", "Event Location") %]

@@ -18,7 +18,7 @@ title = (is_edit) ? loc("Edit done") : loc("Event Created")
                 <p>[% loc("Your event has been updated") %]</p>
 [% END %]
 
-                <p><a href="/2013/event/show/[% event.id %]">[% loc("Proceed To Event Page") %]</a></p>
+                <p><a href="/2014/event/show/[% event.id %]">[% loc("Proceed To Event Page") %]</a></p>
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@ title = (is_edit) ? loc("Edit done") : loc("Event Created")
 <!--
     $(document).ready(function() {
         setTimeout(function() {
-            location.href = "/2013/event/show/[% event.id %]"
+            location.href = "/2014/event/show/[% event.id %]"
         }, 3000);
     });
 -->
