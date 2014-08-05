@@ -1,5 +1,6 @@
 package YAPCApp::Controller::Event;
 use Mojo::Base 'YAPCApp::Controller::CRUD';
+use YAPCApp::Constants;
 
 sub index { $_[0]->redirect_to("/2013/event/list") }
 
@@ -14,9 +15,11 @@ sub show {
             }
         }
         $self->stash(organizer => $organizer);
-    }
 
-    $self->stash(member => $self->get_member());
+        if( my $venue_id = $event->{venue_id} ){
+            $event->{venue} = VENUE_ID2NAME->{$venue_id};
+        }
+    }
 }
 
 sub list {
@@ -49,6 +52,7 @@ sub input {
     my $self = shift;
     my $member = $self->assert_logged_in or return;
 
+    $self->stash(venues => VENUES );
     $self->SUPER::input(@_);
 }
 
@@ -56,7 +60,7 @@ sub edit {
     my $self = shift;
     my $member = $self->assert_logged_in or return;
 
-    my $id = $self->match->captures->{object_id};
+    my $id = $self->param('object_id');
     my $object = $self->load_object( $id );
     if (! $object) {
         $self->render_not_found();
@@ -70,8 +74,22 @@ sub edit {
     }
 
     $self->SUPER::edit();
-    ($object->{start_on_date}, $object->{start_on_time}) =
-        ($object->{start_on} =~ /^(\d+-\d+-\d+) (\d+):(\d+)/);
+
+    my ($date, $time) =
+        ($object->{start_on} =~ /^(\d+-\d+-\d+) (\d+:\d+)/);
+
+    $self->stash->{fif}->{start_on_date} = $date;
+    if ($time !~ /^00:00:00$/) {
+        $self->stash->{fif}->{start_on_time} = $time;
+    }
+    $self->stash(venues => VENUES );
+}
+
+sub preview {
+    my $self = shift;
+
+    $self->SUPER::preview();
+    $self->stash(venue_id2name => VENUE_ID2NAME );
 }
 
 sub commit {

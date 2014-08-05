@@ -31,11 +31,13 @@ sub schedule {
     my $format    = $self->req->param('format') || 'html';
     my $cache_key = join ".", qw(talk schedule), $format, $date;
     my $data      = $cache->get($cache_key);
-    if (! $data) {
+    if (1 || ! $data) {
         my $talk_api = $self->get('API::Talk');
+        my $event_api = $self->get('API::Event');
         my $member_api = $self->get('API::Member');
         my $venues = VENUES;
         my @talks_by_venue;
+        my @events_by_venue;
         foreach my $venue ( @$venues ) {
             my @talks = $talk_api->search(
                 {
@@ -48,16 +50,32 @@ sub schedule {
                     order_by => "start_on ASC",
                 }
             );
+            my @events = $event_api->search(
+                {
+                    venue_id => $venue->{id},
+                    status   => 1,
+                    start_on => { "between" => [ "$date 00:00:00", "$date 23:59:59" ] }
+                },
+                {
+                    order_by => "start_on ASC",
+                }
+            );
             foreach my $talk (@talks) {
                 $talk->{speaker} = $member_api->lookup($talk->{member_id});
             }
             push @talks_by_venue, \@talks;
+
+            foreach my $talk (@events) {
+                $talk->{speaker} = $member_api->lookup($talk->{member_id});
+            }
+            push @events_by_venue, \@events;
         }
 
         $data = {
             venues => $venues,
             venue_id2name => VENUE_ID2NAME,
             talks_by_venue => \@talks_by_venue,
+            events_by_venue => \@events_by_venue,
             date => $date,
         };
 
