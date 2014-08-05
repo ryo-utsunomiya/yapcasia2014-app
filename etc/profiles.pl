@@ -103,7 +103,7 @@ use Data::FormValidator::Constraints qw(email);
     },
     'event.check' => {
         required => [ qw(title description) ],
-        optional => [ qw(is_edit id location start_on_date start_on_time duration is_official member_id signup_url) ],
+        optional => [ qw(is_edit id location start_on_date start_on_time duration is_official member_id signup_url venue_id) ],
         defaults => {
             location => 'TBD',
             is_official => 0,
