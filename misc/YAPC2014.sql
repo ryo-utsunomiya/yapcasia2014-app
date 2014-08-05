@@ -75,6 +75,7 @@ CREATE TABLE event (
     id CHAR(40) NOT NULL PRIMARY KEY,
     member_id CHAR(40) NOT NULL,
     status TINYINT(1) NOT NULL DEFAULT 1,
+    venue_id INT,
     is_official TINYINT(1) NOT NULL DEFAULT 0,
     title TEXT NOT NULL,
     location TEXT NOT NULL,
