@@ -50,7 +50,7 @@
 
 [% IF (member.is_admin) %]
                         <div class="form-group">
-                            <label for="is_official" class="col-sm-2 control-label">[% loc("Official/Unofficial") %]</label>
+                            <label for="is_official" class="col-sm-2 control-label">(*Admin) [% loc("Official/Unofficial") %]</label>
                             <div class="col-sm-3">
                                 <select id="is_official" name="is_official" class="form-control">
                                     <option value="0">[% loc("Unofficial Event") %]</option>
@@ -61,7 +61,7 @@
 
                         <div class="form-group">
 
-                            <label for="venue_id" class="col-sm-2 control-label">[% loc("Venue") %]</label>
+                            <label for="venue_id" class="col-sm-2 control-label">(*Admin) [% loc("Venue") %]</label>
                             <div class="col-sm-3">
                                 <select id="venue_id" name="venue_id" class="form-control">
                                     <option value="">TBD</option>
