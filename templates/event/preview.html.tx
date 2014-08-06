@@ -2,13 +2,14 @@
     title = loc("Please verify your submission")
 %]
 
-<div id="main">
-
-<div id="lead" class="section">
-<h1 class="corners">[% loc("Please verify your submission") %]</h1>
+<section>
+<div class="section">
+<h1 class="title">
+<div class="innerblock">
+<span class="icon-jp_icon_paper_fan"></span> <em>[% IF (is_edit) %][% loc("Edit done") %][% ELSE %][% loc("Thank you for your submission!") %][% END %]</em></div>
+</h1>
 <div class="body">
-
-<div id="main-contents">
+<div class="inner block”>
 
 <div class="section posts">
     <div class="innerblock">
@@ -87,21 +88,9 @@
 -->
 </script>
 
-
-
-
-
-
-
-
-
-
+</div>
 </div><!--  / .body /  -->
 </div><!--  / .section /  -->
+</section>
 
-</div><!--  / #main /  -->
-
-
-
-
-[% END %]
+[% END %] 

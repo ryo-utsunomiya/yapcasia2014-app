@@ -2,7 +2,14 @@
 title = loc("Event Deleted!")
 %]
 
-<div id="main">
+<section>
+<div class="section">
+<h1 class="title">
+<div class="innerblock">
+<span class="icon-jp_icon_paper_fan"></span> <em>[% IF (is_edit) %][% loc("Edit done") %][% ELSE %][% loc("Thank you for your submission!") %][% END %]</em></div>
+</h1>
+<div class="body">
+<div class="inner block”>
 
 <div id="lead" class="section">
 <h1 class="corners">[% loc("Event Deleted!") %]</h1>
@@ -11,9 +18,9 @@ title = loc("Event Deleted!")
 <p>[% loc("Your event was successfully deleted") %]</p>
 <p><a href="/2014/member">[% loc("Proceed To Member Page") %]</a></p>
 
+</div>
 </div><!--  / .body /  -->
 </div><!--  / .section /  -->
-
-</div>
+</section>
 
 [% END %]

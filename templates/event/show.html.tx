@@ -3,11 +3,14 @@
     og_description = fmt_event_description_as_og_description(event),
 %]
 
-<div id="main">
-
-<div id="lead" class="section">
-<h1 class="corners">[% loc("Event Information") %]</h1>
+<section>
+<div class="section">
+<h1 class="title">
+<div class="innerblock">
+<span class="icon-jp_icon_paper_fan"></span> <em>[% IF (is_edit) %][% loc("Edit done") %][% ELSE %][% loc("Thank you for your submission!") %][% END %]</em></div>
+</h1>
 <div class="body">
+<div class="inner block”>
 
 [% SET event_url = "http://yapcasia.org/2014/event/show/" _ event.id %]
 
@@ -171,10 +174,9 @@
 -->
 </script>
 
-
+</div>
 </div><!--  / .body /  -->
 </div><!--  / .section /  -->
-
-</div><!--  / #main /  -->
+</section>
 
 [% END %]

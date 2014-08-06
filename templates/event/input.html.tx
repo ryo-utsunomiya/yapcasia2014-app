@@ -6,14 +6,14 @@
   .error { color : red }
 </style>
 
-<div id="main">
-
-<div id="lead" class="section">
-<h1 class="corners">[% IF (is_edit) %][% loc("Edit Your Event") %][% ELSE %][% loc("Create A New Event") %][% END %]</h1>
+<section>
+<div class="section">
+<h1 class="title">
+<div class="innerblock">
+<span class="icon-jp_icon_paper_fan"></span> <em>[% IF (is_edit) %][% loc("Edit done") %][% ELSE %][% loc("Thank you for your submission!") %][% END %]</em></div>
+</h1>
 <div class="body">
-<h2 class="corners"></h2>
-
-<div id="main-contents">
+<div class="inner block”>
 
 <div class="section posts">
     <div class="innerblock">
@@ -127,17 +127,10 @@
 </div><!-- main-contents -->
 
 
-
-
-
-
-
-
-
+</div>
 </div><!--  / .body /  -->
 </div><!--  / .section /  -->
-
-</div><!--  / #main /  -->
+</section>
 
 <script type="text/javascript">
 <!--
