@@ -29,37 +29,38 @@
 [% END %]
                     <fieldset>
                         <h3>[% loc("Event Details") %] </h3>
-                        [% fmt_error_message(results, "title", "Event Title") %]
-                        <div class="control-group">
-                            <label class="control-label" for="">[% loc("Event Title" ) %] ([% loc("required") %])</label>
-                            <div class="controls docs-input-sizes">
-                                <input type="text" class="input-xlarge" name="title">
+
+                        <div class="form-group">
+                            <label for="title" class="col-sm-2 control-label">[% loc("Event Title" ) %] ([% loc("required") %])</label>
+                            <div class="col-sm-10">
+                                [% fmt_error_message(results, "title", "Event Title") %]
+                                <p><input name="title" class="form-control input-lg" type="text" placeholder="[% loc("Event Title" ) %]"></p>
                             </div>
                         </div>
 
-                        [% fmt_error_message(results, "signup_url", "Signup URL") %]
-                        <div class="control-group">
-                            <p style="font-size: 8px">[% loc("If you plan to have people signup for your event, please use and specify an external service like Peatix, ATND, zussar, connpass, etc.") %]</p>
-                            <label class="control-label" for="">[% loc("Signup URL" ) %]</label>
-                            <div class="controls docs-input-sizes">
-                                <input type="text" class="input-xlarge" name="signup_url">
+                        <div class="form-group">
+                            <label for="signup_url" class="col-sm-2 control-label">[% loc("Signup URL" ) %]</label>
+                            <div class="col-sm-10">
+                                <p><input name="signup_url" class="form-control input-lg" type="text" placeholder="[% loc("Event Title" ) %]"></p>
+                                [% fmt_error_message(results, "signup_url", "Signup URL") %]
+                                <p>[% loc("If you plan to have people signup for your event, please use and specify an external service like Peatix, ATND, zussar, connpass, etc.") %]</p>
                             </div>
                         </div>
+
 
 [% IF (member.is_admin) %]
-                        <div class="control-group">
-                            <label class="control-label" for="">[% loc("Official/Unofficial") %]</label>
-                            <div class="controls">
-                                <select name="is_official">
+                        <div class="form-group">
+                            <label for="is_official" class="col-sm-2 control-label">[% loc("Official/Unofficial") %]</label>
+                            <div class="col-sm-3">
+                                <select id="is_official" name="is_official" class="form-control">
                                     <option value="0">[% loc("Unofficial Event") %]</option>
                                     <option value="1">[% loc("Official Event") %]</option>
                                 </select>
                             </div>
                         </div>
-[% END %]
 
                         <div class="form-group">
-                            [% fmt_error_message(results, "venue_id", "Venue") %]
+
                             <label for="venue_id" class="col-sm-2 control-label">[% loc("Venue") %]</label>
                             <div class="col-sm-3">
                                 <select id="venue_id" name="venue_id" class="form-control">
@@ -67,52 +68,52 @@
                                     [% FOREACH venue IN venues %]
                                     <option value="[% venue.id %]">[% loc(venue.name) %]</option>
                                     [% END %]
-                                    <option value="5">その他</option>
                                 </select>
                             </div>
+                            [% fmt_error_message(results, "venue_id", "Venue") %]
                         </div>
+[% END %]
 
-                        <div class="control-group">
-                            [% fmt_error_message(results, "location", "Event Location") %]
-                            <label class="control-label" for="">[% loc("Event Location") %]</label>
-                            <div class="controls">
-                                <input type="text" name="location">
+                        <div class="form-group">
+                            <label for="location" class="col-sm-2 control-label">[% loc("Event Location") %]</label>
+                            <div class="col-sm-6">
+                                [% fmt_error_message(results, "location", "Event Location") %]
+                                <p><input name="location" class="form-control input-lg" type="text" placeholder="[% loc("Event Title" ) %]"></p>
                             </div>
                         </div>
 
-                        <div class="control-group">
-                            [% fmt_error_message(results, "start_on_date", "Event Date") %]
-                            <label class="control-label" for="">[% loc("Event Date") %]</label>
-                            <div class="controls">
-                                <input type="text" name="start_on_date" id="datepicker" />
+                        <div class="form-group">
+                            <label for="start_on_date" class="col-sm-2 control-label">[% loc("Event Date") %]</label>
+                            <div class="col-sm-3">
+                                [% fmt_error_message(results, "start_on_date", "Event Date") %]
+                                <p><input name="start_on_date" id="datepicker" class="form-control input-lg" placeholder="ex: 2014-08-30"></p>
                             </div>
                         </div>
 
-
-                        <div class="control-group">
-                            [% fmt_error_message(results, "start_on_time", "Event Time") %]
-                            <label class="control-label" for="">[% loc("Event Time") %]</label>
-                            <div class="controls">
-                                <input type="text" name="start_on_time" placeholder="HH:MM">
+                        <div class="form-group">
+                            <label for="start_on_time" class="col-sm-2 control-label">[% loc("Event Time") %]</label>
+                            <div class="col-sm-3">
+                                [% fmt_error_message(results, "start_on_time", "Event Time") %]
+                                <p><input name="start_on_time" id="datepicker" class="form-control input-lg" placeholder="ex: HH:MM"></p>
                             </div>
                         </div>
 
-                        <div class="control-group">
-                            [% fmt_error_message(results, "duration", "Event Duration") %]
-                            <label class="control-label" for="">[% loc("Event Duration") %]</label>
-                            <div class="controls">
-                                <input type="text" name="duration" placeholder="[% loc("in minutes, please") %]">
+                        <div class="form-group">
+                            <label for="duration" class="col-sm-2 control-label">[% loc("Event Duration") %]</label>
+                            <div class="col-sm-3">
+                                [% fmt_error_message(results, "duration", "Event Duration") %]
+                                <p><input name="duration" id="datepicker" class="form-control input-lg" placeholder="[% loc("in minutes, please") %]"></p>
                             </div>
                         </div>
 
-                        <div class="control-group">
-                            [% fmt_error_message(results, "description", "Event Description") %]
-                            <label class="control-label" for="">[% loc("Event Description") %] ([% loc("required") %])</label>
-                            <div class="controls">
-                                <textarea name="description" style="width: 300px; height: 20em" placeholder="[% loc("Please describe this event. Please make sure to include max cap, fees, deadlines, etc. This text will be interprted as Markdown formatted text.") %]"></textarea>
+                        <div class="form-group">
+                            <label for="description" class="col-sm-2 control-label">[% loc("Event Description") %] ([% loc("required") %])</label>
+                            <div class="col-sm-10">
+                                [% fmt_error_message(results, "abstract", "Talk Abstract") %]
+                                <textarea name="description" class="form-control" id="description" rows="10" placeholder="[% loc("Please describe this event. Please make sure to include max cap, fees, deadlines, etc. This text will be interprted as Markdown formatted text.") %]"></textarea>
+                                <p style="text-align: right">* [% loc("This text will be interprted as Markdown formatted text.") %]</p>
                             </div>
                         </div>
-
 
                         <button type="submit" class="button button-yapc">[% loc("Submit") %]</button>
 
