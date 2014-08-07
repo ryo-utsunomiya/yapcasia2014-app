@@ -469,6 +469,9 @@ msgstr "応募はこちらから！"
 msgid "required"
 msgstr "必須"
 
+msgid "Event Information"
+msgstr "イベント情報"
+
 msgid "Event Title"
 msgstr "イベント名称"
 
