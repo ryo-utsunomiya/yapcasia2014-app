@@ -153,9 +153,6 @@
 </div>
 <div class="detail">
     <span class="speaker"><a href="/2014/member/show/[% talk.speaker.id %]">[% talk.speaker.name || talk.speaker.nickname %]</a></span>
-    <span class="level">[[% loc(talk.material_level) %]]</span>
-    <span class="category">[[% loc(talk.category) %]]</span>
-    <span class="language">[[% loc(talk.language) %]]</span>
 </div>
 </div>
 [% END %]
