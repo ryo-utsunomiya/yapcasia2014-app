@@ -484,6 +484,9 @@ msgstr "Submit You Talk HERE!"
 msgid "required"
 msgstr "required"
 
+msgid "Event Information"
+msgstr "Event Information"
+
 msgid "Event Title"
 msgstr "Event Title"
 
