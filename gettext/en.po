@@ -550,11 +550,11 @@ msgstr "Official Events"
 msgid "Unofficial Events"
 msgstr "Unofficial Events"
 
-msgid "Here you can see the list of events (other than talk sessions) that are taking place during YAPC::Asia Tokyo 2013."
-msgstr "Here you can see the list of events (other than talk sessions) that are taking place during YAPC::Asia Tokyo 2013."
+msgid "Here you can see the list of events (other than talk sessions) that are taking place during YAPC::Asia Tokyo 2014."
+msgstr "Here you can see the list of events (other than talk sessions) that are taking place during YAPC::Asia Tokyo 2014."
 
-msgid "Please note that YAPC::Asia Tokyo 2013 is NOT affiliated with any of the 'unofficial' events. Should you decide to join any of these event, please do so at your own discretion."
-msgstr "Please note that YAPC::Asia Tokyo 2013 is NOT affiliated with any of the 'unofficial' events. Should you decide to join any of these event, please do so at your own discretion."
+msgid "Please note that YAPC::Asia Tokyo 2014 is NOT affiliated with any of the 'unofficial' events. Should you decide to join any of these event, please do so at your own discretion."
+msgstr "Please note that YAPC::Asia Tokyo 2014 is NOT affiliated with any of the 'unofficial' events. Should you decide to join any of these event, please do so at your own discretion."
 
 msgid "If you would like to organize a new event such as a hackathon, a BOF, a drinkup, an after party, etc, please use this form."
 msgstr "If you would like to organize a new event such as a hackathon, a BOF, a drinkup, an after party, etc, please use this form."

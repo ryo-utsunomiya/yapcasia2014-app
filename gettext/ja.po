@@ -535,11 +535,11 @@ msgstr "公式イベント"
 msgid "Unofficial Events"
 msgstr "非公式イベント"
 
-msgid "Here you can see the list of events (other than talk sessions) that are taking place during YAPC::Asia Tokyo 2013."
-msgstr "こちらではトークセッション以外のYAPC::Asia Tokyo 2013関連のイベントをリストアップしています。"
+msgid "Here you can see the list of events (other than talk sessions) that are taking place during YAPC::Asia Tokyo 2014."
+msgstr "こちらではトークセッション以外のYAPC::Asia Tokyo 2014関連のイベントをリストアップしています。"
 
-msgid "Please note that YAPC::Asia Tokyo 2013 is NOT affiliated with any of the 'unofficial' events. Should you decide to join any of these event, please do so at your own discretion."
-msgstr "なお、「非公式」指定されているイベントに関してはYAPC::Asia Tokyo 2013は直接関与しておりませんので、参加する際にはご注意ください。"
+msgid "Please note that YAPC::Asia Tokyo 2014 is NOT affiliated with any of the 'unofficial' events. Should you decide to join any of these event, please do so at your own discretion."
+msgstr "なお、「非公式」指定されているイベントに関してはYAPC::Asia Tokyo 2014は直接関与しておりませんので、参加する際にはご注意ください。"
 
 msgid "If you would like to organize a new event such as a hackathon, a BOF, a drinkup, an after party, etc, please use this form."
 msgstr "ハッカソン、BOF、 飲み会、後夜祭等のイベントを開催したい方はこちらからご登録ください"
@@ -548,7 +548,7 @@ msgid "Create A New Event"
 msgstr "イベントの作成"
 
 msgid "Here, you can submit a new event (e.g. hackathons, drinkups, BOFs, etc)."
-msgstr "こちらではYAPC::Asia Tokyo 2013関連のイベント（ハッカソン、飲み会、BOF等）の登録ができます。"
+msgstr "こちらではYAPC::Asia Tokyo 2014関連のイベント（ハッカソン、飲み会、BOF等）の登録ができます。"
 
 msgid "If you plan to have people signup for your event, please use and specify an external service like Peatix, ATND, zussar, connpass, etc."
 msgstr "参加登録が必要なイベントの場合はPeatix, ATND, zussar, connpass等の外部サービスを使用してURLをこちらに登録してください"
