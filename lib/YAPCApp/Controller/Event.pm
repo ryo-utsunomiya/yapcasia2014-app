@@ -2,7 +2,7 @@ package YAPCApp::Controller::Event;
 use Mojo::Base 'YAPCApp::Controller::CRUD';
 use YAPCApp::Constants;
 
-sub index { $_[0]->redirect_to("/2013/event/list") }
+sub index { $_[0]->redirect_to("/2014/event/list") }
 
 sub show {
     my $self = shift;
