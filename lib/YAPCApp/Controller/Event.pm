@@ -13,6 +13,7 @@ sub show {
             if ($event->{member_id} eq $member->{id}) {
                 $self->stash( owner => 1 );
             }
+            $self->stash( member => $member );
         }
         $self->stash(organizer => $organizer);
 
