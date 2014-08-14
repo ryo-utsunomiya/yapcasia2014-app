@@ -80,6 +80,10 @@ sub schedule {
         };
 
         if ($format eq 'json') {
+            #XXX
+            my $markdown = $self->app->get('Markdown');
+            my $scrubber = $self->app->get('Scrubber');
+
             foreach my $talks (@talks_by_venue) {
                 foreach my $talk (@$talks) {
                     my $speaker = $talk->{speaker};
@@ -92,6 +96,22 @@ sub schedule {
                     delete $speaker->{updated_on};
                     delete $speaker->{created_on};
                     delete $talk->{tshirt_size};
+                    $talk->{abstract_html} = $self->app->get_talk_abstract($talk, $scrubber, $markdown);
+                }
+            }
+            foreach my $talks (@events_by_venue) {
+                foreach my $talk (@$talks) {
+                    my $speaker = $talk->{speaker};
+                    $speaker->{profile_image_url} = $self->app->get_member_icon_url($speaker);
+                    delete $speaker->{email};
+                    delete $speaker->{is_admin};
+                    delete $speaker->{remote_id};
+                    delete $speaker->{authenticated_by};
+                    delete $speaker->{modified_on};
+                    delete $speaker->{updated_on};
+                    delete $speaker->{created_on};
+                    delete $talk->{tshirt_size};
+                    $talk->{abstract_html} = $self->app->get_talk_abstract($talk, $scrubber, $markdown);
                 }
             }
         }
@@ -101,6 +121,11 @@ sub schedule {
     if ( $self->req->param('print') ){
         $self->stash(
             template => "talk/schedule_print",
+        );
+    }
+    if ( $self->req->param('mobile') ){
+        $self->stash(
+            template => "talk/schedule_mobile",
         );
     }
 

@@ -1,0 +1,17 @@
+.schedule-tabs {
+  margin:1em 1em 0;
+}
+.entry-media {
+  float:left;
+  width:70px;
+}
+.entry-media img {
+  padding:1px;
+  border:1px solid #ccc;
+}
+.entry-info {
+  float:left;
+}
+.clear {
+  clear:both;
+}

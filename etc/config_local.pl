@@ -1,6 +1,8 @@
 warn "config, load 'config_local.pl'";
+my $credentials = require 'credentials.pl';
 
 +{
+    %$credentials,
     Memcached => +{ servers => [ '127.0.0.1:11211' ] },
     'DB::Master' => +[
         'dbi:mysql:dbname=yapc2014',
@@ -22,11 +24,11 @@ warn "config, load 'config_local.pl'";
             mysql_enable_utf8 => 1,
         }
     ],
-    Twitter => { #local dev用 twitter account
-        consumer_key => '37p1zU3nzcOGELSWawufCg',
-        consumer_secret => 'zN48zGLw1d5MfDzssB5R9y4mMFgKzbr0EgOaRsIYdU',
-        callback_url => 'http://localhost:3000/2014/auth/auth_twitter'
-    },
+    # Twitter => { #local dev用 twitter account
+    #     consumer_key => '37p1zU3nzcOGELSWawufCg',
+    #     consumer_secret => 'zN48zGLw1d5MfDzssB5R9y4mMFgKzbr0EgOaRsIYdU',
+    #     callback_url => 'http://localhost:3000/2014/auth/auth_twitter'
+    # },
     Localizer => {
         localizers => [
             { class => 'Gettext', path => app->home->rel_file("gettext/*.po") },
