@@ -123,7 +123,7 @@ sub schedule {
             template => "talk/schedule_print",
         );
     }
-    if ( $self->req->param('mobile') ){
+    if ( $self->req->param('format') eq 'mobile' ){
         $self->stash(
             template => "talk/schedule_mobile",
         );

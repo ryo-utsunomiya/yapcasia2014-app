@@ -48,6 +48,7 @@ yapc2014.controller('ScheduleController', function($scope, $http){
     4 : 'Event Hall / イベントホール'
   };
   $scope.load = function(){
+    myf7.showPreloader();
     $http.get('/2014/talk/schedule?date=' + current_date + '&format=json').success(function(data) {
       var talks = [];
       $.each(data.talks_by_venue, function(){
@@ -79,6 +80,7 @@ yapc2014.controller('ScheduleController', function($scope, $http){
         }
       });
       $scope.talk_set = talk_set;
+      myf7.hidePreloader();
     });
   };
 });
