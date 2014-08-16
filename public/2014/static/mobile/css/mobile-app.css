@@ -12,6 +12,12 @@
 .entry-info {
   float:left;
 }
+.popup-container {
+  display:block;
+}
+h3.entry-title {
+  text-align:center;
+}
 .clear {
   clear:both;
 }

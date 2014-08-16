@@ -29,33 +29,35 @@
                 <a href="#tab2" class="tab-link button " data-date="2014-08-29">Fri 8/29</a>
                 <a href="#tab3" class="tab-link button " data-date="2014-08-30">Sat 8/30</a>
               </div>
-              <div id="schedule" class="content-block" ng-controller="ScheduleController" ng-init="load();">
 
-                <div ng-repeat="(start_time, talks) in talk_set">
+              <div id="schedule" class="content-block" ng-controller="ScheduleController" ng-init="load();">
+                <div ng-controller="TalkController">
+                  <div ng-repeat="(start_time, talks) in talk_set">
                     <div class="content-block-title">{{ start_time }}</div>
                     <div class="list-block media-list">
                       <ul ng-repeat="talk in talks">
-                        <li ng-controller="TalkController">
-                          <div class="item-wrapper">
-                            <a href="#" class="item-content" ng-click="show_detail();">
-                              <div class="popup" ng-class="popup">
-                                <div class="content-block">
-                                  <h3 class="entry-title">{{ talk.title }}</h3>
-                                  <div class="entry-media">
-                                    <img ng-src="{{ talk.speaker.profile_image_url }}" width="60">
-                                  </div>
-                                  <div class="entry-info">
-                                    <div class="entry-text">start: <b>{{ start_time }}</b>
-                                      / duration: <b>{{ talk.duration }}</b>min
-                                    </div>
-                                    <div class="entry-text">by: <b>{{ talk.speaker.name }}</b></div>
-                                    <div class="entry-text">at: <b>{{ talk.venue_name }}</b></div>
-                                  </div>
-                                  <div class="clear"></div>
-                                  <div class="entry-abstract" ng-bind-html="talk.abstract_html">
-                                  </div>
+                        <li>
+                          <div class="item-wrapper" ng-class="'talk-' + talk.id">
+                            <div class="popup">
+                              <div class="content-block">
+                                <h3 class="entry-title">{{ talk.title || talk.title_en }}</h3>
+                                <div class="entry-media">
+                                  <img ng-src="{{ talk.speaker.profile_image_url }}" width="60">
                                 </div>
+                                <div class="entry-info">
+                                  <div class="entry-text">start: <b>{{ start_time }}</b>
+                                    / duration: <b>{{ talk.duration }}</b>min
+                                  </div>
+                                  <div class="entry-text">by: <b>{{ talk.speaker.name }}</b></div>
+                                 <div class="entry-text">at: <b>{{ talk.venue_name }}</b></div>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="entry-abstract" ng-bind-html="talk.abstract_html"></div>
+                                <p><a href="#" class="button button-round close-popup">Close</a></p>
                               </div>
+                            </div>
+                            <!-- /END of popup -->
+                            <a href="#" class="item-content" ng-click="show_detail(talk.id);">
                               <div class="item-media"><img ng-src="{{ talk.speaker.profile_image_url }}" width="50"></div>
                               <div class="item-inner">
                                 <div class="item-title-row">
@@ -69,14 +71,11 @@
                       </ul>
                     </div>
                   </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="popup-container">
-        </div>
-
         <div class="toolbar">
           <div class="toolbar-inner">
             <a href="#" class="link">Schedules</a>

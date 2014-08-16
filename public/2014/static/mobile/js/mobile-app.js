@@ -87,9 +87,8 @@ yapc2014.controller('ScheduleController', function($scope, $http){
 
 yapc2014.controller('TalkController', function($scope, $element){
   $scope.detail = false;
-  $scope.show_detail = function(){
-    var html = $($element).find('.popup')[0];
-    var container = $('.popup-container').append(html);
-    myf7.popup(html);
+  $scope.show_detail = function(id){
+    var elem = angular.element('.talk-' + id).html();
+    myf7.popup(elem);
   };
 });
