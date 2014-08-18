@@ -92,3 +92,9 @@ yapc2014.controller('TalkController', function($scope, $element){
     myf7.popup(elem);
   };
 });
+
+yapc2014.controller('ToolbarController', function($scope){
+  $scope.scroll_to_top = function(){
+    $('.page-content').animate({scrollTop: $('.messages').height() }, 'slow');
+  };
+});
