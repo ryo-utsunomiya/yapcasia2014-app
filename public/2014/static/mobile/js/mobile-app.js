@@ -97,4 +97,9 @@ yapc2014.controller('ToolbarController', function($scope){
   $scope.scroll_to_top = function(){
     $('.page-content').animate({scrollTop: $('.messages').height() }, 'slow');
   };
+  $scope.show_map = function(){
+    var elem = angular.element('#map').html();
+    console.log(elem);
+    myf7.popup(elem);
+  };
 });

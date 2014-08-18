@@ -85,10 +85,17 @@
         <div class="toolbar">
           <div class="toolbar-inner" ng-controller="ToolbarController">
             <a href="#" class="link" ng-click="scroll_to_top();">Schedules</a>
-            <a href="#" class="link" ng-click="show_maps();">Maps</a>
+            <a href="#" class="link" ng-click="show_map();">Maps</a>
           </div>
         </div>
 
+        <div id="map">
+          <div class="popup map">
+            <img src="/2014/static/mobile/img/map.png" />
+            <p><a href="#" class="button button-round close-popup">Close</a></p>
+          </div>
+        </div>
+            
       </div>
     <script type="text/javascript" src="/2014/static/mobile/js/framework7.js"></script>
     <script type="text/javascript" src="/2014/static/mobile/js/jquery.min.js"></script>
