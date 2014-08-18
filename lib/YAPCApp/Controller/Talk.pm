@@ -99,9 +99,9 @@ sub schedule {
                     $talk->{abstract_html} = $self->app->get_talk_abstract($talk, $scrubber, $markdown);
                 }
             }
-            foreach my $talks (@events_by_venue) {
-                foreach my $talk (@$talks) {
-                    my $speaker = $talk->{speaker};
+            foreach my $events (@events_by_venue) {
+                foreach my $event (@$events) {
+                    my $speaker = $event->{speaker};
                     $speaker->{profile_image_url} = $self->app->get_member_icon_url($speaker);
                     delete $speaker->{email};
                     delete $speaker->{is_admin};
@@ -110,8 +110,8 @@ sub schedule {
                     delete $speaker->{modified_on};
                     delete $speaker->{updated_on};
                     delete $speaker->{created_on};
-                    delete $talk->{tshirt_size};
-                    $talk->{abstract_html} = $self->app->get_talk_abstract($talk, $scrubber, $markdown);
+                    delete $event->{tshirt_size};
+                    $event->{abstract_html} = $self->app->get_event_description($event, $scrubber, $markdown);
                 }
             }
         }
