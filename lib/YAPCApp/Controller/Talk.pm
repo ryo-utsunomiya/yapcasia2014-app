@@ -156,7 +156,7 @@ sub list {
             rejected_talks => $rejected_talks,
         );
     } elsif ( $status && $status eq 'pending' ){
-        my $member = $self->assert_email or return;
+        my $member = $self->get_member;
         if ( $member->{is_admin} ){
             my $pending_talks = $talk_api->search(
                 { status => 'pending' },
@@ -375,7 +375,7 @@ sub commit {
         {
             local $self->stash->{format} = "eml";
             local $self->stash->{member} = $member;
-            $message = $self->render( "talk/thankyou", partial => 1);
+            $message = ($talk->{duration} != 5) ? $self->render( "talk/thankyou", partial => 1) : $self->render( "talk/thankyou_lt", partial => 1);
         }
         $self->get('API::Email')->send_email({
             to      => $member->{email},
