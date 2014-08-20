@@ -1,17 +1,20 @@
 [% WRAPPER 'layouts/default.html.tx' WITH
-title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
+title = (is_edit) ? loc("Edit Your Talk") _ '(LT)' : loc("Submit a new talk") _ '(LT)'
 %]
+
+<section>
+<div class="section">
+<h1 class="title">
+<div class="innerblock">
+<span class="icon-jp_icon_paper_fan"></span> <b>[% title %]</b></div>
+</h1>
+<div class="body">
+<div class="innerblock">
+
 
 <style>
   .error { color : red }
 </style>
-
-<div id="main">
-
-<div id="lead" class="section">
-<h1 class="corners">[% IF (is_edit) %][% loc("Edit Your Talk") %][% ELSE %][% loc("Submit a new talk") %][% END %]</h1>
-<div class="body">
-<h2 class="corners"></h2>
 
 <div id="main-contents">
 
@@ -203,12 +206,9 @@ title = (is_edit) ? loc("Edit Your Talk") : loc("Submit a new talk")
 
 
 
-
-
-
+</div>
 </div><!--  / .body /  -->
 </div><!--  / .section /  -->
-
-</div><!--  / #main /  -->
+</section>
 
 [% END %]
