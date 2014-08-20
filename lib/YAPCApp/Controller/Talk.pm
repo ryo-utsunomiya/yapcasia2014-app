@@ -372,6 +372,7 @@ sub commit {
     if (! $data->{is_edit}) {
         # all done, send a notification
         my $message;
+        my $talk = $self->stash->{talk};
         {
             local $self->stash->{format} = "eml";
             local $self->stash->{member} = $member;
@@ -383,7 +384,6 @@ sub commit {
             message => $message->to_string,
         });
 
-        my $talk = $self->stash->{talk};
         if ($talk->{duration} != 5) {
             # The url must be protected, so we need to calculate
             # the number of bytes UP to the URL, and it needs to be 58 chars
