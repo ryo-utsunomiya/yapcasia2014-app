@@ -8,10 +8,6 @@ YAPC::Asia 2014 Tokyoのトークへ応募いただきありがとうござい�
     日本語タイトル： [% talk.title %]
     英語タイトル　： [% talk.title_en %]
 
-トークの採択はトークページにある各種ソーシャルボタンの数値を参考に
-運営側で判断させていただきます。是非ご自分のトークを知ってもらえる
-よう、下記トーク詳細閲覧用URLをまわりに是非紹介してください。
-
     http://yapcasia.org/2014/talk/show/[% talk.id %]
 
 採択された場合、メールにてお知らせいたします。
@@ -35,11 +31,6 @@ YAPC::Asia Tokyo 2014.
 
     English : [% talk.title_en %]
     Japanese: [% talk.title %]
-
-The organizers will determine if your talk is accepted or not.
-The decision will partially based on the amount of feedback
-for each social media, so please promote your talk URL below to
-increase your chances of getting accepted.
 
     http://yapcasia.org/2014/talk/show/[% talk.id %]
 

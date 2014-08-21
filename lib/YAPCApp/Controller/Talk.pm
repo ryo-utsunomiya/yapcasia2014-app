@@ -197,6 +197,15 @@ sub show {
             $self->stash( member => $member );
         }
 
+        # LTは採用されたもの以外は ownerとadmin 以外はページの閲覧が出来ないようにする
+        if ( $talk->{duration} == 5 && $talk->{duration} ne 'accepted' ){
+            if ( !$self->stash->{member} || !$self->stash->{owner} || !$self->stash->{member}->{is_admin} ) {
+                $self->render( text => "Currently talk submissions are disabled" );
+                $self->rendered(403);
+                return;
+            }
+        }
+
         if( my $venue_id = $talk->{venue_id} ){
             $talk->{venue} = VENUE_ID2NAME->{$venue_id};
         }
