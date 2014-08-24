@@ -18,7 +18,55 @@ var get_current_date = function(){
   });
   return default_date;
 };
-var current_date = get_current_date();
+
+function get_param(key) {
+  var url = location.href;
+  parameters = url.split("?");
+  params = parameters[1].split("&");
+  var params_array = [];
+  for ( i = 0; i < params.length; i++ ) {
+    neet = params[i].split("=");
+    params_array.push(neet[0]);
+    params_array[neet[0]] = neet[1];
+  }
+  var value = params_array[key] || null;
+  return value;
+}
+
+function set_param(key, value) {
+  var uri = location.href;
+  var re = new RegExp("([?&])" + key + "=.*?(&|$)");
+  var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+  if (uri.match(re)) {
+    uri = uri.replace(re, '$1' + key + "=" + value + '$2');
+  }
+  else {
+    uri = uri + separator + key + "=" + value;
+  }
+  window.history.pushState(null,null,uri);
+}
+
+var current_date;
+var param_date = get_param('date');
+if(param_date) {
+  var list = ['2014-08-28', '2014-08-29', '2014-08-30'];
+  $.each(list, function(){
+    if(param_date == this) current_date = this;
+  });
+}else{
+  current_date = get_current_date();
+}
+
+yapc2014.directive("highlight", function() {
+  return function(scope, element, attrs) {
+    element.on('mouseleave', function(event) {
+      element.removeClass(attrs.highlight)
+    })
+    element.on('mousedown', function(event) {
+      element.addClass(attrs.highlight)
+    })
+  }
+});
 
 yapc2014.controller('DateController', function($scope){
   $scope.change_date = function(){
@@ -32,6 +80,7 @@ yapc2014.controller('DateController', function($scope){
   };
   $('.tab-link').click(function(){
     current_date = $(this).attr('data-date');
+    set_param('date', current_date);
     $scope.change_date();
     var scope = angular.element($('#schedule')).scope();
     scope.$apply(function(){
