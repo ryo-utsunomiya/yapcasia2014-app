@@ -83,6 +83,9 @@ title = loc("[_1]'s Page", member.name || member.nickname)
                 <ul>
 [% IF member.email) %]
                   <li>
+                    <a href="/2014/talk/input?lt=1">[% loc("Submit a new talk") %] (LT)</a>
+                  </li>
+                  <li>
                     <a href="/2014/member/email_edit">[% loc("Register a new email address") %]</a>
                   </li>
 [% END %]

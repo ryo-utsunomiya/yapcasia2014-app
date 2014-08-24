@@ -144,7 +144,7 @@ sub list {
     my $talk_api = $self->get('API::Talk');
     my $member_api = $self->get('API::Member');
 
-    if ( $status eq 'rejected' ){
+    if ( $status && $status eq 'rejected' ){
         my $rejected_talks = $talk_api->search(
             { status => 'rejected' },
             { order_by => "start_on ASC, created_on DESC" },
@@ -155,20 +155,29 @@ sub list {
         $self->stash(
             rejected_talks => $rejected_talks,
         );
+    } elsif ( $status && $status eq 'pending' ){
+        my $member = $self->get_member;
+        if ( $member->{is_admin} ){
+            my $pending_talks = $talk_api->search(
+                { status => 'pending' },
+                { order_by => "start_on ASC, created_on DESC" },
+            );
+            foreach my $talk ( @$pending_talks ){
+                $talk->{speaker} = $member_api->lookup( $talk->{member_id} );
+            }
+            $self->stash(
+                pending_talks => $pending_talks,
+            );
+        }
     } else {
-        my $pending_talks = $talk_api->search(
-            { status => 'pending' },
-            { order_by => "start_on ASC, created_on DESC" },
-        );
         my $accepted_talks = $talk_api->search(
             { status => 'accepted' },
             { order_by => "start_on ASC, created_on DESC" },
         );
-        foreach my $talk ( ( @$pending_talks, @$accepted_talks ) ){
+        foreach my $talk ( @$accepted_talks ){
             $talk->{speaker} = $member_api->lookup( $talk->{member_id} );
         }
         $self->stash(
-            pending_talks => $pending_talks,
             accepted_talks => $accepted_talks
         );
     }
@@ -186,6 +195,15 @@ sub show {
                 $self->stash( owner => 1 );
             }
             $self->stash( member => $member );
+        }
+
+        # LTは採用されたもの以外は ownerとadmin 以外はページの閲覧が出来ないようにする
+        if ( $talk->{duration} == 5 && $talk->{duration} ne 'accepted' ){
+            if ( !$self->stash->{member} || ( !$self->stash->{owner} && !$self->stash->{member}->{is_admin} ) ) {
+                $self->render( text => "Currently talk submissions are disabled" );
+                $self->rendered(403);
+                return;
+            }
         }
 
         if( my $venue_id = $talk->{venue_id} ){
@@ -228,9 +246,9 @@ sub input {
     }
 
     ## 新規トークの受付を中止
-    state $deadline = timelocal(0, 0, 17, 4, 7-1, 114);
+    state $deadline = timelocal(0, 0, 0, 27, 8-1, 114);
     my $now = time();
-    if (!$member->{is_admin} && $now > $deadline) {
+    if (!$member->{is_admin} && $now > $deadline && !$is_lt) {
         $self->render( text => "Currently talk submissions are disabled" );
         $self->rendered(403);
         return;
@@ -319,9 +337,9 @@ sub preview {
 
     ## 新規トークの受付を中止
     my $object = $self->load_from_subsession();
-    state $deadline = timelocal(0, 0, 17, 4, 7-1, 114);
+    state $deadline = timelocal(0, 0, 0, 27, 8-1, 114);
     my $now = time();
-    if (!$member->{is_admin} && !$object->{is_edit} && $now > $deadline) {
+    if (!$member->{is_admin} && !$object->{is_edit} && $now > $deadline && $object->{duration} != 5) {
         $self->render( text => "Currently talk submissions are disabled" );
         $self->rendered(403);
         return;
@@ -363,10 +381,11 @@ sub commit {
     if (! $data->{is_edit}) {
         # all done, send a notification
         my $message;
+        my $talk = $self->stash->{talk};
         {
             local $self->stash->{format} = "eml";
             local $self->stash->{member} = $member;
-            $message = $self->render( "talk/thankyou", partial => 1);
+            $message = ($talk->{duration} != 5) ? $self->render( "talk/thankyou", partial => 1) : $self->render( "talk/thankyou_lt", partial => 1);
         }
         $self->get('API::Email')->send_email({
             to      => $member->{email},
@@ -374,7 +393,6 @@ sub commit {
             message => $message->to_string,
         });
 
-        my $talk = $self->stash->{talk};
         if ($talk->{duration} != 5) {
             # The url must be protected, so we need to calculate
             # the number of bytes UP to the URL, and it needs to be 58 chars

@@ -105,9 +105,9 @@
 </style>
 
 <div id="main-contents">
-YAPC::Asia Tokyo 2013 - [% IF date == '2013-09-20' %] 9/20 (金)[% ELSE %] 9/21 (土)[% END %] トークスケジュール<br />
+YAPC::Asia Tokyo 2014 - [% IF date == '2014-08-29' %] 8/29 (金)[% ELSE %] 8/30 (土)[% END %] トークスケジュール<br />
 <span style="font-size:0.4em">(*)各エントリは「タイトル スピーカー[対象][ジャンル][言語]」　(*)Each entry is showing " title speaker[audience][genre][language]"</span><br />
-<span style="font-size:0.4em">(*)当日の最新情報はウェブサイトをご参照ください。 (*)Latest information on the day, please refer to the website.  "http://yapcasia.org/2013/talk/schedule"
+<span style="font-size:0.4em">(*)当日の最新情報はウェブサイトをご参照ください。 (*)Latest information on the day, please refer to the website.  "http://yapcasia.org/2014/talk/schedule"
 <div class="section">
 <div class="schedule">
 <div class="timeaxis">
@@ -115,11 +115,11 @@ YAPC::Asia Tokyo 2013 - [% IF date == '2013-09-20' %] 9/20 (金)[% ELSE %] 9/21 
 [% IF (date == "2013-09-19") %][% SET hours = [ 17..21 ] %][% END %]
 [% FOREACH hour IN hours %]
 [% IF (hour == 9) %]
-[% FOREACH minute IN [ 30, 40, 50 ] %]
+[% FOREACH minute IN [ 50 ] %]
 <div class="row"><span class="hm">[% hour %]:[% minute %]</span></div>
 [% END %]
 [% ELSIF hour == 18 %]
-[% FOREACH minute IN [ "00", 10, 20, 30 ] %]
+[% FOREACH minute IN [ "00", 10, 20, 30, 40, 50 ] %]
 <div class="row"><span class="hm">[% hour %]:[% minute %]</span></div>
 [% END # minute %]
 [% ELSE %]
@@ -135,7 +135,7 @@ YAPC::Asia Tokyo 2013 - [% IF date == '2013-09-20' %] 9/20 (金)[% ELSE %] 9/21 
 
 [% FOREACH talk IN talks_by_venue.item(loop.index) %]
 [% SET t = get_talk_schedule_time(talk) %]
-[% SET top = ( 4 + (t.hour - 10) * 6 + t.minute/10) * 16 -2 %]
+[% SET top = ( 4 + (t.hour - 10) * 6 + t.minute/10) * 16 -2 -32 %]
 [% IF t.hour > 11 %]
 [% top = top + 10 %]
 [% END %]
@@ -143,7 +143,7 @@ YAPC::Asia Tokyo 2013 - [% IF date == '2013-09-20' %] 9/20 (金)[% ELSE %] 9/21 
 [% SET h = talk.duration / 10 * 16 -1 %]
 [% IF (t.hour == 11 && t.minute == 40) || (t.hour == 11 && t.minute == 20 && talk.duration == 40) %]
 [% h = h + 10 %]
-[% ELSIF talk.id == '389f68b0-00e3-11e3-8088-bc4f6aeab6a4' %]
+[% ELSIF talk.id == '4a499ffe-268f-11e4-a449-654f6aeab6a4' %]
 [% h = 64 -1 %]
 [% END %]
 
@@ -151,18 +151,42 @@ YAPC::Asia Tokyo 2013 - [% IF date == '2013-09-20' %] 9/20 (金)[% ELSE %] 9/21 
 <a id="[% talk.id %]"></a>
 <div class="title" style="font-size:8px;">
     <a href="/2013/talk/show/[% talk.id %]">
-[% IF talk.id == '1973a82a-c781-11e2-be2e-7ec06aeab6a4' %]オープニング
-[% ELSIF talk.id == '961396b6-c82f-11e2-9315-13836aeab6a4'%]クロージング
+[% IF talk.id == '1ebc2e92-0c68-11e4-aec0-ad686aeab6a4' %]オープニング
+[% ELSIF talk.id == '28f95212-0c87-11e4-aec0-ad686aeab6a4'%]クロージング
 [% ELSE %]
 [% talk.title || talk.title_en %]
 [% END %]
 </a>
-    <span class="speaker"><a href="/2013/member/show/[% talk.speaker.id %]"></a> [% talk.speaker.name || talk.speaker.nickname %]</span> <span class="level">[[% talk.material_level %]][[% talk.category %]][[% talk.language %]]</span>
-    [% IF talk.id == '389f68b0-00e3-11e3-8088-bc4f6aeab6a4' %]<br />(*)懇親会は20:00までです[% END %]
+    <span class="speaker"><a href="/2013/member/show/[% talk.speaker.id %]"></a> [% talk.speaker.name || talk.speaker.nickname %]</span> <span class="level">[[% talk.material_level %]][[% talk.category %]][[% talk.language %]]</span>　　　　　　　　　　
+</div>
+</div>
+[% END %]
+
+[% FOREACH talk IN events_by_venue.item(loop.index) %]
+[% SET t = get_talk_schedule_time(talk) %]
+[% SET top = ( 4 + (t.hour - 10) * 6 + t.minute/10) * 16 -2 -32 %]
+[% IF t.hour > 11 %]
+[% top = top + 10 %]
+[% END %]
+
+[% SET h = talk.duration / 10 * 16 -1 %]
+[% IF (t.hour == 11 && t.minute == 40) || (t.hour == 11 && t.minute == 20 && talk.duration == 40) %]
+[% h = h + 10 %]
+[% ELSIF talk.id == '4a499ffe-268f-11e4-a449-654f6aeab6a4' %]
+[% h = 64 -1 %]
+[% END %]
+
+<div class="talk" style="top: [% top %]px; height: [% h %]px">
+<a id="[% talk.id %]"></a>
+<div class="title" style="font-size:8px;">
+    <a href="/2013/talk/show/[% talk.id %]">[% talk.title || talk.title_en %]</a>
+    <span class="speaker"><a href="/2013/member/show/[% talk.speaker.id %]"></a> [% talk.speaker.name || talk.speaker.nickname %]</span> <span class="level">[event]</span>
+    [% IF talk.id == '4a499ffe-268f-11e4-a449-654f6aeab6a4' %]<br />(*)懇親会は21:00までです[% END %]
 　　　　　　　　　　
 </div>
 </div>
 [% END %]
+
 </div>
 [% END %]
 </div>
