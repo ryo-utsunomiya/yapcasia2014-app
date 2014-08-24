@@ -5,6 +5,9 @@ body {
 .active {
   color:#cc4200;
 }
+.content-block {
+  margin-bottom:80px;
+}
 .list-block .item-title {
   font-size:15px;
 }
