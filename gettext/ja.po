@@ -379,8 +379,8 @@ msgstr "投票対象リスト"
 msgid "Talks You Voted For"
 msgstr "投票済みのトーク"
 
-msgid "If you have a 2-day pass, then you have 4 votes. If you have a 1-day pass, you have 2 votes."
-msgstr "2日通し券をお持ちの場合は4票分、1日券の場合は2票分の投票が可能です"
+msgid "If you have a 2-day pass, then you have 4 votes (2 votes/day). If you have a 1-day pass, you have 2 votes."
+msgstr "2日通し券をお持ちの場合は1日2票ずつで4票分、1日券の場合は2票分の投票が可能です"
 
 msgid "Cancel Vote"
 msgstr "投票をキャンセル"
@@ -589,5 +589,8 @@ msgstr "多目的教室3"
 msgid "List of Talks"
 msgstr "トーク一覧"
 
-msdid "Vote in the ticket ID of another"
+msgid "Vote in the ticket ID of another"
 msgstr "別のチケットIDで投票"
+
+msgid "you have 2 votes on talk."
+msgstr "2つのトークに投票できます。"

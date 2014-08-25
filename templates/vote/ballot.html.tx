@@ -14,7 +14,7 @@
 <h2>[% loc('Vote ID') %] : [% ballot_id %]</h2>
 <p>[% loc('Number of Ballots (used/total)') %] : [% talks.size() || 0 %] / [% IF ballot.ticket_type == 'twodays' %]4[% ELSE %]2[% END %] <a href="/2014/vote/form">[% loc('Vote in the ticket ID of another') %]</a></p>
 
-<p>[% loc('If you have a 2-day pass, then you have 4 votes. If you have a 1-day pass, you have 2 votes.') %]</p>
+<p>[% loc('If you have a 2-day pass, then you have 4 votes (2 votes/day). If you have a 1-day pass, you have 2 votes.') %]</p>
 
 <ul>
 [% IF ballot.ticket_type == 'day1' || ballot.ticket_type == 'twodays' %]

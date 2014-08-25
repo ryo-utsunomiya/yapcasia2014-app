@@ -13,17 +13,12 @@ title = loc('Vote For Best Talk Awards')
 
 <h2>[% loc('List Of Vote Candidates') %] - [% date %]</h2>
 
-<p>
-  投票したいトークにチェックを入れて投票ボタンを押してください。<br />
-  トークは２つまで選択することができます。
-</p>
+<p>[% loc('you have 2 votes on talk.') %]</p>
 
 <form action="/2014/vote/cast" method="post" class="form-horizontal">
 
-<div class="control-group">
-
-[% FOREACH talk IN talks %]
 <div class="form-group">
+[% FOREACH talk IN talks %]
     <input type="checkbox" name="talk_id" id="[% talk.id %]" value="[% talk.id %]"[% IF votes.${talk.id} %] checked="checked"[% END %] />
     <label for="[% talk.id %]" class="control-label">
         <a href="/2014/talk/show/[% talk.id %]" target="_new">
@@ -34,13 +29,11 @@ title = loc('Vote For Best Talk Awards')
             [%- END %]
         </a>
     </label>
+    <br />
+[% END %]
 </div>
 
 <input type="submit" value="vote!" class="btn btn-info btn-mini" onclick="javascript:alert('投票を更新しました。/ updated your votes')" />
-
-[% END %]
-
-</div>
 
 </form>
 
