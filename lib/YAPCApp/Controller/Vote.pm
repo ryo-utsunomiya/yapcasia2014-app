@@ -78,7 +78,7 @@ sub list {
         return;
     }
 
-    my $date = $self->match->captures->{date};
+    my $date = $self->param('date');
 
     if ($date !~ /^2014-08-(29|30)$/) {
         $self->render_text("Invalid date");

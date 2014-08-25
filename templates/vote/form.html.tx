@@ -1,5 +1,5 @@
 [% WRAPPER 'layouts/default.html.tx' WITH
-title = loc("Best Talk Votes") _ ' - Regist Your Ticket NO.'
+title = loc("Vote For Best Talk Awards") _ ' - Regist Your Ticket NO.'
 %]
 
 <section>

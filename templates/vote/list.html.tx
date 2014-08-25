@@ -1,5 +1,5 @@
 [% WRAPPER 'layouts/default.html.tx' WITH
-title = 'Vote'
+title = loc('Vote For Best Talk Awards')
 %]
 
 <section>
@@ -11,7 +11,7 @@ title = 'Vote'
 <div class="body">
 <div class="innerblock">
 
-<h2>[% loc('vote list') %] - [% date %]</h2>
+<h2>[% loc('List Of Vote Candidates') %] - [% date %]</h2>
 
 <p>
   投票したいトークにチェックを入れて投票ボタンを押してください。<br />
@@ -20,21 +20,24 @@ title = 'Vote'
 
 <form action="/2014/vote/cast" method="post" class="form-horizontal">
 
-<input type="submit" value="vote!" class="button button-success button-large" />
-
 <div class="control-group">
 
 [% FOREACH talk IN talks %]
-<div class="checkbox">
-      <input type="checkbox" name="talk_id" id="[% talk.id %]" value="[% talk.id %]"[% IF votes.${talk.id} %] checked="checked"[% END %] />
-      <a href="/2014/talk/show/[% talk.id %]" target="_new">
-        [%- IF lang == 'ja' %]
-          [%- talk.title || talk.title_en %]
-        [%- ELSE %]
-          [%- talk.title_en || talk.title %]
-        [%- END %]
-      </a>
+<div class="form-group">
+    <input type="checkbox" name="talk_id" id="[% talk.id %]" value="[% talk.id %]"[% IF votes.${talk.id} %] checked="checked"[% END %] />
+    <label for="[% talk.id %]" class="control-label">
+        <a href="/2014/talk/show/[% talk.id %]" target="_new">
+            [%- IF lang == 'ja' %]
+              [%- talk.title || talk.title_en %]
+            [%- ELSE %]
+              [%- talk.title_en || talk.title %]
+            [%- END %]
+        </a>
+    </label>
 </div>
+
+<input type="submit" value="vote!" class="btn btn-info btn-mini" onclick="javascript:alert('投票を更新しました。/ updated your votes')" />
+
 [% END %]
 
 </div>

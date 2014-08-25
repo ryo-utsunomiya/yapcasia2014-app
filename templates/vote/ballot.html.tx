@@ -1,5 +1,5 @@
 [% WRAPPER 'layouts/default.html.tx' WITH
-    title = loc("Best Talk Votes")
+    title = loc("Vote For Best Talk Awards")
 %]
 
 <section>
@@ -11,21 +11,21 @@
 <div class="body">
 <div class="innerblock">
 
-<h2>投票ID : [% ballot_id %]</h2>
-<p><a href="/2014/vote/form">その他のIDで投票する</a></p>
+<h2>[% loc('Vote ID') %] : [% ballot_id %]</h2>
+<p>[% loc('Number of Ballots (used/total)') %] : [% talks.size() || 0 %] / [% IF ballot.ticket_type == 'twodays' %]4[% ELSE %]2[% END %] <a href="/2014/vote/form">[% loc('Vote in the ticket ID of another') %]</a></p>
 
-<h3>投票リンク</h3>
+<p>[% loc('If you have a 2-day pass, then you have 4 votes. If you have a 1-day pass, you have 2 votes.') %]</p>
 
-チケットの種類に応じて参加したそれぞれの開催日ごとに、２つのトークに投票できます。
-
+<ul>
 [% IF ballot.ticket_type == 'day1' || ballot.ticket_type == 'twodays' %]
-<p><a href="/2014/vote/list/2014-08-29" target="_new">8/29のトークに投票する</a></p>
+<li><a href="/2014/vote/list/2014-08-29" target="_new">8/29のトークに投票する</a></li>
 [% END %]
 [% IF ballot.ticket_type == 'day2' || ballot.ticket_type == 'twodays' %]
-<p><a href="/2014/vote/list/2014-08-30" target="_new">8/30のトークに投票する</a></p>
+<li><a href="/2014/vote/list/2014-08-30" target="_new">8/30のトークに投票する</a></li>
 [% END %]
+</ul>
 
-<h3>投票したトーク一覧</h3>
+<h3>[% loc('Talks You Voted For') %]</h3>
 [% IF talks %]
 <form action="./cancel" method="post">
 <div class="control-group">
@@ -33,14 +33,14 @@
     <input type="checkbox" name="talk_id" value="[% talk.id %]" />
     <a href="/2014/talk/show/[% talk.id %]">
         [%- IF lang == 'ja' %]
-          [%- talk.title || talk.title_en %]
+          [%- talk.title || talk.title_en %] - [% talk.speaker.name %]
         [%- ELSE %]
-          [%- talk.title_en || talk.title %]
+          [%- talk.title_en || talk.title %] - [% talk.speaker.name %]
         [%- END %]
     </a>
     <br />
     [% END %]
-<input type="submit" value="削除" class="button button-danger button-mini" />
+<input type="submit" value="Delete" class="btn btn-danger btn-mini"  />
 </div>
 
 </form>
