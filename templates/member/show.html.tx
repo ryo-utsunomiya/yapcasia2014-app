@@ -79,6 +79,10 @@ title = loc("[_1]'s Page", member.name || member.nickname)
 [% END # IF (events.size) %]
 
 [% IF (owner) %]
+                <h4>[% loc("Best Talk Votes") %]</h4>
+                <ul>
+                    <li><a href="/2014/vote/ballot">[% loc("Best Talk Votes") %]</a></li>
+                </ul>
                 <h4>[% loc("Menu") %]</h4>
                 <ul>
 [% IF member.email) %]

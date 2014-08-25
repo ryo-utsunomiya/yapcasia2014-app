@@ -1,36 +1,51 @@
 [% WRAPPER 'layouts/default.html.tx' WITH
-title = 'Vote'
+title = loc("Best Talk Votes") _ ' - Regist Your Ticket NO.'
 %]
 
-<div id="main">
-
-<div id="lead" class="section">
-<h1 class="corners">Vote</h1>
+<section>
+<div class="section">
+<h1 class="title">
+<div class="innerblock">
+<span class="icon-jp_icon_paper_fan"></span> <em>[% title %]</em></div>
+</h1>
 <div class="body">
+<div class="innerblock">
 
-<style type="text/css">
-<!--
+<form action="/2014/vote/ballot" method="get">
 
--->
-</style>
+    <div class="form-group">
+        <label for="ballot_id" class="col-sm-2 control-label">チケット番号：</label>
+        <div class="col-sm-10">
+            <div class="col-sm-4">
+                <p><input id="ballot_id" name="ballot_id" class="form-control input-lg" type="text" placeholder=""></p>
+            </div>
+            <div class="col-sm-2">
+                <input type="submit" value="[% loc("Submit") %]" class="btn btn-info btn-lg">
+            </div>
+        </div>
+    </div>
 
-<div id="main-contents">
-
-<form action="./" method="get">
-  <div class="controls">
-  チケット番号：  
-  <input type="text" name="ballot_id" value="" />
-  <input type="submit" class="button button-yapc" />
 </form>
 
+<div>
+  <strong>チケットを購入された方はトークに投票することができます。</strong><br />
+  投票結果はクロージングで発表しますので、是非よかったトークに投票をお願いします。<br />
+  今年も参加者による投票で決める「ベストトーク賞」を用意しております！<br />
+  関連記事：<a href="http://yapcasia.org/2013/07/yapcasia-2013-prize.html">YAPC::Asia 2013 ベストトーク賞の賞品決定！＆トーク申し込みは本日締切！</a><br />
+  <br />
+  投票に必要なチケット番号はpeatixで購入したチケットのQRコードを表示するページに記載されています。<br />
+  具体的な記載場所は、以下の例の画像の箇所です。<br />
+  ご不明な点はお気軽にスタッフにおたずねください。<br />
 </div>
 
+<div style="text-align:center">
+  <img src="http://yapcasia.org/2013/ticket_view.png" />
 </div>
 
+
+</div>
 </div><!--  / .body /  -->
 </div><!--  / .section /  -->
-
-</div><!--  / #main /  -->
+</section>
 
 [% END %]
-

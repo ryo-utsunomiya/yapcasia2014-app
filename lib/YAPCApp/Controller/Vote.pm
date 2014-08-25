@@ -35,13 +35,14 @@ sub form {
 sub ballot {
     my $self = shift;
 
-    my $ballot_id = 
-        $self->req->param('ballot_id') || 
+    my $ballot_id =
+        $self->req->param('ballot_id') ||
         $self->sessions->get('ballot_id')
     ;
     warn $ballot_id;
     if (! $ballot_id) {
         # do nothing
+        $self->redirect_to("/2014/vote/form");
         return;
     }
     my $ballot = $self->get('API::Ballot')->lookup($ballot_id);
@@ -67,7 +68,7 @@ sub list {
 
     my $ballot_id = $self->sessions->get('ballot_id');
     if (! $ballot_id) {
-        $self->redirect_to("/2013/vote/ballot");
+        $self->redirect_to("/2014/vote/ballot");
         return;
     }
     my $ballot = $self->get('API::Ballot')->lookup($ballot_id);
@@ -79,7 +80,7 @@ sub list {
 
     my $date = $self->match->captures->{date};
 
-    if ($date !~ /^2013-09-2[01]$/) {
+    if ($date !~ /^2014-08-(29|30)$/) {
         $self->render_text("Invalid date");
         $self->rendered(500);
         return;
@@ -130,7 +131,7 @@ sub cast {
         $refdate   = undef; # don't matter
     } else {
         $max_votes = 2;
-        $refdate   = $ticket_type eq 'day1' ? '2013-09-20' : '2013-09-21';
+        $refdate   = $ticket_type eq 'day1' ? '2014-08-29' : '2014-08-30';
     }
 
     # You can only vote $max_votes, so make sure that the total number
@@ -166,7 +167,7 @@ sub cast {
         ballot_id => $ballot_id,
         talk_id   => \@talks
     });
-    $self->redirect_to("/2013/vote/ballot");
+    $self->redirect_to("/2014/vote/ballot");
 }
 
 sub cancel {
@@ -186,7 +187,7 @@ sub cancel {
         ballot_id => $ballot_id,
         talk_id => { in => \@talks }
     });
-    $self->redirect_to('/2013/vote/ballot');
+    $self->redirect_to('/2014/vote/ballot');
 }
 
 1;

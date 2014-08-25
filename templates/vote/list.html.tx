@@ -2,19 +2,14 @@
 title = 'Vote'
 %]
 
-<div id="main">
-
-<div id="lead" class="section">
-<h1 class="corners">Vote</h1>
+<section>
+<div class="section">
+<h1 class="title">
+<div class="innerblock">
+<span class="icon-jp_icon_paper_fan"></span> <em>[% title %]</em></div>
+</h1>
 <div class="body">
-
-<style type="text/css">
-<!--
-
--->
-</style>
-
-<div id="main-contents">
+<div class="innerblock">
 
 <h2>[% loc('vote list') %] - [% date %]</h2>
 
@@ -23,7 +18,7 @@ title = 'Vote'
   トークは２つまで選択することができます。
 </p>
 
-<form action="/2013/vote/cast" method="post" class="form-horizontal">
+<form action="/2014/vote/cast" method="post" class="form-horizontal">
 
 <input type="submit" value="vote!" class="button button-success button-large" />
 
@@ -32,7 +27,7 @@ title = 'Vote'
 [% FOREACH talk IN talks %]
 <div class="checkbox">
       <input type="checkbox" name="talk_id" id="[% talk.id %]" value="[% talk.id %]"[% IF votes.${talk.id} %] checked="checked"[% END %] />
-      <a href="/2013/talk/show/[% talk.id %]" target="_new">
+      <a href="/2014/talk/show/[% talk.id %]" target="_new">
         [%- IF lang == 'ja' %]
           [%- talk.title || talk.title_en %]
         [%- ELSE %]
@@ -47,11 +42,8 @@ title = 'Vote'
 </form>
 
 </div>
-
 </div><!--  / .body /  -->
 </div><!--  / .section /  -->
-
-</div><!--  / #main /  -->
+</section>
 
 [% END %]
-
