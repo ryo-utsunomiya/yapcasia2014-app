@@ -1,0 +1,58 @@
+#!/usr/bin/env perl
+
+use strict;
+use Encode qw(decode_utf8);
+use JSON;
+use File::Temp qw(tempfile);
+use File::Copy qw(move);
+use Data::Dumper;
+use YAPCApp;
+use utf8;
+
+my @ids = qw( 38603 38605 38607 38608 );
+my %ticket_name2id = (
+    "Student pass" => "student_en",
+    "学生チケット(無料)" => "student",
+    "Early Bird 2 day pass" => "early_bird_en",
+    "先行販売 2日通し券(Tシャツ付き)" => "early_bird",
+    "2 day pass w T-shirt" => "twoday_pass_en",
+    "2日通し券 (Tシャツ付き)" => "twoday_pass",
+    "8/29 1 day pass w T-shirt" => "oneday_pass_1_en",
+    "8/29 1日券 (Tシャツ付き)" => "oneday_pass_1",
+    "8/30 1 day pass w T-shirt" => "oneday_pass_2_en",
+    "8/30 1日券 (Tシャツ付き)" => "oneday_pass_2",
+    "8/29 1 day pass w/o T-shirt" => "oneday_pass_1_no_tshirt_en",
+    "8/29 1日券 (Tシャツ無し)" => "oneday_pass_1_no_tshirt",
+    "8/30 1 day pass w/o T-shirt" => "oneday_pass_2_no_tshirt_en",
+    "8/30 1日券 (Tシャツ無し)" => "oneday_pass_2_no_tshirt",
+);
+
+my $app = YAPCApp->new;
+my $ballot_api = $app->container->get('API::Ballot');
+
+for my $id ( @ids ){
+    my $json = `$^X ./script/fetch_csv $id`;
+    my $data = JSON::decode_json($json);
+    for my $key ( keys ( %$data ) ) {
+        for my $vote_id ( @{$data->{$key}->{vote_id}} ){
+
+            my $peatix_ticket_id = $ticket_name2id{ $data->{$key}->{ticket_type} } || 'individual_sponsors';
+            my $ticket_type = 'twodays';
+            if ( $peatix_ticket_id =~ /oneday_pass_1/ ){
+                $ticket_type = 'day1';
+            } elsif ( $peatix_ticket_id =~ /oneday_pass_2/ ){
+                $ticket_type = 'day2';
+            }
+
+            my $hash = +{
+                id => $vote_id,
+                peatix_purchase_id => $key,
+                peatix_ticket_id => $peatix_ticket_id,
+                peatix_event_id => $id,
+                ticket_type => $ticket_type,
+            };
+
+            $ballot_api->create($hash);
+        }
+    }
+}
