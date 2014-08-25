@@ -603,3 +603,6 @@ msgstr "Multiprupose Room 3"
 
 msgid "List of Talks"
 msgstr "List of Talks"
+
+msdid "Vote in the ticket ID of another"
+msgstr "Vote in the ticket ID of another"

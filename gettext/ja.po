@@ -588,3 +588,6 @@ msgstr "多目的教室3"
 
 msgid "List of Talks"
 msgstr "トーク一覧"
+
+msdid "Vote in the ticket ID of another"
+msgstr "別のチケットIDで投票"
