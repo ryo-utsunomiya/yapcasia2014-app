@@ -606,3 +606,6 @@ msgstr "List of Talks"
 
 msdid "Vote in the ticket ID of another"
 msgstr "Vote in the ticket ID of another"
+
+msgid "you have 2 votes on talk."
+msgstr "you have 2 votes on talk."
