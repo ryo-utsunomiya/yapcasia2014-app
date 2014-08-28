@@ -245,10 +245,7 @@ sub input {
         );
     }
 
-    ## 新規トークの受付を中止
-    state $deadline = timelocal(0, 0, 0, 27, 8-1, 114);
-    my $now = time();
-    if (!$member->{is_admin} && $now > $deadline && !$is_lt) {
+    if (!$member->{is_admin} ) {
         $self->render( text => "Currently talk submissions are disabled" );
         $self->rendered(403);
         return;
@@ -335,11 +332,8 @@ sub preview {
     my $member = $self->assert_email or return;
     $self->stash( member => $member );
 
-    ## 新規トークの受付を中止
     my $object = $self->load_from_subsession();
-    state $deadline = timelocal(0, 0, 0, 27, 8-1, 114);
-    my $now = time();
-    if (!$member->{is_admin} && !$object->{is_edit} && $now > $deadline && $object->{duration} != 5) {
+    if (!$member->{is_admin} && !$object->{is_edit}) {
         $self->render( text => "Currently talk submissions are disabled" );
         $self->rendered(403);
         return;
