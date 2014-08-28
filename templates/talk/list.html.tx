@@ -122,7 +122,7 @@ title = 'Talks'
 </div>
 <br />
 
-<p><a href="http://yapcasia.org/2014/08/call-for-lightning-talks.html">LT募集開始！ / Call for Lightning Talks!</a></p>
+<ul><li><strong><a href="/2014/vote/ballot">[% loc("Best Talk Votes") %]</a></strong></li></ul>
 
 <hr />
 
