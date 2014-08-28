@@ -26,6 +26,13 @@
 <body>
 <a id="top" name="top"></a>
 <div id="wrapper">
+[% IF title == "Talks" || title == "Talk Schedule" %]
+<div id="goto-mobile" style="display:none;">
+  <div class="innerblock" style="width:100%">
+    <a href="http://yapcasia.org/2014/talk/schedule?format=mobile" style="margin:0 auto 20px;display:block;width:90%;" class="btn btn-primary btn-lg">Mobile Schedule Viewer is Here</a>
+  </div>
+</div>
+[% END %]
 
 <header id="header-main">
 <div class="innerblock">
